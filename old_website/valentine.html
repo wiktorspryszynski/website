@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#fecfef" />
-		<title>Walentynka dla Gabrysi 💖</title>
+		<title>Walentynka 💖</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
@@ -219,7 +219,7 @@
 		</div>
 
 		<main class="card" role="main">
-			<h1>Gabrysiu</h1>
+			<h1 id="nameHeading">Gabrysiu</h1>
 			<p class="subtitle">Czy zostaniesz moją Walentynką?</p>
 
 			<div class="photo">
@@ -233,6 +233,10 @@
 		</main>
 
 		<script>
+			const urlParams = new URLSearchParams(window.location.search);
+			const name = urlParams.get('name') || 'Gabrysiu';
+			document.getElementById('nameHeading').textContent = name;
+
 			const yesBtn = document.getElementById('yesBtn');
 			const noBtn  = document.getElementById('noBtn');
 
@@ -254,7 +258,7 @@
 				const ics = [
 					'BEGIN:VCALENDAR',
 					'VERSION:2.0',
-					'PRODID:-//Walentynka//Gabrysia Card//PL',
+					'PRODID:-//Walentynka//Card//PL',
 					'BEGIN:VEVENT',
 					`UID:${uid}`,
 					`DTSTAMP:${dtstamp}`,
