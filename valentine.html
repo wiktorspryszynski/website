@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#fecfef" />
+		<title>Walentynka dla Gabrysi 💖</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+		<style>
+			:root {
+				--bg1: #ff9a9e;
+				--bg2: #fecfef;
+				--accent: #ff3b6d;
+				--accent-dark: #d82b57;
+				--text: #2b1b25;
+			}
+
+			/* Ensure gradient also paints on the root for iOS Safari */
+			html {
+				height: 100%;
+				background: linear-gradient(135deg, var(--bg1), var(--bg2));
+				background-color: var(--bg2); /* fallback solid color repeats infinitely */
+			}
+
+			/* Background */
+			body {
+				margin: 0;
+				/* Fallback then dynamic viewport units for iOS Safari */
+				min-height: 100vh;
+				min-height: 100svh; /* iOS 15+ small viewport */
+				min-height: 100dvh; /* modern dynamic viewport */
+				min-height: 100lvh; /* large viewport for expanded toolbars */
+				display: grid;
+				place-items: center;
+				color: var(--text);
+				background: linear-gradient(135deg, var(--bg1), var(--bg2));
+				font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+				overflow: hidden;
+			}
+
+			/* Floating hearts */
+			.hearts {
+				position: fixed;
+				inset: 0;
+				pointer-events: none;
+				overflow: hidden;
+				z-index: 0;
+			}
+			.heart {
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				background: var(--accent);
+				transform: rotate(-45deg);
+				opacity: 0.75;
+				left: var(--x, 50%);
+				bottom: -32px;
+				animation: floatUp var(--dur, 12s) linear infinite;
+				animation-delay: var(--delay, 0s);
+				filter: drop-shadow(0 4px 6px rgba(0,0,0,.15));
+			}
+			.heart::before,
+			.heart::after {
+				content: "";
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				background: var(--accent);
+				border-radius: 50%;
+			}
+			.heart::before { top: -10px; left: 0; }
+			.heart::after  { left: 10px; top: 0; }
+
+			@keyframes floatUp {
+				0%   { transform: translateY(0) rotate(-45deg) scale(var(--s, 1)); opacity: 0; }
+				10%  { opacity: 0.85; }
+				100% { transform: translateY(-120vh) rotate(-45deg) scale(var(--s, 1)); opacity: 0; }
+			}
+
+			/* Variations for hearts */
+			.hearts .heart:nth-child(1)  { --x: 8%;   --dur: 13s; --delay: 0s;   --s: 1.0; }
+			.hearts .heart:nth-child(2)  { --x: 18%;  --dur: 16s; --delay: 3s;   --s: 0.9; }
+			.hearts .heart:nth-child(3)  { --x: 28%;  --dur: 11s; --delay: 6s;   --s: 1.2; }
+			.hearts .heart:nth-child(4)  { --x: 38%;  --dur: 15s; --delay: 1.5s; --s: 1.1; }
+			.hearts .heart:nth-child(5)  { --x: 48%;  --dur: 12s; --delay: 5s;   --s: 0.95; }
+			.hearts .heart:nth-child(6)  { --x: 58%;  --dur: 14s; --delay: 2s;   --s: 1.15; }
+			.hearts .heart:nth-child(7)  { --x: 68%;  --dur: 17s; --delay: 4s;   --s: 0.85; }
+			.hearts .heart:nth-child(8)  { --x: 78%;  --dur: 12s; --delay: 7s;   --s: 1.0; }
+			.hearts .heart:nth-child(9)  { --x: 88%;  --dur: 16s; --delay: 3.5s; --s: 1.25; }
+			.hearts .heart:nth-child(10) { --x: 14%;  --dur: 13s; --delay: 8s;   --s: 1.05; }
+			.hearts .heart:nth-child(11) { --x: 26%;  --dur: 18s; --delay: 1s;   --s: 0.9; }
+			.hearts .heart:nth-child(12) { --x: 42%;  --dur: 10s; --delay: 2.5s; --s: 1.3; }
+			.hearts .heart:nth-child(13) { --x: 54%;  --dur: 14s; --delay: 6.5s; --s: 1.1; }
+			.hearts .heart:nth-child(14) { --x: 66%;  --dur: 12s; --delay: 9s;   --s: 0.95; }
+			.hearts .heart:nth-child(15) { --x: 82%;  --dur: 19s; --delay: 0.5s; --s: 1.2; }
+
+			/* Content card */
+			.card {
+				position: relative;
+				z-index: 1;
+				max-width: 760px;
+				margin: 4vmin;
+				padding: clamp(20px, 4vmin, 36px);
+				background: rgba(255, 255, 255, 0.18);
+				border: 1px solid rgba(255, 255, 255, 0.35);
+				border-radius: 24px;
+				backdrop-filter: blur(8px);
+				box-shadow: 0 16px 40px rgba(0,0,0,.18);
+				text-align: center;
+			}
+			h1 {
+				font-family: "Pacifico", cursive;
+				font-weight: 400;
+				font-size: clamp(36px, 6vmin, 64px);
+				margin: 0 0 8px;
+				color: #b7184a;
+			}
+			.subtitle {
+				font-size: clamp(18px, 3.2vmin, 28px);
+				font-weight: 500;
+				margin: 0 0 20px;
+			}
+
+			/* Photo placeholder */
+			.photo {
+				display: grid;
+				place-items: center;
+				margin: 20px auto 24px;
+				width: min(520px, 92%);
+				aspect-ratio: 4 / 3;
+				border-radius: 18px;
+				background: rgba(255,255,255,.55);
+				color: rgba(43,27,37,.75);
+				font-size: 15px;
+			}
+			.photo img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				border-radius: 16px;
+				display: block;
+			}
+			.photo img[src=""] { display: none; }
+
+			/* Blur/fade the edges of the specific image */
+			#valentine_img {
+				/* keep base sizing */
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				border-radius: 16px;
+				/* soft feathered edges using mask */
+				/* subtle glow to enhance softness as a fallback */
+				filter: drop-shadow(0 0 24px rgba(255,255,255,0.85));
+			}
+
+			/* Buttons */
+			.actions {
+				display: flex;
+				justify-content: center;
+				gap: 14px;
+				flex-wrap: wrap;
+				margin-top: 4px;
+			}
+			.btn {
+				appearance: none;
+				border: none;
+				outline: none;
+				cursor: pointer;
+				border-radius: 999px;
+				padding: 14px 26px;
+				font-size: 18px;
+				font-weight: 700;
+				transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+			}
+			.btn.yes {
+				background: linear-gradient(180deg, #ff5d85, #ff3b6d);
+				color: #fff;
+				box-shadow: 0 10px 20px rgba(255, 59, 109, .35);
+				transform: scale(var(--scale, 1));
+			}
+			.btn.yes:hover { box-shadow: 0 12px 26px rgba(255, 59, 109, .45); }
+			.btn.no {
+				background: #fff;
+				color: var(--accent);
+				border: 2px solid var(--accent);
+			}
+			.btn.no:hover {
+				background: #ffe4ec;
+			}
+			.btn:focus-visible {
+				box-shadow: 0 0 0 3px rgba(255, 59, 109, .35);
+			}
+
+			/* Footer note */
+			.note { margin-top: 14px; font-size: 13px; opacity: .8; }
+		</style>
+	</head>
+	<body>
+		<!-- Floating hearts background -->
+		<div class="hearts" aria-hidden="true">
+			<div class="heart"></div>
+			<div class="heart"></div>
+			<div class="heart"></div>
+			<div class="heart"></div>
+			<div class="heart"></div>
+			<div class="heart"></div>
+			<div class="heart"></div>
+			<div class="heart"></div>
+			<div class="heart"></div>
+			<div class="heart"></div>
+			<div class="heart"></div>
+			<div class="heart"></div>
+			<div class="heart"></div>
+			<div class="heart"></div>
+			<div class="heart"></div>
+		</div>
+
+		<main class="card" role="main">
+			<h1>Gabrysiu</h1>
+			<p class="subtitle">Czy zostaniesz moją Walentynką?</p>
+
+			<div class="photo">
+				<img id="valentine_img" src="valentine_cat.png" alt="" />
+			</div>
+
+			<div class="actions">
+				<button id="yesBtn" class="btn yes">Tak</button>
+				<button id="noBtn" class="btn no">Nie</button>
+			</div>
+		</main>
+
+		<script>
+			const yesBtn = document.getElementById('yesBtn');
+			const noBtn  = document.getElementById('noBtn');
+
+			let scale = 1;
+			noBtn.addEventListener('click', () => {
+				scale += 0.15; // powiększ "Tak" za każdym kliknięciem
+				yesBtn.style.setProperty('--scale', String(scale));
+				yesBtn.textContent = 'Na pewno?';
+			});
+
+			// Kliknięcie "Tak" — dodaj zdarzenie do kalendarza (plik .ics)
+			yesBtn.addEventListener('click', () => {
+				// Zdarzenie całodniowe na 14.02.2026
+				const DTSTART = '20260214';
+				const DTEND   = '20260215'; // koniec dnia — standard w iCal
+				const dtstamp = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+				const uid = `randka-${Date.now()}@walentynka.local`;
+
+				const ics = [
+					'BEGIN:VCALENDAR',
+					'VERSION:2.0',
+					'PRODID:-//Walentynka//Gabrysia Card//PL',
+					'BEGIN:VEVENT',
+					`UID:${uid}`,
+					`DTSTAMP:${dtstamp}`,
+					`DTSTART;VALUE=DATE:${DTSTART}`,
+					`DTEND;VALUE=DATE:${DTEND}`,
+					'SUMMARY:Randka',
+					'DESCRIPTION:Walentynkowa randka 💖',
+					'END:VEVENT',
+					'END:VCALENDAR'
+				].join('\r\n');
+
+				const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+				const url = URL.createObjectURL(blob);
+				const a = document.createElement('a');
+				a.href = url;
+				a.download = 'Randka-2026-02-14.ics';
+				document.body.appendChild(a);
+				a.click();
+				document.body.removeChild(a);
+				URL.revokeObjectURL(url);
+
+				// Mała zmiana tekstu po zapisaniu
+				yesBtn.textContent = 'Do zobaczenia!';
+			});
+
+			// Opcjonalnie: małe wibracje przy "Nie"
+			noBtn.addEventListener('mousedown', () => {
+				noBtn.style.transform = 'scale(0.98)';
+			});
+			noBtn.addEventListener('mouseup', () => {
+				noBtn.style.transform = 'none';
+			});
+		</script>
+	</body>
+</html>
