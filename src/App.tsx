@@ -34,7 +34,7 @@ function App() {
       pointer.x = e.clientX;
       pointer.y = e.clientY;
     });
-
+    
     function lerp(a: number, b: number, t: number) { return a + (b - a) * t; }
 
     // 4 orbs: independent drift + motion and repulsion parameters
