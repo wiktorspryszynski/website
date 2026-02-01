@@ -16,7 +16,7 @@
 				--accent: #7c5cff;
 				--accent-2: #00d4ff;
 				--green: #00e38b;
-				--card: #1b2030;
+				--card: #292a2d;
 				--card-hover: #222941;
 				--border: #2a3249;
 				--focus: #ffd166;
@@ -40,7 +40,7 @@
 
 			.name-and-surname {
 				font-weight: 700;
-				font-size: 20px;
+				font-size: 24px;
 			}
 
 			/* Lights layer under content */
@@ -99,7 +99,7 @@
 				font-size: clamp(28px, 5vw, 48px);
 				line-height: 1.1;
 				background: linear-gradient(135deg, var(--text), color-mix(in oklab, var(--accent-2) 30%, var(--text)));
-				-webkit-background-clip: text; background-clip: text; color: transparent;
+				-webkit-background-clip: text; background-clip: text; color: #ddd;
 			}
 			.hero p { color: var(--muted); max-width: 65ch; margin: 0; }
 			.actions { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
@@ -122,24 +122,23 @@
 			.card {
 				display: block; position: relative; overflow: hidden; border-radius: 16px; padding: 18px;
 				text-decoration: none; color: var(--text);
-				background:
-					linear-gradient(180deg, color-mix(in oklab, var(--accent-2) 8%, transparent) 0%, transparent 40%),
-					linear-gradient(180deg, var(--card) 0%, color-mix(in oklab, var(--card) 85%, black) 100%);
+				background: color-mix(in oklab, var(--card), transparent 90%);
 				border: 1px solid var(--border);
 				box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+				backdrop-filter: blur(15px);
 				transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
 			}
 
 			.card:hover, .card:focus-visible {
 				transform: translateY(-2px);
-				background: linear-gradient(180deg, var(--card-hover) 0%, color-mix(in oklab, var(--card-hover) 85%, black) 100%);
+				background: color-mix(in oklab, var(--card-hover), transparent 70%);
 				outline: 2px solid color-mix(in oklab, var(--accent) 40%, var(--focus));
 				box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 			}
 
-			.under-construction:hover {
+			.work-in-progress-card:hover {
 				transform: none;
-				background: linear-gradient(180deg, color-mix(in oklab, var(--accent-2) 8%, transparent) 0%, transparent 40%), linear-gradient(180deg, var(--card) 0%, color-mix(in oklab, var(--card) 85%, black) 100%);
+				background: color-mix(in oklab, var(--card), transparent 90%);
 				outline: none;
 				box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 			}
@@ -227,7 +226,6 @@
 			<section aria-labelledby="projects-title" id="projekty">
 				<h2 class="section-title" id="projects-title">Projekty</h2>
 				<div class="grid">
-					<!-- 
 					<a class="card" href="glass.html" aria-label="Projekt Glassmorphism UI">
 						<h3>Glassmorphism UI</h3>
 						<p>Szklane panele, miękkie światło i nowoczesna estetyka.</p>
@@ -263,8 +261,7 @@
 							<span class="tag">Canvas</span>
 						</div>
 					</div>
-					-->
-					<div class="card under-construction" aria-label="Sekcja w trakcie budowy" style="border: 2px dashed var(--border);">
+					<div class="card work-in-progress-card" aria-label="Sekcja w trakcie budowy" style="border: 2px dashed var(--border);">
 						<h3>👷 Section under construction 🚧🚧</h3>
 						<p>Sekcja projektów jest obecnie w trakcie budowy. Wróć wkrótce!</p>
 						<div class="tags">
