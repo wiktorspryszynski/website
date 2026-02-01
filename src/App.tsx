@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import './styles.css';
 
 function App() {
@@ -15,7 +15,8 @@ function App() {
 
     let width = 0, height = 0, dpr = Math.max(1, window.devicePixelRatio || 1);
     function resize() {
-      const rect = container.getBoundingClientRect();
+      const rect = container?.getBoundingClientRect();
+      if (!rect || !ctx) return;
       width = Math.floor(rect.width);
       height = Math.floor(rect.height);
       canvas.width = Math.floor(width * dpr);
@@ -26,22 +27,19 @@ function App() {
     window.addEventListener('resize', resize);
 
     const pointer = { x: width * 0.5, y: height * 0.4 };
-    let lastMove = performance.now();
     let isDown = false;
-    let grabbedIdx = null;
+    let grabbedIdx: number | null = null;
 
     window.addEventListener('pointermove', (e) => {
-      lastMove = performance.now();
       pointer.x = e.clientX;
       pointer.y = e.clientY;
     });
 
-    function lerp(a, b, t) { return a + (b - a) * t; }
-    function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
+    function lerp(a: number, b: number, t: number) { return a + (b - a) * t; }
 
     // 4 orbs: independent drift + motion and repulsion parameters
     const baseRadius = Math.min(window.innerWidth, window.innerHeight);
-    function rand(a, b){ return a + Math.random() * (b - a); }
+    function rand(a: number, b: number){ return a + Math.random() * (b - a); }
     const orbs = Array.from({ length: 4 }).map((_, i) => ({
       x: rand(0.2 * width, 0.8 * width),
       y: rand(0.2 * height, 0.8 * height),
@@ -61,7 +59,7 @@ function App() {
     window.addEventListener('pointerdown', () => {
       isDown = true;
       const grabRadius = 120;
-      let best = { idx: null, dist: Infinity };
+      let best = { idx: null as number | null, dist: Infinity };
       for (let i = 0; i < orbs.length; i++) {
         const o = orbs[i];
         const d = Math.hypot(o.x - pointer.x, o.y - pointer.y);
@@ -73,6 +71,7 @@ function App() {
     window.addEventListener('pointercancel', () => { isDown = false; grabbedIdx = null; });
 
     function draw() {
+      if (!ctx) return;
       ctx.clearRect(0, 0, width, height);
       ctx.globalCompositeOperation = 'lighter';
       for (const o of orbs) {
@@ -90,9 +89,9 @@ function App() {
       ctx.globalCompositeOperation = 'source-over';
     }
 
-    function update(now) {
+    function update(now: number) {
       const t = now * 0.001; // seconds
-      const influence = 140;  // cursor influence radius
+      // const influence = 140;  // cursor influence radius
       const speedScale = reduceMotion ? 0.4 : 1.0; // gentler movement with reduced motion, but still visible
       for (let i = 0; i < orbs.length; i++) {
         const o = orbs[i];
@@ -134,8 +133,8 @@ function App() {
     }
 
     // Always run the animation; scale intensity under reduced motion
-    const raf = window.requestAnimationFrame ? (cb) => window.requestAnimationFrame(cb) : (cb) => setTimeout(() => cb(performance.now()), 16);
-    function loop(now) {
+    const raf = window.requestAnimationFrame ? (cb: FrameRequestCallback) => window.requestAnimationFrame(cb) : (cb: FrameRequestCallback) => setTimeout(() => cb(performance.now()), 16);
+    function loop(now: number) {
       update(now);
       draw();
       raf(loop);
@@ -152,32 +151,32 @@ function App() {
 
   useEffect(() => {
     // Email popover interactions: toggle, copy-to-clipboard, and outside-click close
-    const toggleBtn = document.getElementById('email-toggle');
-    const pop = document.getElementById('email-popover');
+    const toggleBtn = document.getElementById('email-toggle') as HTMLButtonElement | null;
+    const pop = document.getElementById('email-popover') as HTMLDivElement | null;
     const social = toggleBtn ? toggleBtn.closest('.social') : null;
     const emailSpan = document.getElementById('email-value');
     const copyBtn = document.getElementById('copy-email');
     if (!toggleBtn || !pop || !emailSpan || !copyBtn || !social) return;
 
     function positionPopover() {
-      const tb = toggleBtn.getBoundingClientRect();
-      const sb = social.getBoundingClientRect();
-      const left = Math.round(tb.left - sb.left);
-      const top = Math.round(tb.bottom - sb.top + 10);
-      pop.style.left = left + 'px';
-      pop.style.top = top + 'px';
+      const tb = toggleBtn?.getBoundingClientRect();
+      const sb = social?.getBoundingClientRect();
+      const left = Math.round(tb!.left - sb!.left);
+      const top = Math.round(tb!.bottom - sb!.top + 10);
+      pop!.style.left = left + 'px';
+      pop!.style.top = top + 'px';
     }
 
     function openPop() {
       positionPopover();
-      pop.hidden = false;
-      toggleBtn.setAttribute('aria-expanded', 'true');
+      pop!.hidden = false;
+      toggleBtn?.setAttribute('aria-expanded', 'true');
     }
     function closePop() {
-      pop.hidden = true;
-      toggleBtn.setAttribute('aria-expanded', 'false');
+      pop!.hidden = true;
+      toggleBtn?.setAttribute('aria-expanded', 'false');
     }
-    function togglePop() { pop.hidden ? openPop() : closePop(); }
+    function togglePop() { pop!.hidden ? openPop() : closePop(); }
 
     toggleBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -186,21 +185,21 @@ function App() {
 
     // Close on outside click
     document.addEventListener('click', (e) => {
-      if (pop.hidden) return;
-      const target = e.target;
-      if (!pop.contains(target) && target !== toggleBtn && !toggleBtn.contains(target)) {
+      if (pop!.hidden) return;
+      const target = e.target as Node;
+      if (!target) return;
+      if (!pop!.contains(target) && target !== toggleBtn && !toggleBtn.contains(target)) {
         closePop();
       }
     });
 
     // Close on Escape
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !pop.hidden) closePop();
+      if (e.key === 'Escape' && !pop!.hidden) closePop();
     });
 
     // Reposition on resize while open
-    window.addEventListener('resize', () => { if (!pop.hidden) positionPopover(); });
-
+    window.addEventListener('resize', () => { if (!pop!.hidden) positionPopover(); });
     // Copy email to clipboard with quick feedback
     copyBtn.addEventListener('click', async () => {
       const email = emailSpan.textContent || '';
