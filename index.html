@@ -3,9 +3,10 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Moje Portfolio</title>
+		<title>Wiktor Spryszyński — Portfolio</title>
 		<meta name="description" content="Portfolio — przegląd moich projektów, eksperymentów i realizacji." />
 		<meta name="color-scheme" content="light dark" />
+		<link rel="icon" href="favicon.ico" />
 		<style>
 			:root {
 				--bg: #0f1115;
@@ -37,10 +38,15 @@
 				user-select: none; /* modern browsers */
 			}
 
+			.name-and-surname {
+				font-weight: 700;
+				font-size: 20px;
+			}
+
 			/* Lights layer under content */
 			#lights { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
 			#lights canvas { width: 100%; height: 100%; display: block; }
-			header, main, footer { position: relative; z-index: 1; }
+			header, main { position: relative; z-index: 1; }
 
 			.container { max-width: 1080px; margin: 0 auto; padding: 24px; }
 
@@ -143,12 +149,6 @@
 			.tags { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
 			.tag { font-size: 12px; color: var(--muted); border: 1px dashed var(--border); padding: 4px 8px; border-radius: 999px; }
 
-			/* Footer */
-			footer { margin: 36px 0 24px; color: var(--muted); font-size: 14px; }
-			footer .links { display: flex; gap: 12px; flex-wrap: wrap; }
-			footer a { color: var(--muted); }
-			footer a:hover, footer a:focus-visible { color: var(--text); outline: none; }
-
 			/* Accessibility */
 			:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 			@media (prefers-reduced-motion: reduce) {
@@ -161,15 +161,9 @@
 		<div id="lights" aria-hidden="true"></div>
 		<header role="banner">
 			<div class="container header-bar">
-				<div class="brand" aria-label="Moje Portfolio">
-					<div class="logo" aria-hidden="true">⚡</div>
-					<div>Moje Portfolio</div>
+				<div class="brand" aria-label="Wiktor Spryszyński">
+					<div class="name-and-surname">Wiktor Spryszyński</div>
 				</div>
-				<nav role="navigation" aria-label="Główna nawigacja">
-					<a href="#projekty">Projekty</a>
-					<a href="#kontakt">Kontakt</a>
-				</nav>
-				
 			</div>
 		</header>
 
@@ -209,8 +203,7 @@
 									<stop offset="100%" style="stop-color: var(--green);" />
 								</linearGradient>
 							</defs>
-							<rect x="2" y="2" width="20" height="20" rx="4" fill="url(#grad-at)" />
-							<text x="12" y="16" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="800" fill="#0f1115">@</text>
+							<text x="12" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="500" fill="url(#grad-at)">@</text>
 						</svg>
 					</button>
 
@@ -223,9 +216,9 @@
 							</svg>
 						</button>
 						<a class="icon-btn" id="send-email" href="mailto:spryszynskiwiktor@gmail.com" aria-label="Wyślij email" title="Wyślij">
-								<svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
-									<path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
-								</svg>
+							<svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+								<path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+							</svg>
 						</a>
 					</div>
 				</div>
@@ -290,14 +283,6 @@
 				</div>
 			</section>
 		</main>
-
-		<footer class="container" role="contentinfo">
-			<div class="links">
-				<span>© 2026</span>
-				<a href="#projekty">Projekty</a>
-				<a href="#kontakt">Kontakt</a>
-			</div>
-		</footer>
 
 		<script>
 			(function () {
