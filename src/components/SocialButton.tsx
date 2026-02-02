@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 interface SocialButtonProps {
   type: 'link' | 'button';
@@ -28,8 +30,10 @@ const SocialButton: React.FC<SocialButtonProps> = ({
   children
 }) => {
   const [isEmailPopoverOpen, setIsEmailPopoverOpen] = useState(false);
+  const [copyTooltipVisible, setCopyTooltipVisible] = useState(false);
   const buttonRef = useRef<HTMLButtonElement | HTMLAnchorElement>(null);
   const popoverRef = useRef<HTMLDivElement>(null);
+  const copyBtnRef = useRef<HTMLButtonElement>(null);
 
   const isEmailButton = id === 'email-toggle';
 
@@ -82,12 +86,12 @@ const SocialButton: React.FC<SocialButtonProps> = ({
       const email = emailSpan.textContent || '';
       try {
         await navigator.clipboard.writeText(email);
-        copyBtn.setAttribute('aria-label', 'Skopiowano!');
-        copyBtn.title = 'Skopiowano!';
+        copyBtn.classList.add('copied');
+        setCopyTooltipVisible(true);
         setTimeout(() => {
-          copyBtn.setAttribute('aria-label', 'Kopiuj email');
-          copyBtn.title = 'Kopiuj';
-        }, 1200);
+          copyBtn.classList.remove('copied');
+          setCopyTooltipVisible(false);
+        }, 2000);
       } catch (_) {
         // Fallback
         const range = document.createRange();
@@ -99,6 +103,12 @@ const SocialButton: React.FC<SocialButtonProps> = ({
           document.execCommand('copy');
           sel.removeAllRanges();
         }
+        copyBtn.classList.add('copied');
+        setCopyTooltipVisible(true);
+        setTimeout(() => {
+          copyBtn.classList.remove('copied');
+          setCopyTooltipVisible(false);
+        }, 2000);
       }
     };
 
@@ -171,12 +181,28 @@ const SocialButton: React.FC<SocialButtonProps> = ({
           hidden={!isEmailPopoverOpen}
         >
           <span className="email-text" id="email-value">spryszynskiwiktor@gmail.com</span>
-          <button className="icon-btn" id="copy-email" type="button" aria-label="Kopiuj email" title="Kopiuj">
-            <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
-              <path fill="currentColor" d="M16 1H6C4.9 1 4 1.9 4 3v12h2V3h10V1zm3 4H10c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h9c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H10V7h9v14z"/>
-            </svg>
-          </button>
-          <a className="icon-btn" id="send-email" href="mailto:spryszynskiwiktor@gmail.com" aria-label="Wyślij email" title="Wyślij">
+          <Tippy
+            content="Skopiowano!"
+            visible={copyTooltipVisible}
+            onHidden={() => setCopyTooltipVisible(false)}
+            placement="top"
+            theme="custom"
+            arrow={true}
+            duration={200}
+          >
+            <button
+              ref={copyBtnRef}
+              className="icon-btn"
+              id="copy-email"
+              type="button"
+              aria-label="Kopiuj email"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+                <path fill="currentColor" d="M16 1H6C4.9 1 4 1.9 4 3v12h2V3h10V1zm3 4H10c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h9c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H10V7h9v14z"/>
+              </svg>
+            </button>
+          </Tippy>
+          <a className="icon-btn" id="send-email" href="mailto:spryszynskiwiktor@gmail.com" aria-label="Wyślij email">
             <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
               <path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
             </svg>

@@ -88,6 +88,22 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 .email-text { user-select: text; -webkit-user-select: text; }
 .icon-btn { display: inline-flex; width: 36px; height: 36px; align-items: center; justify-content: center; border-radius: 8px; border: 1px solid var(--border); background: color-mix(in oklab, var(--bg-elev) 40%, transparent); color: var(--text); cursor: pointer; }
 .icon-btn:hover, .icon-btn:focus-visible { background: var(--card-hover); outline: none; }
+.icon-btn.copied { 
+  animation: fadeBack 2s ease forwards; 
+}
+
+@keyframes fadeBack {
+  0% { 
+    background: rgba(0, 227, 139, 0.8); 
+    backdrop-filter: blur(8px); 
+    border-color: var(--green); 
+  }
+  100% { 
+    background: color-mix(in oklab, var(--bg-elev) 40%, transparent); 
+    backdrop-filter: none; 
+    border-color: var(--border); 
+  }
+}
 
 .header-bar { display: flex; justify-content: space-between; align-items: center; }
 
@@ -147,6 +163,24 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 .card p { margin: 0; color: var(--muted); }
 .tags { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
 .tag { font-size: 12px; color: var(--muted); border: 1px dashed var(--border); padding: 4px 8px; border-radius: 999px; }
+
+/* Tippy tooltip custom theme */
+.tippy-box[data-theme~='custom'] {
+  background-color: var(--green);
+  color: #0f1115;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tippy-box[data-theme~='custom'] .tippy-arrow {
+  color: var(--green);
+}
+
+.tippy-box[data-theme~='custom'] .tippy-content {
+  padding: 6px 10px;
+}
 
 /* Accessibility */
 :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }

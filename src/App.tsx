@@ -214,7 +214,7 @@ function App() {
                     <stop offset="100%" stopColor="var(--green)" />
                   </linearGradient>
                 </defs>
-                <text x="12" y="20" textAnchor="middle" fontFamily="Segoe UI, Arial, sans-serif" fontSize="22" fontWeight="500" fill="url(#grad-at)">@</text>
+                <text x="12" y="20" textAnchor="middle" fontFamily="Segoe UI, Arial, sans-serif" fontSize="24" fontWeight="500" fill="url(#grad-at)">@</text>
               </svg>
             </SocialButton>
 
