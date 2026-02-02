@@ -33,7 +33,8 @@ const SocialButton: React.FC<SocialButtonProps> = ({
 }) => {
   const [isEmailPopoverOpen, setIsEmailPopoverOpen] = useState(false);
   const [copyTooltipVisible, setCopyTooltipVisible] = useState(false);
-  const buttonRef = useRef<HTMLButtonElement | HTMLAnchorElement>(null);
+  const anchorRef = useRef<HTMLAnchorElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const popoverRef = useRef<HTMLDivElement>(null);
   const copyBtnRef = useRef<HTMLButtonElement>(null);
 
@@ -42,7 +43,7 @@ const SocialButton: React.FC<SocialButtonProps> = ({
   useEffect(() => {
     if (!isEmailButton) return;
 
-    const toggleBtn = buttonRef.current;
+    const toggleBtn = type === 'link' ? anchorRef.current : buttonRef.current;
     const pop = popoverRef.current;
     const social = toggleBtn?.parentElement;
     const emailSpan = pop?.querySelector('#email-value') as HTMLSpanElement;
@@ -144,7 +145,7 @@ const SocialButton: React.FC<SocialButtonProps> = ({
   if (type === 'link') {
     return (
       <a
-        ref={buttonRef as React.RefObject<HTMLAnchorElement>}
+        ref={anchorRef}
         href={href}
         target={target}
         rel={rel}
@@ -161,7 +162,7 @@ const SocialButton: React.FC<SocialButtonProps> = ({
   return (
     <>
       <button
-        ref={buttonRef as React.RefObject<HTMLButtonElement>}
+        ref={buttonRef}
         type="button"
         id={id}
         aria-label={ariaLabel}
