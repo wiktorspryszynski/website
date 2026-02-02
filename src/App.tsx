@@ -6,8 +6,18 @@ import contentPl from './content.json';
 import contentEn from './english.json';
 
 function App() {
-  const [language, setLanguage] = useState<'pl' | 'en'>('pl');
-  const content = language === 'pl' ? contentPl : contentEn;
+  const languages = [
+    { code: 'pl' as const, name: 'Polski', display: 'PL' },
+    { code: 'en' as const, name: 'English', display: 'EN' }
+  ];
+  const contents = {
+    pl: contentPl,
+    en: contentEn
+  };
+  const urlParams = new URLSearchParams(window.location.search);
+  const initialLang = urlParams.get('lang') === 'en' ? 'en' : 'pl';
+  const [language, setLanguage] = useState<'pl' | 'en'>(initialLang);
+  const content = contents[language];
   useEffect(() => {
     // Lights animation script
     const container = document.getElementById('lights');
@@ -160,12 +170,18 @@ function App() {
       <div id="lights" aria-hidden="true"></div>
       <header role="banner">
         <div className="container header-bar">
-          <div className="brand" aria-label={content.header.nameLabel}>
-            <div className="name-and-surname">{content.header.name}</div>
+          <div className="brand" aria-label="Wiktor Spryszyński">
+            <div className="name-and-surname">Wiktor Spryszyński</div>
           </div>
           <nav>
             <button
-              onClick={() => setLanguage(language === 'pl' ? 'en' : 'pl')}
+              onClick={() => {
+                const newLang = language === 'pl' ? 'en' : 'pl';
+                setLanguage(newLang);
+                const url = new URL(window.location.href);
+                url.searchParams.set('lang', newLang);
+                window.history.pushState({}, '', url);
+              }}
               className="language-switch"
               aria-label={`Switch to ${language === 'pl' ? 'English' : 'Polish'}`}
             >
@@ -177,7 +193,9 @@ function App() {
 
       <main className="container" id="main" role="main">
         <section className="hero" aria-labelledby="hero-title">
-          <h1 id="hero-title">{content.hero.title}</h1>
+					<div id="hero-title" className="visually-hidden">
+						<h1>{content.hero.title.hi}<br />{content.hero.title.description}</h1>
+					</div>
           <p>{content.hero.subtitle}</p>
           <div className="social social-bar" aria-label={content.hero.socialLabel}>
             <SocialButton

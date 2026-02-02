@@ -122,6 +122,20 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 
 .header-bar { display: flex; justify-content: space-between; align-items: center; }
 
+.language-switch {
+  background: color-mix(in oklab, var(--bg-elev) 40%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.language-switch:hover, .language-switch:focus-visible {
+  background: var(--card-hover);
+  outline: none;
+}
+
 /* Hero */
 .hero {
 	margin: 24px 0;

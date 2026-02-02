@@ -247,11 +247,11 @@
 				yesBtn.textContent = 'Na pewno?';
 			});
 
-			// Kliknięcie "Tak" — dodaj zdarzenie do kalendarza (plik .ics)
+			// Kliknięcie "Tak" - dodaj zdarzenie do kalendarza (plik .ics)
 			yesBtn.addEventListener('click', () => {
 				// Zdarzenie całodniowe na 14.02.2026
 				const DTSTART = '20260214';
-				const DTEND   = '20260215'; // koniec dnia — standard w iCal
+				const DTEND   = '20260215'; // koniec dnia - standard w iCal
 				const dtstamp = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
 				const uid = `randka-${Date.now()}@walentynka.local`;
 

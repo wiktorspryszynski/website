@@ -1,63 +1,59 @@
 {
-  "header": {
-    "name": "",
-    "nameLabel": ""
-  },
   "hero": {
-    "title": "",
-    "subtitle": "",
-    "socialLabel": ""
+    "title": {
+        "hi": "Hi!",
+        "description": "I create web projects and experiments."
+    },
+    "subtitle": "On this site, you'll find my works - from aesthetic interfaces to small, inventive mini-projects. Click a card to see details.",
+    "socialLabel": "Social links"
   },
   "social": {
-    "linkedin": "",
-    "github": "",
-    "email": "",
-    "copyTooltip": ""
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "email": "Show email",
+    "copyTooltip": "Copied!"
   },
   "projects": {
-    "title": "",
+    "title": "Projects",
     "cards": [
       {
-        "title": "",
-        "description": "",
-        "tags": ["", ""],
-        "ariaLabel": ""
+        "title": "Glassmorphism UI",
+        "description": "Glass panels, soft light, and modern aesthetics.",
+        "tags": ["UI", "CSS"],
+        "ariaLabel": "Glassmorphism UI project"
       },
       {
-        "title": "",
-        "description": "",
-        "tags": ["", ""],
-        "ariaLabel": ""
+        "title": "Valentine's project",
+        "description": "Romantic theme and subtle animations - a light, pleasant experiment.",
+        "tags": ["Animations", "HTML"],
+        "ariaLabel": "Valentine's project"
       },
       {
-        "title": "",
-        "description": "",
-        "tags": ["", ""],
-        "ariaLabel": ""
+        "title": "Portfolio API",
+        "description": "Integration with a simple API for dynamically fetching projects.",
+        "tags": ["JavaScript", "API"],
+        "ariaLabel": "Project in preparation"
       },
       {
-        "title": "",
-        "description": "",
-        "tags": ["", ""],
-        "ariaLabel": ""
+        "title": "Browser mini-game",
+        "description": "A short logic game with pure DOM and responsive controls.",
+        "tags": ["Game", "Canvas"],
+        "ariaLabel": "Project in preparation"
       },
       {
-        "title": "",
-        "description": "",
-        "tags": ["", ""],
-        "ariaLabel": ""
+        "title": "👷 Section under construction 🚧🚧",
+        "description": "The projects section is currently under construction. Check back soon!",
+        "tags": ["Coming soon"],
+        "ariaLabel": "Section under construction"
       }
     ]
   },
   "contact": {
-    "title": "",
-    "description": "",
-    "emailButton": "",
-    "githubButton": "",
-    "emailLabel": "",
-    "githubLabel": ""
-  },
-  "language": {
-    "switch": ""
+    "title": "Contact",
+    "description": "Do you have a question or an idea for collaboration? Send a message - I'll be happy to respond.",
+    "emailButton": "Send email",
+    "githubButton": "GitHub",
+    "emailLabel": "Send email message",
+    "githubLabel": "View GitHub profile"
   }
 }
