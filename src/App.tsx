@@ -119,14 +119,14 @@ function App() {
               ariaLabel={content.social.email}
               copyTooltip={content.social.copyTooltip}
             >
-              <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+              <svg viewBox="0 0 24 28" role="img" aria-hidden="true">
                 <defs>
                   <linearGradient id="grad-at" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="var(--accent)" />
                     <stop offset="100%" stopColor="var(--green)" />
                   </linearGradient>
                 </defs>
-                <text x="12" y="20" textAnchor="middle" fontFamily="Segoe UI, Arial, sans-serif" fontSize="24" fontWeight="500" fill="url(#grad-at)">@</text>
+                <text x="12" y="22" textAnchor="middle" fontFamily="Segoe UI, Arial, sans-serif" fontSize="24" fontWeight="500" fill="url(#grad-at)">@</text>
               </svg>
             </SocialButton>
 

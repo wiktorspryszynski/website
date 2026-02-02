@@ -48,9 +48,39 @@ const SocialButton: React.FC<SocialButtonProps> = ({
     if (!toggleBtn || !pop || !emailSpan || !copyBtn || !social) return;
 
     function positionPopover() {
+      pop!.style.width = ''; // Reset width
       const tb = toggleBtn!.getBoundingClientRect();
       const sb = social!.getBoundingClientRect();
-      const left = Math.round(tb.left - sb.left);
+      const viewportWidth = window.innerWidth;
+      const isMobile = viewportWidth < 768;
+
+      let left: number;
+      let popupWidth = pop!.offsetWidth;
+
+      if (isMobile) {
+        // Dynamic positioning for mobile
+        const buttonLeft = tb.left;
+        const buttonWidth = tb.width;
+        const buttonCenter = buttonLeft + buttonWidth / 2;
+
+        // Try to center on button
+        left = buttonCenter - popupWidth / 2;
+
+        // Adjust if off-screen
+        if (left < 0) left = 0;
+        if (left + popupWidth > viewportWidth) left = viewportWidth - popupWidth;
+
+        // If still too big, resize
+        if (popupWidth > viewportWidth) {
+          popupWidth = viewportWidth;
+          pop!.style.width = popupWidth + 'px';
+          left = 0;
+        }
+      } else {
+        // Original positioning for PC
+        left = Math.round(tb.left - sb.left);
+      }
+
       const top = Math.round(tb.bottom - sb.top + 10);
       pop!.style.left = left + 'px';
       pop!.style.top = top + 'px';
