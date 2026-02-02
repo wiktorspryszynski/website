@@ -10,14 +10,21 @@ function App() {
     { code: 'pl' as const, name: 'Polski', display: 'PL' },
     { code: 'en' as const, name: 'English', display: 'EN' }
   ];
+
   const contents = {
     pl: contentPl,
     en: contentEn
   };
+
   const urlParams = new URLSearchParams(window.location.search);
-  const initialLang = urlParams.get('lang') === 'en' ? 'en' : 'pl';
-  const [language, setLanguage] = useState<'pl' | 'en'>(initialLang);
+  const langParam = urlParams.get('lang');
+  const validLangs = languages.map(lang => lang.code);
+	type LangCode = typeof languages[number]['code'];
+	const defaultLang = languages[0].code;
+	const initialLang = validLangs.includes(langParam as LangCode) ? langParam as LangCode : defaultLang;
+	const [language, setLanguage] = useState<LangCode>(initialLang);
   const content = contents[language];
+
   useEffect(() => {
     // Lights animation script
     const container = document.getElementById('lights');
@@ -176,16 +183,18 @@ function App() {
           <nav>
             <button
               onClick={() => {
-                const newLang = language === 'pl' ? 'en' : 'pl';
-                setLanguage(newLang);
-                const url = new URL(window.location.href);
-                url.searchParams.set('lang', newLang);
-                window.history.pushState({}, '', url);
+                const otherLang = languages.find(lang => lang.code !== language);
+                if (otherLang) {
+                  setLanguage(otherLang.code);
+                  const url = new URL(window.location.href);
+                  url.searchParams.set('lang', otherLang.code);
+                  window.history.pushState({}, '', url);
+                }
               }}
               className="language-switch"
-              aria-label={`Switch to ${language === 'pl' ? 'English' : 'Polish'}`}
+              aria-label={`Switch to ${languages.find(lang => lang.code !== language)?.name || 'other language'}`}
             >
-              {language === 'pl' ? 'EN' : 'PL'}
+              {languages.find(lang => lang.code !== language)?.display || 'EN'}
             </button>
           </nav>
         </div>
