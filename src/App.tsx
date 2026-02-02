@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import './styles/styles.css';
 import Card from './components/Card';
 import SocialButton from './components/SocialButton';
@@ -36,6 +37,14 @@ function App() {
 
   return (
     <>
+      <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#0f1115" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <title>Wiktor Spryszyński - Portfolio</title>
+        <meta name="description" content="Portfolio website of Wiktor Spryszyński, software developer." />
+      </Helmet>
       <div id="lights" aria-hidden="true"></div>
       <header role="banner">
         <div className="container header-bar">
