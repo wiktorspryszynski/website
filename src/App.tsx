@@ -4,6 +4,7 @@ import Card from './components/Card';
 import SocialButton from './components/SocialButton';
 import contentPl from './content.json';
 import contentEn from './english.json';
+import LightsAnimation from './LightsAnimation';
 
 function App() {
   const languages = [
@@ -26,149 +27,10 @@ function App() {
   const content = contents[language];
 
   useEffect(() => {
-    // Lights animation script
     const container = document.getElementById('lights');
-    if (!container) return;
-
-    const mqReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-    let reduceMotion = mqReduced.matches;
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    container.appendChild(canvas);
-
-    let width = 0, height = 0, dpr = Math.max(1, window.devicePixelRatio || 1);
-    function resize() {
-      const rect = container?.getBoundingClientRect();
-      if (!rect || !ctx) return;
-      width = Math.floor(rect.width);
-      height = Math.floor(rect.height);
-      canvas.width = Math.floor(width * dpr);
-      canvas.height = Math.floor(height * dpr);
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    const pointer = { x: width * 0.5, y: height * 0.4 };
-    let isDown = false;
-    let grabbedIdx: number | null = null;
-
-    window.addEventListener('pointermove', (e) => {
-      pointer.x = e.clientX;
-      pointer.y = e.clientY;
-    });
-    
-    function lerp(a: number, b: number, t: number) { return a + (b - a) * t; }
-
-    // 4 orbs: independent drift + motion and repulsion parameters
-    const baseRadius = Math.min(window.innerWidth, window.innerHeight);
-    function rand(a: number, b: number){ return a + Math.random() * (b - a); }
-    const orbs = Array.from({ length: 4 }).map((_, i) => ({
-      x: rand(0.2 * width, 0.8 * width),
-      y: rand(0.2 * height, 0.8 * height),
-      vx: rand(-0.2, 0.2),
-      vy: rand(-0.2, 0.2),
-      freqX: rand(0.4, 0.9),   // Hz (after time scaling)
-      freqY: rand(0.3, 0.8),
-      phaseX: rand(0, Math.PI * 2),
-      phaseY: rand(0, Math.PI * 2),
-      baseSpeed: 0.9 + i * 0.25, // px na klatkę (większa widoczność ruchu)
-      repulseStrength: 2.2 - i * 0.3, // siła odpychania (mniej dla większych orbów)
-      radius: baseRadius * (0.11 - i * 0.015),
-      color: i % 2 === 0 ? 'rgba(124,92,255,' : 'rgba(0,212,255,'
-    }));
-
-    // Register grab events after initializing orbs
-    window.addEventListener('pointerdown', () => {
-      isDown = true;
-      const grabRadius = 120;
-      let best = { idx: null as number | null, dist: Infinity };
-      for (let i = 0; i < orbs.length; i++) {
-        const o = orbs[i];
-        const d = Math.hypot(o.x - pointer.x, o.y - pointer.y);
-        if (d < best.dist) best = { idx: i, dist: d };
-      }
-      grabbedIdx = best.dist < grabRadius ? best.idx : null;
-    });
-    window.addEventListener('pointerup', () => { isDown = false; grabbedIdx = null; });
-    window.addEventListener('pointercancel', () => { isDown = false; grabbedIdx = null; });
-
-    function draw() {
-      if (!ctx) return;
-      ctx.clearRect(0, 0, width, height);
-      ctx.globalCompositeOperation = 'lighter';
-      for (const o of orbs) {
-        const cx = o.x, cy = o.y;
-        const r = o.radius;
-        const g = ctx.createRadialGradient(cx, cy, r * 0.05, cx, cy, r);
-        g.addColorStop(0.0, o.color + '0.45)');
-        g.addColorStop(0.35, o.color + '0.20)');
-        g.addColorStop(1.0, o.color + '0.00)');
-        ctx.fillStyle = g;
-        ctx.beginPath();
-        ctx.arc(cx, cy, r, 0, Math.PI * 2);
-        ctx.fill();
-      }
-      ctx.globalCompositeOperation = 'source-over';
-    }
-
-    function update(now: number) {
-      const t = now * 0.001; // seconds
-      // const influence = 140;  // cursor influence radius
-      const speedScale = reduceMotion ? 0.4 : 1.0; // gentler movement with reduced motion, but still visible
-      for (let i = 0; i < orbs.length; i++) {
-        const o = orbs[i];
-        // Target velocity (direction from sine pseudo-noise)
-        const nx = Math.sin(t * o.freqX + o.phaseX) + Math.sin(t * o.freqX * 0.5 + o.phaseY) * 0.5;
-        const ny = Math.cos(t * o.freqY + o.phaseY) + Math.cos(t * o.freqY * 0.6 + o.phaseX) * 0.5;
-        const len = Math.hypot(nx, ny) || 1;
-        const dvx = (nx / len) * o.baseSpeed * speedScale;
-        const dvy = (ny / len) * o.baseSpeed * speedScale;
-        // Velocity smoothing
-        o.vx = lerp(o.vx, dvx, 0.04);
-        o.vy = lerp(o.vy, dvy, 0.04);
-
-        // Grabbing an orb with the cursor: attract to cursor position
-        if (isDown && grabbedIdx === i) {
-          o.x = lerp(o.x, pointer.x, 0.45);
-          o.y = lerp(o.y, pointer.y, 0.45);
-          // Velocity damping to maintain control
-          o.vx *= 0.5;
-          o.vy *= 0.5;
-        } else {
-          // Repulsion by cursor
-          /*
-          const dx = o.x - pointer.x;
-          const dy = o.y - pointer.y;
-          const dist = Math.hypot(dx, dy);
-          if (dist > 0 && dist < influence) {
-            const force = (1 - dist / influence) * o.repulseStrength;
-            o.vx += (dx / dist) * force;
-            o.vy += (dy / dist) * force;
-          }
-          */
-
-          // Motion integration
-          o.x += o.vx;
-          o.y += o.vy;
-        }
-      }
-    }
-
-    // Always run the animation; scale intensity under reduced motion
-    const raf = window.requestAnimationFrame ? (cb: FrameRequestCallback) => window.requestAnimationFrame(cb) : (cb: FrameRequestCallback) => setTimeout(() => cb(performance.now()), 16);
-    function loop(now: number) {
-      update(now);
-      draw();
-      raf(loop);
-    }
-    raf(loop);
-
-    // Update setting when system preference changes
-    if (typeof mqReduced.addEventListener === 'function') {
-      mqReduced.addEventListener('change', (e) => { reduceMotion = e.matches; });
-    } else if (typeof mqReduced.addListener === 'function') {
-      mqReduced.addListener((e) => { reduceMotion = e.matches; });
+    if (container) {
+      const animation = new LightsAnimation(container);
+      animation.start();
     }
   }, []);
 
