@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
-import './styles.css';
+import './styles/styles.css';
+import Card from './components/Card';
+import SocialButton from './components/SocialButton';
 
 function App() {
   useEffect(() => {
@@ -149,83 +151,6 @@ function App() {
     }
   }, []);
 
-  useEffect(() => {
-    // Email popover interactions: toggle, copy-to-clipboard, and outside-click close
-    const toggleBtn = document.getElementById('email-toggle') as HTMLButtonElement | null;
-    const pop = document.getElementById('email-popover') as HTMLDivElement | null;
-    const social = toggleBtn ? toggleBtn.closest('.social') : null;
-    const emailSpan = document.getElementById('email-value');
-    const copyBtn = document.getElementById('copy-email');
-    if (!toggleBtn || !pop || !emailSpan || !copyBtn || !social) return;
-
-    function positionPopover() {
-      const tb = toggleBtn?.getBoundingClientRect();
-      const sb = social?.getBoundingClientRect();
-      const left = Math.round(tb!.left - sb!.left);
-      const top = Math.round(tb!.bottom - sb!.top + 10);
-      pop!.style.left = left + 'px';
-      pop!.style.top = top + 'px';
-    }
-
-    function openPop() {
-      positionPopover();
-      pop!.hidden = false;
-      toggleBtn?.setAttribute('aria-expanded', 'true');
-    }
-    function closePop() {
-      pop!.hidden = true;
-      toggleBtn?.setAttribute('aria-expanded', 'false');
-    }
-    function togglePop() { pop!.hidden ? openPop() : closePop(); }
-
-    toggleBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      togglePop();
-    });
-
-    // Close on outside click
-    document.addEventListener('click', (e) => {
-      if (pop!.hidden) return;
-      const target = e.target as Node;
-      if (!target) return;
-      if (!pop!.contains(target) && target !== toggleBtn && !toggleBtn.contains(target)) {
-        closePop();
-      }
-    });
-
-    // Close on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !pop!.hidden) closePop();
-    });
-
-    // Reposition on resize while open
-    window.addEventListener('resize', () => { if (!pop!.hidden) positionPopover(); });
-    // Copy email to clipboard with quick feedback
-    copyBtn.addEventListener('click', async () => {
-      const email = emailSpan.textContent || '';
-      try {
-        await navigator.clipboard.writeText(email);
-        copyBtn.setAttribute('aria-label', 'Skopiowano!');
-        copyBtn.title = 'Skopiowano!';
-        setTimeout(() => {
-          copyBtn.setAttribute('aria-label', 'Kopiuj email');
-          copyBtn.title = 'Kopiuj';
-        }, 1200);
-      } catch (_) {
-        // Fallback: select and copy via execCommand if needed (best-effort)
-        const range = document.createRange();
-        range.selectNodeContents(emailSpan);
-        const sel = window.getSelection();
-        if (sel) {
-          sel.removeAllRanges();
-          sel.addRange(range);
-          document.execCommand('copy');
-          sel.removeAllRanges();
-        }
-      }
-    });
-  }, []);
-
   return (
     <>
       <div id="lights" aria-hidden="true"></div>
@@ -242,7 +167,13 @@ function App() {
           <h1 id="hero-title">Cześć! Tworzę projekty webowe i eksperymenty.</h1>
           <p>Na tej stronie znajdziesz moje realizacje — od estetycznych interfejsów po małe, pomysłowe mini-projekty. Kliknij kartę, aby zobaczyć szczegóły.</p>
           <div className="social social-bar" aria-label="Linki społecznościowe">
-            <a href="https://www.linkedin.com/in/wiktor-spryszynski" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <SocialButton
+              type="link"
+              href="https://www.linkedin.com/in/wiktor-spryszynski"
+              target="_blank"
+              rel="noopener"
+              ariaLabel="LinkedIn"
+            >
               <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
                 <defs>
                   <linearGradient id="grad-li" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -253,8 +184,14 @@ function App() {
                 <rect x="2" y="2" width="20" height="20" rx="4" fill="url(#grad-li)" />
                 <text x="12" y="15" textAnchor="middle" fontFamily="Segoe UI, Arial, sans-serif" fontSize="11" fontWeight="700" fill="#0f1115">in</text>
               </svg>
-            </a>
-            <a href="https://github.com/wiktorspryszynski" target="_blank" rel="noopener" aria-label="GitHub">
+            </SocialButton>
+            <SocialButton
+              type="link"
+              href="https://github.com/wiktorspryszynski"
+              target="_blank"
+              rel="noopener"
+              ariaLabel="GitHub"
+            >
               <svg viewBox="0 0 16 16" role="img" aria-hidden="true">
                 <defs>
                   <linearGradient id="grad-gh" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -264,8 +201,12 @@ function App() {
                 </defs>
                 <path fill="url(#grad-gh)" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.31 6.57 5.49 7.62.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38C13.69 14.57 16 11.54 16 8c0-4.42-3.58-8-8-8z"/>
               </svg>
-            </a>
-            <button id="email-toggle" type="button" aria-label="Pokaż email" aria-haspopup="dialog" aria-expanded="false" aria-controls="email-popover">
+            </SocialButton>
+            <SocialButton
+              type="button"
+              id="email-toggle"
+              ariaLabel="Pokaż email"
+            >
               <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
                 <defs>
                   <linearGradient id="grad-at" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -275,69 +216,52 @@ function App() {
                 </defs>
                 <text x="12" y="20" textAnchor="middle" fontFamily="Segoe UI, Arial, sans-serif" fontSize="22" fontWeight="500" fill="url(#grad-at)">@</text>
               </svg>
-            </button>
+            </SocialButton>
 
-            <div className="email-popover" id="email-popover" role="dialog" aria-label="Adres email" hidden>
-              <span className="email-text" id="email-value">spryszynskiwiktor@gmail.com</span>
-              <button className="icon-btn" id="copy-email" type="button" aria-label="Kopiuj email" title="Kopiuj">
-                <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
-                  <path fill="currentColor" d="M16 1H6C4.9 1 4 1.9 4 3v12h2V3h10V1zm3 4H10c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h9c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H10V7h9v14z"/>
-                </svg>
-              </button>
-              <a className="icon-btn" id="send-email" href="mailto:spryszynskiwiktor@gmail.com" aria-label="Wyślij email" title="Wyślij">
-                <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
-                  <path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
-                </svg>
-              </a>
-            </div>
           </div>
         </section>
 
         <section aria-labelledby="projects-title" id="projekty">
           <h2 className="section-title" id="projects-title">Projekty</h2>
           <div className="grid">
-            <a className="card" href="glass.html" aria-label="Projekt Glassmorphism UI">
-              <h3>Glassmorphism UI</h3>
-              <p>Szklane panele, miękkie światło i nowoczesna estetyka.</p>
-              <div className="tags">
-                <span className="tag">UI</span>
-                <span className="tag">CSS</span>
-              </div>
-            </a>
+            <Card
+              href="glass.html"
+              title="Glassmorphism UI"
+              description="Szklane panele, miękkie światło i nowoczesna estetyka."
+              tags={["UI", "CSS"]}
+              ariaLabel="Projekt Glassmorphism UI"
+            />
 
-            <a className="card" href="valentine.html" aria-label="Projekt Walentynkowy">
-              <h3>Walentynkowy projekt</h3>
-              <p>Romantyczny motyw i subtelne animacje — lekki, przyjemny eksperyment.</p>
-              <div className="tags">
-                <span className="tag">Animacje</span>
-                <span className="tag">HTML</span>
-              </div>
-            </a>
+            <Card
+              href="valentine.html"
+              title="Walentynkowy projekt"
+              description="Romantyczny motyw i subtelne animacje — lekki, przyjemny eksperyment."
+              tags={["Animacje", "HTML"]}
+              ariaLabel="Projekt Walentynkowy"
+            />
 
-            <div className="card" aria-label="Projekt w przygotowaniu">
-              <h3>Portfolio API</h3>
-              <p>Integracja z prostym API do pobierania projektów dynamicznie.</p>
-              <div className="tags">
-                <span className="tag">JavaScript</span>
-                <span className="tag">API</span>
-              </div>
-            </div>
+            <Card
+              title="Portfolio API"
+              description="Integracja z prostym API do pobierania projektów dynamicznie."
+              tags={["JavaScript", "API"]}
+              ariaLabel="Projekt w przygotowaniu"
+            />
 
-            <div className="card" aria-label="Projekt w przygotowaniu">
-              <h3>Mini-gra przeglądarkowa</h3>
-              <p>Krótka gra logiczna z czystym DOM i responsywnym sterowaniem.</p>
-              <div className="tags">
-                <span className="tag">Game</span>
-                <span className="tag">Canvas</span>
-              </div>
-            </div>
-            <div className="card work-in-progress-card" aria-label="Sekcja w trakcie budowy" style={{border: '2px dashed var(--border)'}}>
-              <h3>👷 Section under construction 🚧🚧</h3>
-              <p>Sekcja projektów jest obecnie w trakcie budowy. Wróć wkrótce!</p>
-              <div className="tags">
-                <span className="tag">Wkrótce</span>
-              </div>
-            </div>
+            <Card
+              title="Mini-gra przeglądarkowa"
+              description="Krótka gra logiczna z czystym DOM i responsywnym sterowaniem."
+              tags={["Game", "Canvas"]}
+              ariaLabel="Projekt w przygotowaniu"
+            />
+
+            <Card
+              title="👷 Section under construction 🚧🚧"
+              description="Sekcja projektów jest obecnie w trakcie budowy. Wróć wkrótce!"
+              tags={["Wkrótce"]}
+              className="work-in-progress-card"
+              style={{border: '2px dashed var(--border)'}}
+              ariaLabel="Sekcja w trakcie budowy"
+            />
           </div>
         </section>
 
