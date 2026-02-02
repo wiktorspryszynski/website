@@ -1,9 +1,13 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './styles/styles.css';
 import Card from './components/Card';
 import SocialButton from './components/SocialButton';
+import contentPl from './content.json';
+import contentEn from './english.json';
 
 function App() {
+  const [language, setLanguage] = useState<'pl' | 'en'>('pl');
+  const content = language === 'pl' ? contentPl : contentEn;
   useEffect(() => {
     // Lights animation script
     const container = document.getElementById('lights');
@@ -156,23 +160,32 @@ function App() {
       <div id="lights" aria-hidden="true"></div>
       <header role="banner">
         <div className="container header-bar">
-          <div className="brand" aria-label="Wiktor Spryszyński">
-            <div className="name-and-surname">Wiktor Spryszyński</div>
+          <div className="brand" aria-label={content.header.nameLabel}>
+            <div className="name-and-surname">{content.header.name}</div>
           </div>
+          <nav>
+            <button
+              onClick={() => setLanguage(language === 'pl' ? 'en' : 'pl')}
+              className="language-switch"
+              aria-label={`Switch to ${language === 'pl' ? 'English' : 'Polish'}`}
+            >
+              {language === 'pl' ? 'EN' : 'PL'}
+            </button>
+          </nav>
         </div>
       </header>
 
       <main className="container" id="main" role="main">
         <section className="hero" aria-labelledby="hero-title">
-          <h1 id="hero-title">Cześć! Tworzę projekty webowe i eksperymenty.</h1>
-          <p>Na tej stronie znajdziesz moje realizacje — od estetycznych interfejsów po małe, pomysłowe mini-projekty. Kliknij kartę, aby zobaczyć szczegóły.</p>
-          <div className="social social-bar" aria-label="Linki społecznościowe">
+          <h1 id="hero-title">{content.hero.title}</h1>
+          <p>{content.hero.subtitle}</p>
+          <div className="social social-bar" aria-label={content.hero.socialLabel}>
             <SocialButton
               type="link"
               href="https://www.linkedin.com/in/wiktor-spryszynski"
               target="_blank"
               rel="noopener"
-              ariaLabel="LinkedIn"
+              ariaLabel={content.social.linkedin}
             >
               <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
                 <defs>
@@ -190,7 +203,7 @@ function App() {
               href="https://github.com/wiktorspryszynski"
               target="_blank"
               rel="noopener"
-              ariaLabel="GitHub"
+              ariaLabel={content.social.github}
             >
               <svg viewBox="0 0 16 16" role="img" aria-hidden="true">
                 <defs>
@@ -205,7 +218,8 @@ function App() {
             <SocialButton
               type="button"
               id="email-toggle"
-              ariaLabel="Pokaż email"
+              ariaLabel={content.social.email}
+              copyTooltip={content.social.copyTooltip}
             >
               <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
                 <defs>
@@ -222,55 +236,29 @@ function App() {
         </section>
 
         <section aria-labelledby="projects-title" id="projekty">
-          <h2 className="section-title" id="projects-title">Projekty</h2>
+          <h2 className="section-title" id="projects-title">{content.projects.title}</h2>
           <div className="grid">
-            <Card
-              href="glass.html"
-              title="Glassmorphism UI"
-              description="Szklane panele, miękkie światło i nowoczesna estetyka."
-              tags={["UI", "CSS"]}
-              ariaLabel="Projekt Glassmorphism UI"
-            />
-
-            <Card
-              href="valentine.html"
-              title="Walentynkowy projekt"
-              description="Romantyczny motyw i subtelne animacje — lekki, przyjemny eksperyment."
-              tags={["Animacje", "HTML"]}
-              ariaLabel="Projekt Walentynkowy"
-            />
-
-            <Card
-              title="Portfolio API"
-              description="Integracja z prostym API do pobierania projektów dynamicznie."
-              tags={["JavaScript", "API"]}
-              ariaLabel="Projekt w przygotowaniu"
-            />
-
-            <Card
-              title="Mini-gra przeglądarkowa"
-              description="Krótka gra logiczna z czystym DOM i responsywnym sterowaniem."
-              tags={["Game", "Canvas"]}
-              ariaLabel="Projekt w przygotowaniu"
-            />
-
-            <Card
-              title="👷 Section under construction 🚧🚧"
-              description="Sekcja projektów jest obecnie w trakcie budowy. Wróć wkrótce!"
-              tags={["Wkrótce"]}
-              className="work-in-progress-card"
-              style={{border: '2px dashed var(--border)'}}
-              ariaLabel="Sekcja w trakcie budowy"
-            />
+            {content.projects.cards.map((card, index) => (
+              <Card
+                key={index}
+                href={card.title === "👷 Section under construction 🚧🚧" ? undefined : card.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') + '.html'}
+                title={card.title}
+                description={card.description}
+                tags={card.tags}
+                ariaLabel={card.ariaLabel}
+                className={card.title === "👷 Section under construction 🚧🚧" ? "work-in-progress-card" : ""}
+                style={card.title === "👷 Section under construction 🚧🚧" ? {border: '2px dashed var(--border)'} : undefined}
+              />
+            ))}
           </div>
         </section>
 
         <section aria-labelledby="contact-title" id="kontakt" style={{marginTop: '28px'}}>
-          <h2 className="section-title" id="contact-title">Kontakt</h2>
-          <p>Masz pytanie lub pomysł na współpracę? Napisz wiadomość — chętnie odpowiem.</p>
+          <h2 className="section-title" id="contact-title">{content.contact.title}</h2>
+          <p>{content.contact.description}</p>
           <div className="actions">
-            <a className="btn" href="mailto:spryszynskiwiktor@gmail.com" aria-label="Wyślij wiadomość email">Wyślij email</a>
-            <a className="btn" href="#" aria-label="Zobacz profil GitHub">GitHub</a>
+            <a className="btn" href="mailto:spryszynskiwiktor@gmail.com" aria-label={content.contact.emailLabel}>{content.contact.emailButton}</a>
+            <a className="btn" href="#" aria-label={content.contact.githubLabel}>{content.contact.githubButton}</a>
           </div>
         </section>
       </main>

@@ -1,0 +1,63 @@
+{
+  "header": {
+    "name": "",
+    "nameLabel": ""
+  },
+  "hero": {
+    "title": "",
+    "subtitle": "",
+    "socialLabel": ""
+  },
+  "social": {
+    "linkedin": "",
+    "github": "",
+    "email": "",
+    "copyTooltip": ""
+  },
+  "projects": {
+    "title": "",
+    "cards": [
+      {
+        "title": "",
+        "description": "",
+        "tags": ["", ""],
+        "ariaLabel": ""
+      },
+      {
+        "title": "",
+        "description": "",
+        "tags": ["", ""],
+        "ariaLabel": ""
+      },
+      {
+        "title": "",
+        "description": "",
+        "tags": ["", ""],
+        "ariaLabel": ""
+      },
+      {
+        "title": "",
+        "description": "",
+        "tags": ["", ""],
+        "ariaLabel": ""
+      },
+      {
+        "title": "",
+        "description": "",
+        "tags": ["", ""],
+        "ariaLabel": ""
+      }
+    ]
+  },
+  "contact": {
+    "title": "",
+    "description": "",
+    "emailButton": "",
+    "githubButton": "",
+    "emailLabel": "",
+    "githubLabel": ""
+  },
+  "language": {
+    "switch": ""
+  }
+}

@@ -14,6 +14,7 @@ interface SocialButtonProps {
   ariaControls?: string;
   onClick?: () => void;
   children: React.ReactNode;
+  copyTooltip?: string;
 }
 
 const SocialButton: React.FC<SocialButtonProps> = ({
@@ -27,7 +28,8 @@ const SocialButton: React.FC<SocialButtonProps> = ({
   ariaExpanded,
   ariaControls,
   onClick,
-  children
+  children,
+  copyTooltip = "Skopiowano!"
 }) => {
   const [isEmailPopoverOpen, setIsEmailPopoverOpen] = useState(false);
   const [copyTooltipVisible, setCopyTooltipVisible] = useState(false);
@@ -182,7 +184,7 @@ const SocialButton: React.FC<SocialButtonProps> = ({
         >
           <span className="email-text" id="email-value">spryszynskiwiktor@gmail.com</span>
           <Tippy
-            content="Skopiowano!"
+            content={copyTooltip}
             visible={copyTooltipVisible}
             onHidden={() => setCopyTooltipVisible(false)}
             placement="top"

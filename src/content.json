@@ -1,0 +1,63 @@
+{
+  "header": {
+    "name": "Wiktor Spryszyński",
+    "nameLabel": "Wiktor Spryszyński"
+  },
+  "hero": {
+    "title": "Cześć! Tworzę projekty webowe i eksperymenty.",
+    "subtitle": "Na tej stronie znajdziesz moje realizacje — od estetycznych interfejsów po małe, pomysłowe mini-projekty. Kliknij kartę, aby zobaczyć szczegóły.",
+    "socialLabel": "Linki społecznościowe"
+  },
+  "social": {
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "email": "Pokaż email",
+    "copyTooltip": "Skopiowano!"
+  },
+  "projects": {
+    "title": "Projekty",
+    "cards": [
+      {
+        "title": "Glassmorphism UI",
+        "description": "Szklane panele, miękkie światło i nowoczesna estetyka.",
+        "tags": ["UI", "CSS"],
+        "ariaLabel": "Projekt Glassmorphism UI"
+      },
+      {
+        "title": "Walentynkowy projekt",
+        "description": "Romantyczny motyw i subtelne animacje — lekki, przyjemny eksperyment.",
+        "tags": ["Animacje", "HTML"],
+        "ariaLabel": "Projekt Walentynkowy"
+      },
+      {
+        "title": "Portfolio API",
+        "description": "Integracja z prostym API do pobierania projektów dynamicznie.",
+        "tags": ["JavaScript", "API"],
+        "ariaLabel": "Projekt w przygotowaniu"
+      },
+      {
+        "title": "Mini-gra przeglądarkowa",
+        "description": "Krótka gra logiczna z czystym DOM i responsywnym sterowaniem.",
+        "tags": ["Game", "Canvas"],
+        "ariaLabel": "Projekt w przygotowaniu"
+      },
+      {
+        "title": "👷 Section under construction 🚧🚧",
+        "description": "Sekcja projektów jest obecnie w trakcie budowy. Wróć wkrótce!",
+        "tags": ["Wkrótce"],
+        "ariaLabel": "Sekcja w trakcie budowy"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontakt",
+    "description": "Masz pytanie lub pomysł na współpracę? Napisz wiadomość — chętnie odpowiem.",
+    "emailButton": "Wyślij email",
+    "githubButton": "GitHub",
+    "emailLabel": "Wyślij wiadomość email",
+    "githubLabel": "Zobacz profil GitHub"
+  },
+  "language": {
+    "switch": "EN"
+  }
+}
