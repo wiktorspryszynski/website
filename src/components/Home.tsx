@@ -72,9 +72,7 @@ const Home: React.FC = () => {
 
       <main className="container" id="main" role="main">
         <section className="hero" aria-labelledby="hero-title">
-					<div id="hero-title" className="visually-hidden">
-						<h1>{content.hero.title.hi}<br />{content.hero.title.description}</h1>
-					</div>
+          <h1 id="hero-title">{content.hero.title.hi}<br />{content.hero.title.description}</h1>
           <p>{content.hero.subtitle}</p>
           <div className="social social-bar" aria-label={content.hero.socialLabel}>
             <SocialButton
