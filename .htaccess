@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /
+
+# Nie przekierowuj istniejących plików ani folderów
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Wszystko inne na index.html (dla SPA)
+RewriteRule ^ index.html [L]
