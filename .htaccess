@@ -1,10 +1,9 @@
 RewriteEngine On
-RewriteBase /
 
-# Nie przekierowuj istniejących plików ani folderów
+# Jeśli plik lub folder istnieje, nie ruszaj
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Wszystko inne na index.html (dla SPA)
-RewriteRule ^ index.html [L]
+# Wszystko inne kieruj na index.html w root
+RewriteRule . /index.html [L]
