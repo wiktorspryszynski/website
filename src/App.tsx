@@ -4,7 +4,7 @@ import Flashcards from './components/Flashcards';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/flashcards" element={<Flashcards />} />
