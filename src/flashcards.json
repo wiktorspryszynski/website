@@ -2,522 +2,652 @@
 [
   {
     "question": "W jaki sposób agenci AI mogą być integrowani z metodami sztucznej inteligencji, takimi jak sieci neuronowe czy systemy ekspertowe?",
-    "answer": ""
+    "number": 1,
+    "answer": "Agenci AI mogą wykorzystywać sieci neuronowe do analizy danych i podejmowania decyzji w oparciu o uczenie maszynowe, a systemy ekspertowe do stosowania reguł i wiedzy dziedzinowej. Integracja polega na łączeniu komponentów uczących się z modułami wnioskowania symbolicznego. Takie podejście zwiększa elastyczność, adaptacyjność i trafność decyzji podejmowanych przez agentów."
   },
   {
     "question": "Wyjaśnij, czym jest przetwarzanie hybrydowe i jak wpływa na efektywność systemów rozproszonych.",
-    "answer": ""
+    "number": 2,
+    "answer": "Przetwarzanie hybrydowe łączy różne modele obliczeniowe, np. chmurę publiczną, prywatną i infrastrukturę lokalną, w celu optymalnego wykorzystania zasobów. Pozwala to dynamicznie przenosić obciążenia między środowiskami w zależności od potrzeb. W efekcie zwiększa skalowalność, niezawodność i efektywność kosztową systemów rozproszonych."
   },
   {
     "question": "Jakie techniki przetwarzania wstępnego danych mogą być stosowane w celu minimalizacji błędów i pewności danych?",
-    "answer": ""
+    "number": 3,
+    "answer": "Stosuje się czyszczenie danych, usuwanie duplikatów, uzupełnianie braków oraz normalizację i standaryzację wartości. Ważne są także techniki wykrywania anomalii i walidacji poprawności danych. Dzięki temu zwiększa się jakość zbioru danych oraz wiarygodność wyników analizy."
   },
   {
     "question": "Jakie mechanizmy w ramach Zero Trust mogą być zastosowane w celu ochrony wiarygodności danych w systemach IT?",
-    "answer": ""
+    "number": 4,
+    "answer": "Model Zero Trust zakłada weryfikację każdego użytkownika i urządzenia przed udzieleniem dostępu do zasobów. Wykorzystuje się silne uwierzytelnianie wieloskładnikowe, segmentację sieci oraz zasadę minimalnych uprawnień. Dodatkowo stosuje się ciągłe monitorowanie i analizę zachowań w celu wykrywania zagrożeń."
   },
   {
     "question": "Jakie są główne zagrożenia dla tradycyjnych metod kryptografii wynikające z rozwoju generatywnej sztucznej inteligencji?",
-    "answer": ""
+    "number": 5,
+    "answer": "Generatywna sztuczna inteligencja może wspierać tworzenie zaawansowanych ataków phishingowych oraz automatyzować analizę podatności systemów kryptograficznych. Ułatwia także generowanie realistycznych treści służących do socjotechniki. Choć nie łamie bezpośrednio silnych algorytmów, zwiększa skuteczność ataków na otoczenie systemów kryptograficznych."
   },
   {
     "question": "Jakie korzyści dla procesów biznesowych może przynieść zastosowanie generatywnej sztucznej inteligencji",
-    "answer": ""
+    "number": 6,
+    "answer": "Generatywna sztuczna inteligencja automatyzuje tworzenie treści, analiz i raportów, co skraca czas realizacji zadań. Wspiera personalizację oferty oraz optymalizację obsługi klienta. Dodatkowo umożliwia szybsze prototypowanie i innowacje produktowe."
   },
   {
     "question": "Jakie modele i technologie umożliwiają implementację sztucznej inteligencji w monitorowaniu procesów biznesowych?",
-    "answer": ""
+    "number": 7,
+    "answer": "Wykorzystuje się modele uczenia maszynowego, takie jak sieci neuronowe, drzewa decyzyjne czy modele predykcyjne do analizy danych procesowych. Popularne są także systemy analityki strumieniowej oraz narzędzia klasy BPM z modułami AI. Technologie te pozwalają wykrywać anomalie, przewidywać opóźnienia i optymalizować przepływy pracy."
   },
   {
     "question": "W jaki sposób technologie energooszczędne wpływają na wydajność infrastruktury obliczeniowej?",
-    "answer": ""
+    "number": 8,
+    "answer": "Technologie energooszczędne zmniejszają zużycie energii poprzez optymalizację chłodzenia, wirtualizację i dynamiczne zarządzanie zasobami. Nowoczesne procesory i systemy zarządzania energią pozwalają utrzymać wysoką wydajność przy niższym poborze mocy. W rezultacie infrastruktura staje się bardziej zrównoważona i ekonomiczna."
   },
   {
     "question": "Jakie są główne wyzwania związane z wdrażaniem energooszczędnych systemów w dużych środowiskach obliczeniowych?",
-    "answer": ""
+    "number": 9,
+    "answer": "Do głównych wyzwań należą wysokie koszty początkowe modernizacji infrastruktury oraz konieczność integracji z istniejącymi systemami. Problemem bywa także zapewnienie kompatybilności sprzętu i oprogramowania. Dodatkowo wymaga to odpowiedniego planowania i monitorowania efektywności energetycznej."
   },
   {
     "question": "Jakie są główne zalety przetwarzania hybrydowego w kontekście systemów rozproszonych?",
-    "answer": ""
+    "number": 10,
+    "answer": "Przetwarzanie hybrydowe umożliwia elastyczne skalowanie zasobów w zależności od obciążenia systemu. Zwiększa odporność na awarie dzięki dystrybucji danych i usług między różnymi środowiskami. Pozwala także optymalizować koszty i poziom bezpieczeństwa poprzez odpowiednie rozmieszczenie krytycznych zasobów."
   },
   {
     "question": "W jaki sposób przetwarzanie hybrydowe pozwala na efektywne wykorzystanie zasobów lokalnych i chmurowych?",
-    "answer": ""
+    "number": 11,
+    "answer": "Przetwarzanie hybrydowe umożliwia dynamiczne rozdzielanie obciążeń między infrastrukturę lokalną a chmurę w zależności od aktualnych potrzeb. Krytyczne dane mogą być przetwarzane lokalnie, a zadania wymagające dużej mocy obliczeniowej kierowane do chmury. Pozwala to zwiększyć wydajność, elastyczność i kontrolę kosztów."
   },
   {
     "question": "Jakie wyzwania związane z bezpieczeństwem danych pojawiają się w środowiskach hybrydowych?",
-    "answer": ""
+    "number": 12,
+    "answer": "Wyzwania obejmują zapewnienie spójnej polityki bezpieczeństwa w różnych środowiskach oraz bezpieczną transmisję danych między nimi. Problemem może być także zarządzanie tożsamością i kontrolą dostępu w wielu systemach. Dodatkowo rośnie ryzyko błędów konfiguracyjnych i luk wynikających z integracji różnych technologii."
   },
   {
     "question": "W jaki sposób Internet Rzeczy (IoT) wpływa na projektowanie i funkcjonalność robotów wielofunkcyjnych?",
-    "answer": ""
+    "number": 13,
+    "answer": "Internet Rzeczy umożliwia robotom wielofunkcyjnym stałą komunikację z innymi urządzeniami i systemami, co zwiększa ich autonomię i elastyczność działania. Dzięki IoT roboty mogą korzystać z danych w czasie rzeczywistym oraz być zdalnie monitorowane i aktualizowane. Wpływa to na projektowanie bardziej modułowych i skalowalnych rozwiązań."
   },
   {
     "question": "Jakie rodzaje danych zbieranych przez czujniki IoT są najbardziej przydatne dla robotów wielofunkcyjnych?",
-    "answer": ""
+    "number": 14,
+    "answer": "Najbardziej przydatne są dane środowiskowe, takie jak temperatura, wilgotność, ciśnienie czy poziom oświetlenia. Istotne są także dane przestrzenne z czujników ruchu, kamer i lidarów umożliwiające nawigację i unikanie przeszkód. Dane operacyjne dotyczące stanu urządzeń wspierają diagnostykę i konserwację predykcyjną."
   },
   {
     "question": "Jakie role pełnią algorytmy sztucznej inteligencji w rozwoju interfejsów mózg-komputer?",
-    "answer": ""
+    "number": 15,
+    "answer": "Algorytmy sztucznej inteligencji analizują sygnały neuronalne i przekształcają je w zrozumiałe komendy dla systemów komputerowych. Umożliwiają filtrowanie szumów oraz rozpoznawanie wzorców aktywności mózgu. Dzięki uczeniu maszynowemu interfejsy mogą dostosowywać się do indywidualnych cech użytkownika."
   },
   {
     "question": "Przedstaw kluczowe różnice między tradycyjnymi metodami zarządzania projektami (np. Waterfall) a metodykami zwinnymi (np. Scrum, Kanban) oraz omów, w jakich sytuacjach każda z tych metod może być najbardziej efektywna, szczególnie w kontekście projektów IT.",
-    "answer": ""
+    "number": 16,
+    "answer": "Metody tradycyjne, takie jak Waterfall, opierają się na sekwencyjnych etapach i szczegółowym planowaniu od początku projektu. Metody zwinne, jak Scrum czy Kanban, zakładają iteracyjność, elastyczność i częste dostarczanie przyrostów produktu. Waterfall sprawdza się przy stabilnych wymaganiach, natomiast podejścia zwinne są bardziej efektywne w projektach IT o zmiennych wymaganiach i wysokiej niepewności."
   },
   {
     "question": "Jakie mogą być najczęstsze zagrożenia dla bezpieczeństwa sieci teleinformatycznych?",
-    "answer": ""
+    "number": 17,
+    "answer": "Do najczęstszych zagrożeń należą ataki phishingowe, malware, ransomware oraz ataki typu DDoS. Istotnym problemem są także luki w oprogramowaniu i błędy konfiguracyjne. Coraz większe znaczenie mają również zagrożenia wewnętrzne oraz ataki socjotechniczne."
   },
   {
     "question": "Omów rodzaje testów i jakie korzyści przynosi automatyzacja testów w procesie wytwarzania oprogramowania?",
-    "answer": ""
+    "number": 18,
+    "answer": "Wyróżnia się testy jednostkowe, integracyjne, systemowe oraz akceptacyjne, a także testy wydajnościowe i bezpieczeństwa. Automatyzacja testów przyspiesza wykrywanie błędów i umożliwia częste uruchamianie testów przy każdej zmianie kodu. Zwiększa to jakość oprogramowania i skraca czas dostarczania produktu."
   },
   {
     "question": "Jakie są najpopularniejsze systemy kontroli wersji i jakie są ich główne zalety i wady w pracy w dużych zespołach?",
-    "answer": ""
+    "number": 19,
+    "answer": "Do najpopularniejszych systemów należą Git, Subversion (SVN) oraz Mercurial. Git oferuje rozproszoną architekturę i dużą elastyczność pracy zespołowej, ale może być złożony dla początkujących. SVN jest prostszy w zarządzaniu centralnym repozytorium, jednak mniej elastyczny w pracy rozproszonej."
   },
   {
     "question": "W jaki sposób analiza złożoności obliczeniowej (czasowej i pamięciowej) wpływa na wybór algorytmu do konkretnego zadania?",
-    "answer": ""
+    "number": 20,
+    "answer": "Analiza złożoności pozwala ocenić, jak algorytm będzie skalował się wraz ze wzrostem danych wejściowych. W zadaniach o dużej skali preferowane są algorytmy o niższej złożoności czasowej i pamięciowej. Dzięki temu można zapewnić wydajność i stabilność systemu."
   },
   {
     "question": "Jakie są najczęstsze techniki optymalizacji algorytmów i w jakich sytuacjach ich stosowanie jest najbardziej efektywne?",
-    "answer": ""
+    "number": 21,
+    "answer": "Do popularnych technik należą programowanie dynamiczne, dziel i zwyciężaj, memoizacja oraz zastosowanie odpowiednich struktur danych. Efektywne są szczególnie w problemach o dużej liczbie powtarzających się podproblemów. Optymalizacja ma największe znaczenie przy przetwarzaniu dużych zbiorów danych."
   },
   {
     "question": "W jaki sposób ograniczenia czasowe i pamięciowe wpływają na wybór między optymalizacją algorytmiczną a heurystyczną w rozwiązywaniu problemów obliczeniowych?",
-    "answer": ""
+    "number": 22,
+    "answer": "Przy ścisłych ograniczeniach czasowych często wybiera się heurystyki, które dają szybkie, choć nie zawsze optymalne rozwiązania. Jeśli dostępne są większe zasoby i wymagana jest wysoka dokładność, stosuje się algorytmy optymalne. Wybór zależy od kompromisu między jakością wyniku a kosztami obliczeniowymi."
   },
   {
     "question": "Jak podejścia algorytmiczne mogą wpływać na skalowalność systemu informatycznego?",
-    "answer": ""
+    "number": 23,
+    "answer": "Zastosowanie wydajnych algorytmów o niskiej złożoności umożliwia obsługę większej liczby operacji przy rosnącym obciążeniu. Odpowiednie podejście algorytmiczne redukuje zużycie zasobów i poprawia czas reakcji systemu. Ma to kluczowe znaczenie dla systemów o dużej liczbie użytkowników."
   },
   {
     "question": "Jakie są konsekwencje stosowania algorytmów o różnej złożoności obliczeniowej dla skalowalności systemów informatycznych i ich zdolności do obsługi rosnącej liczby użytkowników?",
-    "answer": ""
+    "number": 24,
+    "answer": "Algorytmy o wysokiej złożoności mogą prowadzić do spadku wydajności wraz ze wzrostem liczby użytkowników. Z kolei algorytmy bardziej efektywne pozwalają systemowi rosnąć bez proporcjonalnego zwiększania zasobów. Wpływa to bezpośrednio na koszty utrzymania i jakość usług."
   },
   {
     "question": "Jakie są kluczowe różnice między podejściem algorytmicznym a heurystycznym w rozwiązywaniu problemów w systemach informatycznych?",
-    "answer": ""
+    "number": 25,
+    "answer": "Podejście algorytmiczne dąży do znalezienia rozwiązania optymalnego przy użyciu ściśle określonych procedur. Heurystyki koncentrują się na szybkim uzyskaniu rozwiązania wystarczająco dobrego, często kosztem pełnej optymalności. Wybór zależy od złożoności problemu i dostępnych zasobów obliczeniowych."
   },
   {
     "question": "W jakich sytuacjach podejście heurystyczne jest bardziej efektywne niż algorytmiczne, biorąc pod uwagę dynamiczny charakter danych oraz dostępność zasobów obliczeniowych?",
-    "answer": ""
+    "number": 26,
+    "answer": "Podejście heurystyczne jest bardziej efektywne w problemach o dużej złożoności obliczeniowej, gdzie znalezienie rozwiązania optymalnego jest czasochłonne lub niemożliwe w czasie rzeczywistym. Sprawdza się przy dynamicznie zmieniających się danych oraz ograniczonych zasobach obliczeniowych. Umożliwia szybkie uzyskanie rozwiązania wystarczająco dobrego przy akceptowalnym koszcie."
   },
   {
     "question": "Jak algebra liniowa może być wykorzystana w przetwarzaniu obrazów i analizie danych w systemach informatycznych?",
-    "answer": ""
+    "number": 27,
+    "answer": "Algebra liniowa jest podstawą operacji na macierzach i wektorach, które reprezentują obrazy oraz dane wielowymiarowe. Umożliwia transformacje, kompresję oraz redukcję wymiarów, np. przy użyciu dekompozycji macierzy. Jest kluczowa w działaniu sieci neuronowych i systemów rozpoznawania wzorców."
   },
   {
     "question": "W jaki sposób rachunek różniczkowy i całkowy przyczynia się do optymalizacji algorytmów i modeli predykcyjnych?",
-    "answer": ""
+    "number": 28,
+    "answer": "Rachunek różniczkowy umożliwia obliczanie gradientów funkcji błędu, co jest podstawą optymalizacji modeli uczenia maszynowego. Metody takie jak spadek gradientowy pozwalają minimalizować funkcję kosztu i poprawiać dokładność predykcji. Rachunek całkowy wspiera analizę zmian ciągłych i modelowanie procesów dynamicznych."
   },
   {
     "question": "Jakie są kluczowe etapy w procesie budowy modelu uczenia maszynowego i jak wpływają one na jakość i efektywność systemu sztucznej inteligencji?",
-    "answer": ""
+    "number": 29,
+    "answer": "Proces obejmuje zbieranie i przygotowanie danych, wybór modelu, trenowanie, walidację oraz wdrożenie. Jakość danych i właściwy dobór parametrów mają kluczowy wpływ na skuteczność modelu. Odpowiednia ewaluacja i monitorowanie zapewniają stabilność oraz efektywność systemu."
   },
   {
     "question": "W jaki sposób techniki uczenia nadzorowanego i nienadzorowanego różnią się pod względem zastosowań i implementacji w systemach sztucznej inteligencji?",
-    "answer": ""
+    "number": 30,
+    "answer": "Uczenie nadzorowane wykorzystuje oznaczone dane treningowe i jest stosowane w klasyfikacji oraz regresji. Uczenie nienadzorowane operuje na danych nieoznaczonych i służy do wykrywania wzorców lub grupowania. Różnice dotyczą zarówno celu analizy, jak i sposobu przygotowania danych oraz oceny wyników."
   },
   {
     "question": "Jakie są najlepsze praktyki w zakresie zarządzania danymi treningowymi, w tym ich gromadzenie, przechowywanie, przetwarzanie i zabezpieczanie, w kontekście budowy systemów sztucznej inteligencji?",
-    "answer": ""
+    "number": 31,
+    "answer": "Najlepsze praktyki obejmują zapewnienie wysokiej jakości i reprezentatywności danych oraz ich odpowiednią anonimizację. Dane powinny być bezpiecznie przechowywane z kontrolą dostępu i regularnymi kopiami zapasowymi. Istotne jest także monitorowanie integralności danych i zgodność z regulacjami prawnymi."
   },
   {
     "question": "Jak duże modele językowe (LLM) mogą być integrowane z istniejącymi systemami informatycznymi i aplikacjami, aby poprawić ich funkcjonalność i wydajność",
-    "answer": ""
+    "number": 32,
+    "answer": "LLM mogą być integrowane poprzez interfejsy API, mikroserwisy lub moduły osadzone w aplikacjach. Umożliwiają automatyzację obsługi klienta, generowanie treści oraz analizę danych tekstowych. Integracja zwiększa interaktywność systemów i usprawnia procesy decyzyjne."
   },
   {
     "question": "W jaki sposób duże modele językowe (LLM) mogą być wykorzystywane do automatyzacji zadań związanych z przetwarzaniem języka naturalnego (NLP), takich jak tłumaczenie, podsumowywanie tekstu i analiza sentymentu?",
-    "answer": ""
+    "number": 33,
+    "answer": "LLM analizują kontekst i semantykę tekstu, co pozwala im generować tłumaczenia oraz zwięzłe podsumowania. Potrafią również klasyfikować wypowiedzi pod kątem sentymentu i intencji użytkownika. Dzięki temu automatyzują wiele procesów związanych z obsługą i analizą treści tekstowych."
   },
   {
     "question": "Wyjaśnij różnicę pomiędzy szyfrowaniem symetrycznym a asymetrycznym.",
-    "answer": ""
+    "number": 34,
+    "answer": "Szyfrowanie symetryczne wykorzystuje ten sam klucz do szyfrowania i deszyfrowania danych, co wymaga jego bezpiecznej wymiany. Szyfrowanie asymetryczne używa pary kluczy: publicznego i prywatnego. Metoda asymetryczna zwiększa bezpieczeństwo wymiany kluczy, lecz jest zwykle wolniejsza obliczeniowo."
   },
   {
     "question": "Ataki odmowy dostępu do usług (Denial of Service) - podaj przykłady ataku i sposoby jego unikania.",
-    "answer": ""
+    "number": 35,
+    "answer": "Przykładem ataku DoS jest zalewanie serwera dużą liczbą zapytań w celu wyczerpania jego zasobów. Innym przykładem jest atak SYN flood wykorzystujący mechanizm nawiązywania połączeń TCP. Zapobieganie obejmuje stosowanie zapór sieciowych, systemów wykrywania intruzów oraz mechanizmów ograniczania ruchu."
   },
   {
     "question": "Jakie są najczęstsze rodzaje ataków odmowy dostępu do usług (DoS i DDoS), jakie czynniki techniczne, organizacyjne i prawne wpływają na podatność systemów na te ataki oraz jakie metody mogą być stosowane do ich skutecznego zapobiegania?",
-    "answer": ""
+    "number": 36,
+    "answer": "Najczęstsze są ataki wolumetryczne, protokołowe oraz aplikacyjne, często realizowane w formie rozproszonej (DDoS). Podatność zwiększają słaba konfiguracja sieci, brak procedur bezpieczeństwa oraz niewystarczające regulacje i nadzór. Skuteczne metody ochrony obejmują filtrowanie ruchu, redundancję infrastruktury oraz współpracę z dostawcami usług bezpieczeństwa."
   },
   {
     "question": "Czym jest wirtualizacja w kontekście systemów operacyjnych i jakie przynosi korzyści?",
-    "answer": ""
+    "number": 37,
+    "answer": "Wirtualizacja polega na tworzeniu wirtualnych maszyn umożliwiających uruchamianie wielu systemów operacyjnych na jednym fizycznym serwerze. Pozwala lepiej wykorzystać zasoby sprzętowe i zwiększyć elastyczność zarządzania infrastrukturą. Ułatwia także testowanie, skalowanie i izolację środowisk."
   },
   {
     "question": "Czym jest hypervisor w wirtualizacji, jaką pełni rolę i jak jest zorganizowany?",
-    "answer": ""
+    "number": 38,
+    "answer": "Hypervisor to warstwa oprogramowania zarządzająca tworzeniem i działaniem maszyn wirtualnych. Odpowiada za przydział zasobów sprzętowych oraz izolację środowisk wirtualnych. Może działać bezpośrednio na sprzęcie (typ 1) lub jako aplikacja w systemie operacyjnym (typ 2)."
   },
   {
     "question": "Czym jest hypervisor w wirtualizacji, jaka jest jego rola oraz w jaki sposób uwarunkowania infrastrukturalne, takie jak zasoby sprzętowe, architektura systemu oraz wymagania dotyczące wydajności i bezpieczeństwa, wpływają na jego organizację i funkcjonowanie?",
-    "answer": ""
+    "number": 39,
+    "answer": "Hypervisor zarządza maszynami wirtualnymi, kontrolując dostęp do procesora, pamięci i urządzeń wejścia-wyjścia. Wydajność sprzętu, architektura procesora oraz dostępność mechanizmów wsparcia wirtualizacji wpływają na jego efektywność. Wysokie wymagania bezpieczeństwa i skalowalności determinują wybór odpowiedniego typu i konfiguracji hypervisora."
   },
   {
     "question": "Wyjaśnij, co oznacza i dlaczego mówimy o systemach operacyjnych 32 i 64 bitowych?",
-    "answer": ""
+    "number": 40,
+    "answer": "Określenia 32- i 64-bitowe odnoszą się do szerokości rejestrów procesora i sposobu adresowania pamięci. System 64-bitowy może obsługiwać większą ilość pamięci RAM oraz wykonywać operacje na większych liczbach w jednym cyklu. Wpływa to na wydajność oraz możliwości uruchamiania nowoczesnych aplikacji."
   },
   {
     "question": "W jaki sposób realizowana jest obsługa wyjątków w wybranym języku programowania i jakie są jej główne mechanizmy oraz najlepsze praktyki?",
-    "answer": ""
+    "number": 41,
+    "answer": "W języku Java obsługa wyjątków realizowana jest za pomocą bloków try, catch i finally oraz słowa kluczowego throw. Mechanizm ten pozwala przechwytywać i obsługiwać błędy w kontrolowany sposób, rozdzielając logikę biznesową od obsługi błędów. Najlepsze praktyki obejmują tworzenie własnych wyjątków, unikanie przechwytywania ogólnych klas Exception oraz zapewnienie odpowiedniego logowania."
   },
   {
     "question": "W jaki sposób realizowana jest obsługa wyjątków w wybranym języku programowania, jakie uwarunkowania programistyczne wpływają na jej efektywność oraz jakie techniki i najlepsze praktyki pozwalają minimalizować wpływ wyjątków na wydajność i bezpieczeństwo kodu?",
-    "answer": ""
+    "number": 42,
+    "answer": "W języku Java wyjątki są obsługiwane poprzez konstrukcje try-catch-finally oraz mechanizm wyjątków sprawdzanych i niesprawdzanych. Nadmierne używanie wyjątków w logice sterowania może obniżać wydajność, dlatego powinny być stosowane wyłącznie do sytuacji wyjątkowych. Dobrą praktyką jest precyzyjne definiowanie wyjątków, ich odpowiednie propagowanie oraz unikanie ujawniania wrażliwych informacji w komunikatach błędów."
   },
   {
     "question": "Jakie są kluczowe różnice między klasą a obiektem w programowaniu obiektowym oraz jak te różnice wpływają na tworzenie i wykorzystanie kodu?",
-    "answer": ""
+    "number": 43,
+    "answer": "Klasa jest szablonem definiującym właściwości i zachowania, natomiast obiekt jest jej konkretną instancją w pamięci. Klasa określa strukturę danych i metod, a obiekt przechowuje rzeczywiste wartości. Rozdzielenie tych pojęć umożliwia wielokrotne tworzenie obiektów na podstawie jednej definicji."
   },
   {
     "question": "Jakie są kluczowe różnice między klasą a obiektem w programowaniu obiektowym w różnych językach programowania oraz jak specyfika danego języka wpływa na sposób ich definiowania, tworzenia i wykorzystania w kodzie?",
-    "answer": ""
+    "number": 44,
+    "answer": "W językach takich jak Java czy C++ klasy definiuje się jawnie, a obiekty tworzy za pomocą operatora new, natomiast w Pythonie klasy są bardziej dynamiczne. Różnice dotyczą także zarządzania pamięcią oraz wsparcia dla funkcji takich jak destruktory. Specyfika języka wpływa na sposób inicjalizacji, zakres dostępu oraz mechanizmy typowania."
   },
   {
     "question": "Czym jest enkapsulacja w programowaniu obiektowym, jakie są jej główne zalety i dlaczego jest istotna dla tworzenia solidnego i bezpiecznego kodu?",
-    "answer": ""
+    "number": 45,
+    "answer": "Enkapsulacja polega na ukrywaniu wewnętrznej implementacji obiektu i udostępnianiu jedynie kontrolowanego interfejsu. Chroni dane przed nieuprawnioną modyfikacją i zmniejsza zależności między modułami. Dzięki temu kod jest bardziej bezpieczny, czytelny i łatwiejszy w utrzymaniu."
   },
   {
     "question": "Jakie jest znaczenie polimorfizmu w programowaniu obiektowym i jakie są przykłady jego praktycznego zastosowania w różnych językach programowania?",
-    "answer": ""
+    "number": 46,
+    "answer": "Polimorfizm umożliwia traktowanie obiektów różnych klas w jednolity sposób poprzez wspólny interfejs lub klasę bazową. Przykładem jest nadpisywanie metod w klasach pochodnych w Java czy C++. Pozwala to zwiększyć elastyczność i rozszerzalność systemu bez modyfikowania istniejącego kodu."
   },
   {
     "question": "Jakie jest znaczenie polimorfizmu w programowaniu obiektowym, jakie mechanizmy jego implementacji występują w różnych językach programowania oraz jakie ograniczenia i możliwości wynikają z ich stosowania?",
-    "answer": ""
+    "number": 47,
+    "answer": "Polimorfizm realizowany jest poprzez dziedziczenie, interfejsy oraz przeciążanie i nadpisywanie metod. W językach statycznie typowanych wymaga zgodności typów, natomiast w dynamicznych opiera się na tzw. duck typing. Ograniczenia mogą dotyczyć wydajności i złożoności kodu, lecz zwiększa on modularność i skalowalność aplikacji."
   },
   {
     "question": "Jakie są różnice między modyfikatorami dostępu public, private i protected w różnych językach programowania oraz jak te różnice wpływają na sposób zarządzania dostępem do członków klasy?",
-    "answer": ""
+    "number": 48,
+    "answer": "Modyfikator public umożliwia dostęp z dowolnego miejsca, private ogranicza dostęp do wnętrza klasy, a protected pozwala na dostęp w klasach dziedziczących. W niektórych językach, jak C++, protected daje szerszy zakres niż w Java. Odpowiednie stosowanie tych modyfikatorów wspiera enkapsulację i bezpieczeństwo kodu."
   },
   {
     "question": "Wyjaśnij pojęcie klasy i obiektu. Definiowanie klasy, tworzenie i usuwanie obiektów w wybranym języku programowania.",
-    "answer": ""
+    "number": 49,
+    "answer": "W Java klasa definiowana jest przy użyciu słowa kluczowego class i zawiera pola oraz metody. Obiekt tworzy się za pomocą operatora new, który alokuje pamięć i wywołuje konstruktor. Usuwanie obiektów odbywa się automatycznie przez mechanizm garbage collection."
   },
   {
     "question": "W jaki sposób definiuje się klasy oraz tworzy i usuwa obiekty w wybranym języku programowania, jakie mechanizmy zarządzania pamięcią wpływają na cykl życia obiektów i jakie konsekwencje ma to dla wydajności aplikacji?",
-    "answer": ""
+    "number": 50,
+    "answer": "W Java klasy definiuje się słowem class, a obiekty tworzy operatorem new, inicjalizując je konstruktorem. Cykl życia obiektów kontrolowany jest przez garbage collector, który automatycznie zwalnia nieużywaną pamięć. Mechanizm ten upraszcza programowanie, lecz może wpływać na wydajność w przypadku intensywnej alokacji obiektów."
   },
   {
     "question": "Omów składnię definiowania oraz różnice w przekazywaniu parametrów, zwracaniu wartości i wywoływaniu metod obiektowych (instancyjnych) i klasowych (statycznych) na przykładzie wybranego języka.",
-    "answer": ""
+    "number": 51,
+    "answer": "W Java metody instancyjne definiuje się bez słowa static i wywołuje na obiekcie, natomiast metody statyczne oznacza się jako static i wywołuje na klasie. Parametry przekazywane są przez wartość, a metody mogą zwracać określony typ lub void. Wybór metody statycznej lub instancyjnej wpływa na zależność od stanu obiektu."
   },
   {
     "question": "Jakie są różnice w składni definiowania metod instancyjnych i klasowych (statycznych) w wybranym języku programowania, w jaki sposób przekazywanie parametrów i zwracanie wartości wpływa na ich działanie oraz jakie są konsekwencje wyboru konkretnego podejścia dla struktury kodu?",
-    "answer": ""
+    "number": 52,
+    "answer": "W Java metoda statyczna posiada modyfikator static i nie ma dostępu do niestatycznych pól klasy bezpośrednio. Metody instancyjne operują na stanie konkretnego obiektu. Wybór podejścia wpływa na organizację kodu, testowalność oraz możliwość współdzielenia danych między instancjami."
   },
   {
     "question": "Opisz ideę dziedziczenia i jej realizację w wybranym obiektowym języku programowania.",
-    "answer": ""
+    "number": 53,
+    "answer": "Dziedziczenie umożliwia tworzenie nowych klas na podstawie istniejących, przejmując ich pola i metody. W Java realizowane jest za pomocą słowa kluczowego extends. Pozwala to na ponowne wykorzystanie kodu i implementację polimorfizmu."
   },
   {
     "question": "Jakie są kluczowe różnice między zmiennymi automatycznymi a dynamicznymi w kontekście programowania oraz jak te różnice wpływają na zarządzanie pamięcią i działanie programu?",
-    "answer": ""
+    "number": 54,
+    "answer": "Zmienne automatyczne przechowywane są na stosie i ich cykl życia jest ograniczony do bloku, w którym zostały zadeklarowane. Zmienne dynamiczne alokowane są na stercie i wymagają zarządzania pamięcią ręcznie lub przez garbage collector. Różnice te wpływają na wydajność oraz ryzyko wycieków pamięci."
   },
   {
     "question": "Jak różni się pojęcie interfejsu od implementacji klasy w kontekście programowania obiektowego oraz jakie są główne zalety korzystania z interfejsów w projektowaniu oprogramowania?",
-    "answer": ""
+    "number": 55,
+    "answer": "Interfejs definiuje zestaw metod bez ich implementacji, określając kontrakt dla klas. Implementacja klasy zawiera rzeczywisty kod realizujący te metody. Korzystanie z interfejsów zwiększa elastyczność, umożliwia łatwiejszą wymianę komponentów i wspiera luźne powiązania między modułami."
   },
   {
     "question": "Jakie są główne techniki i zalety tworzenia nowych klas poprzez dziedziczenie z już istniejących klas w programowaniu obiektowym, oraz w jaki sposób dziedziczenie wspomaga reużywalność kodu i organizację hierarchii klas?",
-    "answer": ""
+    "number": 56,
+    "answer": "Dziedziczenie pozwala tworzyć klasy potomne, które rozszerzają lub modyfikują zachowanie klas bazowych poprzez nadpisywanie metod i dodawanie nowych funkcjonalności. Umożliwia to ponowne wykorzystanie istniejącego kodu bez jego duplikowania. Dzięki temu powstają przejrzyste hierarchie klas odzwierciedlające relacje typu „jest rodzajem”, co ułatwia organizację systemu."
   },
   {
     "question": "Jakie techniki dziedziczenia są dostępne w różnych językach programowania, jakie są ich zalety i ograniczenia oraz w jaki sposób różne modele dziedziczenia wspomagają reużywalność kodu i organizację hierarchii klas?",
-    "answer": ""
+    "number": 57,
+    "answer": "Występuje dziedziczenie pojedyncze, wielokrotne oraz hierarchiczne, a niektóre języki oferują mechanizmy interfejsów lub mixinów zamiast pełnego dziedziczenia wielokrotnego. Dziedziczenie wielokrotne zwiększa elastyczność, lecz może prowadzić do problemu diamentu i większej złożoności. Odpowiedni model dziedziczenia wspiera modularność i reużywalność, ale wymaga przemyślanego projektowania."
   },
   {
-    "question": "Model tworzony w Scilabie/Matlabie jest przybliżeniem rzeczywistości. Dokładnemu odwzorowaniu towarzyszą niepewności np. co do -parametrów modelu -warunków brzegowych które mogą wpływać na dokładność i wiarygodność wyników. Omów te niepewności na dowolnym przykładzie.",
-    "answer": ""
+    "question": "Model tworzony w Scilabie/Matlabie jest przybliżeniem rzeczywistości. Dokładnemu odwzorowaniu towarzyszą niepewności np. co do parametrów modelu i warunków brzegowych które mogą wpływać na dokładność i wiarygodność wyników. Omów te niepewności na dowolnym przykładzie.",
+    "number": 58,
+    "answer": "Przykładowo w modelu ruchu wahadła parametry takie jak długość ramienia czy współczynnik tłumienia mogą być oszacowane z błędem. Dodatkowo niepewność warunków początkowych, jak dokładny kąt wychylenia, wpływa na przebieg symulacji. Takie odchylenia powodują różnice między wynikami symulacji a rzeczywistym zachowaniem układu."
   },
   {
     "question": "Proszę omówić i porównać modele relacyjne i nierelacyjne bazy danych.",
-    "answer": ""
+    "number": 59,
+    "answer": "Relacyjne bazy danych przechowują dane w tabelach powiązanych relacjami i wykorzystują język SQL do zapytań. Nierelacyjne (NoSQL) oferują elastyczne modele danych, takie jak dokumentowe, grafowe czy klucz-wartość. Relacyjne zapewniają silną spójność i strukturę, natomiast nierelacyjne lepiej skalują się poziomo i obsługują dane o zmiennej strukturze."
   },
   {
     "question": "Proszę omówić zasady definiowania wzorców funkcji i klas (znane również jako szablony lub generics).",
-    "answer": ""
+    "number": 60,
+    "answer": "Szablony i generics pozwalają definiować funkcje i klasy operujące na różnych typach danych bez duplikowania kodu. Parametry typów określa się przy definicji, a konkretne typy podaje podczas użycia. Zwiększa to bezpieczeństwo typów i elastyczność kodu."
   },
   {
     "question": "Proszę podać główne cechy zunifikowanego języka modelowania systemów informatycznych (ang. UML) – zastosowanie, charakterystykę oraz jego podstawowe diagramy.",
-    "answer": ""
+    "number": 61,
+    "answer": "UML jest standardowym językiem graficznym do modelowania systemów informatycznych na różnych etapach ich projektowania. Umożliwia wizualizację struktury i zachowania systemu w sposób niezależny od języka programowania. Do podstawowych diagramów należą diagram klas, przypadków użycia, sekwencji, aktywności i komponentów."
   },
   {
     "question": "Jakie są wyzwania związane z projektowaniem i implementacją systemów rozproszonych z użyciem chmurowej infrastruktury, uwzględniając wymogi dotyczące skalowalności, dostępności i spójności danych?",
-    "answer": ""
+    "number": 62,
+    "answer": "Wyzwania obejmują zapewnienie równowagi między skalowalnością a spójnością danych zgodnie z zasadą CAP. Konieczne jest projektowanie systemów odpornych na awarie i opóźnienia sieciowe. Istotne są także kwestie bezpieczeństwa i zarządzania kosztami infrastruktury."
   },
   {
     "question": "Jakie techniki projektowania systemów można zastosować do integracji rozproszonych aplikacji w środowisku chmurowym, zapewniając jednocześnie ich wysoką dostępność i odporność na awarie?",
-    "answer": ""
+    "number": 63,
+    "answer": "Stosuje się architekturę mikroserwisów, komunikację asynchroniczną oraz wzorce takie jak circuit breaker i retry. Ważne jest wdrażanie mechanizmów replikacji oraz równoważenia obciążenia. Monitorowanie i automatyczne skalowanie zwiększają dostępność systemu."
   },
   {
     "question": "Jakie są zalety i wady podejścia opartego na mikroserwisach w kontekście integracji generatywnej sztucznej inteligencji z systemami rozproszonymi w chmurze?",
-    "answer": ""
+    "number": 64,
+    "answer": "Mikroserwisy umożliwiają niezależne wdrażanie i skalowanie komponentów AI, co zwiększa elastyczność. Ułatwiają integrację modeli generatywnych jako osobnych usług. Wadą jest większa złożoność zarządzania komunikacją i monitorowaniem rozproszonego środowiska."
   },
   {
     "question": "Jakie aspekty inżynierii oprogramowania są kluczowe przy budowie systemów opartych na przetwarzaniu rozproszonym, które korzystają z generatywnych modeli AI w chmurze?",
-    "answer": ""
+    "number": 65,
+    "answer": "Kluczowe są projektowanie skalowalnej architektury, zarządzanie danymi oraz zapewnienie bezpieczeństwa i prywatności. Istotne jest także monitorowanie wydajności modeli i ich aktualizacja. Automatyzacja testów oraz ciągła integracja wspierają stabilność systemu."
   },
   {
     "question": "Jakie metody modelowania systemów informatycznych można zastosować, aby zaprojektować skalowalne aplikacje w architekturze chmurowej?",
-    "answer": ""
+    "number": 66,
+    "answer": "Można stosować UML, modele C4 oraz diagramy architektury logicznej i fizycznej. Pomagają one identyfikować zależności, punkty skalowania i komponenty krytyczne. Modelowanie umożliwia wczesne wykrycie wąskich gardeł systemu."
   },
   {
     "question": "W jaki sposób procesy DevOps i CI/CD mogą wspierać rozwój i wdrażanie aplikacji bazujących na generatywnej sztucznej inteligencji w systemach rozproszonych działających w chmurze?",
-    "answer": ""
+    "number": 67,
+    "answer": "DevOps i CI/CD automatyzują budowanie, testowanie i wdrażanie aplikacji oraz modeli AI. Umożliwiają szybkie wprowadzanie poprawek i częste aktualizacje w środowisku produkcyjnym. Zwiększa to jakość, skraca czas dostarczania i minimalizuje ryzyko błędów."
   },
   {
     "question": "Jakie wyzwania napotykają inżynierowie oprogramowania przy integracji systemów rozproszonych z chmurową infrastrukturą, gdy system ten korzysta z algorytmów generatywnej sztucznej inteligencji?",
-    "answer": ""
+    "number": 68,
+    "answer": "Wyzwania obejmują wysokie wymagania obliczeniowe modeli oraz zarządzanie opóźnieniami sieciowymi. Istotne są także kwestie bezpieczeństwa danych i kontroli kosztów przetwarzania w chmurze. Dodatkowo konieczne jest zapewnienie skalowalności i monitorowania jakości generowanych wyników."
   },
   {
     "question": "Jakie metody projektowania mogą poprawić odporność na awarie w systemach sztucznej inteligencji działających w środowisku rozproszonym w chmurze?",
-    "answer": ""
+    "number": 69,
+    "answer": "Stosowanie redundancji, replikacji danych oraz architektury bezstanowej zwiększa odporność na awarie. Wzorce takie jak circuit breaker, fallback i autoskalowanie ograniczają skutki przeciążeń. Regularne testy odpornościowe i monitorowanie pomagają szybko wykrywać problemy."
   },
   {
     "question": "W jaki sposób techniki projektowania systemów oparte na mikrousługach wspierają wykorzystanie generatywnej sztucznej inteligencji w rozproszonych aplikacjach chmurowych?",
-    "answer": ""
+    "number": 70,
+    "answer": "Mikrousługi pozwalają wydzielić komponenty AI jako niezależne usługi dostępne przez API. Umożliwia to ich niezależne skalowanie i aktualizację bez wpływu na cały system. Takie podejście zwiększa elastyczność, modularność i odporność aplikacji."
   },
   {
     "question": "Jakie problemy z zakresu spójności danych pojawiają się przy projektowaniu systemów w architekturze rozproszonej i jak można je rozwiązać, korzystając z narzędzi chmurowych?",
-    "answer": ""
+    "number": 71,
+    "answer": "W architekturze rozproszonej problemy spójności obejmują konflikty przy równoczesnej aktualizacji danych i opóźnienia replikacji. Rozwiązaniem jest stosowanie mechanizmów takich jak spójność ostateczna, transakcje rozproszone i blokady w chmurze. Narzędzia chmurowe oferują bazy danych z wbudowaną replikacją i mechanizmy zarządzania konfliktami."
   },
   {
     "question": "W jaki sposób architektura chmurowa wspiera implementację i integrację systemów przetwarzania rozproszonego w kontekście generatywnej sztucznej inteligencji?",
-    "answer": ""
+    "number": 72,
+    "answer": "Chmura zapewnia elastyczne zasoby obliczeniowe, skalowalność i narzędzia do zarządzania kontenerami i mikrousługami. Ułatwia integrację komponentów AI poprzez API i platformy orkiestracyjne. Pozwala to efektywnie wdrażać i aktualizować modele generatywne w systemach rozproszonych."
   },
   {
     "question": "Jakie strategie zarządzania wymaganiami są najskuteczniejsze w procesie rozwoju systemów sztucznej inteligencji z uwzględnieniem chmurowych usług przetwarzania rozproszonego?",
-    "answer": ""
+    "number": 73,
+    "answer": "Skuteczne są iteracyjne podejścia, ciągłe zbieranie informacji zwrotnej od użytkowników oraz priorytetyzacja wymagań funkcjonalnych i niefunkcjonalnych. Ważne jest także ścisłe powiązanie wymagań z architekturą chmurową i możliwościami przetwarzania rozproszonego. Narzędzia do zarządzania backlogiem i śledzenia zmian wspierają transparentność procesu."
   },
   {
     "question": "Jakie podejście do zarządzania jakością oprogramowania jest najbardziej odpowiednie przy tworzeniu systemów generatywnej sztucznej inteligencji w środowisku chmurowym?",
-    "answer": ""
+    "number": 74,
+    "answer": "Odpowiednie jest podejście zautomatyzowane, obejmujące testy jednostkowe, integracyjne i wydajnościowe modeli AI. Wdrożenie CI/CD oraz monitorowanie jakości wyników w czasie rzeczywistym pozwala wykrywać błędy i degradację modeli. Krytyczne jest także zapewnienie zgodności z wymogami bezpieczeństwa i ochrony danych."
   },
   {
     "question": "Jakie narzędzia i technologie wspierają integrację generatywnej sztucznej inteligencji z chmurowymi platformami przetwarzania rozproszonego, zapewniając elastyczność i skalowalność systemu?",
-    "answer": ""
+    "number": 75,
+    "answer": "Narzędzia obejmują platformy kontenerowe (Docker, Kubernetes), usługi ML w chmurze (AWS SageMaker, Google AI Platform) oraz API do komunikacji między usługami. Technologie te umożliwiają automatyczne skalowanie, aktualizację modeli i elastyczne zarządzanie zasobami. Ułatwiają integrację z istniejącymi aplikacjami i mikrousługami."
   },
   {
     "question": "Jakie korzyści wynikają z zastosowania kontenerów (np. Docker) i orkiestracji (np. Kubernetes) w systemach AI opartych na chmurowym przetwarzaniu rozproszonym?",
-    "answer": ""
+    "number": 76,
+    "answer": "Kontenery zapewniają izolację środowisk i spójność wdrożeń, a Kubernetes umożliwia automatyczne skalowanie i zarządzanie cyklem życia usług. Pozwala to szybko wdrażać i aktualizować modele AI oraz utrzymywać wysoką dostępność. Redukuje również zależności między komponentami i ułatwia przenoszenie systemów między środowiskami."
   },
   {
     "question": "Jakie techniki architektoniczne powinny być uwzględnione przy projektowaniu systemów, które muszą działać w real-time w rozproszonych systemach chmurowych?",
-    "answer": ""
+    "number": 77,
+    "answer": "Należy stosować architekturę bezstanową, komunikację asynchroniczną, kolejkowanie zdarzeń oraz mechanizmy priorytetyzacji i buforowania. Ważne są też optymalizacja sieci i minimalizacja opóźnień w przetwarzaniu. Monitoring i mechanizmy automatycznego skalowania pozwalają utrzymać wymagany czas reakcji."
   },
   {
     "question": "W jaki sposób zastosowanie chmurowej infrastruktury obliczeniowej wpływa na wydajność algorytmów AI w systemach rozproszonych?",
-    "answer": ""
+    "number": 78,
+    "answer": "Chmura oferuje elastyczne zasoby CPU, GPU i TPU, które mogą być przydzielane dynamicznie w zależności od obciążenia. Pozwala to skrócić czas treningu i przetwarzania modeli AI oraz obsługiwać większe zbiory danych. Ułatwia także wdrażanie algorytmów w rozproszonym środowisku z minimalnymi opóźnieniami."
   },
   {
     "question": "Jakie wyzwania pojawiają się przy skalowaniu systemów opartych na generatywnej sztucznej inteligencji w rozproszonych środowiskach chmurowych?",
-    "answer": ""
+    "number": 79,
+    "answer": "Wyzwania obejmują zarządzanie dużymi zbiorami danych, replikację modeli, synchronizację wyników i kontrolę kosztów zasobów. Istotne jest też monitorowanie wydajności oraz zapewnienie bezpieczeństwa danych. Dodatkowo, skalowanie może wymagać optymalizacji komunikacji między węzłami i równoważenia obciążenia."
   },
   {
     "question": "Jakie techniki zarządzania danymi są skuteczne w systemach opartych na przetwarzaniu rozproszonym w chmurze?",
-    "answer": ""
+    "number": 80,
+    "answer": "Skuteczne są techniki partycjonowania i replikacji danych, indeksowania, buforowania oraz wykorzystania hurtowni danych i lake’ów danych. Ważna jest automatyzacja przetwarzania i monitorowanie integralności oraz spójności danych. Umożliwia to szybszy dostęp do danych i zwiększa niezawodność systemu."
   },
   {
     "question": "Jakie rozwiązania są dostępne do monitorowania i optymalizacji wydajności systemów działających w chmurze, szczególnie w kontekście rozproszonego przetwarzania?",
-    "answer": ""
+    "number": 81,
+    "answer": "Dostępne są narzędzia takie jak Prometheus, Grafana, CloudWatch czy Stackdriver, które pozwalają monitorować zasoby, opóźnienia i obciążenie systemu. Umożliwiają alertowanie i automatyczne skalowanie w celu optymalizacji wydajności. Analiza logów i metryk wspiera również identyfikację wąskich gardeł i problemów w architekturze."
   },
   {
     "question": "Jakie techniki wykorzystywane w inżynierii oprogramowania są istotne przy budowie rozproszonych systemów, które korzystają z algorytmów uczenia maszynowego w chmurze?",
-    "answer": ""
+    "number": 82,
+    "answer": "Kluczowe są metodyki Agile, CI/CD, automatyzacja testów, monitorowanie oraz zarządzanie konfiguracją i wersjami modeli. Ważna jest modularna architektura, stosowanie wzorców projektowych i zarządzanie zależnościami między komponentami. Pozwala to utrzymać spójność, skalowalność i wydajność systemu."
   },
   {
     "question": "Jakie wyzwania związane z bezpieczeństwem i prywatnością danych występują w systemach działających w chmurowym przetwarzaniu rozproszonym?",
-    "answer": ""
+    "number": 83,
+    "answer": "Wyzwania obejmują ochronę danych w ruchu i spoczynku, kontrolę dostępu, zgodność z regulacjami oraz zabezpieczenie przed atakami zewnętrznymi i wewnętrznymi. Problemem jest także anonimowość danych i zarządzanie uprawnieniami w wielu węzłach. Niezbędne są mechanizmy szyfrowania, audytowania i monitorowania bezpieczeństwa."
   },
   {
     "question": "Jakie korzyści daje zastosowanie technologii chmurowych, takich jak serverless computing, w kontekście generatywnych modeli AI w rozproszonych aplikacjach?",
-    "answer": ""
+    "number": 84,
+    "answer": "Serverless computing automatycznie przydziela zasoby tylko w czasie wykonywania funkcji, co redukuje koszty i upraszcza skalowanie. Umożliwia szybkie wdrażanie modeli AI bez zarządzania serwerami i infrastrukturą. Poprawia elastyczność systemu i umożliwia dynamiczne przetwarzanie dużych zbiorów danych."
   },
   {
     "question": "Jakie mechanizmy synchronizacji i komunikacji w systemach rozproszonych wspierają skuteczne działanie algorytmów generatywnej sztucznej inteligencji w chmurze?",
-    "answer": ""
+    "number": 85,
+    "answer": "Mechanizmy obejmują kolejki wiadomości, brokerów komunikatów, protokoły RPC oraz replikację danych z blokadami i transakcjami rozproszonymi. Synchronizacja parametrów modeli i agregacja wyników zapewniają spójność i stabilność obliczeń. Dzięki tym mechanizmom AI może działać równolegle w wielu węzłach bez utraty jakości wyników."
   },
   {
     "question": "Jakie wzorce projektowe są najczęściej wykorzystywane przy budowie systemów rozproszonych, które wykorzystują generatywną sztuczną inteligencję i działają w środowiskach chmurowych?",
-    "answer": ""
+    "number": 86,
+    "answer": "W takich systemach kluczowy jest wzorzec RAG (Retrieval-Augmented Generation), który łączy model generatywny z zewnętrzną bazą wiedzy dla zwiększenia precyzji odpowiedzi. Powszechnie stosuje się także architekturę mikrousług (Microservices) do izolowania komponentów AI oraz architekturę sterowaną zdarzeniami (Event-Driven), która umożliwia asynchroniczne przetwarzanie zapytań."
   },
   {
     "question": "Jakie aspekty projektowania systemów rozproszonych należy uwzględnić, aby zapewnić ich wysoką wydajność w kontekście aplikacji działających w chmurze?",
-    "answer": ""
+    "number": 87,
+    "answer": "Należy skupić się na skalowalności poziomej, wykorzystując mechanizmy auto-scalingu, aby dynamicznie dostosowywać zasoby do obciążenia. Istotne jest także minimalizowanie opóźnień sieciowych poprzez umieszczanie danych blisko użytkownika (CDN, Edge Computing) oraz stosowanie asynchronicznej komunikacji między usługami."
   },
   {
     "question": "W jaki sposób użycie chmurowych narzędzi do przetwarzania danych w czasie rzeczywistym wpływa na efektywność algorytmów sztucznej inteligencji?",
-    "answer": ""
+    "number": 88,
+    "answer": "Przetwarzanie strumieniowe (np. przez Kafka czy Kinesis) umożliwia modelom AI podejmowanie decyzji na podstawie najświeższych danych, co drastycznie zwiększa ich trafność w dynamicznych środowiskach. Pozwala to również na ciągłe douczanie modeli (online learning) oraz natychmiastową detekcję anomalii bez konieczności oczekiwania na wsadowe przetworzenie danych."
   },
   {
     "question": "Jakie są korzyści z zastosowania rozproszonych baz danych w systemach opartych na przetwarzaniu rozproszonym w chmurze?",
-    "answer": ""
+    "number": 89,
+    "answer": "Główną korzyścią jest wysoka dostępność (High Availability) i odporność na awarie dzięki replikacji danych między różnymi strefami dostępności lub regionami. Rozproszone bazy danych pozwalają także na niemal nieograniczoną skalowalność zapisu i odczytu, co jest niezbędne przy obsłudze globalnego ruchu sieciowego."
   },
   {
     "question": "Jakie problemy napotykają projektanci systemów w kontekście dostosowywania algorytmów generatywnej sztucznej inteligencji do specyfiki chmurowego przetwarzania rozproszonego?",
-    "answer": ""
+    "number": 90,
+    "answer": "Poważnym wyzwaniem jest zarządzanie kosztami i dostępnością specjalistycznego sprzętu (GPU/TPU) oraz optymalizacja opóźnień (latency) przy przesyłaniu dużych kontekstów danych do modelu. Projektanci muszą także rozwiązywać problemy związane ze spójnością stanu w systemach rozproszonych oraz zapewnieniem bezpieczeństwa i prywatności danych przetwarzanych przez zewnętrzne API."
   },
   {
     "question": "Jakie narzędzia do automatyzacji procesów mogą być stosowane w zarządzaniu cyklem życia systemów opartych na chmurowej infrastrukturze rozproszonej?",
-    "answer": ""
+    "number": 91,
+    "answer": "Standardem są narzędzia Infrastructure as Code (IaC) takie jak Terraform, AWS CloudFormation czy Ansible, które pozwalają na programowe zarządzanie infrastrukturą. Do orkiestracji kontenerów i automatyzacji wdrażania (CI/CD) powszechnie wykorzystuje się Kubernetes, Jenkins, GitLab CI oraz GitHub Actions."
   },
   {
     "question": "Jakie metody skalowania i optymalizacji zasobów chmurowych są najefektywniejsze w przypadku aplikacji działających w systemach rozproszonych?",
-    "answer": ""
+    "number": 92,
+    "answer": "Najefektywniejsze jest skalowanie horyzontalne (dodawanie instancji) sterowane metrykami obciążenia CPU lub pamięci, często realizowane przez grupy Auto Scaling. Warto również stosować instancje typu Spot dla zadań odpornych na przerwania w celu redukcji kosztów oraz techniki cache'owania (np. Redis), aby odciążyć bazy danych."
   },
   {
     "question": "Jakie aspekty wydajnościowe i techniczne należy wziąć pod uwagę przy projektowaniu rozproszonych systemów w kontekście chmurowych architektur opartych na serverless computing?",
-    "answer": ""
+    "number": 93,
+    "answer": "Kluczowym aspektem jest zjawisko \"zimnego startu\" (cold start), które może wprowadzać opóźnienia przy rzadkich wywołaniach funkcji. Należy również pamiętać o bezstanowości (statelessness) funkcji, limitach czasu wykonywania oraz konieczności zarządzania połączeniami do bazy danych, np. poprzez użycie proxy."
   },
   {
     "question": "Jakie techniki przechowywania i przetwarzania danych są najbardziej odpowiednie dla generatywnych modeli AI działających w systemach rozproszonych?",
-    "answer": ""
+    "number": 94,
+    "answer": "Dla modeli generatywnych kluczowe jest użycie wektorowych baz danych (np. Pinecone, Milvus) do efektywnego wyszukiwania semantycznego. Surowe dane (tekst, obrazy) najlepiej przechowywać w skalowalnych magazynach obiektowych (np. S3), a do przetwarzania wykorzystywać platformy big data jak Spark w połączeniu z akceleratorami sprzętowymi."
   },
   {
     "question": "Jakie narzędzia chmurowe pozwalają na efektywne zarządzanie procesami trenowania modeli AI w rozproszonych systemach chmurowych?",
-    "answer": ""
+    "number": 95,
+    "answer": "Wiodącymi rozwiązaniami są kompleksowe platformy MLOps takie jak Amazon SageMaker, Google Vertex AI oraz Azure Machine Learning. Oferują one środowiska do zarządzania eksperymentami, automatyzację potoków treningowych oraz narzędzia do monitorowania i wersjonowania modeli (np. MLflow)."
   },
   {
     "question": "Proszę omówić i porównać modele relacyjne i nierelacyjne bazy danych.",
-    "answer": ""
+    "number": 96,
+    "answer": "Relacyjne bazy danych (SQL) opierają się na tabelach i ścisłych schematach, gwarantując spójność transakcji (ACID), co jest idealne dla systemów finansowych. Bazy nierelacyjne (NoSQL) oferują elastyczność schematu i łatwiejsze skalowanie poziome, sprawdzając się lepiej przy dużych wolumenach nieustrukturyzowanych danych lub w systemach wymagających bardzo niskich opóźnień."
   },
   {
     "question": "Omów pojęcie abstrakcji i wskaż jego znaczenie z punktu widzenia wielokrotnego użycia (ang. Reuse).",
-    "answer": ""
+    "number": 97,
+    "answer": "Abstrakcja polega na ukrywaniu złożonych szczegółów implementacyjnych za pomocą uproszczonych interfejsów lub klas bazowych. Jest to fundamentem wielokrotnego użycia kodu, ponieważ pozwala programistom korzystać z gotowych komponentów w różnych kontekstach bez konieczności rozumienia ich wewnętrznej budowy czy powielania logiki."
   },
   {
     "question": "Podaj uwarunkowania stosowania podejścia obiektowego i strukturalnego w projektowaniu systemów informatycznych.",
-    "answer": ""
+    "number": 98,
+    "answer": "Podejście obiektowe jest zalecane w dużych, złożonych systemach, które wymagają łatwej konserwacji, rozbudowy i modelowania rzeczywistych bytów. Podejście strukturalne lepiej sprawdza się w prostszych programach, skryptach lub systemach wbudowanych o ograniczonych zasobach, gdzie priorytetem jest liniowa logika i wydajność bez narzutu obiektowości."
   },
   {
     "question": "Omów zasady działania wzorca MVC (ang. Model View Controler). W jakich projektach zastosowałbyś tę architekturę?",
-    "answer": ""
+    "number": 99,
+    "answer": "MVC dzieli aplikację na trzy warstwy: Model (dane i logika), Widok (prezentacja) i Kontroler (obsługa żądań i sterowanie przepływem). Zastosowałbym tę architekturę w projektach aplikacji webowych lub desktopowych z interfejsem użytkownika, aby odseparować logikę biznesową od wyglądu, co ułatwia testowanie i równoległą pracę programistów."
   },
   {
     "question": "Wymień i opisz cechy różnych typów aplikacji mobilnych (natywne, hybrydowe, wieloplatformowe itp.).",
-    "answer": ""
+    "number": 100,
+    "answer": "Aplikacje natywne oferują najwyższą wydajność i dostęp do sprzętu, ale wymagają osobnego kodu dla każdej platformy (iOS, Android). Aplikacje wieloplatformowe (np. Flutter, React Native) pozwalają na współdzielenie kodu przy zbliżonej wydajności, natomiast hybrydowe to strony webowe opakowane w kontener aplikacji, co jest najtańsze, ale oferuje najniższą wydajność."
   },
   {
     "question": "Opisz wzorce projektowe oraz podaj przykłady ich zastosowania",
-    "answer": ""
+    "number": 101,
+    "answer": "Wzorce projektowe to uniwersalne, sprawdzone rozwiązania częstych problemów architektonicznych, dzielące się na kreacyjne (np. Singleton w zarządzaniu połączeniem z bazą), strukturalne (np. Adapter do łączenia niekompatybilnych interfejsów) oraz czynnościowe (np. Obserwator w systemach powiadomień). Ich stosowanie przyspiesza proces projektowania, ułatwia komunikację w zespole oraz poprawia czytelność i łatwość utrzymania kodu."
   },
   {
     "question": "Porównaj Composition API i Options API w Vue. Omów główne różnice między tymi podejściami, ich zalety i wady oraz wpływ na organizację kodu w aplikacjach Vue.",
-    "answer": ""
+    "number": 102,
+    "answer": "Options API grupuje kod według właściwości (data, methods), co jest intuicyjne dla początkujących, ale utrudnia reużywalność logiki w dużych komponentach. Composition API pozwala na grupowanie kodu według funkcji biznesowych, co znacznie poprawia czytelność przy złożonej logice i ułatwia współdzielenie kodu za pomocą kompozytów, choć wymaga lepszego zrozumienia reaktywności."
   },
   {
     "question": "Omów działanie HTTP/2 i jakie przynosi korzyści w stosunku do HTTP/1.1",
-    "answer": ""
+    "number": 103,
+    "answer": "HTTP/2 wprowadza binarne przesyłanie danych oraz multipleksowanie, co pozwala na przesyłanie wielu zasobów jednocześnie przez jedno połączenie TCP, eliminując problem blokowania kolejki (Head-of-Line Blocking). Dodatkowo oferuje kompresję nagłówków HPACK oraz funkcję Server Push, co znacząco skraca czas ładowania nowoczesnych stron internetowych pełnych drobnych zasobów."
   },
   {
     "question": "Wymień główne różnice między GraphQL a REST API",
-    "answer": ""
+    "number": 104,
+    "answer": "REST opiera się na wielu stałych punktach końcowych (endpoints) i często przesyła nadmiarowe dane, podczas gdy GraphQL wykorzystuje jeden punkt końcowy, pozwalając klientowi precyzyjnie zdefiniować strukturę potrzebnych danych. GraphQL eliminuje problemy over-fetchingu i under-fetchingu, ale jest trudniejszy w implementacji cache'owania po stronie serwera w porównaniu do standardowego REST."
   },
   {
     "question": "Omów działanie WebSockets i kiedy warto je stosować w aplikacjach internetowych",
-    "answer": ""
+    "number": 105,
+    "answer": "WebSockets to protokół zapewniający pełnodupleksowy, dwukierunkowy kanał komunikacji przez pojedyncze połączenie TCP, co pozwala serwerowi na wysyłanie danych do klienta bez uprzedniego zapytania. Warto je stosować w aplikacjach wymagających niskich opóźnień i aktualizacji w czasie rzeczywistym, takich jak czaty, giełdy finansowe, gry online czy systemy powiadomień live."
   },
   {
     "question": "Omów najlepsze praktyki stosowane w zakresie Continuous Integration i Continuous Delivery (CI/CD) dla aplikacji webowych",
-    "answer": ""
+    "number": 106,
+    "answer": "Kluczowe praktyki to automatyzacja testów na każdym etapie, utrzymywanie szybkiego feedbacku dla deweloperów oraz częste integrowanie kodu z główną gałęzią repozytorium. Należy również dbać o spójność środowisk (np. poprzez konteneryzację), automatyczne wycofywanie zmian w razie błędów (rollback) oraz bezpieczne zarządzanie sekretami i konfiguracją środowiskową."
   },
   {
     "question": "Omów działanie Jest i Cypress, i jakie są ich zastosowania?",
-    "answer": ""
+    "number": 107,
+    "answer": "Jest to framework testowy oparty na JavaScript, zoptymalizowany pod kątem szybkości, używany głównie do testów jednostkowych i integracyjnych logiki biznesowej oraz komponentów UI w środowisku Node.js. Cypress to narzędzie do automatyzacji testów End-to-End, które działa bezpośrednio w przeglądarce, umożliwiając łatwe testowanie kompletnych ścieżek użytkownika w rzeczywistym środowisku renderowania."
   },
   {
     "question": "Wymień różnice między testami jednostkowymi, integracyjnymi i end-to-end w aplikacjach webowych",
-    "answer": ""
+    "number": 108,
+    "answer": "Testy jednostkowe sprawdzają najmniejsze fragmenty kodu (np. pojedyncze funkcje) w izolacji, testy integracyjne weryfikują poprawność współpracy między modułami lub systemami zewnętrznymi (np. API i bazą danych). Testy End-to-End (E2E) symulują zachowanie realnego użytkownika w całej aplikacji od początku do końca, sprawdzając, czy system jako całość spełnia wymagania biznesowe."
   },
   {
     "question": "Omów działanie SOLID i jakie korzyści przynosi stosowanie tych zasad?",
-    "answer": ""
+    "number": 109,
+    "answer": "SOLID to zestaw pięciu zasad projektowania obiektowego (m.in. Single Responsibility, Open/Closed), które mają na celu tworzenie bardziej zrozumiałe, elastycznego i łatwego w utrzymaniu oprogramowania. Ich stosowanie minimalizuje ryzyko regresji przy wprowadzaniu zmian, ułatwia testowanie kodu oraz pozwala na łatwiejszą rozbudowę systemu bez konieczności modyfikacji istniejących, stabilnych komponentów."
   },
   {
     "question": "Omów jak działa wzorzec Model-View-Controller (MVC) i w jakich aplikacjach jest stosowany?",
-    "answer": ""
+    "number": 110,
+    "answer": "Wzorzec MVC separuje logikę danych (Model), interfejs użytkownika (View) oraz logikę sterowania (Controller), co pozwala na niezależny rozwój tych warstw. Jest powszechnie stosowany w tradycyjnych frameworkach webowych (np. Spring, Django, ASP.NET MVC) oraz w aplikacjach desktopowych, gdzie kluczowe jest oddzielenie przetwarzania danych od ich prezentacji."
   },
   {
     "question": "Jak działa Dependency Injection i dlaczego warto je stosować?",
-    "answer": ""
+    "number": 111,
+    "answer": "Wstrzykiwanie zależności (DI) polega na dostarczaniu gotowych obiektów, od których zależy dana klasa, z zewnątrz (np. przez konstruktor), zamiast tworzenia ich wewnątrz tej klasy. Warto je stosować, ponieważ drastycznie zwiększa testowalność kodu (łatwe mockowanie), zmniejsza powiązania (coupling) między modułami i ułatwia zarządzanie cyklem życia obiektów w dużych aplikacjach."
   },
   {
     "question": "Na czym polega metaprogramowanie i jak działa w językach obiektowych?",
-    "answer": ""
+    "number": 112,
+    "answer": "Metaprogramowanie to technika pisania programów, które traktują inne programy jako dane, umożliwiając generowanie kodu lub modyfikowanie jego struktury w czasie kompilacji lub wykonania. W językach obiektowych realizowane jest to m.in. przez refleksję (analiza typów w runtime), dekoratory, makra lub dynamiczne dodawanie metod do klas, co pozwala na tworzenie bardzo elastycznych frameworków."
   },
   {
     "question": "Jakie są konsekwencje nadmiernego stosowania dziedziczenia w programowaniu obiektowym?",
-    "answer": ""
+    "number": 113,
+    "answer": "Nadmierne dziedziczenie prowadzi do powstania sztywnych, głębokich hierarchii klas, w których zmiana w klasie bazowej może nieprzewidywalnie wpłynąć na wiele podklas (problem kruchej klasy bazowej). Często skutkuje to również niepotrzebnym eksponowaniem metod, których podklasy nie potrzebują, dlatego zaleca się stosowanie kompozycji zamiast dziedziczenia tam, gdzie to możliwe."
   },
   {
     "question": "Wyjaśnij działanie currying i jakie są jego zastosowania?",
-    "answer": ""
+    "number": 114,
+    "answer": "Currying (rozwijanie funkcji) to technika transformacji funkcji przyjmującej wiele argumentów w serię funkcji, z których każda przyjmuje dokładnie jeden argument. Pozwala to na łatwe tworzenie funkcji specjalistycznych poprzez częściowe stosowanie argumentów (partial application), co zwiększa reużywalność kodu i jest fundamentalne w programowaniu funkcyjnym do tworzenia potoków danych."
   },
   {
     "question": "Wymień główne różnice między programowaniem obiektowym a funkcyjnym",
-    "answer": ""
+    "number": 115,
+    "answer": "Programowanie obiektowe (OOP) opiera się na zmiennym stanie i obiektach łączących dane z zachowaniem, skupiając się na modelowaniu rzeczywistości. Programowanie funkcyjne (FP) promuje niemutowalność danych, funkcje czyste (pure functions) oraz brak efektów ubocznych, traktując obliczenia jako ewaluację matematycznych funkcji, co ułatwia testowanie i współbieżność."
   },
   {
     "question": "W jaki sposób można przetestować wydajność aplikacji webowej?",
-    "answer": ""
+    "number": 116,
+    "answer": "Wydajność testuje się poprzez testy obciążeniowe (Load Testing), sprawdzające zachowanie systemu pod typowym ruchem, oraz testy przeciążeniowe (Stress Testing), wyznaczające punkty krytyczne aplikacji. Wykorzystuje się do tego narzędzia takie jak JMeter, k6 czy Lighthouse, które analizują czasy odpowiedzi, przepustowość oraz wskaźniki Core Web Vitals."
   },
   {
     "question": "Wyjaśnij na czym polegają różnice między SSR (Server-Side Rendering) a CSR (Client-Side Rendering)?",
-    "answer": ""
+    "number": 117,
+    "answer": "SSR generuje pełny kod HTML na serwerze dla każdego żądania, co przyspiesza pierwsze renderowanie i poprawia SEO, ale bardziej obciąża serwer. CSR przesyła do przeglądarki minimalny szkielet HTML i pliki JavaScript, które budują interfejs po stronie klienta, co zapewnia płynniejsze przejścia między podstronami, ale opóźnia czas pierwszej interakcji."
   },
   {
-    "question": "Wyjaśnij działanie OAuth 2.0 i jakie są najlepsze prakty",
-    "answer": ""
+    "question": "Wyjaśnij działanie OAuth 2.0 i jakie są najlepsze praktyki?",
+    "number": 118,
+    "answer": "OAuth 2.0 to protokół delegacji uprawnień, który pozwala aplikacji uzyskać ograniczony dostęp do zasobów użytkownika bez poznawania jego hasła, opierając się na tokenach dostępu. Najlepsze praktyki to stosowanie PKCE (Proof Key for Code Exchange), używanie krótkotrwałych tokenów dostępu (Access Tokens) oraz wymuszanie komunikacji wyłącznie przez HTTPS."
   },
   {
     "question": "W jaki sposób można skalować aplikację internetową w chmurze, np. AWS (Amazon Web Services) lub Azure?",
-    "answer": ""
+    "number": 119,
+    "answer": "Skalowanie realizuje się pionowo (Vertical Scaling) poprzez zwiększanie mocy obliczeniowej pojedynczej instancji lub poziomo (Horizontal Scaling) poprzez dodawanie kolejnych maszyn za Load Balancerem. W chmurze najskuteczniejsze jest skalowanie poziome z wykorzystaniem usług typu Auto Scaling Groups, które dynamicznie dostosowują liczbę instancji do aktualnego ruchu."
   },
   {
     "question": "W jaki sposób można zabezpieczyć aplikację webową przed atakami typu CSRF (Cross-Site Request Forgery) i XSS (Cross-Site Scripting)?",
-    "answer": ""
+    "number": 120,
+    "answer": "Przed CSRF chroni stosowanie unikalnych tokenów anty-CSRF dla każdej sesji oraz ustawianie atrybutu SameSite dla ciasteczek. Obroną przed XSS jest rygorystyczne filtrowanie i escapowanie danych wejściowych od użytkownika oraz wdrożenie polityki Content Security Policy (CSP), która ogranicza źródła wykonywalnych skryptów."
   },
   {
     "question": "Czym charakteryzuje się Progressive Web App (PWA) i jakie technologie są wykorzystywane do jej implementacji?",
-    "answer": ""
+    "number": 121,
+    "answer": "PWA to aplikacja webowa oferująca doświadczenia zbliżone do natywnych, takie jak praca offline, powiadomienia push i instalacja na ekranie głównym. Kluczowe technologie to Service Workers (do zarządzania cache), plik Web App Manifest (konfiguracja wyglądu) oraz protokół HTTPS zapewniający bezpieczeństwo."
   },
   {
     "question": "Jakie są różnice między WPF (Windows Presentation Foundation) i UWP (Universal Windows Platform) w kontekście tworzenia aplikacji desktopowych?",
-    "answer": ""
+    "number": 122,
+    "answer": "WPF opiera się na .NET Framework i oferuje ogromną swobodę w dostępie do zasobów systemowych, ale jest ograniczone do systemu Windows. UWP to nowszy model działający w bezpiecznym piaskownicy (sandbox), który umożliwia uruchomienie tej samej aplikacji na różnych urządzeniach (PC, Xbox, HoloLens), ale posiada bardziej restrykcyjne API."
   },
   {
     "question": "Omów różnice między interfejsami Callable i Runnable w kontekście programowania współbieżnego.",
-    "answer": ""
+    "number": 123,
+    "answer": "Interfejs Runnable posiada metodę run(), która nie zwraca żadnego wyniku i nie może rzucać sprawdzanych wyjątków. Callable jest bardziej elastyczny, ponieważ jego metoda call() zwraca wynik (typu Future) i pozwala na obsługę wyjątków, co czyni go lepszym wyborem przy zadaniach obliczeniowych zwracających dane."
   },
   {
     "question": "W jaki sposób można zaimplementować wzorzec projektowy Singleton, aby był bezpieczny w środowisku wielowątkowym?",
-    "answer": ""
+    "number": 124,
+    "answer": "Najbezpieczniejszą metodą jest użycie mechanizmu 'Double-Checked Locking' z poleceniem volatile lub skorzystanie z inicjalizacji klasy wewnętrznej (tzw. Bill Pugh Singleton). W języku Java najprostszym i w pełni bezpiecznym sposobem jest implementacja Singletona za pomocą typu wyliczeniowego Enum, co chroni także przed problemami z serializacją."
   },
   {
-    "question": "Omów działanie interfejsów komunikacyjnych stosowanych w systemach wbudowanych I2C (Inter-Integrated Circuit), SPI (Serial Peripheral Interface), UART (Universal Asynchronous Receiver-Transmitter), CAN (Controller Area Network) i podaj przykłady",
-    "answer": ""
+    "question": "Omów działanie interfejsów komunikacyjnych stosowanych w systemach wbudowanych I2C, SPI, UART, CAN i podaj przykłady",
+    "number": 125,
+    "answer": "I2C to dwuprzewodowa magistrala szeregowa dla wielu urządzeń (np. czujniki temperatury), SPI to szybki interfejs czteroprzewodowy idealny dla wyświetlaczy i kart SD. UART służy do prostej, asynchronicznej komunikacji punkt-punkt (np. debugowanie przez PC), a magistrala CAN to standard przemysłowy i motoryzacyjny cechujący się wysoką odpornością na zakłócenia."
   },
   {
     "question": "Które języki programowania są najczęściej używane w programowaniu systemów wbudowanych i dlaczego?",
-    "answer": ""
+    "number": 126,
+    "answer": "Dominują języki C i C++, ponieważ oferują niskopoziomowy dostęp do rejestrów sprzętowych i bardzo wysoką wydajność przy minimalnym zużyciu pamięci. Coraz większą popularność zdobywa Rust ze względu na wbudowane mechanizmy bezpieczeństwa pamięci, a w prostych projektach edukacyjnych często stosuje się MicroPython."
   },
   {
     "question": "Wymień różnice między mikrokontrolerami Arduino (ATmega328P) i ESP8266",
-    "answer": ""
+    "number": 127,
+    "answer": "Arduino (ATmega328P) to prosty, 8-bitowy mikrokontroler działający na 5V, idealny do podstawowej elektroniki, ale pozbawiony łączności bezprzewodowej. ESP8266 to znacznie wydajniejszy układ 32-bitowy zasilany 3.3V, który posiada wbudowany moduł Wi-Fi, co czyni go dedykowanym rozwiązaniem dla projektów IoT."
   },
   {
     "question": "W jaki sposób dodać obsługę do mikrokontrolera ESP8266 do platformy programistycznej Arduino IDE?",
-    "answer": ""
+    "number": 128,
+    "answer": "Należy wejść w Preferencje Arduino IDE i w polu 'Dodatkowe adresy URL do menedżera płytek' wkleić link do repozytorium ESP8266. Następnie w Menedżerze Płytek (Boards Manager) wyszukuje się frazę 'esp8266' i instaluje odpowiedni pakiet, co odblokowuje dostęp do bibliotek i definicji pinów tego układu."
   },
   {
     "question": "Podaj technologie wykorzystywane do monitorowania danych z mikrokontrolera ESP8266",
-    "answer": ""
+    "number": 129,
+    "answer": "Do monitorowania danych najczęściej wykorzystuje się protokół MQTT w połączeniu z brokerem (np. Mosquitto) i systemami wizualizacji jak Home Assistant czy Node-RED. Popularne są również dedykowane platformy chmurowe typu Blynk, ThingSpeak lub własne dashboardy oparte na bazie InfluxDB i Grafanie."
   },
   {
     "question": "Wymień języki stosowane w programowaniu sterowników PLC",
-    "answer": ""
+    "number": 130,
+    "answer": "Standard IEC 61131-3 definiuje pięć głównych języków: drabinkowy (LD), tekst strukturalny (ST), bloków funkcyjnych (FBD), listę instrukcji (IL) oraz sekwencyjny graf funkcyjny (SFC). Wybór zależy od preferencji inżyniera oraz specyfiki procesu, przy czym język drabinkowy jest najbardziej intuicyjny dla elektryków, a ST dla programistów IT."
   }
 ]
