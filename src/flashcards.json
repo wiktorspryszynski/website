@@ -1,0 +1,523 @@
+
+[
+  {
+    "question": "W jaki sposób agenci AI mogą być integrowani z metodami sztucznej inteligencji, takimi jak sieci neuronowe czy systemy ekspertowe?",
+    "answer": ""
+  },
+  {
+    "question": "Wyjaśnij, czym jest przetwarzanie hybrydowe i jak wpływa na efektywność systemów rozproszonych.",
+    "answer": ""
+  },
+  {
+    "question": "Jakie techniki przetwarzania wstępnego danych mogą być stosowane w celu minimalizacji błędów i pewności danych?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie mechanizmy w ramach Zero Trust mogą być zastosowane w celu ochrony wiarygodności danych w systemach IT?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są główne zagrożenia dla tradycyjnych metod kryptografii wynikające z rozwoju generatywnej sztucznej inteligencji?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie korzyści dla procesów biznesowych może przynieść zastosowanie generatywnej sztucznej inteligencji",
+    "answer": ""
+  },
+  {
+    "question": "Jakie modele i technologie umożliwiają implementację sztucznej inteligencji w monitorowaniu procesów biznesowych?",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób technologie energooszczędne wpływają na wydajność infrastruktury obliczeniowej?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są główne wyzwania związane z wdrażaniem energooszczędnych systemów w dużych środowiskach obliczeniowych?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są główne zalety przetwarzania hybrydowego w kontekście systemów rozproszonych?",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób przetwarzanie hybrydowe pozwala na efektywne wykorzystanie zasobów lokalnych i chmurowych?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie wyzwania związane z bezpieczeństwem danych pojawiają się w środowiskach hybrydowych?",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób Internet Rzeczy (IoT) wpływa na projektowanie i funkcjonalność robotów wielofunkcyjnych?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie rodzaje danych zbieranych przez czujniki IoT są najbardziej przydatne dla robotów wielofunkcyjnych?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie role pełnią algorytmy sztucznej inteligencji w rozwoju interfejsów mózg-komputer?",
+    "answer": ""
+  },
+  {
+    "question": "Przedstaw kluczowe różnice między tradycyjnymi metodami zarządzania projektami (np. Waterfall) a metodykami zwinnymi (np. Scrum, Kanban) oraz omów, w jakich sytuacjach każda z tych metod może być najbardziej efektywna, szczególnie w kontekście projektów IT.",
+    "answer": ""
+  },
+  {
+    "question": "Jakie mogą być najczęstsze zagrożenia dla bezpieczeństwa sieci teleinformatycznych?",
+    "answer": ""
+  },
+  {
+    "question": "Omów rodzaje testów i jakie korzyści przynosi automatyzacja testów w procesie wytwarzania oprogramowania?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są najpopularniejsze systemy kontroli wersji i jakie są ich główne zalety i wady w pracy w dużych zespołach?",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób analiza złożoności obliczeniowej (czasowej i pamięciowej) wpływa na wybór algorytmu do konkretnego zadania?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są najczęstsze techniki optymalizacji algorytmów i w jakich sytuacjach ich stosowanie jest najbardziej efektywne?",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób ograniczenia czasowe i pamięciowe wpływają na wybór między optymalizacją algorytmiczną a heurystyczną w rozwiązywaniu problemów obliczeniowych?",
+    "answer": ""
+  },
+  {
+    "question": "Jak podejścia algorytmiczne mogą wpływać na skalowalność systemu informatycznego?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są konsekwencje stosowania algorytmów o różnej złożoności obliczeniowej dla skalowalności systemów informatycznych i ich zdolności do obsługi rosnącej liczby użytkowników?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są kluczowe różnice między podejściem algorytmicznym a heurystycznym w rozwiązywaniu problemów w systemach informatycznych?",
+    "answer": ""
+  },
+  {
+    "question": "W jakich sytuacjach podejście heurystyczne jest bardziej efektywne niż algorytmiczne, biorąc pod uwagę dynamiczny charakter danych oraz dostępność zasobów obliczeniowych?",
+    "answer": ""
+  },
+  {
+    "question": "Jak algebra liniowa może być wykorzystana w przetwarzaniu obrazów i analizie danych w systemach informatycznych?",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób rachunek różniczkowy i całkowy przyczynia się do optymalizacji algorytmów i modeli predykcyjnych?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są kluczowe etapy w procesie budowy modelu uczenia maszynowego i jak wpływają one na jakość i efektywność systemu sztucznej inteligencji?",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób techniki uczenia nadzorowanego i nienadzorowanego różnią się pod względem zastosowań i implementacji w systemach sztucznej inteligencji?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są najlepsze praktyki w zakresie zarządzania danymi treningowymi, w tym ich gromadzenie, przechowywanie, przetwarzanie i zabezpieczanie, w kontekście budowy systemów sztucznej inteligencji?",
+    "answer": ""
+  },
+  {
+    "question": "Jak duże modele językowe (LLM) mogą być integrowane z istniejącymi systemami informatycznymi i aplikacjami, aby poprawić ich funkcjonalność i wydajność",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób duże modele językowe (LLM) mogą być wykorzystywane do automatyzacji zadań związanych z przetwarzaniem języka naturalnego (NLP), takich jak tłumaczenie, podsumowywanie tekstu i analiza sentymentu?",
+    "answer": ""
+  },
+  {
+    "question": "Wyjaśnij różnicę pomiędzy szyfrowaniem symetrycznym a asymetrycznym.",
+    "answer": ""
+  },
+  {
+    "question": "Ataki odmowy dostępu do usług (Denial of Service) - podaj przykłady ataku i sposoby jego unikania.",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są najczęstsze rodzaje ataków odmowy dostępu do usług (DoS i DDoS), jakie czynniki techniczne, organizacyjne i prawne wpływają na podatność systemów na te ataki oraz jakie metody mogą być stosowane do ich skutecznego zapobiegania?",
+    "answer": ""
+  },
+  {
+    "question": "Czym jest wirtualizacja w kontekście systemów operacyjnych i jakie przynosi korzyści?",
+    "answer": ""
+  },
+  {
+    "question": "Czym jest hypervisor w wirtualizacji, jaką pełni rolę i jak jest zorganizowany?",
+    "answer": ""
+  },
+  {
+    "question": "Czym jest hypervisor w wirtualizacji, jaka jest jego rola oraz w jaki sposób uwarunkowania infrastrukturalne, takie jak zasoby sprzętowe, architektura systemu oraz wymagania dotyczące wydajności i bezpieczeństwa, wpływają na jego organizację i funkcjonowanie?",
+    "answer": ""
+  },
+  {
+    "question": "Wyjaśnij, co oznacza i dlaczego mówimy o systemach operacyjnych 32 i 64 bitowych?",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób realizowana jest obsługa wyjątków w wybranym języku programowania i jakie są jej główne mechanizmy oraz najlepsze praktyki?",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób realizowana jest obsługa wyjątków w wybranym języku programowania, jakie uwarunkowania programistyczne wpływają na jej efektywność oraz jakie techniki i najlepsze praktyki pozwalają minimalizować wpływ wyjątków na wydajność i bezpieczeństwo kodu?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są kluczowe różnice między klasą a obiektem w programowaniu obiektowym oraz jak te różnice wpływają na tworzenie i wykorzystanie kodu?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są kluczowe różnice między klasą a obiektem w programowaniu obiektowym w różnych językach programowania oraz jak specyfika danego języka wpływa na sposób ich definiowania, tworzenia i wykorzystania w kodzie?",
+    "answer": ""
+  },
+  {
+    "question": "Czym jest enkapsulacja w programowaniu obiektowym, jakie są jej główne zalety i dlaczego jest istotna dla tworzenia solidnego i bezpiecznego kodu?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie jest znaczenie polimorfizmu w programowaniu obiektowym i jakie są przykłady jego praktycznego zastosowania w różnych językach programowania?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie jest znaczenie polimorfizmu w programowaniu obiektowym, jakie mechanizmy jego implementacji występują w różnych językach programowania oraz jakie ograniczenia i możliwości wynikają z ich stosowania?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są różnice między modyfikatorami dostępu public, private i protected w różnych językach programowania oraz jak te różnice wpływają na sposób zarządzania dostępem do członków klasy?",
+    "answer": ""
+  },
+  {
+    "question": "Wyjaśnij pojęcie klasy i obiektu. Definiowanie klasy, tworzenie i usuwanie obiektów w wybranym języku programowania.",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób definiuje się klasy oraz tworzy i usuwa obiekty w wybranym języku programowania, jakie mechanizmy zarządzania pamięcią wpływają na cykl życia obiektów i jakie konsekwencje ma to dla wydajności aplikacji?",
+    "answer": ""
+  },
+  {
+    "question": "Omów składnię definiowania oraz różnice w przekazywaniu parametrów, zwracaniu wartości i wywoływaniu metod obiektowych (instancyjnych) i klasowych (statycznych) na przykładzie wybranego języka.",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są różnice w składni definiowania metod instancyjnych i klasowych (statycznych) w wybranym języku programowania, w jaki sposób przekazywanie parametrów i zwracanie wartości wpływa na ich działanie oraz jakie są konsekwencje wyboru konkretnego podejścia dla struktury kodu?",
+    "answer": ""
+  },
+  {
+    "question": "Opisz ideę dziedziczenia i jej realizację w wybranym obiektowym języku programowania.",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są kluczowe różnice między zmiennymi automatycznymi a dynamicznymi w kontekście programowania oraz jak te różnice wpływają na zarządzanie pamięcią i działanie programu?",
+    "answer": ""
+  },
+  {
+    "question": "Jak różni się pojęcie interfejsu od implementacji klasy w kontekście programowania obiektowego oraz jakie są główne zalety korzystania z interfejsów w projektowaniu oprogramowania?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są główne techniki i zalety tworzenia nowych klas poprzez dziedziczenie z już istniejących klas w programowaniu obiektowym, oraz w jaki sposób dziedziczenie wspomaga reużywalność kodu i organizację hierarchii klas?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie techniki dziedziczenia są dostępne w różnych językach programowania, jakie są ich zalety i ograniczenia oraz w jaki sposób różne modele dziedziczenia wspomagają reużywalność kodu i organizację hierarchii klas?",
+    "answer": ""
+  },
+  {
+    "question": "Model tworzony w Scilabie/Matlabie jest przybliżeniem rzeczywistości. Dokładnemu odwzorowaniu towarzyszą niepewności np. co do -parametrów modelu -warunków brzegowych które mogą wpływać na dokładność i wiarygodność wyników. Omów te niepewności na dowolnym przykładzie.",
+    "answer": ""
+  },
+  {
+    "question": "Proszę omówić i porównać modele relacyjne i nierelacyjne bazy danych.",
+    "answer": ""
+  },
+  {
+    "question": "Proszę omówić zasady definiowania wzorców funkcji i klas (znane również jako szablony lub generics).",
+    "answer": ""
+  },
+  {
+    "question": "Proszę podać główne cechy zunifikowanego języka modelowania systemów informatycznych (ang. UML) – zastosowanie, charakterystykę oraz jego podstawowe diagramy.",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są wyzwania związane z projektowaniem i implementacją systemów rozproszonych z użyciem chmurowej infrastruktury, uwzględniając wymogi dotyczące skalowalności, dostępności i spójności danych?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie techniki projektowania systemów można zastosować do integracji rozproszonych aplikacji w środowisku chmurowym, zapewniając jednocześnie ich wysoką dostępność i odporność na awarie?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są zalety i wady podejścia opartego na mikroserwisach w kontekście integracji generatywnej sztucznej inteligencji z systemami rozproszonymi w chmurze?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie aspekty inżynierii oprogramowania są kluczowe przy budowie systemów opartych na przetwarzaniu rozproszonym, które korzystają z generatywnych modeli AI w chmurze?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie metody modelowania systemów informatycznych można zastosować, aby zaprojektować skalowalne aplikacje w architekturze chmurowej?",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób procesy DevOps i CI/CD mogą wspierać rozwój i wdrażanie aplikacji bazujących na generatywnej sztucznej inteligencji w systemach rozproszonych działających w chmurze?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie wyzwania napotykają inżynierowie oprogramowania przy integracji systemów rozproszonych z chmurową infrastrukturą, gdy system ten korzysta z algorytmów generatywnej sztucznej inteligencji?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie metody projektowania mogą poprawić odporność na awarie w systemach sztucznej inteligencji działających w środowisku rozproszonym w chmurze?",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób techniki projektowania systemów oparte na mikrousługach wspierają wykorzystanie generatywnej sztucznej inteligencji w rozproszonych aplikacjach chmurowych?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie problemy z zakresu spójności danych pojawiają się przy projektowaniu systemów w architekturze rozproszonej i jak można je rozwiązać, korzystając z narzędzi chmurowych?",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób architektura chmurowa wspiera implementację i integrację systemów przetwarzania rozproszonego w kontekście generatywnej sztucznej inteligencji?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie strategie zarządzania wymaganiami są najskuteczniejsze w procesie rozwoju systemów sztucznej inteligencji z uwzględnieniem chmurowych usług przetwarzania rozproszonego?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie podejście do zarządzania jakością oprogramowania jest najbardziej odpowiednie przy tworzeniu systemów generatywnej sztucznej inteligencji w środowisku chmurowym?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie narzędzia i technologie wspierają integrację generatywnej sztucznej inteligencji z chmurowymi platformami przetwarzania rozproszonego, zapewniając elastyczność i skalowalność systemu?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie korzyści wynikają z zastosowania kontenerów (np. Docker) i orkiestracji (np. Kubernetes) w systemach AI opartych na chmurowym przetwarzaniu rozproszonym?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie techniki architektoniczne powinny być uwzględnione przy projektowaniu systemów, które muszą działać w real-time w rozproszonych systemach chmurowych?",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób zastosowanie chmurowej infrastruktury obliczeniowej wpływa na wydajność algorytmów AI w systemach rozproszonych?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie wyzwania pojawiają się przy skalowaniu systemów opartych na generatywnej sztucznej inteligencji w rozproszonych środowiskach chmurowych?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie techniki zarządzania danymi są skuteczne w systemach opartych na przetwarzaniu rozproszonym w chmurze?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie rozwiązania są dostępne do monitorowania i optymalizacji wydajności systemów działających w chmurze, szczególnie w kontekście rozproszonego przetwarzania?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie techniki wykorzystywane w inżynierii oprogramowania są istotne przy budowie rozproszonych systemów, które korzystają z algorytmów uczenia maszynowego w chmurze?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie wyzwania związane z bezpieczeństwem i prywatnością danych występują w systemach działających w chmurowym przetwarzaniu rozproszonym?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie korzyści daje zastosowanie technologii chmurowych, takich jak serverless computing, w kontekście generatywnych modeli AI w rozproszonych aplikacjach?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie mechanizmy synchronizacji i komunikacji w systemach rozproszonych wspierają skuteczne działanie algorytmów generatywnej sztucznej inteligencji w chmurze?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie wzorce projektowe są najczęściej wykorzystywane przy budowie systemów rozproszonych, które wykorzystują generatywną sztuczną inteligencję i działają w środowiskach chmurowych?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie aspekty projektowania systemów rozproszonych należy uwzględnić, aby zapewnić ich wysoką wydajność w kontekście aplikacji działających w chmurze?",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób użycie chmurowych narzędzi do przetwarzania danych w czasie rzeczywistym wpływa na efektywność algorytmów sztucznej inteligencji?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są korzyści z zastosowania rozproszonych baz danych w systemach opartych na przetwarzaniu rozproszonym w chmurze?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie problemy napotykają projektanci systemów w kontekście dostosowywania algorytmów generatywnej sztucznej inteligencji do specyfiki chmurowego przetwarzania rozproszonego?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie narzędzia do automatyzacji procesów mogą być stosowane w zarządzaniu cyklem życia systemów opartych na chmurowej infrastrukturze rozproszonej?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie metody skalowania i optymalizacji zasobów chmurowych są najefektywniejsze w przypadku aplikacji działających w systemach rozproszonych?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie aspekty wydajnościowe i techniczne należy wziąć pod uwagę przy projektowaniu rozproszonych systemów w kontekście chmurowych architektur opartych na serverless computing?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie techniki przechowywania i przetwarzania danych są najbardziej odpowiednie dla generatywnych modeli AI działających w systemach rozproszonych?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie narzędzia chmurowe pozwalają na efektywne zarządzanie procesami trenowania modeli AI w rozproszonych systemach chmurowych?",
+    "answer": ""
+  },
+  {
+    "question": "Proszę omówić i porównać modele relacyjne i nierelacyjne bazy danych.",
+    "answer": ""
+  },
+  {
+    "question": "Omów pojęcie abstrakcji i wskaż jego znaczenie z punktu widzenia wielokrotnego użycia (ang. Reuse).",
+    "answer": ""
+  },
+  {
+    "question": "Podaj uwarunkowania stosowania podejścia obiektowego i strukturalnego w projektowaniu systemów informatycznych.",
+    "answer": ""
+  },
+  {
+    "question": "Omów zasady działania wzorca MVC (ang. Model View Controler). W jakich projektach zastosowałbyś tę architekturę?",
+    "answer": ""
+  },
+  {
+    "question": "Wymień i opisz cechy różnych typów aplikacji mobilnych (natywne, hybrydowe, wieloplatformowe itp.).",
+    "answer": ""
+  },
+  {
+    "question": "Opisz wzorce projektowe oraz podaj przykłady ich zastosowania",
+    "answer": ""
+  },
+  {
+    "question": "Porównaj Composition API i Options API w Vue. Omów główne różnice między tymi podejściami, ich zalety i wady oraz wpływ na organizację kodu w aplikacjach Vue.",
+    "answer": ""
+  },
+  {
+    "question": "Omów działanie HTTP/2 i jakie przynosi korzyści w stosunku do HTTP/1.1",
+    "answer": ""
+  },
+  {
+    "question": "Wymień główne różnice między GraphQL a REST API",
+    "answer": ""
+  },
+  {
+    "question": "Omów działanie WebSockets i kiedy warto je stosować w aplikacjach internetowych",
+    "answer": ""
+  },
+  {
+    "question": "Omów najlepsze praktyki stosowane w zakresie Continuous Integration i Continuous Delivery (CI/CD) dla aplikacji webowych",
+    "answer": ""
+  },
+  {
+    "question": "Omów działanie Jest i Cypress, i jakie są ich zastosowania?",
+    "answer": ""
+  },
+  {
+    "question": "Wymień różnice między testami jednostkowymi, integracyjnymi i end-to-end w aplikacjach webowych",
+    "answer": ""
+  },
+  {
+    "question": "Omów działanie SOLID i jakie korzyści przynosi stosowanie tych zasad?",
+    "answer": ""
+  },
+  {
+    "question": "Omów jak działa wzorzec Model-View-Controller (MVC) i w jakich aplikacjach jest stosowany?",
+    "answer": ""
+  },
+  {
+    "question": "Jak działa Dependency Injection i dlaczego warto je stosować?",
+    "answer": ""
+  },
+  {
+    "question": "Na czym polega metaprogramowanie i jak działa w językach obiektowych?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są konsekwencje nadmiernego stosowania dziedziczenia w programowaniu obiektowym?",
+    "answer": ""
+  },
+  {
+    "question": "Wyjaśnij działanie currying i jakie są jego zastosowania?",
+    "answer": ""
+  },
+  {
+    "question": "Wymień główne różnice między programowaniem obiektowym a funkcyjnym",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób można przetestować wydajność aplikacji webowej?",
+    "answer": ""
+  },
+  {
+    "question": "Wyjaśnij na czym polegają różnice między SSR (Server-Side Rendering) a CSR (Client-Side Rendering)?",
+    "answer": ""
+  },
+  {
+    "question": "Wyjaśnij działanie OAuth 2.0 i jakie są najlepsze prakty",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób można skalować aplikację internetową w chmurze, np. AWS (Amazon Web Services) lub Azure?",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób można zabezpieczyć aplikację webową przed atakami typu CSRF (Cross-Site Request Forgery) i XSS (Cross-Site Scripting)?",
+    "answer": ""
+  },
+  {
+    "question": "Czym charakteryzuje się Progressive Web App (PWA) i jakie technologie są wykorzystywane do jej implementacji?",
+    "answer": ""
+  },
+  {
+    "question": "Jakie są różnice między WPF (Windows Presentation Foundation) i UWP (Universal Windows Platform) w kontekście tworzenia aplikacji desktopowych?",
+    "answer": ""
+  },
+  {
+    "question": "Omów różnice między interfejsami Callable i Runnable w kontekście programowania współbieżnego.",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób można zaimplementować wzorzec projektowy Singleton, aby był bezpieczny w środowisku wielowątkowym?",
+    "answer": ""
+  },
+  {
+    "question": "Omów działanie interfejsów komunikacyjnych stosowanych w systemach wbudowanych I2C (Inter-Integrated Circuit), SPI (Serial Peripheral Interface), UART (Universal Asynchronous Receiver-Transmitter), CAN (Controller Area Network) i podaj przykłady",
+    "answer": ""
+  },
+  {
+    "question": "Które języki programowania są najczęściej używane w programowaniu systemów wbudowanych i dlaczego?",
+    "answer": ""
+  },
+  {
+    "question": "Wymień różnice między mikrokontrolerami Arduino (ATmega328P) i ESP8266",
+    "answer": ""
+  },
+  {
+    "question": "W jaki sposób dodać obsługę do mikrokontrolera ESP8266 do platformy programistycznej Arduino IDE?",
+    "answer": ""
+  },
+  {
+    "question": "Podaj technologie wykorzystywane do monitorowania danych z mikrokontrolera ESP8266",
+    "answer": ""
+  },
+  {
+    "question": "Wymień języki stosowane w programowaniu sterowników PLC",
+    "answer": ""
+  }
+]

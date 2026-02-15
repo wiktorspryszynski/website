@@ -17,30 +17,35 @@
     "title": "Projekty",
     "cards": [
       {
+        "show": false,
         "title": "Glassmorphism UI",
         "description": "Szklane panele, miękkie światło i nowoczesna estetyka.",
         "tags": ["UI", "CSS"],
         "ariaLabel": "Projekt Glassmorphism UI"
       },
       {
+        "show": false,
         "title": "Walentynkowy projekt",
         "description": "Romantyczny motyw i subtelne animacje - lekki, przyjemny eksperyment.",
         "tags": ["Animacje", "HTML"],
         "ariaLabel": "Projekt Walentynkowy"
       },
       {
+        "show": false,
         "title": "Portfolio API",
         "description": "Integracja z prostym API do pobierania projektów dynamicznie.",
         "tags": ["JavaScript", "API"],
         "ariaLabel": "Projekt w przygotowaniu"
       },
       {
+        "show": false,
         "title": "Mini-gra przeglądarkowa",
         "description": "Krótka gra logiczna z czystym DOM i responsywnym sterowaniem.",
         "tags": ["Game", "Canvas"],
         "ariaLabel": "Projekt w przygotowaniu"
       },
       {
+        "show": true,
         "title": "👷 Section under construction 🚧🚧",
         "description": "Sekcja projektów jest obecnie w trakcie budowy. Wróć wkrótce!",
         "tags": ["Wkrótce"],
