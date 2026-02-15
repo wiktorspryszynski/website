@@ -440,10 +440,14 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 .flashcard button:hover {
   background: var(--accent-2);
 }
-.google-btn {
+.flashcard-actions {
 	position: absolute;
 	top: 12px;
 	right: 12px;
+	display: flex;
+	gap: 8px;
+}
+.google-btn, .chatgpt-btn {
 	width: 34px;
 	height: 34px;
 	display: inline-flex;
@@ -455,11 +459,12 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 	box-shadow: none;
 	text-decoration: none;
 }
-.google-btn:hover, .google-btn:focus-visible {
+.google-btn:hover, .google-btn:focus-visible,
+.chatgpt-btn:hover, .chatgpt-btn:focus-visible {
 	background: color-mix(in oklab, var(--bg-elev) 45%, transparent);
 	outline: none;
 }
-.google-icon {
+.google-icon, .chatgpt-icon {
 	width: 20px;
 	height: 20px;
 	fill: var(--muted);
