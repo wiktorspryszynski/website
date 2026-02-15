@@ -241,6 +241,18 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 	flex-wrap: wrap;
 	margin-bottom: 18px;
 }
+.flashcards-header h1 {
+	margin: 0;
+}
+.flashcards-controls {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex: 1;
+	min-width: 0;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
 .flashcards-random {
 	background: var(--accent);
 	color: white;
@@ -249,6 +261,7 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 	border-radius: 12px;
 	cursor: pointer;
 	font: inherit;
+	white-space: nowrap;
 }
 .flashcards-random:hover {
 	background: var(--accent-2);
@@ -264,14 +277,9 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 		order: 1;
 	}
 
-	.flashcards-search {
+	.flashcards-controls {
 		order: 2;
 		max-width: none;
-	}
-
-	.flashcards-random {
-		order: 2;
-		align-self: flex-start;
 	}
 
 	.switch {
@@ -281,7 +289,7 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 }
 .flashcards-search {
 	flex: 1;
-	min-width: 220px;
+	min-width: 0;
 	max-width: 420px;
 	display: flex;
 	align-items: center;
@@ -390,6 +398,13 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
   flex-direction: column;
   gap: 20px;
 	align-items: center;
+}
+.flashcards-page .flashcards,
+.flashcards-page .flashcard,
+.flashcards-page .flashcard h3,
+.flashcards-page .flashcard p {
+	user-select: text;
+	-webkit-user-select: text;
 }
 .flashcard {
   background: var(--card);

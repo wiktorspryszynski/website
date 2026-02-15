@@ -45,19 +45,29 @@ const Flashcards: React.FC = () => {
   }, [searchQuery]);
 
   const normalizedQuery = searchQuery.trim().toLowerCase();
+  const normalizedQueryNoTrailingDots = normalizedQuery.replace(/\.+$/, '');
+  const leadingNumberMatch = normalizedQueryNoTrailingDots.match(/^(\d+)\.?\s*(.*)$/);
+  const leadingNumber = leadingNumberMatch?.[1] ?? null;
+  const queryRemainder = leadingNumberMatch?.[2]?.trim() ?? '';
+  const effectiveQuery = queryRemainder || normalizedQueryNoTrailingDots || normalizedQuery;
+  const normalizeText = (value: string) => value.toLowerCase().replace(/[\s\p{P}]+/gu, ' ').trim();
   const filteredFlashcards = flashcards
     .map((card, index) => ({ card, index }))
     .filter(({ card, index }) => {
-    if (!normalizedQuery) {
+    if (!effectiveQuery) {
       return true;
     }
     const indexLabel = String(card.number ?? index + 1);
-    const questionText = card.question.toLowerCase();
-    const answerText = card.answer.toLowerCase();
+    const questionText = normalizeText(card.question);
+    const answerText = normalizeText(card.answer);
+    const normalizedSearch = normalizeText(effectiveQuery);
+    if (leadingNumber && indexLabel !== leadingNumber) {
+      return false;
+    }
     return (
-      indexLabel.includes(normalizedQuery) ||
-      questionText.includes(normalizedQuery) ||
-      answerText.includes(normalizedQuery)
+      indexLabel.includes(effectiveQuery) ||
+      questionText.includes(normalizedSearch) ||
+      answerText.includes(normalizedSearch)
     );
   });
 
@@ -93,28 +103,30 @@ const Flashcards: React.FC = () => {
       </Helmet>
       <div className="flashcards-header">
         <h1>Fiszki</h1>
-        <label className="flashcards-search">
-          <span className="visually-hidden">Szukaj fiszek</span>
-          <span className="search-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" focusable="false">
-              <path d="M10.5 3a7.5 7.5 0 0 1 5.9 12.1l4 4a1 1 0 1 1-1.4 1.4l-4-4A7.5 7.5 0 1 1 10.5 3zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11z" />
-            </svg>
-          </span>
-          <input
-            type="search"
-            placeholder="Szukaj po numerze, pytaniu, odpowiedzi"
-            value={searchQuery}
-            onChange={(event) => setSearchQuery(event.target.value)}
-          />
-        </label>
-        <button
-          className="flashcards-random"
-          onClick={handleRandomCard}
-          aria-label={randomIndex === null ? 'Losowa fiszka' : 'Wszystkie fiszki'}
-          title={randomIndex === null ? 'Losowa fiszka' : 'Wszystkie fiszki'}
-        >
-          losuj
-        </button>
+        <div className="flashcards-controls">
+          <label className="flashcards-search">
+            <span className="visually-hidden">Szukaj fiszek</span>
+            <span className="search-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M10.5 3a7.5 7.5 0 0 1 5.9 12.1l4 4a1 1 0 1 1-1.4 1.4l-4-4A7.5 7.5 0 1 1 10.5 3zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11z" />
+              </svg>
+            </span>
+            <input
+              type="search"
+              placeholder="Szukaj po numerze, pytaniu, odpowiedzi"
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+            />
+          </label>
+          <button
+            className="flashcards-random"
+            onClick={handleRandomCard}
+            aria-label={randomIndex === null ? 'Losowa fiszka' : 'Wszystkie fiszki'}
+            title={randomIndex === null ? 'Losowa fiszka' : 'Wszystkie fiszki'}
+          >
+            losuj
+          </button>
+        </div>
         <label className="switch">
           <span className="switch-label">Ukrywaj odpowiedzi</span>
           <input
