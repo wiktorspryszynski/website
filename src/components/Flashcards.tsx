@@ -15,6 +15,8 @@ const Flashcards: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [randomIndex, setRandomIndex] = useState<number | null>(null);
 
+  const chatGPTsuggestion = "Odpowiadaj jak na obronie pracy inżynierskiej. Odpowiedź ma być treściwa, konkretna i zrozumiała. Długość: 4-6 zdań. Najpierw krótka definicja, potem najważniejsze elementy w punktach lub logicznej kolejności. Bez dygresji, bez przykładów jeśli nie są konieczne.\nPytanie: ";
+
   const handleHideToggle = (event: React.ChangeEvent<HTMLInputElement>) => {
     const nextValue = event.target.checked;
     setHideAnswers(nextValue);
@@ -160,7 +162,7 @@ const Flashcards: React.FC = () => {
               </a>
               <a
                 className="chatgpt-btn"
-                href={`https://chatgpt.com/?q=${encodeURIComponent(card.question)}`}
+                href={`https://chatgpt.com/?q=${encodeURIComponent(chatGPTsuggestion + card.question)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Ask ChatGPT"
