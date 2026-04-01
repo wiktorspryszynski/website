@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Card from './Card';
 import SocialButton from './SocialButton';
+import HeaderBar from './HeaderBar';
 import contentPl from '../content.json';
 import contentEn from '../english.json';
 import LightsAnimation from '../LightsAnimation';
@@ -41,34 +42,25 @@ const Home: React.FC = () => {
         <meta name="theme-color" content="#0f1115" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <title>Wiktor Spryszyński - Portfolio</title>
-        <meta name="description" content="Portfolio website of Wiktor Spryszyński, software developer." />
+        <title>Wiktor SpryszyĹ„ski - Portfolio</title>
+        <meta name="description" content="Portfolio website of Wiktor SpryszyĹ„ski, software developer." />
       </Helmet>
       <div id="lights" aria-hidden="true"></div>
-      <header role="banner">
-        <div className="container header-bar">
-          <div className="brand" aria-label="Wiktor Spryszyński">
-            <div className="name-and-surname">Wiktor Spryszyński</div>
-          </div>
-          <nav> 
-            <button
-              onClick={() => {
-                const otherLang = languages.find(lang => lang.code !== language);
-                if (otherLang) {
-                  setLanguage(otherLang.code);
-                  const url = new URL(window.location.href);
-                  url.searchParams.set('lang', otherLang.code);
-                  window.history.pushState({}, '', url);
-                }
-              }}
-              className="language-switch"
-              aria-label={`Switch to ${languages.find(lang => lang.code !== language)?.name || 'other language'}`}
-            >
-              {languages.find(lang => lang.code !== language)?.display || 'EN'}
-            </button>
-          </nav>
-        </div>
-      </header>
+      <HeaderBar
+        title="Wiktor Spryszyński"
+        brandAriaLabel="Wiktor Spryszyński"
+        switchDisplay={languages.find(lang => lang.code !== language)?.display || 'EN'}
+        switchAriaLabel={`Switch to ${languages.find(lang => lang.code !== language)?.name || 'other language'}`}
+        onSwitch={() => {
+          const otherLang = languages.find(lang => lang.code !== language);
+          if (otherLang) {
+            setLanguage(otherLang.code);
+            const url = new URL(window.location.href);
+            url.searchParams.set('lang', otherLang.code);
+            window.history.pushState({}, '', url);
+          }
+        }}
+      />
 
       <main className="container" id="main" role="main">
         <section className="hero" aria-labelledby="hero-title">
