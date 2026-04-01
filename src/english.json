@@ -10,6 +10,7 @@
   "social": {
     "linkedin": "LinkedIn",
     "github": "GitHub",
+    "cv": "CV",
     "email": "Show email",
     "copyTooltip": "Copied!"
   },
@@ -56,7 +57,7 @@
   "contact": {
     "title": "Contact",
     "description": "Do you have a question or an idea for collaboration? Send a message - I'll be happy to respond.",
-    "emailButton": "Send email",
+    "emailButton": "Send an email",
     "githubButton": "GitHub",
     "emailLabel": "Send email message",
     "githubLabel": "View GitHub profile"

@@ -126,6 +126,21 @@ const Home: React.FC = () => {
                 <text x="12" y="22" textAnchor="middle" fontFamily="Segoe UI, Arial, sans-serif" fontSize="24" fontWeight="500" fill="url(#grad-at)">@</text>
               </svg>
             </SocialButton>
+            <SocialButton
+              type="link"
+              href={`/cv?lang=${language}`}
+              ariaLabel={content.social.cv}
+            >
+              <svg viewBox="0 0 28 28" width="28" height="28" role="img" aria-hidden="true">
+                <defs>
+                  <linearGradient id="grad-cv" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="var(--accent)" />
+                    <stop offset="100%" stopColor="var(--green)" />
+                  </linearGradient>
+                </defs>
+                <text x="14" y="22" textAnchor="middle" fontFamily="'Arial Narrow', 'Roboto Condensed', 'Segoe UI', Arial, sans-serif" fontSize="22" fontWeight="700" fill="url(#grad-cv)">CV</text>
+              </svg>
+            </SocialButton>
           </div>
         </section>
 
@@ -154,7 +169,6 @@ const Home: React.FC = () => {
           <p>{content.contact.description}</p>
           <div className="actions">
             <a className="btn" href="mailto:spryszynskiwiktor@gmail.com" aria-label={content.contact.emailLabel}>{content.contact.emailButton}</a>
-            <a className="btn" href="#" aria-label={content.contact.githubLabel}>{content.contact.githubButton}</a>
           </div>
         </section>
       </main>
