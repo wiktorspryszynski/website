@@ -98,9 +98,7 @@ const CvPage: React.FC = () => {
                 title={content.downloadButton}
                 onClick={(event) => event.stopPropagation()}
               >
-                <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
-                  <path fill="currentColor" d="M5 20h14v-2H5v2zm7-18v10.17l3.59-3.58L17 10l-5 5-5-5 1.41-1.41L11 12.17V2h1z" />
-                </svg>
+                <span className="material-symbols-rounded cv-download-icon" aria-hidden="true">download</span>
               </a>
             </div>
           </article>
@@ -139,9 +137,7 @@ const CvPage: React.FC = () => {
                 title={content.downloadButton}
                 onClick={(event) => event.stopPropagation()}
               >
-                <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
-                  <path fill="currentColor" d="M5 20h14v-2H5v2zm7-18v10.17l3.59-3.58L17 10l-5 5-5-5 1.41-1.41L11 12.17V2h1z" />
-                </svg>
+                <span className="material-symbols-rounded cv-download-icon" aria-hidden="true">download</span>
               </a>
             </div>
           </article>
