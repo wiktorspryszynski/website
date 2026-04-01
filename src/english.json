@@ -73,12 +73,10 @@
     "downloadButtonAriaLabel": "Download resume file",
     "backButton": "Back to home",
     "polish": {
-      "title": "Polish",
-      "description": "Polish version (PDF)"
+      "title": "Polish version (PDF)"
     },
     "english": {
-      "title": "English",
-      "description": "English version (PDF)"
+      "title": "English version (PDF)"
     }
   }
 }

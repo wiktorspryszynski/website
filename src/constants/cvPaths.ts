@@ -1,5 +1,5 @@
-import cvPolish from '../assets/CV Wiktor Spryszyński.pdf';
-import cvEnglish from '../assets/CV Wiktor Spryszyński ENG.pdf';
+import cvPolish from '../assets/_CV_Wiktor_Spryszynski.pdf';
+import cvEnglish from '../assets/_CV_Wiktor_Spryszynski_ENG.pdf';
 
 export const CV_PATHS = {
   pl: cvPolish,

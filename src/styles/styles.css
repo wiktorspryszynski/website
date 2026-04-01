@@ -510,15 +510,42 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
   margin: 0;
 }
 
+.cv-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.cv-card-content {
+  min-width: 0;
+}
+
+.cv-card-content p {
+  margin-top: 6px;
+}
+
 .cv-actions {
+  margin-top: 0;
+  margin-left: auto;
   gap: 10px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .cv-card-clickable {
   cursor: pointer;
 }
 
+.cv-open-btn,
 .cv-download-btn {
-  margin-top: 4px;
+  margin-top: 0;
+  width: 44px;
+  height: 44px;
+}
+
+.cv-open-btn svg,
+.cv-download-btn svg {
+  width: 24px;
+  height: 24px;
 }

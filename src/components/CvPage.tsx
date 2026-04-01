@@ -72,9 +72,24 @@ const CvPage: React.FC = () => {
             onClick={() => openCv(CV_PATHS.pl)}
             onKeyDown={(event) => handleCardKeyDown(event, CV_PATHS.pl)}
           >
-            <h2>{content.polish.title}</h2>
-            <p>{content.polish.description}</p>
+            <div className="cv-card-content">
+              <h2>{content.polish.title}</h2>
+            </div>
             <div className="actions cv-actions">
+              <a
+                className="icon-btn cv-open-btn"
+                href={CV_PATHS.pl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={content.openButtonAriaLabel}
+                title={content.openButton}
+                onClick={(event) => event.stopPropagation()}
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+                  <path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z" />
+                  <path fill="currentColor" d="M5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z" />
+                </svg>
+              </a>
               <a
                 className="icon-btn cv-download-btn"
                 href={CV_PATHS.pl}
@@ -98,9 +113,24 @@ const CvPage: React.FC = () => {
             onClick={() => openCv(CV_PATHS.en)}
             onKeyDown={(event) => handleCardKeyDown(event, CV_PATHS.en)}
           >
-            <h2>{content.english.title}</h2>
-            <p>{content.english.description}</p>
+            <div className="cv-card-content">
+              <h2>{content.english.title}</h2>
+            </div>
             <div className="actions cv-actions">
+              <a
+                className="icon-btn cv-open-btn"
+                href={CV_PATHS.en}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={content.openButtonAriaLabel}
+                title={content.openButton}
+                onClick={(event) => event.stopPropagation()}
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+                  <path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z" />
+                  <path fill="currentColor" d="M5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z" />
+                </svg>
+              </a>
               <a
                 className="icon-btn cv-download-btn"
                 href={CV_PATHS.en}

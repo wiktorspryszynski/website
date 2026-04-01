@@ -73,12 +73,10 @@
     "downloadButtonAriaLabel": "Pobierz plik CV",
     "backButton": "Wróć do strony głównej",
     "polish": {
-      "title": "Polish",
-      "description": "Wersja polska (PDF)"
+      "title": "Wersja polska (PDF)"
     },
     "english": {
-      "title": "English",
-      "description": "English version (PDF)"
+      "title": "English version (PDF)"
     }
   }
 }
