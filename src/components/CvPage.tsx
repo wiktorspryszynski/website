@@ -1,0 +1,130 @@
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { CV_PATHS } from '../constants/cvPaths';
+import HeaderBar from './HeaderBar';
+import contentPl from '../content.json';
+import contentEn from '../english.json';
+
+const CvPage: React.FC = () => {
+  const languages = [
+    { code: 'pl' as const, name: 'Polski', display: 'PL' },
+    { code: 'en' as const, name: 'English', display: 'EN' }
+  ];
+
+  const contents = {
+    pl: contentPl,
+    en: contentEn
+  };
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const langParam = urlParams.get('lang');
+  const validLangs = languages.map((lang) => lang.code);
+  type LangCode = typeof languages[number]['code'];
+  const defaultLang = languages[0].code;
+  const initialLang = validLangs.includes(langParam as LangCode) ? (langParam as LangCode) : defaultLang;
+  const [language, setLanguage] = useState<LangCode>(initialLang);
+  const content = contents[language].cv;
+  const otherLang = languages.find((lang) => lang.code !== language);
+
+  const changeLanguage = () => {
+    if (!otherLang) {
+      return;
+    }
+
+    const url = new URL(window.location.href);
+    url.searchParams.set('lang', otherLang.code);
+    window.history.pushState({}, '', url);
+    setLanguage(otherLang.code);
+  };
+
+  const openCv = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleCardKeyDown = (event: React.KeyboardEvent<HTMLElement>, url: string) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openCv(url);
+    }
+  };
+
+  return (
+    <>
+      <HeaderBar
+        title="Wiktor Spryszyński"
+        switchDisplay={otherLang?.display || 'EN'}
+        switchAriaLabel={`Switch to ${otherLang?.name || 'other language'}`}
+        onSwitch={changeLanguage}
+      />
+
+      <main className="container cv-page" role="main">
+        <section className="cv-header">
+          <h1>{content.heading}</h1>
+          <p>{content.subtitle}</p>
+        </section>
+
+        <section className="grid cv-grid" aria-label={content.listAriaLabel}>
+          <article
+            className="card cv-card cv-card-clickable"
+            role="link"
+            tabIndex={0}
+            aria-label={`${content.polish.title} - ${content.openButtonAriaLabel}`}
+            onClick={() => openCv(CV_PATHS.pl)}
+            onKeyDown={(event) => handleCardKeyDown(event, CV_PATHS.pl)}
+          >
+            <h2>{content.polish.title}</h2>
+            <p>{content.polish.description}</p>
+            <div className="actions cv-actions">
+              <a
+                className="icon-btn cv-download-btn"
+                href={CV_PATHS.pl}
+                download
+                aria-label={content.downloadButtonAriaLabel}
+                title={content.downloadButton}
+                onClick={(event) => event.stopPropagation()}
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+                  <path fill="currentColor" d="M5 20h14v-2H5v2zm7-18v10.17l3.59-3.58L17 10l-5 5-5-5 1.41-1.41L11 12.17V2h1z" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <article
+            className="card cv-card cv-card-clickable"
+            role="link"
+            tabIndex={0}
+            aria-label={`${content.english.title} - ${content.openButtonAriaLabel}`}
+            onClick={() => openCv(CV_PATHS.en)}
+            onKeyDown={(event) => handleCardKeyDown(event, CV_PATHS.en)}
+          >
+            <h2>{content.english.title}</h2>
+            <p>{content.english.description}</p>
+            <div className="actions cv-actions">
+              <a
+                className="icon-btn cv-download-btn"
+                href={CV_PATHS.en}
+                download
+                aria-label={content.downloadButtonAriaLabel}
+                title={content.downloadButton}
+                onClick={(event) => event.stopPropagation()}
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+                  <path fill="currentColor" d="M5 20h14v-2H5v2zm7-18v10.17l3.59-3.58L17 10l-5 5-5-5 1.41-1.41L11 12.17V2h1z" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        </section>
+
+        <div className="actions">
+          <Link className="btn" to={`/?lang=${language}`}>
+            {content.backButton}
+          </Link>
+        </div>
+      </main>
+    </>
+  );
+};
+
+export default CvPage;
