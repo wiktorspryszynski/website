@@ -1,4 +1,4 @@
-{
+﻿{
   "hero": {
     "title": {
         "hi": "Cześć!",
@@ -60,5 +60,24 @@
     "githubButton": "GitHub",
     "emailLabel": "Wyślij wiadomość email",
     "githubLabel": "Zobacz profil GitHub"
+  },
+  "cv": {
+    "pageTitle": "CV",
+    "heading": "Moje CV",
+    "subtitle": "Tutaj znajdziesz obie wersje językowe CV. Możesz je otworzyć lub pobrać.",
+    "listAriaLabel": "Dostępne wersje CV",
+    "openButton": "Otwórz",
+    "downloadButton": "Pobierz",
+    "openButtonAriaLabel": "Otwórz plik CV",
+    "downloadButtonAriaLabel": "Pobierz plik CV",
+    "backButton": "Wróć do strony głównej",
+    "polish": {
+      "title": "Polish",
+      "description": "Wersja polska (PDF)"
+    },
+    "english": {
+      "title": "English",
+      "description": "English version (PDF)"
+    }
   }
 }

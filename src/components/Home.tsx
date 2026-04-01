@@ -136,13 +136,13 @@ const Home: React.FC = () => {
               card.show !== false && (
                 <Card
                   key={index}
-                  href={card.title === "👷 Section under construction 🚧🚧" ? undefined : card.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') + '.html'}
+                  href={/under construction/i.test(card.title) ? undefined : card.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') + '.html'}
                   title={card.title}
                   description={card.description}
                   tags={card.tags}
                   ariaLabel={card.ariaLabel}
-                  className={card.title === "👷 Section under construction 🚧🚧" ? "work-in-progress-card" : ""}
-                  style={card.title === "👷 Section under construction 🚧🚧" ? {border: '2px dashed var(--border)'} : undefined}
+                  className={/under construction/i.test(card.title) ? "work-in-progress-card" : ""}
+                  style={/under construction/i.test(card.title) ? {border: '2px dashed var(--border)'} : undefined}
                 />
               )
             ))}

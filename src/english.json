@@ -1,8 +1,8 @@
-{
+﻿{
   "hero": {
     "title": {
-        "hi": "Hi!",
-        "description": "I create web projects and experiments."
+      "hi": "Hi!",
+      "description": "I create web projects and experiments."
     },
     "subtitle": "On this site, you'll find my works - from aesthetic interfaces to small, inventive mini-projects. Click a card to see details.",
     "socialLabel": "Social links"
@@ -46,7 +46,7 @@
       },
       {
         "show": true,
-        "title": "👷 Section under construction 🚧🚧",
+        "title": "Section under construction",
         "description": "The projects section is currently under construction. Check back soon!",
         "tags": ["Coming soon"],
         "ariaLabel": "Section under construction"
@@ -60,5 +60,24 @@
     "githubButton": "GitHub",
     "emailLabel": "Send email message",
     "githubLabel": "View GitHub profile"
+  },
+  "cv": {
+    "pageTitle": "CV",
+    "heading": "My resume",
+    "subtitle": "You can find both resume language versions here. Open or download each file.",
+    "listAriaLabel": "Available resume versions",
+    "openButton": "Open",
+    "downloadButton": "Download",
+    "openButtonAriaLabel": "Open resume file",
+    "downloadButtonAriaLabel": "Download resume file",
+    "backButton": "Back to home",
+    "polish": {
+      "title": "Polish",
+      "description": "Polish version (PDF)"
+    },
+    "english": {
+      "title": "English",
+      "description": "English version (PDF)"
+    }
   }
 }
