@@ -37,6 +37,17 @@ const CvPage: React.FC = () => {
     setLanguage(otherLang.code);
   };
 
+  const openCv = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleCardKeyDown = (event: React.KeyboardEvent<HTMLElement>, url: string) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openCv(url);
+    }
+  };
+
   return (
     <>
       <HeaderBar
@@ -53,28 +64,54 @@ const CvPage: React.FC = () => {
         </section>
 
         <section className="grid cv-grid" aria-label={content.listAriaLabel}>
-          <article className="card cv-card">
+          <article
+            className="card cv-card cv-card-clickable"
+            role="link"
+            tabIndex={0}
+            aria-label={`${content.polish.title} - ${content.openButtonAriaLabel}`}
+            onClick={() => openCv(CV_PATHS.pl)}
+            onKeyDown={(event) => handleCardKeyDown(event, CV_PATHS.pl)}
+          >
             <h2>{content.polish.title}</h2>
             <p>{content.polish.description}</p>
             <div className="actions cv-actions">
-              <a className="btn" href={CV_PATHS.pl} target="_blank" rel="noopener noreferrer" aria-label={content.openButtonAriaLabel}>
-                {content.openButton}
-              </a>
-              <a className="btn" href={CV_PATHS.pl} download aria-label={content.downloadButtonAriaLabel}>
-                {content.downloadButton}
+              <a
+                className="icon-btn cv-download-btn"
+                href={CV_PATHS.pl}
+                download
+                aria-label={content.downloadButtonAriaLabel}
+                title={content.downloadButton}
+                onClick={(event) => event.stopPropagation()}
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+                  <path fill="currentColor" d="M5 20h14v-2H5v2zm7-18v10.17l3.59-3.58L17 10l-5 5-5-5 1.41-1.41L11 12.17V2h1z" />
+                </svg>
               </a>
             </div>
           </article>
 
-          <article className="card cv-card">
+          <article
+            className="card cv-card cv-card-clickable"
+            role="link"
+            tabIndex={0}
+            aria-label={`${content.english.title} - ${content.openButtonAriaLabel}`}
+            onClick={() => openCv(CV_PATHS.en)}
+            onKeyDown={(event) => handleCardKeyDown(event, CV_PATHS.en)}
+          >
             <h2>{content.english.title}</h2>
             <p>{content.english.description}</p>
             <div className="actions cv-actions">
-              <a className="btn" href={CV_PATHS.en} target="_blank" rel="noopener noreferrer" aria-label={content.openButtonAriaLabel}>
-                {content.openButton}
-              </a>
-              <a className="btn" href={CV_PATHS.en} download aria-label={content.downloadButtonAriaLabel}>
-                {content.downloadButton}
+              <a
+                className="icon-btn cv-download-btn"
+                href={CV_PATHS.en}
+                download
+                aria-label={content.downloadButtonAriaLabel}
+                title={content.downloadButton}
+                onClick={(event) => event.stopPropagation()}
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+                  <path fill="currentColor" d="M5 20h14v-2H5v2zm7-18v10.17l3.59-3.58L17 10l-5 5-5-5 1.41-1.41L11 12.17V2h1z" />
+                </svg>
               </a>
             </div>
           </article>
