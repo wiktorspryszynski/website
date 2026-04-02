@@ -111,7 +111,7 @@ class LightsAnimation {
   }
 
   private constrainOrbPosition(o: { x: number; y: number; vx: number; vy: number; radius: number }) {
-    const offscreenAllowance = 120;
+    const offscreenAllowance = 150;
     const edgePaddingX = Math.min(o.radius * 0.4, this.width * 0.35);
     const edgePaddingY = Math.min(o.radius * 0.4, this.height * 0.35);
     const minX = edgePaddingX - offscreenAllowance;
