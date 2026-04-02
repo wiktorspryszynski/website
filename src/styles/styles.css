@@ -590,7 +590,9 @@ nav a:focus-visible {
 .card-stack {
 	display: flex;
 	gap: 8px;
+	row-gap: 10px;
 	flex-wrap: wrap;
+	margin: 8px 0 10px;
 }
 
 .card-image {
