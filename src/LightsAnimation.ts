@@ -110,6 +110,31 @@ class LightsAnimation {
     return a + (b - a) * t;
   }
 
+  private constrainOrbPosition(o: { x: number; y: number; vx: number; vy: number; radius: number }) {
+    const edgePaddingX = Math.min(o.radius * 0.4, this.width * 0.35);
+    const edgePaddingY = Math.min(o.radius * 0.4, this.height * 0.35);
+    const minX = edgePaddingX;
+    const maxX = this.width - edgePaddingX;
+    const minY = edgePaddingY;
+    const maxY = this.height - edgePaddingY;
+
+    if (o.x < minX) {
+      o.x = minX;
+      o.vx = Math.abs(o.vx) * 0.8;
+    } else if (o.x > maxX) {
+      o.x = maxX;
+      o.vx = -Math.abs(o.vx) * 0.8;
+    }
+
+    if (o.y < minY) {
+      o.y = minY;
+      o.vy = Math.abs(o.vy) * 0.8;
+    } else if (o.y > maxY) {
+      o.y = maxY;
+      o.vy = -Math.abs(o.vy) * 0.8;
+    }
+  }
+
   private draw() {
     if (!this.ctx) return;
     this.ctx.clearRect(0, 0, this.width, this.height);
@@ -151,6 +176,8 @@ class LightsAnimation {
         o.x += o.vx;
         o.y += o.vy;
       }
+
+      this.constrainOrbPosition(o);
     }
   }
 
