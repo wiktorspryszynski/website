@@ -9,6 +9,7 @@
 	--card: #292a2d;
 	--card-hover: #222941;
 	--border: #2a3249;
+	--border-dimmed: color-mix(in oklab, var(--border) 60%, transparent);
 	--focus: #ffd166;
 }
 
@@ -250,37 +251,124 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 .grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-	gap: 16px; align-items: stretch;
+	gap: 16px; align-items: start;
 }
     
 .card {
-	display: block; position: relative; overflow: hidden; border-radius: 16px; padding: 18px;
+	display: flex; flex-direction: column; gap: 12px; position: relative; overflow: hidden; border-radius: 16px; padding: 18px;
 	text-decoration: none; color: var(--text);
-	background: color-mix(in oklab, var(--card), transparent 90%);
-	border: 1px solid var(--border);
-	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-	backdrop-filter: blur(15px);
-	transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+	background:
+    linear-gradient(
+      145deg,
+      color-mix(in oklab, #ffffff 12%, transparent) 0%,
+      color-mix(in oklab, var(--bg-elev) 48%, transparent) 38%,
+      color-mix(in oklab, var(--card) 68%, transparent) 100%
+    );
+	backdrop-filter: blur(24px) saturate(1.25);
+	transition: transform .2s ease, background .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 
 .card:hover, .card:focus-visible {
+}
+
+.showcaseable-project-card {
+	box-shadow:
+    inset 0 1px 0 color-mix(in oklab, #ffffff 38%, transparent),
+    0 10px 30px rgba(0, 0, 0, 0.33);
+	border: 1px solid color-mix(in oklab, #ffffff 22%, var(--border));
+}
+
+.showcaseable-project-card:hover, .showcaseable-project-card:focus-visible {
+	background:
+    linear-gradient(
+      145deg,
+      color-mix(in oklab, #ffffff 14%, transparent) 0%,
+      color-mix(in oklab, var(--card-hover) 56%, transparent) 40%,
+      color-mix(in oklab, var(--card-hover) 72%, transparent) 100%
+    );
+	border-color: color-mix(in oklab, #ffffff 32%, var(--border));
+	box-shadow:
+    inset 0 1px 0 color-mix(in oklab, #ffffff 45%, transparent),
+    0 14px 34px rgba(0, 0, 0, 0.4);
 	transform: translateY(-2px);
-	background: color-mix(in oklab, var(--card-hover), transparent 70%);
 	outline: 2px solid color-mix(in oklab, var(--accent) 40%, var(--focus));
-	box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 
-.work-in-progress-card:hover {
+.under-construction-card {
+	border: 2px dashed color-mix(in oklab, var(--border) 75%, var(--muted));
+}
+
+.under-construction-card:hover,
+.under-construction-card:focus-visible {
 	transform: none;
-	background: color-mix(in oklab, var(--card), transparent 90%);
+	background:
+    linear-gradient(
+      145deg,
+      color-mix(in oklab, #ffffff 12%, transparent) 0%,
+      color-mix(in oklab, var(--bg-elev) 48%, transparent) 38%,
+      color-mix(in oklab, var(--card) 68%, transparent) 100%
+    );
 	outline: none;
-	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+	border-color: color-mix(in oklab, var(--border) 75%, var(--muted));
 }
 
-.card h3 { margin: 4px 0 6px; font-size: 18px; }
-.card p { margin: 0; color: var(--muted); }
-.tags { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
-.tag { font-size: 12px; color: var(--muted); border: 1px dashed var(--border); padding: 4px 8px; border-radius: 999px; }
+.project-wip-card {}
+
+.project-wip-card:hover, .project-wip-card:focus-visible {}
+
+.tag {
+	font-size: 12px;
+	color: var(--muted);
+	border: 1px solid color-mix(in oklab, var(--accent) 15%, var(--border-dimmed));
+	padding: 4px 10px;
+	border-radius: 999px;
+}
+
+.card-title { margin: 0; font-size: 20px; line-height: 1.3; }
+.card-description { margin: 0; color: var(--muted); min-height: 52px; }
+.card-stack { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--bg-elev) 45%, transparent);
+}
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+}
+.card-btn {
+  flex: 1;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--bg-elev) 55%, transparent);
+  color: var(--text);
+  text-decoration: none;
+  padding: 10px 12px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+.card-btn:hover, .card-btn:focus-visible {
+  background: var(--card-hover);
+  border-color: color-mix(in oklab, var(--accent) 45%, var(--border));
+  transform: translateY(-1px);
+  outline: none;
+}
+.card-btn-disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.under-construction-card .card-image,
+.under-construction-card .card-actions {
+	display: none;
+}
 
 /* Tippy tooltip custom theme */
 .tippy-box[data-theme~='custom'] {

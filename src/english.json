@@ -18,11 +18,14 @@
     "title": "Projects",
     "cards": [
       {
-        "show": false,
+        "show": true,
         "title": "Glassmorphism UI",
         "description": "Glass panels, soft light, and modern aesthetics.",
         "tags": ["UI", "CSS"],
-        "ariaLabel": "Glassmorphism UI project"
+        "ariaLabel": "Glassmorphism UI project",
+        "image": "/project-preview.svg",
+        "github": "https://github.com/wiktorspryszynski",
+        "demo": "/flashcards"
       },
       {
         "show": false,
@@ -43,6 +46,7 @@
         "title": "Browser mini-game",
         "description": "A short logic game with pure DOM and responsive controls.",
         "tags": ["Game", "Canvas"],
+        "worksInProgress": true,
         "ariaLabel": "Project in preparation"
       },
       {
@@ -50,6 +54,7 @@
         "title": "👷 Section under construction 🚧🚧",
         "description": "The projects section is currently under construction. Check back soon!",
         "tags": ["Coming soon"],
+        "underConstruction": true,
         "ariaLabel": "Section under construction"
       }
     ]

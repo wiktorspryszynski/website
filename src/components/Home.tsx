@@ -7,6 +7,21 @@ import contentPl from '../content.json';
 import contentEn from '../english.json';
 import LightsAnimation from '../LightsAnimation';
 
+type ProjectCard = {
+  show?: boolean;
+  title: string;
+  description: string;
+  tags: string[];
+  ariaLabel?: string;
+  image?: string;
+  github?: string;
+  demo?: string;
+  worksInProgress?: boolean;
+  workInProgress?: boolean;
+  underConstruction?: boolean;
+  underConstrucion?: boolean;
+};
+
 const Home: React.FC = () => {
   const languages = [
     { code: 'pl' as const, name: 'Polski', display: 'PL' },
@@ -42,8 +57,8 @@ const Home: React.FC = () => {
         <meta name="theme-color" content="#0f1115" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <title>Wiktor SpryszyĹ„ski - Portfolio</title>
-        <meta name="description" content="Portfolio website of Wiktor SpryszyĹ„ski, software developer." />
+        <title>Wiktor Spryszyński - Portfolio</title>
+        <meta name="description" content="Portfolio website of Wiktor Spryszyński, software developer." />
       </Helmet>
       <div id="lights" aria-hidden="true"></div>
       <HeaderBar
@@ -139,20 +154,23 @@ const Home: React.FC = () => {
         <section aria-labelledby="projects-title" id="projekty">
           <h2 className="section-title" id="projects-title">{content.projects.title}</h2>
           <div className="grid">
-            {content.projects.cards.map((card, index) => (
-              card.show !== false && (
+            {(content.projects.cards as ProjectCard[]).map((card, index) => {
+              if (card.show === false) return null;
+              return (
                 <Card
                   key={index}
-                  href={/under construction/i.test(card.title) ? undefined : card.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') + '.html'}
                   title={card.title}
                   description={card.description}
                   tags={card.tags}
+                  imageUrl={card.image}
+                  githubUrl={card.github}
+                  demoUrl={card.demo}
                   ariaLabel={card.ariaLabel}
-                  className={/under construction/i.test(card.title) ? "work-in-progress-card" : ""}
-                  style={/under construction/i.test(card.title) ? {border: '2px dashed var(--border)'} : undefined}
+                  underConstruction={card.underConstruction}
+                  worksInProgress={card.worksInProgress}
                 />
-              )
-            ))}
+              );
+            })}
           </div>
         </section>
 
