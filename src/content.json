@@ -19,32 +19,28 @@
     "wip": "W trakcie",
     "cards": [
       {
-        "show": true,
+        "show": false,
         "title": "Glassmorphism UI",
         "description": "Szklane panele, miękkie światło i nowoczesna estetyka.",
         "tags": ["UI", "CSS"],
-        "ariaLabel": "Projekt Glassmorphism UI",
-        "image": "/project-preview.svg",
-        "github": "https://github.com/wiktorspryszynski",
-        "demo": "/flashcards"
+        "ariaLabel": "Projekt Glassmorphism UI"
       },
       {
-        "show": true,
+        "show": false,
         "title": "Walentynkowy projekt",
         "description": "Romantyczny motyw i subtelne animacje - lekki, przyjemny eksperyment.",
         "tags": ["Animacje", "HTML"],
-        "ariaLabel": "Projekt Walentynkowy",
-        "github": "https://github.com/wiktorspryszynski"
+        "ariaLabel": "Projekt Walentynkowy"
       },
       {
-        "show": true,
+        "show": false,
         "title": "Portfolio API",
         "description": "Integracja z prostym API do pobierania projektów dynamicznie.",
         "tags": ["JavaScript", "API"],
         "ariaLabel": "Projekt w przygotowaniu"
       },
       {
-        "show": true,
+        "show": false,
         "title": "Mini-gra przeglądarkowa",
         "description": "Krótka gra logiczna z czystym DOM i responsywnym sterowaniem.",
         "tags": ["Game", "Canvas"],

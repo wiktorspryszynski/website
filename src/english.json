@@ -19,31 +19,28 @@
     "wip": "Work in progress",
     "cards": [
       {
-        "show": true,
+        "show": false,
         "title": "Glassmorphism UI",
         "description": "Glass panels, soft light, and modern aesthetics.",
         "tags": ["UI", "CSS"],
-        "ariaLabel": "Glassmorphism UI project",
-        "image": "/project-preview.svg",
-        "github": "https://github.com/wiktorspryszynski",
-        "demo": "/flashcards"
+        "ariaLabel": "Glassmorphism UI project"
       },
       {
-        "show": true,
+        "show": false,
         "title": "Valentine's project",
         "description": "Romantic theme and subtle animations - a light, pleasant experiment.",
         "tags": ["Animations", "HTML"],
         "ariaLabel": "Valentine's project"
       },
       {
-        "show": true,
+        "show": false,
         "title": "Portfolio API",
         "description": "Integration with a simple API for dynamically fetching projects.",
         "tags": ["JavaScript", "API"],
         "ariaLabel": "Project in preparation"
       },
       {
-        "show": true,
+        "show": false,
         "title": "Browser mini-game",
         "description": "A short logic game with pure DOM and responsive controls.",
         "tags": ["Game", "Canvas"],
