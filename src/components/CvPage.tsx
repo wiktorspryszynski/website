@@ -93,7 +93,7 @@ const CvPage: React.FC = () => {
               <a
                 className="icon-btn cv-download-btn"
                 href={CV_PATHS.pl}
-                download
+                download="_CV_Wiktor_Spryszynski.pdf"
                 aria-label={content.downloadButtonAriaLabel}
                 title={content.downloadButton}
                 onClick={(event) => event.stopPropagation()}
@@ -132,7 +132,7 @@ const CvPage: React.FC = () => {
               <a
                 className="icon-btn cv-download-btn"
                 href={CV_PATHS.en}
-                download
+                download="_CV_Wiktor_Spryszynski_ENG.pdf"
                 aria-label={content.downloadButtonAriaLabel}
                 title={content.downloadButton}
                 onClick={(event) => event.stopPropagation()}
