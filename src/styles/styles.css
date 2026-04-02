@@ -48,7 +48,7 @@ body.flashcards-page::before {
 }
 
 .name-and-surname {
-	font-weight: 700;
+	font-weight: 500;
 	font-size: 24px;
 }
 
@@ -57,7 +57,7 @@ body.flashcards-page::before {
 	--home-light-y: 50%;
 	position: relative;
 	display: inline-block;
-	padding: 8px 14px;
+	padding: 8px 0;
 	border-radius: 8px;
 	overflow: visible;
 	cursor: pointer;
@@ -138,13 +138,13 @@ header {
 	z-index: 10;
 }
 .brand {
-	display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: 0.2px;
+	display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: 0.2px;
 }
 .brand .logo {
 	display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px;
 	background: linear-gradient(135deg, var(--accent), var(--accent-2));
 	box-shadow: 0 8px 24px color-mix(in oklab, var(--accent) 30%, black);
-	color: #0e0f14; font-weight: 800;
+	color: #0e0f14; font-weight: 700;
 }
 nav { display: flex; gap: 16px; align-items: center; }
 nav a { color: var(--muted); text-decoration: none; padding: 10px 12px; border-radius: 8px; }
@@ -238,6 +238,7 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 .hero h1 {
 	font-size: clamp(28px, 5vw, 48px);
 	line-height: 1.1;
+	font-weight: 400;
 	background: linear-gradient(135deg, var(--text), color-mix(in oklab, var(--accent-2) 30%, var(--text)));
 	-webkit-background-clip: text; background-clip: text; color: #ddd;
 }
@@ -256,7 +257,13 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 .btn:hover, .btn:focus-visible { background: var(--card-hover); outline: none; }
 
 /* Grid */
-.section-title { margin: 28px 0 10px; font-size: 18px; color: var(--muted); }
+.section-title {
+	margin: 10px 0;
+	font-size: 18px;
+	font-weight: 500;
+	color: var(--muted);
+}
+
 .grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -264,7 +271,13 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 }
     
 .card {
-	display: flex; flex-direction: column; gap: 12px; position: relative; overflow: hidden; border-radius: 16px; padding: 18px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 16px;
+	padding: 18px;
 	text-decoration: none; color: var(--text);
 	background:
     linear-gradient(
@@ -341,7 +354,7 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 	box-shadow: 0 0 0 1px color-mix(in oklab, var(--accent) 20%, transparent), 0 6px 14px rgba(0, 0, 0, 0.25);
 }
 
-.card-title { margin: 0; font-size: 20px; line-height: 1.3; }
+.card-title { margin: 0; font-size: 20px; line-height: 1.3; font-weight: 600; }
 .card-description { margin: 0; color: var(--muted); min-height: 52px; }
 .card-stack { display: flex; gap: 8px; flex-wrap: wrap; }
 
@@ -367,7 +380,7 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
   color: var(--text);
   text-decoration: none;
   padding: 10px 12px;
-  font-weight: 600;
+  font-weight: 500;
   transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 .card-btn:hover, .card-btn:focus-visible {
@@ -393,7 +406,7 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
   color: #0f1115;
   border-radius: 6px;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 400;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -597,7 +610,7 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
   margin-top: 0;
 	font-size: 20px;
 	line-height: 1.5;
-	font-weight: 600;
+	font-weight: 500;
 	color: var(--muted);
 	padding-right: 48px;
 }
@@ -669,6 +682,7 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 
 .cv-header h1 {
   margin: 0;
+  font-weight: 600;
 }
 
 .cv-header p {
@@ -676,12 +690,11 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
   color: var(--muted);
 }
 
-.cv-grid {
-  margin-top: 20px;
-}
-
 .cv-card h2 {
   margin: 0;
+  font-weight: 400;
+	white-space: nowrap;
+	word-break: keep-all;
 }
 
 .cv-card {
@@ -690,17 +703,22 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
   border-radius: 16px;
   padding: 18px;
   border: 1px solid color-mix(in oklab, #ffffff 22%, var(--border));
-  background:
+  /* glass */
+  /* background:
     linear-gradient(
       145deg,
       color-mix(in oklab, #ffffff 12%, transparent) 0%,
       color-mix(in oklab, var(--bg-elev) 48%, transparent) 38%,
       color-mix(in oklab, var(--card) 68%, transparent) 100%
-    );
-  box-shadow:
+    ); */
+	/* opaque */
+	/* background: var(--card); */
+	/* blurred */
+	  background: color-mix(in oklab, var(--border-dimmed) 95%, transparent);
+  /* box-shadow:
     inset 0 1px 0 color-mix(in oklab, #ffffff 38%, transparent),
-    0 10px 30px rgba(0, 0, 0, 0.33);
-  transition: transform .2s ease, background .2s ease, box-shadow .2s ease, border-color .2s ease;
+    0 10px 30px rgba(0, 0, 0, 0.33); */
+  transition: transform .4s ease, background .4s ease, box-shadow .4s ease, border-color .4s ease;
   display: flex;
   align-items: center;
   justify-content: space-between;
