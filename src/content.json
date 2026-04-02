@@ -49,7 +49,7 @@
       },
       {
         "show": true,
-        "title": "👷 Section under construction 🚧🚧",
+        "title": "👷 Sekcja w trakcie budowy 🚧🚧",
         "description": "Sekcja projektów jest obecnie w trakcie budowy. Wróć wkrótce!",
         "tags": ["Wkrótce"],
         "underConstruction": true,
