@@ -90,15 +90,15 @@ const Home: React.FC = () => {
               rel="noopener"
               ariaLabel={content.social.linkedin}
             >
-              <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                <svg viewBox="0 0 28 28" role="img" aria-hidden="true">
                 <defs>
                   <linearGradient id="grad-li" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="var(--accent)" />
                     <stop offset="100%" stopColor="var(--green)" />
                   </linearGradient>
                 </defs>
-                <rect x="2" y="2" width="20" height="20" rx="4" fill="url(#grad-li)" />
-                <text x="12" y="15" textAnchor="middle" fontFamily="Segoe UI, Arial, sans-serif" fontSize="11" fontWeight="700" fill="#0f1115">in</text>
+                <rect x="1" y="1" width="26" height="26" rx="4" fill="url(#grad-li)" />
+                <text x="15" y="24" textAnchor="middle" fontFamily="Segoe UI, Arial, sans-serif" fontSize="20" fontWeight="700" fill="#0f1115">in</text>
               </svg>
             </SocialButton>
             <SocialButton
@@ -124,14 +124,14 @@ const Home: React.FC = () => {
               ariaLabel={content.social.email}
               copyTooltip={content.social.copyTooltip}
             >
-              <svg viewBox="0 0 24 28" role="img" aria-hidden="true">
+              <svg className="social-icon-at" viewBox="0 0 24 24" role="img" aria-hidden="true">
                 <defs>
                   <linearGradient id="grad-at" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="var(--accent)" />
                     <stop offset="100%" stopColor="var(--green)" />
                   </linearGradient>
                 </defs>
-                <text x="12" y="22" textAnchor="middle" fontFamily="Segoe UI, Arial, sans-serif" fontSize="24" fontWeight="500" fill="url(#grad-at)">@</text>
+                <text className="social-icon-at-text" x="12" y="10" textAnchor="middle" dy="0.36em" fontFamily="Segoe UI, Arial, sans-serif" fontSize="24" fontWeight="500" fill="url(#grad-at)">@</text>
               </svg>
             </SocialButton>
             <SocialButton
@@ -139,14 +139,14 @@ const Home: React.FC = () => {
               href={`/cv?lang=${language}`}
               ariaLabel={content.social.cv}
             >
-              <svg viewBox="0 0 28 28" width="28" height="28" role="img" aria-hidden="true">
+                <svg className="social-icon-cv" viewBox="0 0 28 24" role="img" aria-hidden="true">
                 <defs>
                   <linearGradient id="grad-cv" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="var(--accent)" />
                     <stop offset="100%" stopColor="var(--green)" />
                   </linearGradient>
                 </defs>
-                <text x="14" y="22" textAnchor="middle" fontFamily="'Arial Narrow', 'Roboto Condensed', 'Segoe UI', Arial, sans-serif" fontSize="22" fontWeight="700" fill="url(#grad-cv)">CV</text>
+                <text className="social-icon-cv-text" x="50%" y="50%" textAnchor="middle" dy="0.35em" fontFamily="'Arial Narrow', 'Roboto Condensed', 'Segoe UI', Arial, sans-serif" fontSize="20" fontWeight="700" fill="url(#grad-cv)">CV</text>
               </svg>
             </SocialButton>
           </div>
