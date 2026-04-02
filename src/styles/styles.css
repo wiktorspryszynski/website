@@ -100,22 +100,18 @@ body.flashcards-page::before {
 @keyframes homeLinkTextHover {
 	0% {
 		text-shadow: 0 0 0 rgba(0, 212, 255, 0);
-		transform: translateY(0);
 	}
 	100% {
 		text-shadow: 0 0 10px color-mix(in oklab, var(--accent-2) 34%, transparent);
-		transform: translateY(-0.5px);
 	}
 }
 
 @keyframes homeLinkTextRest {
 	0% {
 		text-shadow: 0 0 10px color-mix(in oklab, var(--accent-2) 34%, transparent);
-		transform: translateY(-0.5px);
 	}
 	100% {
 		text-shadow: 0 0 0 rgba(0, 212, 255, 0);
-		transform: translateY(0);
 	}
 }
 
