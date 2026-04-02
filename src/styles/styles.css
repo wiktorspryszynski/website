@@ -14,13 +14,22 @@
 }
 
 /* Prefer system fonts; snappy UI */
-html { box-sizing: border-box; height: 100%; background: var(--bg); }
-*, *::before, *::after { box-sizing: inherit; }
+html {
+	box-sizing: border-box;
+	height: 100%;
+	background: var(--bg);
+}
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
 body {
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
-		Arial, sans-serif;
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+		Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial,
+		sans-serif;
 	color: var(--text);
 	line-height: 1.6;
 	-webkit-user-select: none; /* Safari */
@@ -32,10 +41,14 @@ body {
 }
 
 body::before {
-	content: '';
+	content: "";
 	position: fixed;
 	inset: 0;
-	background: radial-gradient(1200px 600px at 10% 10%, #121625 0%, var(--bg) 60%);
+	background: radial-gradient(
+		1200px 600px at 10% 10%,
+		#121625 0%,
+		var(--bg) 60%
+	);
 	z-index: -1;
 }
 
@@ -62,12 +75,15 @@ body.flashcards-page::before {
 	overflow: visible;
 	cursor: pointer;
 	isolation: isolate;
-	transition: color 0.25s ease, text-shadow 0.25s ease, transform 0.25s ease;
+	transition:
+		color 0.25s ease,
+		text-shadow 0.25s ease,
+		transform 0.25s ease;
 	animation: homeLinkTextRest 0.25s ease forwards;
 }
 
 #home-link::after {
-	content: '';
+	content: "";
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -81,10 +97,13 @@ body.flashcards-page::before {
 	);
 	filter: blur(16px);
 	opacity: 0;
-	transform: translate3d(var(--home-light-x), var(--home-light-y), 0) translate(-50%, -50%);
+	transform: translate3d(var(--home-light-x), var(--home-light-y), 0)
+		translate(-50%, -50%);
 	pointer-events: none;
 	z-index: -1;
-	transition: transform 120ms ease-out, opacity 220ms ease;
+	transition:
+		transform 120ms ease-out,
+		opacity 220ms ease;
 }
 
 #home-link:hover::after,
@@ -102,13 +121,15 @@ body.flashcards-page::before {
 		text-shadow: 0 0 0 rgba(0, 212, 255, 0);
 	}
 	100% {
-		text-shadow: 0 0 10px color-mix(in oklab, var(--accent-2) 34%, transparent);
+		text-shadow: 0 0 10px
+			color-mix(in oklab, var(--accent-2) 34%, transparent);
 	}
 }
 
 @keyframes homeLinkTextRest {
 	0% {
-		text-shadow: 0 0 10px color-mix(in oklab, var(--accent-2) 34%, transparent);
+		text-shadow: 0 0 10px
+			color-mix(in oklab, var(--accent-2) 34%, transparent);
 	}
 	100% {
 		text-shadow: 0 0 0 rgba(0, 212, 255, 0);
@@ -116,9 +137,22 @@ body.flashcards-page::before {
 }
 
 /* Lights layer under content */
-#lights { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
-#lights canvas { width: 100%; height: 100%; display: block; }
-header, main { position: relative; z-index: 1; }
+#lights {
+	position: fixed;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+}
+#lights canvas {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+header,
+main {
+	position: relative;
+	z-index: 1;
+}
 main {
 	margin-top: 24px;
 	display: flex;
@@ -126,7 +160,11 @@ main {
 	flex-direction: column;
 }
 
-.container { max-width: 1080px; margin: 0 auto; padding: 24px; }
+.container {
+	max-width: 1080px;
+	margin: 0 auto;
+	padding: 24px;
+}
 
 /* Header */
 header {
@@ -138,75 +176,204 @@ header {
 	z-index: 10;
 }
 .brand {
-	display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: 0.2px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-weight: 600;
+	letter-spacing: 0.2px;
 }
 .brand .logo {
-	display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px;
+	display: grid;
+	place-items: center;
+	width: 36px;
+	height: 36px;
+	border-radius: 10px;
 	background: linear-gradient(135deg, var(--accent), var(--accent-2));
 	box-shadow: 0 8px 24px color-mix(in oklab, var(--accent) 30%, black);
-	color: #0e0f14; font-weight: 700;
+	color: #0e0f14;
+	font-weight: 700;
 }
-nav { display: flex; gap: 16px; align-items: center; }
-nav a { color: var(--muted); text-decoration: none; padding: 10px 12px; border-radius: 8px; }
-nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in oklab, var(--bg-elev) 60%, transparent); outline: none; }
+nav {
+	display: flex;
+	gap: 16px;
+	align-items: center;
+}
+nav a {
+	color: var(--muted);
+	text-decoration: none;
+	padding: 10px 12px;
+	border-radius: 8px;
+}
+nav a:hover,
+nav a:focus-visible {
+	color: var(--text);
+	background: color-mix(in oklab, var(--bg-elev) 60%, transparent);
+	outline: none;
+}
 .language-switch {
-  background: none;
-  border: 1px solid var(--border);
-  color: var(--muted);
-  padding: 4px 12px !important;
-  min-width: 50px;
-  border-radius: 8px;
-  cursor: pointer;
-  font: inherit;
-  transition: all 0.2s ease;
+	background: none;
+	border: 1px solid var(--border);
+	color: var(--muted);
+	padding: 4px 12px !important;
+	min-width: 50px;
+	border-radius: 8px;
+	cursor: pointer;
+	font: inherit;
+	transition: all 0.2s ease;
 }
-.language-switch:hover, .language-switch:focus-visible {
-  color: var(--text);
-  background: color-mix(in oklab, var(--bg-elev) 60%, transparent);
-  outline: none;
+.language-switch:hover,
+.language-switch:focus-visible {
+	color: var(--text);
+	background: color-mix(in oklab, var(--bg-elev) 60%, transparent);
+	outline: none;
 }
 
 /* Social icons */
-.social { position: relative; display: flex; gap: 12px; align-items: center; }
-.social .social-btn { display: inline-flex; width: 60px; height: 60px; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid var(--border); background: color-mix(in oklab, var(--bg-elev) 40%, transparent); }
-.social .social-btn:hover, .social .social-btn:focus-visible, .social .social-btn:hover, .social .social-btn:focus-visible { background: var(--card-hover); outline: none; }
-.social .social-btn { cursor: pointer; color: var(--text); font: inherit; padding: 0; }
-.social svg { width: 28px; height: 28px; filter: grayscale(100%) contrast(1.05) brightness(1.1); transition: filter .2s ease, transform .2s ease; }
-.social .social-btn:hover svg, .social .social-btn:focus-visible svg, .social .social-btn:hover svg, .social .social-btn:focus-visible svg { filter: none; transform: translateY(-1px); }
-.social .social-icon-at { width: 30px; height: 30px; }
-.social .social-icon-cv { width: 30px; height: 30px; }
-.social-bar { margin-top: 16px; }
+.social {
+	position: relative;
+	display: flex;
+	gap: 12px;
+	align-items: center;
+}
+.social .social-btn {
+	display: inline-flex;
+	width: 60px;
+	height: 60px;
+	align-items: center;
+	justify-content: center;
+	border-radius: 12px;
+	border: 1px solid var(--border);
+	background: color-mix(in oklab, var(--bg-elev) 40%, transparent);
+}
+.social .social-btn:hover,
+.social .social-btn:focus-visible,
+.social .social-btn:hover,
+.social .social-btn:focus-visible {
+	background: var(--card-hover);
+	outline: none;
+}
+.social .social-btn {
+	cursor: pointer;
+	color: var(--text);
+	font: inherit;
+	padding: 0;
+}
+.social svg {
+	width: 28px;
+	height: 28px;
+	filter: grayscale(100%) contrast(1.05) brightness(1.1);
+	transition:
+		filter 0.2s ease,
+		transform 0.2s ease;
+}
+.social .social-btn:hover svg,
+.social .social-btn:focus-visible svg,
+.social .social-btn:hover svg,
+.social .social-btn:focus-visible svg {
+	filter: none;
+	transform: translateY(-1px);
+}
+.social .social-icon-at {
+	width: 30px;
+	height: 30px;
+}
+.social .social-icon-cv {
+	width: 30px;
+	height: 30px;
+}
+.social-bar {
+	margin-top: 16px;
+}
 
 @media (max-width: 720px) {
-	.social .social-icon-at { width: 26px; height: 26px; }
-	.social .social-icon-at-text { font-size: 19px; }
-	.social .social-icon-cv { width: 30px; height: 30px; }
-	.social .social-icon-cv-text { font-size: 20px; }
+	.social .social-icon-at {
+		width: 26px;
+		height: 26px;
+	}
+	.social .social-icon-at-text {
+		font-size: 19px;
+	}
+	.social .social-icon-cv {
+		width: 30px;
+		height: 30px;
+	}
+	.social .social-icon-cv-text {
+		font-size: 20px;
+	}
 }
 
 /* Email popover */
-.email-popover { position: absolute; left: 0; display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border); background: color-mix(in oklab, var(--bg-elev) 92%, transparent); box-shadow: 0 10px 24px rgba(0,0,0,0.35); opacity: 1; transform: translateY(0) scale(1); transform-origin: left top; transition: opacity .18s ease, transform .18s ease; will-change: transform, opacity; pointer-events: auto; }
-.email-popover[hidden] { opacity: 0; transform: translateY(-8px) scale(.96); visibility: hidden; pointer-events: none; }
-.email-text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 14px; color: var(--text); }
+.email-popover {
+	position: absolute;
+	left: 0;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 10px 12px;
+	border-radius: 12px;
+	border: 1px solid var(--border);
+	background: color-mix(in oklab, var(--bg-elev) 92%, transparent);
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+	opacity: 1;
+	transform: translateY(0) scale(1);
+	transform-origin: left top;
+	transition:
+		opacity 0.18s ease,
+		transform 0.18s ease;
+	will-change: transform, opacity;
+	pointer-events: auto;
+}
+.email-popover[hidden] {
+	opacity: 0;
+	transform: translateY(-8px) scale(0.96);
+	visibility: hidden;
+	pointer-events: none;
+}
+.email-text {
+	font-family:
+		ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+		"Liberation Mono", "Courier New", monospace;
+	font-size: 14px;
+	color: var(--text);
+}
 /* Allow selecting email even with global user-select none */
-.email-text { user-select: text; -webkit-user-select: text; }
-.icon-btn { display: inline-flex; width: 36px; height: 36px; align-items: center; justify-content: center; border-radius: 8px; border: 1px solid var(--border); background: color-mix(in oklab, var(--bg-elev) 40%, transparent); color: var(--text); cursor: pointer; text-decoration: none; }
-.icon-btn:hover, .icon-btn:focus-visible { background: var(--card-hover); outline: none; }
-.icon-btn.copied { 
-  animation: fadeBack 2s ease forwards; 
+.email-text {
+	user-select: text;
+	-webkit-user-select: text;
+}
+.icon-btn {
+	display: inline-flex;
+	width: 36px;
+	height: 36px;
+	align-items: center;
+	justify-content: center;
+	border-radius: 8px;
+	border: 1px solid var(--border);
+	background: color-mix(in oklab, var(--bg-elev) 40%, transparent);
+	color: var(--text);
+	cursor: pointer;
+	text-decoration: none;
+}
+.icon-btn:hover,
+.icon-btn:focus-visible {
+	background: var(--card-hover);
+	outline: none;
+}
+.icon-btn.copied {
+	animation: fadeBack 2s ease forwards;
 }
 
 @keyframes fadeBack {
-  0% { 
-    background: rgba(0, 227, 139, 0.8); 
-    backdrop-filter: blur(8px); 
-    border-color: var(--green); 
-  }
-  100% { 
-    background: color-mix(in oklab, var(--bg-elev) 40%, transparent); 
-    backdrop-filter: none; 
-    border-color: var(--border); 
-  }
+	0% {
+		background: rgba(0, 227, 139, 0.8);
+		backdrop-filter: blur(8px);
+		border-color: var(--green);
+	}
+	100% {
+		background: color-mix(in oklab, var(--bg-elev) 40%, transparent);
+		backdrop-filter: none;
+		border-color: var(--border);
+	}
 }
 
 .header-bar {
@@ -218,17 +385,18 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 }
 
 .language-switch {
-  background: color-mix(in oklab, var(--bg-elev) 40%, transparent);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  color: var(--text);
-  padding: 8px 12px;
-  cursor: pointer;
+	background: color-mix(in oklab, var(--bg-elev) 40%, transparent);
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	color: var(--text);
+	padding: 8px 12px;
+	cursor: pointer;
 }
 
-.language-switch:hover, .language-switch:focus-visible {
-  background: var(--card-hover);
-  outline: none;
+.language-switch:hover,
+.language-switch:focus-visible {
+	background: var(--card-hover);
+	outline: none;
 }
 
 /* Hero */
@@ -239,22 +407,46 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 	font-size: clamp(28px, 5vw, 48px);
 	line-height: 1.1;
 	font-weight: 400;
-	background: linear-gradient(135deg, var(--text), color-mix(in oklab, var(--accent-2) 30%, var(--text)));
-	-webkit-background-clip: text; background-clip: text; color: #ddd;
+	background: linear-gradient(
+		135deg,
+		var(--text),
+		color-mix(in oklab, var(--accent-2) 30%, var(--text))
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: #ddd;
 }
-.hero p { color: var(--muted); max-width: 65ch; margin: 0; }
-.actions { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+.hero p {
+	color: var(--muted);
+	max-width: 65ch;
+	margin: 0;
+}
+.actions {
+	display: flex;
+	gap: 12px;
+	margin-top: 18px;
+	flex-wrap: wrap;
+}
 .btn {
 	display: inline-flex;
 	align-items: center;
 	gap: 10px;
 	padding: 5px 14px;
 	border-radius: 10px;
-	text-decoration: none; color: var(--text);
-	background: linear-gradient(180deg, color-mix(in oklab, var(--accent) 20%, var(--card)) 0%, var(--card) 100%);
+	text-decoration: none;
+	color: var(--text);
+	background: linear-gradient(
+		180deg,
+		color-mix(in oklab, var(--accent) 20%, var(--card)) 0%,
+		var(--card) 100%
+	);
 	border: 1px solid var(--border);
 }
-.btn:hover, .btn:focus-visible { background: var(--card-hover); outline: none; }
+.btn:hover,
+.btn:focus-visible {
+	background: var(--card-hover);
+	outline: none;
+}
 
 /* Grid */
 .section-title {
@@ -267,9 +459,10 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 .grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-	gap: 16px; align-items: start;
+	gap: 16px;
+	align-items: start;
 }
-    
+
 .card {
 	display: flex;
 	flex-direction: column;
@@ -278,40 +471,45 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 	overflow: hidden;
 	border-radius: 16px;
 	padding: 18px;
-	text-decoration: none; color: var(--text);
-	background:
-    linear-gradient(
-      145deg,
-      color-mix(in oklab, #ffffff 12%, transparent) 0%,
-      color-mix(in oklab, var(--bg-elev) 48%, transparent) 38%,
-      color-mix(in oklab, var(--card) 68%, transparent) 100%
-    );
+	text-decoration: none;
+	color: var(--text);
+	background: linear-gradient(
+		145deg,
+		color-mix(in oklab, #ffffff 12%, transparent) 0%,
+		color-mix(in oklab, var(--bg-elev) 48%, transparent) 38%,
+		color-mix(in oklab, var(--card) 68%, transparent) 100%
+	);
 	backdrop-filter: blur(24px) saturate(1.25);
-	transition: transform .2s ease, background .2s ease, box-shadow .2s ease, border-color .2s ease;
+	transition:
+		transform 0.2s ease,
+		background 0.2s ease,
+		box-shadow 0.2s ease,
+		border-color 0.2s ease;
 }
 
-.card:hover, .card:focus-visible {
+.card:hover,
+.card:focus-visible {
 }
 
 .showcaseable-project-card {
 	box-shadow:
-    inset 0 1px 0 color-mix(in oklab, #ffffff 38%, transparent),
-    0 10px 30px rgba(0, 0, 0, 0.33);
+		inset 0 1px 0 color-mix(in oklab, #ffffff 38%, transparent),
+		0 10px 30px rgba(0, 0, 0, 0.33);
 	border: 1px solid color-mix(in oklab, #ffffff 22%, var(--border));
 }
 
-.showcaseable-project-card:hover, .showcaseable-project-card:focus-visible {
-	background:
-    linear-gradient(
-      145deg,
-      color-mix(in oklab, #ffffff 14%, transparent) 0%,
-      color-mix(in oklab, var(--card-hover) 56%, transparent) 40%,
-      color-mix(in oklab, var(--card-hover) 72%, transparent) 100%
-    );
+.showcaseable-project-card:hover,
+.showcaseable-project-card:focus-visible {
+	background: linear-gradient(
+		145deg,
+		color-mix(in oklab, #ffffff 14%, transparent) 0%,
+		color-mix(in oklab, var(--card-hover) 56%, transparent) 40%,
+		color-mix(in oklab, var(--card-hover) 72%, transparent) 100%
+	);
 	border-color: color-mix(in oklab, #ffffff 32%, var(--border));
 	box-shadow:
-    inset 0 1px 0 color-mix(in oklab, #ffffff 45%, transparent),
-    0 14px 34px rgba(0, 0, 0, 0.4);
+		inset 0 1px 0 color-mix(in oklab, #ffffff 45%, transparent),
+		0 14px 34px rgba(0, 0, 0, 0.4);
 	transform: translateY(-2px);
 	outline: 2px solid color-mix(in oklab, var(--accent) 40%, var(--focus));
 }
@@ -323,13 +521,12 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 .under-construction-card:hover,
 .under-construction-card:focus-visible {
 	transform: none;
-	background:
-    linear-gradient(
-      145deg,
-      color-mix(in oklab, #ffffff 12%, transparent) 0%,
-      color-mix(in oklab, var(--bg-elev) 48%, transparent) 38%,
-      color-mix(in oklab, var(--card) 68%, transparent) 100%
-    );
+	background: linear-gradient(
+		145deg,
+		color-mix(in oklab, #ffffff 12%, transparent) 0%,
+		color-mix(in oklab, var(--bg-elev) 48%, transparent) 38%,
+		color-mix(in oklab, var(--card) 68%, transparent) 100%
+	);
 	outline: none;
 	border-color: color-mix(in oklab, var(--border) 75%, var(--muted));
 }
@@ -337,7 +534,8 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 .tag {
 	font-size: 12px;
 	color: var(--muted);
-	border: 1px solid color-mix(in oklab, var(--accent) 15%, var(--border-dimmed));
+	border: 1px solid
+		color-mix(in oklab, var(--accent) 15%, var(--border-dimmed));
 	padding: 4px 10px;
 	border-radius: 999px;
 }
@@ -351,48 +549,67 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 	);
 	border: 1px solid color-mix(in oklab, var(--accent) 55%, var(--border));
 	letter-spacing: 0.2px;
-	box-shadow: 0 0 0 1px color-mix(in oklab, var(--accent) 20%, transparent), 0 6px 14px rgba(0, 0, 0, 0.25);
+	box-shadow:
+		0 0 0 1px color-mix(in oklab, var(--accent) 20%, transparent),
+		0 6px 14px rgba(0, 0, 0, 0.25);
 }
 
-.card-title { margin: 0; font-size: 20px; line-height: 1.3; font-weight: 600; }
-.card-description { margin: 0; color: var(--muted); min-height: 52px; }
-.card-stack { display: flex; gap: 8px; flex-wrap: wrap; }
+.card-title {
+	margin: 0;
+	font-size: 20px;
+	line-height: 1.3;
+	font-weight: 600;
+}
+.card-description {
+	margin: 0;
+	color: var(--muted);
+	min-height: 52px;
+}
+.card-stack {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+}
 
 .card-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: color-mix(in oklab, var(--bg-elev) 45%, transparent);
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 12px;
+	border: 1px solid var(--border);
+	background: color-mix(in oklab, var(--bg-elev) 45%, transparent);
 }
 .card-actions {
-  margin-top: auto;
-  display: flex;
-  gap: 10px;
+	margin-top: auto;
+	display: flex;
+	gap: 10px;
 }
 .card-btn {
-  flex: 1;
-  text-align: center;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: color-mix(in oklab, var(--bg-elev) 55%, transparent);
-  color: var(--text);
-  text-decoration: none;
-  padding: 10px 12px;
-  font-weight: 500;
-  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+	flex: 1;
+	text-align: center;
+	border-radius: 10px;
+	border: 1px solid var(--border);
+	background: color-mix(in oklab, var(--bg-elev) 55%, transparent);
+	color: var(--text);
+	text-decoration: none;
+	padding: 10px 12px;
+	font-weight: 500;
+	transition:
+		background 0.2s ease,
+		transform 0.2s ease,
+		border-color 0.2s ease;
 }
-.card-btn:hover, .card-btn:focus-visible {
-  background: var(--card-hover);
-  border-color: color-mix(in oklab, var(--accent) 45%, var(--border));
-  transform: translateY(-1px);
-  outline: none;
+.card-btn:hover,
+.card-btn:focus-visible {
+	background: var(--card-hover);
+	border-color: color-mix(in oklab, var(--accent) 45%, var(--border));
+	transform: translateY(-1px);
+	outline: none;
 }
 .card-btn-disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-  pointer-events: none;
+	opacity: 0.55;
+	cursor: not-allowed;
+	pointer-events: none;
 }
 
 .under-construction-card .card-image,
@@ -401,27 +618,33 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 }
 
 /* Tippy tooltip custom theme */
-.tippy-box[data-theme~='custom'] {
-  background-color: var(--green);
-  color: #0f1115;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 400;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.tippy-box[data-theme~="custom"] {
+	background-color: var(--green);
+	color: #0f1115;
+	border-radius: 6px;
+	font-size: 12px;
+	font-weight: 400;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.tippy-box[data-theme~='custom'] .tippy-arrow {
-  color: var(--green);
+.tippy-box[data-theme~="custom"] .tippy-arrow {
+	color: var(--green);
 }
 
-.tippy-box[data-theme~='custom'] .tippy-content {
-  padding: 6px 10px;
+.tippy-box[data-theme~="custom"] .tippy-content {
+	padding: 6px 10px;
 }
 
 /* Accessibility */
-:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+:focus-visible {
+	outline: 2px solid var(--focus);
+	outline-offset: 2px;
+}
 @media (prefers-reduced-motion: reduce) {
-	* { transition: none !important; animation: none !important; }
+	* {
+		transition: none !important;
+		animation: none !important;
+	}
 }
 
 /* Flashcards */
@@ -569,7 +792,7 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 	transition: background 0.2s ease;
 }
 .switch-slider::after {
-	content: '';
+	content: "";
 	position: absolute;
 	width: 18px;
 	height: 18px;
@@ -586,9 +809,9 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 	transform: translateX(20px);
 }
 .flashcards {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 	align-items: center;
 }
 .flashcards-page .flashcards,
@@ -599,15 +822,15 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 	-webkit-user-select: text;
 }
 .flashcard {
-  background: var(--card);
-  padding: 20px;
+	background: var(--card);
+	padding: 20px;
 	border-radius: 18px;
-  border: 1px solid var(--border);
+	border: 1px solid var(--border);
 	position: relative;
 	width: min(100%, 720px);
 }
 .flashcard h3 {
-  margin-top: 0;
+	margin-top: 0;
 	font-size: 20px;
 	line-height: 1.5;
 	font-weight: 500;
@@ -621,16 +844,16 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 	color: var(--text);
 }
 .flashcard button {
-  background: var(--accent);
-  color: white;
-  border: none;
-  padding: 10px 15px;
+	background: var(--accent);
+	color: white;
+	border: none;
+	padding: 10px 15px;
 	border-radius: 12px;
-  cursor: pointer;
+	cursor: pointer;
 	margin-top: 6px;
 }
 .flashcard button:hover {
-  background: var(--accent-2);
+	background: var(--accent-2);
 }
 .flashcard-actions {
 	position: absolute;
@@ -639,7 +862,8 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 	display: flex;
 	gap: 8px;
 }
-.google-btn, .chatgpt-btn {
+.google-btn,
+.chatgpt-btn {
 	width: 34px;
 	height: 34px;
 	display: inline-flex;
@@ -651,60 +875,63 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 	box-shadow: none;
 	text-decoration: none;
 }
-.google-btn:hover, .google-btn:focus-visible,
-.chatgpt-btn:hover, .chatgpt-btn:focus-visible {
+.google-btn:hover,
+.google-btn:focus-visible,
+.chatgpt-btn:hover,
+.chatgpt-btn:focus-visible {
 	background: color-mix(in oklab, var(--bg-elev) 45%, transparent);
 	outline: none;
 }
-.google-icon, .chatgpt-icon {
+.google-icon,
+.chatgpt-icon {
 	width: 20px;
 	height: 20px;
 	fill: var(--muted);
 }
 .nav-link {
-  color: var(--muted);
-  text-decoration: none;
-  padding: 10px 12px;
-  border-radius: 8px;
+	color: var(--muted);
+	text-decoration: none;
+	padding: 10px 12px;
+	border-radius: 8px;
 }
 .nav-link:hover {
-  color: var(--text);
-  background: color-mix(in oklab, var(--bg-elev) 60%, transparent);
+	color: var(--text);
+	background: color-mix(in oklab, var(--bg-elev) 60%, transparent);
 }
 
 .cv-page {
-  margin-top: 32px;
+	margin-top: 32px;
 }
 
 .cv-topbar {
-  margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 .cv-header h1 {
-  margin: 0;
-  font-weight: 600;
+	margin: 0;
+	font-weight: 600;
 }
 
 .cv-header p {
-  margin-top: 8px;
-  color: var(--muted);
+	margin-top: 8px;
+	color: var(--muted);
 }
 
 .cv-card h2 {
-  margin: 0;
-  font-weight: 400;
+	margin: 0;
+	font-weight: 400;
 	white-space: nowrap;
 	word-break: keep-all;
 }
 
 .cv-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  padding: 18px;
-  border: 1px solid color-mix(in oklab, #ffffff 22%, var(--border));
-  /* glass */
-  /* background:
+	position: relative;
+	overflow: hidden;
+	border-radius: 16px;
+	padding: 18px;
+	border: 1px solid color-mix(in oklab, #ffffff 22%, var(--border));
+	/* glass */
+	/* background:
     linear-gradient(
       145deg,
       color-mix(in oklab, #ffffff 12%, transparent) 0%,
@@ -714,69 +941,72 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 	/* opaque */
 	/* background: var(--card); */
 	/* blurred */
-	  background: color-mix(in oklab, var(--border-dimmed) 95%, transparent);
-  /* box-shadow:
+	background: color-mix(in oklab, var(--border-dimmed) 95%, transparent);
+	/* box-shadow:
     inset 0 1px 0 color-mix(in oklab, #ffffff 38%, transparent),
     0 10px 30px rgba(0, 0, 0, 0.33); */
-  transition: transform .4s ease, background .4s ease, box-shadow .4s ease, border-color .4s ease;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+	transition:
+		transform 0.4s ease,
+		background 0.4s ease,
+		box-shadow 0.4s ease,
+		border-color 0.4s ease;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
 }
 
 .cv-card-content {
-  min-width: 0;
+	min-width: 0;
 }
 
 .cv-card-content p {
-  margin-top: 6px;
+	margin-top: 6px;
 }
 
 .cv-actions {
-  margin-top: 0;
-  margin-left: auto;
-  gap: 10px;
-  flex-wrap: nowrap;
-  align-items: center;
+	margin-top: 0;
+	margin-left: auto;
+	gap: 10px;
+	flex-wrap: nowrap;
+	align-items: center;
 }
 
 .cv-card-clickable {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .cv-card-clickable:hover,
 .cv-card-clickable:focus-visible {
-  background:
-    linear-gradient(
-      145deg,
-      color-mix(in oklab, #ffffff 14%, transparent) 0%,
-      color-mix(in oklab, var(--card-hover) 56%, transparent) 40%,
-      color-mix(in oklab, var(--card-hover) 72%, transparent) 100%
-    );
-  border-color: color-mix(in oklab, #ffffff 32%, var(--border));
-  box-shadow:
-    inset 0 1px 0 color-mix(in oklab, #ffffff 45%, transparent),
-    0 14px 34px rgba(0, 0, 0, 0.4);
-  transform: translateY(-2px);
-  outline: 2px solid color-mix(in oklab, var(--accent) 40%, var(--focus));
+	background: linear-gradient(
+		145deg,
+		color-mix(in oklab, #ffffff 14%, transparent) 0%,
+		color-mix(in oklab, var(--card-hover) 56%, transparent) 40%,
+		color-mix(in oklab, var(--card-hover) 72%, transparent) 100%
+	);
+	border-color: color-mix(in oklab, #ffffff 32%, var(--border));
+	box-shadow:
+		inset 0 1px 0 color-mix(in oklab, #ffffff 45%, transparent),
+		0 14px 34px rgba(0, 0, 0, 0.4);
+	transform: translateY(-2px);
+	outline: 2px solid color-mix(in oklab, var(--accent) 40%, var(--focus));
 }
 
 .cv-open-btn,
 .cv-download-btn {
-  margin-top: 0;
-  width: 44px;
-  height: 44px;
+	margin-top: 0;
+	width: 44px;
+	height: 44px;
 }
 
 .cv-open-btn svg,
 .cv-download-btn svg {
-  width: 24px;
-  height: 24px;
+	width: 24px;
+	height: 24px;
 }
 
 .cv-download-icon {
-  font-size: 24px;
-  line-height: 1;
-  text-decoration: none;
+	font-size: 24px;
+	line-height: 1;
+	text-decoration: none;
 }
