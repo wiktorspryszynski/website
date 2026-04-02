@@ -99,7 +99,7 @@ class LightsAnimation {
       freqY: rand(0.3, 0.8),
       phaseX: rand(0, Math.PI * 2),
       phaseY: rand(0, Math.PI * 2),
-      baseSpeed: 0.9 + i * 0.25,
+      baseSpeed: 0.5 + i * 0.25,
       repulseStrength: 2.2 - i * 0.3,
       radius: baseRadius * (0.11 - i * 0.015),
       color: i % 2 === 0 ? 'rgba(124,92,255,' : 'rgba(0,212,255,'
@@ -111,12 +111,13 @@ class LightsAnimation {
   }
 
   private constrainOrbPosition(o: { x: number; y: number; vx: number; vy: number; radius: number }) {
+    const offscreenAllowance = 120;
     const edgePaddingX = Math.min(o.radius * 0.4, this.width * 0.35);
     const edgePaddingY = Math.min(o.radius * 0.4, this.height * 0.35);
-    const minX = edgePaddingX;
-    const maxX = this.width - edgePaddingX;
-    const minY = edgePaddingY;
-    const maxY = this.height - edgePaddingY;
+    const minX = edgePaddingX - offscreenAllowance;
+    const maxX = this.width - edgePaddingX + offscreenAllowance;
+    const minY = edgePaddingY - offscreenAllowance;
+    const maxY = this.height - edgePaddingY + offscreenAllowance;
 
     if (o.x < minX) {
       o.x = minX;
