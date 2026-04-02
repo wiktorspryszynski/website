@@ -22,6 +22,8 @@
         "show": false,
         "title": "Glassmorphism UI",
         "description": "Szklane panele, miękkie światło i nowoczesna estetyka.",
+        "github": null,
+        "demo": null,
         "tags": ["UI", "CSS"],
         "ariaLabel": "Projekt Glassmorphism UI"
       },
@@ -29,6 +31,8 @@
         "show": false,
         "title": "Walentynkowy projekt",
         "description": "Romantyczny motyw i subtelne animacje - lekki, przyjemny eksperyment.",
+        "github": null,
+        "demo": null,
         "tags": ["Animacje", "HTML"],
         "ariaLabel": "Projekt Walentynkowy"
       },
@@ -36,6 +40,8 @@
         "show": false,
         "title": "Portfolio API",
         "description": "Integracja z prostym API do pobierania projektów dynamicznie.",
+        "github": null,
+        "demo": null,
         "tags": ["JavaScript", "API"],
         "ariaLabel": "Projekt w przygotowaniu"
       },
@@ -43,6 +49,8 @@
         "show": false,
         "title": "Mini-gra przeglądarkowa",
         "description": "Krótka gra logiczna z czystym DOM i responsywnym sterowaniem.",
+        "github": null,
+        "demo": null,
         "tags": ["Game", "Canvas"],
         "worksInProgress": true,
         "ariaLabel": "Projekt w przygotowaniu"
@@ -51,6 +59,8 @@
         "show": true,
         "title": "👷 Sekcja w trakcie budowy 🚧🚧",
         "description": "Sekcja projektów jest obecnie w trakcie budowy. Wróć wkrótce!",
+        "github": null,
+        "demo": null,
         "tags": ["Wkrótce"],
         "underConstruction": true,
         "ariaLabel": "Sekcja w trakcie budowy"
