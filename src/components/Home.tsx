@@ -24,7 +24,7 @@ type ProjectCard = {
 
 const Home: React.FC = () => {
   const languages = [
-    { code: 'pl' as const, name: 'Polski', display: 'PL' },
+    { code: 'pl' as const, name: 'Polski',  display: 'PL' },
     { code: 'en' as const, name: 'English', display: 'EN' }
   ];
 
