@@ -41,6 +41,7 @@ const Home: React.FC = () => {
 	const initialLang = validLangs.includes(langParam as LangCode) ? langParam as LangCode : defaultLang;
 	const [language, setLanguage] = useState<LangCode>(initialLang);
   const content = contents[language];
+  const localizedWipTag = content.projects.wip || 'Work in progress';
 
   useEffect(() => {
     const container = document.getElementById('lights');
@@ -168,6 +169,7 @@ const Home: React.FC = () => {
                   ariaLabel={card.ariaLabel}
                   underConstruction={card.underConstruction}
                   worksInProgress={card.worksInProgress}
+                  wipTag={localizedWipTag}
                 />
               );
             })}

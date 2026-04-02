@@ -16,6 +16,7 @@
   },
   "projects": {
     "title": "Projects",
+    "wip": "Work in progress",
     "cards": [
       {
         "show": true,
@@ -28,21 +29,21 @@
         "demo": "/flashcards"
       },
       {
-        "show": false,
+        "show": true,
         "title": "Valentine's project",
         "description": "Romantic theme and subtle animations - a light, pleasant experiment.",
         "tags": ["Animations", "HTML"],
         "ariaLabel": "Valentine's project"
       },
       {
-        "show": false,
+        "show": true,
         "title": "Portfolio API",
         "description": "Integration with a simple API for dynamically fetching projects.",
         "tags": ["JavaScript", "API"],
         "ariaLabel": "Project in preparation"
       },
       {
-        "show": false,
+        "show": true,
         "title": "Browser mini-game",
         "description": "A short logic game with pure DOM and responsive controls.",
         "tags": ["Game", "Canvas"],
