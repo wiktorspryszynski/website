@@ -464,6 +464,27 @@ nav a:focus-visible {
 	align-items: start;
 }
 
+/* Projects: max 2 columns, masonry flow (no row locking for uneven card heights). */
+#projekty .grid {
+	display: block;
+	column-count: 2;
+	column-gap: 20px;
+}
+
+#projekty .grid > * {
+	display: inline-block;
+	width: 100%;
+	margin: 0 0 20px;
+	break-inside: avoid;
+	-webkit-column-break-inside: avoid;
+}
+
+@media (max-width: 900px) {
+	#projekty .grid {
+		column-count: 1;
+	}
+}
+
 .card {
 	display: flex;
 	flex-direction: column;
