@@ -11,6 +11,7 @@
 	--border: #2a3249;
 	--border-dimmed: color-mix(in oklab, var(--border) 60%, transparent);
 	--focus: #ffd166;
+	--social-btn-bg: color-mix(in oklab, var(--card) 40%, transparent);
 }
 
 /* Prefer system fonts; snappy UI */
@@ -243,7 +244,7 @@ nav a:focus-visible {
 	justify-content: center;
 	border-radius: 12px;
 	border: 1px solid var(--border);
-	background: color-mix(in oklab, var(--bg-elev) 40%, transparent);
+	background: var(--social-btn-bg);
 }
 .social .social-btn:hover,
 .social .social-btn:focus-visible,
