@@ -65,7 +65,7 @@ const CvPage: React.FC = () => {
 
         <section className="grid cv-grid" aria-label={content.listAriaLabel}>
           <article
-            className="card cv-card cv-card-clickable"
+            className="cv-card cv-card-clickable"
             role="link"
             tabIndex={0}
             aria-label={`${content.polish.title} - ${content.openButtonAriaLabel}`}
@@ -104,7 +104,7 @@ const CvPage: React.FC = () => {
           </article>
 
           <article
-            className="card cv-card cv-card-clickable"
+            className="cv-card cv-card-clickable"
             role="link"
             tabIndex={0}
             aria-label={`${content.english.title} - ${content.openButtonAriaLabel}`}

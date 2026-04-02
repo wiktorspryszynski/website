@@ -685,6 +685,22 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 }
 
 .cv-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  padding: 18px;
+  border: 1px solid color-mix(in oklab, #ffffff 22%, var(--border));
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in oklab, #ffffff 12%, transparent) 0%,
+      color-mix(in oklab, var(--bg-elev) 48%, transparent) 38%,
+      color-mix(in oklab, var(--card) 68%, transparent) 100%
+    );
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, #ffffff 38%, transparent),
+    0 10px 30px rgba(0, 0, 0, 0.33);
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease, border-color .2s ease;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -709,6 +725,23 @@ nav a:hover, nav a:focus-visible { color: var(--text); background: color-mix(in 
 
 .cv-card-clickable {
   cursor: pointer;
+}
+
+.cv-card-clickable:hover,
+.cv-card-clickable:focus-visible {
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in oklab, #ffffff 14%, transparent) 0%,
+      color-mix(in oklab, var(--card-hover) 56%, transparent) 40%,
+      color-mix(in oklab, var(--card-hover) 72%, transparent) 100%
+    );
+  border-color: color-mix(in oklab, #ffffff 32%, var(--border));
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, #ffffff 45%, transparent),
+    0 14px 34px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+  outline: 2px solid color-mix(in oklab, var(--accent) 40%, var(--focus));
 }
 
 .cv-open-btn,
