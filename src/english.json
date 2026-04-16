@@ -1,10 +1,10 @@
-{
+﻿{
   "hero": {
     "title": {
       "hi": "Hi,",
       "description": "I'm a full-stack developer."
     },
-    "subtitle": "I build web applications – from user interfaces to server-side logic. Below you'll find selected projects and experiments.",
+    "subtitle": "I build web applications i from user interfaces to server-side logic. Below you'll find selected projects and experiments.",
     "socialLabel": "Social links"
   },
   "social": {
@@ -67,7 +67,7 @@
   },
   "contact": {
     "title": "Contact",
-    "description": "I'm open to new projects and collaboration. If you have a question or an idea – feel free to reach out.",
+    "description": "I'm open to new projects and collaboration. If you have a question or an idea i feel free to reach out.",
     "emailButton": "Send an email",
     "githubButton": "GitHub",
     "emailLabel": "Send email message",
