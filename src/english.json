@@ -1,10 +1,10 @@
-﻿{
+{
   "hero": {
     "title": {
-      "hi": "Hi!",
-      "description": "I design and build things for the web."
+      "hi": "Hi,",
+      "description": "I'm a full-stack developer."
     },
-    "subtitle": "Here you'll find my work - from polished interfaces to focused web experiments.",
+    "subtitle": "I build web applications – from user interfaces to server-side logic. Below you'll find selected projects and experiments.",
     "socialLabel": "Social links"
   },
   "social": {
@@ -67,7 +67,7 @@
   },
   "contact": {
     "title": "Contact",
-    "description": "Do you have a question or an idea for collaboration? Send a message - I'll be happy to respond.",
+    "description": "I'm open to new projects and collaboration. If you have a question or an idea – feel free to reach out.",
     "emailButton": "Send an email",
     "githubButton": "GitHub",
     "emailLabel": "Send email message",
@@ -76,7 +76,7 @@
   "cv": {
     "pageTitle": "CV",
     "heading": "My resume",
-    "subtitle": "You can find both resume language versions here. Open or download each file.",
+    "subtitle": "Both language versions of my resume are available below. Open or download each file.",
     "listAriaLabel": "Available resume versions",
     "openButton": "Open",
     "downloadButton": "Download",
