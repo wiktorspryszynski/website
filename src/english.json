@@ -2,9 +2,9 @@
   "hero": {
     "title": {
       "hi": "Hi!",
-      "description": "I create web projects and experiments."
+      "description": "I design and build things for the web."
     },
-    "subtitle": "On this site, you'll find my works - from aesthetic interfaces to small, inventive mini-projects. Click a card to see details.",
+    "subtitle": "Here you'll find my work - from polished interfaces to focused web experiments.",
     "socialLabel": "Social links"
   },
   "social": {

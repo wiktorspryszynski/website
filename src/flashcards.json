@@ -301,7 +301,7 @@
     "answer": "Szablony i generics pozwalają definiować funkcje i klasy operujące na różnych typach danych bez duplikowania kodu. Parametry typów określa się przy definicji, a konkretne typy podaje podczas użycia. Zwiększa to bezpieczeństwo typów i elastyczność kodu."
   },
   {
-    "question": "Proszę podać główne cechy zunifikowanego języka modelowania systemów informatycznych (ang. UML) – zastosowanie, charakterystykę oraz jego podstawowe diagramy.",
+    "question": "Proszę podać główne cechy zunifikowanego języka modelowania systemów informatycznych (ang. UML) - zastosowanie, charakterystykę oraz jego podstawowe diagramy.",
     "number": 61,
     "answer": "UML jest standardowym językiem graficznym do modelowania systemów informatycznych na różnych etapach ich projektowania. Umożliwia wizualizację struktury i zachowania systemu w sposób niezależny od języka programowania. Do podstawowych diagramów należą diagram klas, przypadków użycia, sekwencji, aktywności i komponentów."
   },
