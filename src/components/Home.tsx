@@ -11,7 +11,7 @@ type ProjectCard = {
   show?: boolean;
   title: string;
   description: string;
-  tags: string[];
+  stack: string[];
   ariaLabel?: string;
   image?: string;
   github?: string;
@@ -162,7 +162,7 @@ const Home: React.FC = () => {
                   key={index}
                   title={card.title}
                   description={card.description}
-                  tags={card.tags}
+                  stack={card.stack}
                   imageUrl={card.image}
                   githubUrl={card.github}
                   demoUrl={card.demo}

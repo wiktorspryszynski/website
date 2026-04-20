@@ -3,7 +3,7 @@ import React from 'react';
 interface CardProps {
   title: string;
   description: string;
-  tags: string[];
+  stack: string[];
   imageUrl?: string;
   githubUrl?: string;
   demoUrl?: string;
@@ -18,7 +18,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({
   title,
   description,
-  tags,
+  stack,
   imageUrl,
   githubUrl,
   demoUrl,
@@ -55,7 +55,7 @@ const Card: React.FC<CardProps> = ({
 
       <div className="card-stack">
         {(worksInProgress) && <span className="tag wip" aria-label="work-in-progress">{wipTag}</span>}
-        {tags.map((tag, index) => (
+        {stack.map((tag, index) => (
           <span key={index} className="tag">{tag}</span>
         ))}
       </div>
