@@ -509,10 +509,6 @@ nav a:focus-visible {
 		border-color 0.2s ease;
 }
 
-.card:hover,
-.card:focus-visible {
-}
-
 .showcaseable-project-card {
 	box-shadow:
 		inset 0 1px 0 color-mix(in oklab, #ffffff 38%, transparent),
@@ -1053,4 +1049,20 @@ nav a:focus-visible {
 	font-size: 24px;
 	line-height: 1;
 	text-decoration: none;
+}
+
+.site-footer {
+	text-align: center;
+	padding: 24px;
+	color: var(--muted);
+	font-size: 0.8rem;
+	border-top: 1px solid var(--border-dimmed);
+	margin-top: 48px;
+	backdrop-filter: blur(12px) saturate(1.2);
+	background: color-mix(in oklab, var(--bg) 60%, transparent);
+	font-family: Consolas, 'Cascadia Code', 'Fira Code', monospace;
+}
+
+.site-footer span[aria-label="love"] {
+	color: var(--accent);
 }
