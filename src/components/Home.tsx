@@ -166,9 +166,9 @@ const Home: React.FC = () => {
                   imageUrl={card.image}
                   githubUrl={card.github}
                   demoUrl={card.demo}
-                  ariaLabel={card.ariaLabel}
-                  underConstruction={card.underConstruction}
-                  worksInProgress={card.worksInProgress}
+                  ariaLabel={card.ariaLabel ?? `${card.title} - ${card.description}`}
+                  underConstruction={card.underConstruction ?? false}
+                  worksInProgress={card.workInProgress ?? false}
                   wipTag={localizedWipTag}
                 />
               );

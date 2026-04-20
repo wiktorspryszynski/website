@@ -53,8 +53,11 @@ const Card: React.FC<CardProps> = ({
     <article className={cardClass} style={style} aria-label={ariaLabel}>
       <h3 className="card-title">{title}</h3>
 
+      {worksInProgress && (
+        <span className="card-wip-badge tag wip" aria-label="work-in-progress">{wipTag}</span>
+      )}
+
       <div className="card-stack">
-        {(worksInProgress) && <span className="tag wip" aria-label="work-in-progress">{wipTag}</span>}
         {stack.map((tag, index) => (
           <span key={index} className="tag">{tag}</span>
         ))}
