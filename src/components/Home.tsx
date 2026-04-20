@@ -186,7 +186,7 @@ const Home: React.FC = () => {
       </main>
 
       <footer className="site-footer">
-        <span>Made with&nbsp;<span aria-label="love">♥</span> · #{__BUILD_NUMBER__} · sha: {__GIT_SHA__} · {__BUILD_DATE__}</span>
+        <span>Made with&nbsp;<span aria-label="love">♥</span> · sha: {__GIT_SHA__} · {__BUILD_DATE__}</span>
       </footer>
     </>
   );
