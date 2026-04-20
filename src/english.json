@@ -1,8 +1,9 @@
 ﻿{
   "hero": {
     "title": {
-      "hi": "Hi!",
-      "description": "I create web projects and experiments."
+      "hi": "Hi! I'm Wiktor.",
+      "description": "I create websites from start to finish",
+      "old_description": "I create web projects and experiments."
     },
     "subtitle": "On this site, you'll find my works - from aesthetic interfaces to small, inventive mini-projects. Click a card to see details.",
     "socialLabel": "Social links"

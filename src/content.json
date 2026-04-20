@@ -1,8 +1,9 @@
 ﻿{
   "hero": {
     "title": {
-        "hi": "Cześć!",
-        "description": "Tworzę projekty webowe i eksperymenty."
+        "hi": "Cześć! Tu Wiktor.",
+        "description": "Tworzę strony od początku do końca",
+        "old_description": "Tworzę projekty webowe i eksperymenty."
     },
     "subtitle": "Na tej stronie znajdziesz moje realizacje - od estetycznych interfejsów po małe, pomysłowe mini-projekty. Kliknij kartę, aby zobaczyć szczegóły.",
     "socialLabel": "Linki społecznościowe"
