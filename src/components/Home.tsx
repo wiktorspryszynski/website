@@ -185,9 +185,9 @@ const Home: React.FC = () => {
         </section>
       </main>
 
-      <footer className="site-footer">
+      {/* <footer className="site-footer">
         <span>Made with&nbsp;<span aria-label="love">♥</span> · sha: {__GIT_SHA__} · {__BUILD_DATE__}</span>
-      </footer>
+      </footer> */}
     </>
   );
 };
