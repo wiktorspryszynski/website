@@ -626,6 +626,10 @@ nav a:focus-visible {
 }
 .card-btn {
 	flex: 1;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
 	text-align: center;
 	border-radius: 10px;
 	border: 1px solid var(--border);
