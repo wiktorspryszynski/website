@@ -31,7 +31,8 @@
         "stack": ["Python", "Django", "scikit-learn", "Pandas", "Spotify API", "OAuth 2.0"],
         "description": "A music recommendation system based on Spotify data. Unfortunately, the Spotify API audio-features endpoint has been discontinued, so the project is only available as a demo.",
         "github": "https://github.com/wiktorspryszynski/spotify_music_recommender",
-        "demo": "https://spotify.spryszynski.pl"
+        "demo": "https://spotify.spryszynski.pl",
+        "deprecated": true
       },
       {
         "show": false,
