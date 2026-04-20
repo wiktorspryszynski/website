@@ -558,8 +558,24 @@ nav a:focus-visible {
 	color: var(--muted);
 	border: 1px solid
 		color-mix(in oklab, var(--accent) 15%, var(--border-dimmed));
-	padding: 4px 10px;
+	padding: 2px 8px;
 	border-radius: 999px;
+}
+
+.card-wip-badge {
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.4px;
+	padding: 3px 10px;
+	border-radius: 999px;
+	color: #b8860b;
+	background: color-mix(in oklab, #f5c842 18%, transparent);
+	border: 1px solid color-mix(in oklab, #f5c842 55%, transparent);
+	box-shadow: 0 0 0 1px color-mix(in oklab, #f5c842 20%, transparent);
+	pointer-events: none;
 }
 
 .tag.wip {
@@ -583,7 +599,7 @@ nav a:focus-visible {
 	font-weight: 600;
 }
 .card-description {
-	margin: 0;
+	margin: 0 0 10px 0;
 	color: var(--muted);
 	min-height: 52px;
 }
@@ -610,6 +626,10 @@ nav a:focus-visible {
 }
 .card-btn {
 	flex: 1;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
 	text-align: center;
 	border-radius: 10px;
 	border: 1px solid var(--border);

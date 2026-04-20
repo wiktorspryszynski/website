@@ -19,49 +19,28 @@
     "wip": "W trakcie",
     "cards": [
       {
-        "show": false,
-        "title": "Glassmorphism UI",
-        "description": "Szklane panele, miękkie światło i nowoczesna estetyka.",
-        "github": null,
-        "demo": null,
-        "tags": ["UI", "CSS"],
-        "ariaLabel": "Projekt Glassmorphism UI"
+        "title": "Flight scope",
+        "stack": ["React", "TypeScript", "Deck.gl", "FastAPI", "PostgreSQL", "Redis"],
+        "description": "Obserwuj loty na żywo, leć obok modelu samolotu i sprawdzaj szczegóły każdego lotu. Projekt wykorzystuje dane ADS-B z OpenSky Network i jest wciąż w fazie rozwoju.",
+        "github": "https://github.com/wiktorspryszynski/flight-scope",
+        "demo": "https://flights.spryszynski.pl",
+        "workInProgress": true
+      },
+      {
+        "title": "Spotify music recommender",
+        "stack": ["Python", "Django", "scikit-learn", "Pandas", "Spotify API", "OAuth 2.0"],
+        "description": "System rekomendacji muzyki oparty na danych z Spotify. Niestety endpoint audio-features API Spotify został wyłączony, więc projekt jest dostępny tylko w wersji demo.",
+        "github": "https://github.com/wiktorspryszynski/spotify_music_recommender",
+        "demo": "https://spotify.spryszynski.pl",
+        "deprecated": true
       },
       {
         "show": false,
-        "title": "Walentynkowy projekt",
-        "description": "Romantyczny motyw i subtelne animacje - lekki, przyjemny eksperyment.",
-        "github": null,
-        "demo": null,
-        "tags": ["Animacje", "HTML"],
-        "ariaLabel": "Projekt Walentynkowy"
-      },
-      {
-        "show": false,
-        "title": "Portfolio API",
-        "description": "Integracja z prostym API do pobierania projektów dynamicznie.",
-        "github": null,
-        "demo": null,
-        "tags": ["JavaScript", "API"],
-        "ariaLabel": "Projekt w przygotowaniu"
-      },
-      {
-        "show": false,
-        "title": "Mini-gra przeglądarkowa",
-        "description": "Krótka gra logiczna z czystym DOM i responsywnym sterowaniem.",
-        "github": null,
-        "demo": null,
-        "tags": ["Game", "Canvas"],
-        "worksInProgress": true,
-        "ariaLabel": "Projekt w przygotowaniu"
-      },
-      {
-        "show": true,
         "title": "👷 Sekcja w trakcie budowy 🚧🚧",
         "description": "Sekcja projektów jest obecnie w trakcie budowy. Wróć wkrótce!",
         "github": null,
         "demo": null,
-        "tags": ["Wkrótce"],
+        "stack": ["Wkrótce"],
         "underConstruction": true,
         "ariaLabel": "Sekcja w trakcie budowy"
       }
