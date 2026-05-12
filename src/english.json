@@ -20,6 +20,14 @@
     "wip": "Work in progress",
     "cards": [
       {
+        "title": "Nom nom",
+        "stack": ["React", "TypeScript", "FastAPI", "PostgreSQL", "PWA"],
+        "description": "An application for easy meal planning and creating shopping lists. The project is still in development.",
+        "github": "https://github.com/wiktorspryszynski/nom-nom",
+        "demo": "https://fit.spryszynski.pl",
+        "workInProgress": true
+      },
+      {
         "title": "Flight scope",
         "stack": ["React", "TypeScript", "Deck.gl", "FastAPI", "PostgreSQL", "Redis"],
         "description": "Watch live flights, fly alongside a 3D aircraft model, and explore details of each flight. The project uses ADS-B data from OpenSky Network and is still under development.",

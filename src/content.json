@@ -20,6 +20,14 @@
     "wip": "W trakcie",
     "cards": [
       {
+        "title": "Nom nom",
+        "stack": ["React", "TypeScript", "FastAPI", "PostgreSQL", "PWA"],
+        "description": "Aplikacja do łatwego planowania posiłków i tworzenia list zakupów. Projekt jest wciąż w fazie rozwoju.",
+        "github": "https://github.com/wiktorspryszynski/nom-nom",
+        "demo": "https://fit.spryszynski.pl",
+        "workInProgress": true
+      },
+      {
         "title": "Flight scope",
         "stack": ["React", "TypeScript", "Deck.gl", "FastAPI", "PostgreSQL", "Redis"],
         "description": "Obserwuj loty na żywo, leć obok modelu samolotu i sprawdzaj szczegóły każdego lotu. Projekt wykorzystuje dane ADS-B z OpenSky Network i jest wciąż w fazie rozwoju.",
