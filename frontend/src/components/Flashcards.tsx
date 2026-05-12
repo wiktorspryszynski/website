@@ -1,15 +1,21 @@
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import flashcardsData from '../flashcards.json';
 
 interface Flashcard {
+  id: number;
   number?: number | string;
   question: string;
   answer: string;
 }
 
 const Flashcards: React.FC = () => {
-  const flashcards: Flashcard[] = flashcardsData;
+  const [flashcards, setFlashcards] = useState<Flashcard[]>([]);
+
+  useEffect(() => {
+    fetch('/api/flashcards/')
+      .then((r) => r.json())
+      .then(setFlashcards);
+  }, []);
   const [hideAnswers, setHideAnswers] = useState(false);
   const [shownAnswers, setShownAnswers] = useState<Set<number>>(new Set());
   const [searchQuery, setSearchQuery] = useState('');
