@@ -24,7 +24,6 @@
         "stack": ["React", "TypeScript", "FastAPI", "PostgreSQL", "PWA"],
         "description": "Aplikacja do łatwego planowania posiłków i tworzenia list zakupów. Projekt jest wciąż w fazie rozwoju.",
         "github": "https://github.com/wiktorspryszynski/nom-nom",
-        "demo": "https://fit.spryszynski.pl",
         "workInProgress": true
       },
       {

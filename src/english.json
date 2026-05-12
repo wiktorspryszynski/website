@@ -24,7 +24,6 @@
         "stack": ["React", "TypeScript", "FastAPI", "PostgreSQL", "PWA"],
         "description": "An application for easy meal planning and creating shopping lists. The project is still in development.",
         "github": "https://github.com/wiktorspryszynski/nom-nom",
-        "demo": "https://fit.spryszynski.pl",
         "workInProgress": true
       },
       {
