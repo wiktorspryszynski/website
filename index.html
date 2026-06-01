@@ -1,21 +1,252 @@
-<!DOCTYPE html>
-<html lang="pl">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Wiktor Spryszyński - Portfolio</title>
-    <meta name="description" content="Portfolio - przegląd moich projektów, eksperymentów i realizacji." />
-    <meta name="color-scheme" content="light dark" />
-    <link rel="icon" type="image/png" href="/src/assets/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.svg" />
-    <link rel="shortcut icon" href="/src/assets/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/src/assets/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Wiktor" />
-    <link rel="manifest" href="/src/assets/site.webmanifest" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,0" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wiktor Spryszyński</title>
+<meta name="description" content="Full-stack engineer. Gdańsk.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- subtle 3D backdrop -->
+<div id="orb" class="orb" aria-hidden="true"></div>
+
+<!-- top bar -->
+<header class="top">
+  <a class="sig" href="#top" aria-label="Top">
+    <span>Wiktor</span>
+    <span class="sig-last">Spryszyński</span>
+  </a>
+  <nav class="nav">
+    <a href="#work" data-en="Work" data-pl="Projekty">Work</a>
+    <a href="#about" data-en="About" data-pl="O&nbsp;mnie">About</a>
+    <a href="#contact" data-en="Contact" data-pl="Kontakt">Contact</a>
+    <span class="lang" role="group" aria-label="Language">
+      <button data-lang="en" class="active">EN</button>
+      <span class="lang-sep">/</span>
+      <button data-lang="pl">PL</button>
+    </span>
+  </nav>
+</header>
+
+<main>
+
+<!-- hero -->
+<section id="top" class="hero">
+  <div class="hero-meta">
+    <span data-en="Gdańsk, PL" data-pl="Gdańsk, PL">Gdańsk, PL</span>
+    <span class="dot-sep">·</span>
+    <span><i class="ok"></i><span data-en="Open to work, May&nbsp;2026" data-pl="Dostępny od maja&nbsp;2026">Open to work, May&nbsp;2026</span></span>
+  </div>
+
+  <h1 class="name">
+    <span class="name-line"><span class="egg" data-egg="www" tabindex="0" role="button" aria-label="W">Wiktor</span></span>
+    <span class="name-line"><span class="egg" data-egg="pronounce" tabindex="0" role="button" aria-label="Pronunciation">Spryszy<span class="ws">ń</span>ski</span><span class="period">.</span></span>
+  </h1>
+
+  <p class="tag" data-en="Full-stack engineer. I build small, careful software end-to-end — from schema to the last hover state." data-pl="Full-stack engineer. Robię małe, staranne oprogramowanie od bazy po ostatni stan hover.">Full-stack engineer. I build small, careful software end-to-end — from schema to the last hover state.</p>
+
+  <div class="hero-row">
+    <ul class="links">
+      <li>
+        <a class="link" data-action="copy-email" data-value="spryszynskiwiktor@gmail.com" href="mailto:spryszynskiwiktor@gmail.com" tabindex="0">
+          <span class="icn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="1.5"/><path d="M3 6l9 6 9-6"/></svg></span>
+          <span class="link-label" data-en="email" data-pl="email">email</span>
+          <span class="link-val">spryszynskiwiktor@gmail.com</span>
+        </a>
+      </li>
+      <li>
+        <a class="link" href="https://github.com/wiktorspryszynski" target="_blank" rel="noopener">
+          <span class="icn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></span>
+          <span class="link-label">github</span>
+          <span class="link-val">@wiktorspryszynski</span>
+        </a>
+      </li>
+      <li>
+        <a class="link" href="https://www.linkedin.com/in/wiktor-spryszynski/" target="_blank" rel="noopener">
+          <span class="icn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
+          <span class="link-label">linkedin</span>
+          <span class="link-val">in/wiktor-spryszynski</span>
+        </a>
+      </li>
+      <li>
+        <a class="link" href="resume.pdf" download>
+          <span class="icn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2.5H6.5A1.5 1.5 0 0 0 5 4v16a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 20V7.5z"/><path d="M14 2.5V7.5h5"/><path d="M9 13h6M9 16.5h6M9 9.5h2"/></svg></span>
+          <span class="link-label" data-en="résumé" data-pl="cv">résumé</span>
+          <span class="link-val">PDF, 1 page</span>
+        </a>
+      </li>
+    </ul>
+
+    <aside class="fetcher" id="fetcher" data-endpoint="" aria-label="Live API demo">
+      <header class="fetcher-head">
+        <span class="fetcher-method">GET</span>
+        <span class="fetcher-url">/api/now</span>
+        <span class="fetcher-status" data-state="loading"><i class="fetcher-status-dot"></i><span class="fetcher-status-text">…</span></span>
+      </header>
+      <pre class="fetcher-body" id="fetcher-body"><span class="dim">// connecting…</span></pre>
+      <footer class="fetcher-foot">
+        <span id="fetcher-meta" class="dim" data-en="awaiting response" data-pl="oczekiwanie">awaiting response</span>
+        <button class="fetcher-refresh" id="fetcher-refresh" aria-label="Refresh">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.6-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.6 6.2L3 16"/><path d="M3 21v-5h5"/></svg>
+          <span data-en="refresh" data-pl="odśwież">refresh</span>
+        </button>
+      </footer>
+    </aside>
+  </div>
+</section>
+
+<!-- about -->
+<section id="about" class="about">
+  <h2 class="h2" data-en="About" data-pl="O mnie">About</h2>
+  <div class="about-body">
+    <p data-en="I’m based in Gdańsk. For about a year and a half I worked on a SaaS in a three-person team where everyone shipped everything — backend in PHP, frontend in JavaScript and React, the database, the copy." data-pl="Mieszkam w Gdańsku. Przez około półtora roku pracowałem nad SaaS w trzyosobowym zespole, w którym każdy robił wszystko — backend w PHP, frontend w JS i React, baza, copy.">I’m based in Gdańsk. For about a year and a half I worked on a SaaS in a three-person team where everyone shipped everything — backend in PHP, frontend in JavaScript and React, the database, the copy.</p>
+    <p data-en="Before that, three months on an indoor-navigation app for a hospital. React Native, a 3D model of the building, Dijkstra for pathfinding." data-pl="Wcześniej trzy miesiące przy aplikacji nawigacji wewnątrz szpitala. React Native, model 3D budynku, algorytm Dijkstry.">Before that, three months on an indoor-navigation app for a hospital. React Native, a 3D model of the building, Dijkstra for pathfinding.</p>
+    <p data-en="I like work where one person owns a feature from the schema to the last hover state, and products that respect the user’s time." data-pl="Lubię pracę, w której jedna osoba prowadzi feature od schematu bazy po ostatni stan hover, i produkty, które szanują czas użytkownika.">I like work where one person owns a feature from the schema to the last hover state, and products that respect the user’s time.</p>
+  </div>
+  <aside class="about-side">
+    <dl>
+      <dt data-en="Shipped" data-pl="Produkcja">Shipped</dt>
+      <dd>PHP · JavaScript · React · SQL · HTML/CSS</dd>
+      <dt data-en="Side" data-pl="Po godzinach">Side</dt>
+      <dd>TypeScript · Python · FastAPI · PostgreSQL · Redis · Deck.gl</dd>
+      <dt data-en="Mobile" data-pl="Mobile">Mobile</dt>
+      <dd>React Native, Expo</dd>
+      <dt data-en="Languages" data-pl="Języki">Languages</dt>
+      <dd>Polish, English</dd>
+    </dl>
+  </aside>
+</section>
+
+<!-- work -->
+<section id="work" class="work">
+  <h2 class="h2" data-en="Selected work" data-pl="Wybrane projekty">Selected work</h2>
+
+  <article class="proj">
+    <header class="proj-head">
+      <h3 class="proj-title">nom-nom</h3>
+      <span class="proj-status" data-state="wip"><i></i><span data-en="in progress" data-pl="w trakcie">in progress</span></span>
+    </header>
+    <p class="proj-desc" data-en="A small PWA for tracking calories and water. Photo-scan a plate for an estimate, generate meal ideas with a shareable grocery list. Started because no free calorie app respected my time." data-pl="Mała PWA do liczenia kalorii i wody. Skanuj zdjęcie posiłku, generuj pomysły na posiłki z listą zakupów. Powstaje, bo żadna darmowa apka do liczenia kalorii nie szanowała mojego czasu.">A small PWA for tracking calories and water. Photo-scan a plate for an estimate, generate meal ideas with a shareable grocery list. Started because no free calorie app respected my time.</p>
+    <footer class="proj-foot">
+      <span class="proj-stack">React · TypeScript · FastAPI · Postgres · PWA</span>
+      <a class="proj-link" href="https://github.com/wiktorspryszynski/nom-nom" target="_blank" rel="noopener" data-en="source" data-pl="kod">source ↗</a>
+    </footer>
+  </article>
+
+  <article class="proj">
+    <header class="proj-head">
+      <h3 class="proj-title">flight-scope</h3>
+      <span class="proj-status" data-state="live"><i></i><span data-en="live" data-pl="live">live</span></span>
+    </header>
+    <p class="proj-desc" data-en="A live flight tracker. OpenSky into Redis, fanned out to clients, persisted to Postgres. Click a plane and ride along beside a 3D model. Currently adding ML and historic playback." data-pl="Tracker lotów na żywo. OpenSky do Redisa, rozsyłany do klientów, zapisany w Postgresie. Klikasz samolot i lecisz obok modelu 3D. Dokładam ML i odtwarzanie historii.">A live flight tracker. OpenSky into Redis, fanned out to clients, persisted to Postgres. Click a plane and ride along beside a 3D model. Currently adding ML and historic playback.</p>
+    <footer class="proj-foot">
+      <span class="proj-stack">React · TypeScript · FastAPI · Postgres · Redis · Deck.gl</span>
+      <span class="proj-links">
+        <a class="proj-link" href="https://github.com/wiktorspryszynski/flight-scope" target="_blank" rel="noopener" data-en="source" data-pl="kod">source ↗</a>
+        <a class="proj-link accent" href="#" data-demo="flight-scope" target="_blank" rel="noopener" data-en="demo" data-pl="demo">demo ↗</a>
+      </span>
+    </footer>
+  </article>
+
+  <article class="proj">
+    <header class="proj-head">
+      <h3 class="proj-title">spotify-recommender</h3>
+      <span class="proj-status" data-state="dead"><i></i><span data-en="archived" data-pl="archiwum">archived</span></span>
+    </header>
+    <p class="proj-desc" data-en="Sign in with Spotify, pull your top tracks, get a recommended playlist back. Saves to your library in one click. Retired when Spotify killed the audio-features endpoint." data-pl="Logowanie przez Spotify, pobranie topki, zwrot rekomendowanej playlisty. Zapis do biblioteki jednym kliknięciem. Zamknięte, gdy Spotify wyłączył endpoint audio-features.">Sign in with Spotify, pull your top tracks, get a recommended playlist back. Saves to your library in one click. Retired when Spotify killed the audio-features endpoint.</p>
+    <footer class="proj-foot">
+      <span class="proj-stack">Python · Django · kNN · OAuth</span>
+      <a class="proj-link" href="https://github.com/wiktorspryszynski/spotify_music_recommender" target="_blank" rel="noopener" data-en="source" data-pl="kod">source ↗</a>
+    </footer>
+  </article>
+
+  <article class="proj proj-small">
+    <header class="proj-head">
+      <h3 class="proj-title">self-updating github profile</h3>
+      <span class="proj-status" data-state="quiet"><i></i><span data-en="nightly" data-pl="nocne">nightly</span></span>
+    </header>
+    <p class="proj-desc" data-en="A nightly Action that scrapes my own stats and regenerates the PNG embedded in my profile README." data-pl="Nocna akcja GitHub, która pobiera moje statystyki i regeneruje PNG osadzony w README profilu.">A nightly Action that scrapes my own stats and regenerates the PNG embedded in my profile README.</p>
+    <footer class="proj-foot">
+      <span class="proj-stack">Python · GitHub Actions</span>
+      <a class="proj-link" href="https://github.com/wiktorspryszynski/wiktorspryszynski" target="_blank" rel="noopener" data-en="source" data-pl="kod">source ↗</a>
+    </footer>
+  </article>
+</section>
+
+<!-- contact -->
+<section id="contact" class="contact">
+  <h2 class="h2" data-en="Get in touch" data-pl="Napisz">Get in touch</h2>
+  <p class="contact-tag" data-en="The fastest way is email. I read everything." data-pl="Najszybciej przez email. Czytam wszystko.">The fastest way is email. I read everything.</p>
+  <ul class="contact-list">
+    <li>
+      <button class="contact-line" data-action="copy-email" data-value="spryszynskiwiktor@gmail.com" type="button">
+        <span class="icn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="1.5"/><path d="M3 6l9 6 9-6"/></svg></span>
+        <span class="contact-key">email</span>
+        <span class="contact-val">spryszynskiwiktor@gmail.com</span>
+        <span class="contact-cta" data-en="copy" data-pl="skopiuj">copy</span>
+      </button>
+      <a class="contact-side" href="mailto:spryszynskiwiktor@gmail.com" aria-label="Open in mail app" title="open in mail app">↗</a>
+    </li>
+    <li>
+      <a class="contact-line" href="https://github.com/wiktorspryszynski" target="_blank" rel="noopener">
+        <span class="icn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></span>
+        <span class="contact-key">github</span>
+        <span class="contact-val">github.com/wiktorspryszynski</span>
+        <span class="contact-cta">↗</span>
+      </a>
+    </li>
+    <li>
+      <a class="contact-line" href="https://www.linkedin.com/in/wiktor-spryszynski/" target="_blank" rel="noopener">
+        <span class="icn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
+        <span class="contact-key">linkedin</span>
+        <span class="contact-val">in/wiktor-spryszynski</span>
+        <span class="contact-cta">↗</span>
+      </a>
+    </li>
+    <li>
+      <a class="contact-line" href="resume.pdf" download>
+        <span class="icn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2.5H6.5A1.5 1.5 0 0 0 5 4v16a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 20V7.5z"/><path d="M14 2.5V7.5h5"/><path d="M9 13h6M9 16.5h6M9 9.5h2"/></svg></span>
+        <span class="contact-key" data-en="résumé" data-pl="cv">résumé</span>
+        <span class="contact-val" data-en="PDF, one page" data-pl="PDF, jedna strona">PDF, one page</span>
+        <span class="contact-cta">↓</span>
+      </a>
+    </li>
+  </ul>
+</section>
+
+</main>
+
+<footer class="bottom">
+  <span>© Wiktor Spryszyński, 2026</span>
+  <span class="bottom-mid" data-en="Gdańsk · 54.35°N, 18.65°E" data-pl="Gdańsk · 54.35°N, 18.65°E">Gdańsk · 54.35°N, 18.65°E</span>
+  <span><button id="term-toggle" class="term-toggle" type="button"><kbd>`</kbd></button></span>
+</footer>
+
+<!-- terminal overlay -->
+<div id="term" class="term-overlay" aria-hidden="true">
+  <div class="term-window" role="dialog" aria-label="Terminal">
+    <div class="term-head">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="title">~ %</div>
+      <button id="term-close" class="x" aria-label="Close">esc</button>
+    </div>
+    <div id="term-body" class="term-body"></div>
+    <div class="term-input-row">
+      <span class="prompt">~ %</span>
+      <input id="term-input" type="text" autocomplete="off" spellcheck="false" autocapitalize="off">
+    </div>
+  </div>
+</div>
+
+<!-- libs -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="scene.js"></script>
+<script src="interactions.js"></script>
+
+</body>
 </html>
