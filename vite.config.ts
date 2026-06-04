@@ -12,7 +12,8 @@ export default defineConfig({
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
           const url = (req.url ?? '').split('?')[0]
-          if (url === '/legacy/v1' || url === '/legacy/v1/') {
+          const legacyUrls = ['/legacy/v1', '/legacy/v1/']
+          if (legacyUrls.includes(url)) {
             const file = resolve(process.cwd(), 'public/legacy/v1/index.html')
             if (existsSync(file)) {
               res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' })
