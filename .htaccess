@@ -1,9 +1,13 @@
 RewriteEngine On
 
-# Jeśli plik lub folder istnieje, nie ruszaj
+# Serve /old_design/ as static files — skip SPA rewrite
+RewriteCond %{REQUEST_URI} ^/legacy/ [NC]
+RewriteRule ^ - [L]
+
+# If file or directory exists, serve directly
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Wszystko inne kieruj na index.html w root
+# All other requests → React SPA
 RewriteRule . /index.html [L]

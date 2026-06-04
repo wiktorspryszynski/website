@@ -1,10 +1,30 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { existsSync, readFileSync } from 'fs'
+import { resolve } from 'path'
 
-// https://vite.dev/config/
 export default defineConfig({
-  base: '/', // root domeny
-  plugins: [react()],
+  base: '/',
+  plugins: [
+    react(),
+    {
+      name: 'serve-legacy',
+      configureServer(server) {
+        server.middlewares.use((req, res, next) => {
+          const url = (req.url ?? '').split('?')[0]
+          if (url === '/legacy/v1' || url === '/legacy/v1/') {
+            const file = resolve(process.cwd(), 'public/legacy/v1/index.html')
+            if (existsSync(file)) {
+              res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' })
+              res.end(readFileSync(file))
+              return
+            }
+          }
+          next()
+        })
+      },
+    },
+  ],
   define: {
     __GIT_SHA__: JSON.stringify((process.env.VITE_GIT_SHA ?? 'dev').slice(0, 7)),
     __BUILD_NUMBER__: JSON.stringify(process.env.VITE_BUILD_NUMBER ?? 'local'),
