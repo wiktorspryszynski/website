@@ -547,7 +547,7 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
 .cta-split-main.copied .cta-btn-cta { color: var(--ok); }
 .cta-split-side {
   display: inline-grid; place-items: center;
-  padding: 0 22px;
+  padding: 0 14px;
   color: var(--muted);
   font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em;
   white-space: nowrap;
