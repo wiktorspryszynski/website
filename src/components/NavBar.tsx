@@ -37,13 +37,17 @@ export default function NavBar() {
               data-lang="en"
               className={lang === 'en' ? 'active' : ''}
               onClick={() => setLang('en' as Lang)}
-            >EN</button>
+            >
+              EN
+            </button>
             <span className="lang-sep">/</span>
             <button
               data-lang="pl"
               className={lang === 'pl' ? 'active' : ''}
               onClick={() => setLang('pl' as Lang)}
-            >PL</button>
+            >
+              PL
+            </button>
           </span>
         </nav>
       </div>
