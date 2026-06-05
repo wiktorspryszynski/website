@@ -29,8 +29,8 @@ export default function NavBar() {
           <span className="sig-last">Spryszyński</span>
         </button>
         <nav className="nav">
-          <a href="#work">{lang === 'pl' ? 'Projekty' : 'Work'}</a>
           <a href="#about">{lang === 'pl' ? 'O mnie' : 'About'}</a>
+          <a href="#work">{lang === 'pl' ? 'Projekty' : 'Work'}</a>
           <a href="#contact">{lang === 'pl' ? 'Kontakt' : 'Contact'}</a>
           <span className="lang" role="group" aria-label="Language">
             <button
