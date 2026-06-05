@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { LanguageProvider } from './context/LanguageContext'
+import { LanguageProvider } from './context/LanguageProvider'
 import { BACKEND_EXISTS } from './config/features'
 import NavBar from './components/NavBar'
 import OrbCanvas from './components/OrbCanvas'
