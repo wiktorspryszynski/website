@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { useLang } from '../context/LanguageContext'
 import { t } from '../data/homeContent'
 import { colorJson } from '../utils/colorJson'
-import { BACKEND_EXISTS } from '../config/features'
+import T from './T'
 
 interface FetchState {
   statusState: 'loading' | 'ok' | 'err'
@@ -142,7 +142,7 @@ export default function FetcherWidget() {
             <path d="M21 12a9 9 0 0 1-15.6 6.2L3 16" />
             <path d="M3 21v-5h5" />
           </svg>
-          <span>{t(lang, 'refresh', 'odśwież')}</span>
+          <span><T en="refresh" pl="odśwież" /></span>
         </button>
       </footer>
     </aside>

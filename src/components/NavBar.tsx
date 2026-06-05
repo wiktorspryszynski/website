@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useLang } from '../context/LanguageContext'
 import type { Lang } from '../context/LanguageContext'
+import T from './T'
 
-const NavButton = ({ scrollTo, text }: { scrollTo: string; text: string }) => (
+const NavButton = ({ scrollTo, en, pl }: { scrollTo: string; en: string; pl: string }) => (
   <button onClick={() => document.getElementById(scrollTo)?.scrollIntoView({ behavior: 'smooth' })}>
-    {text}
+    <T en={en} pl={pl} />
   </button>
 )
 
@@ -35,9 +36,9 @@ export default function NavBar() {
           <span className="sig-last">Spryszyński</span>
         </button>
         <nav className="nav">
-          <NavButton scrollTo="about"   text={lang === 'pl' ? 'O mnie'   : 'About'} />
-          <NavButton scrollTo="work"    text={lang === 'pl' ? 'Projekty' : 'Work'} />
-          <NavButton scrollTo="contact" text={lang === 'pl' ? 'Kontakt'  : 'Contact'} />
+          <NavButton scrollTo="about"   en="About"   pl="O mnie" />
+          <NavButton scrollTo="work"    en="Work"    pl="Projekty" />
+          <NavButton scrollTo="contact" en="Contact" pl="Kontakt" />
           <span className="lang" role="group" aria-label="Language">
             <button
               data-lang="en"

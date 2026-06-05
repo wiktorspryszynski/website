@@ -99,17 +99,23 @@ main { position: relative; z-index: 1; }
   font-size: 12px;
   color: var(--ink-2);
 }
-.nav a { transition: color 0.2s ease; }
-.nav a:hover { color: var(--accent); }
+.nav a, .nav > button { transition: color 0.2s ease; }
+.nav a:hover, .nav > button:hover { color: var(--accent); }
 .lang { display: inline-flex; gap: 4px; align-items: center; color: var(--muted); }
 .lang button { font: inherit; color: var(--muted); transition: color 0.2s ease; }
 .lang button.active { color: var(--ink); }
 .lang button:hover { color: var(--accent); }
 .lang-sep { color: var(--muted); }
 
+@keyframes t-in {
+  from { opacity: 0; transform: translateY(2px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.t { display: inline-block; animation: t-in 0.18s ease; }
+
 @media (max-width: 640px) {
   .nav { gap: 16px; font-size: 11px; }
-  .nav a:nth-child(2) { display: none; }
+  .nav > button:nth-child(2) { display: none; }
 }
 
 /* ---------- hero ---------- */

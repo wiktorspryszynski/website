@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react'
-import { useLang } from '../context/LanguageContext'
-import { t } from '../data/homeContent'
+import T from './T'
 
 async function copyText(text: string): Promise<boolean> {
   try {
@@ -73,7 +72,6 @@ export interface LinkRowProps {
 }
 
 export default function LinkRow({ icon, label, value, action, aside }: LinkRowProps) {
-  const { lang } = useLang()
   const [copied, setCopied] = useState(false)
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
@@ -90,8 +88,8 @@ export default function LinkRow({ icon, label, value, action, aside }: LinkRowPr
     }
   }
 
-  const ctaText = action.type === 'copy'
-    ? (copied ? `✓ ${t(lang, 'copied', 'skopiowano')}` : t(lang, 'copy', 'skopiuj'))
+  const ctaContent = action.type === 'copy'
+    ? (copied ? <>✓ <T en="copied" pl="skopiowano" /></> : <T en="copy" pl="skopiuj" />)
     : action.type === 'download' ? '↓' : '↗'
 
   const inner = (
@@ -99,7 +97,7 @@ export default function LinkRow({ icon, label, value, action, aside }: LinkRowPr
       <span className="icn" aria-hidden="true">{icon}</span>
       <span className="link-row-label">{label}</span>
       <span className="link-row-value">{value}</span>
-      <span className="link-row-cta" data-cta={action.type}>{ctaText}</span>
+      <span className="link-row-cta" data-cta={action.type}>{ctaContent}</span>
     </>
   )
 

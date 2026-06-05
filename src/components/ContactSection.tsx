@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { useLang } from '../context/LanguageContext'
-import { t } from '../data/homeContent'
 import { EmailIcon, GithubIcon, LinkedInIcon, FileIcon } from './LinkRow'
+import T from './T'
 
 const EMAIL = 'spryszynskiwiktor@gmail.com'
 
@@ -48,9 +48,9 @@ export default function ContactSection({ onCopy }: ContactSectionProps) {
 
   return (
     <section id="contact" className="contact">
-      <h2 className="h2">{t(lang, 'Get in touch', 'Napisz')}</h2>
+      <h2 className="h2"><T en="Get in touch" pl="Napisz" /></h2>
       <p className="contact-tag">
-        {t(lang, 'The fastest way is email. I read everything.', 'Najszybciej przez email. Czytam wszystko.')}
+        <T en="The fastest way is email. I read everything." pl="Najszybciej przez email. Czytam wszystko." />
       </p>
 
       <div className="cta-buttons">
@@ -66,7 +66,7 @@ export default function ContactSection({ onCopy }: ContactSectionProps) {
               <span className="cta-btn-val">{EMAIL}</span>
             </span>
             <span className="cta-btn-cta" data-cta="copy">
-              {copied ? `✓ ${t(lang, 'copied', 'skopiowano')}` : t(lang, 'copy', 'skopiuj')}
+              {copied ? <>✓ <T en="copied" pl="skopiowano" /></> : <T en="copy" pl="skopiuj" />}
             </span>
           </button>
           <a
@@ -74,7 +74,7 @@ export default function ContactSection({ onCopy }: ContactSectionProps) {
             href={`mailto:${EMAIL}`}
             aria-label="Open in mail app"
             title="Open in mail app"
-          >{t(lang, 'open', 'otwórz')}</a>
+          ><T en="open" pl="otwórz" /></a>
         </div>
 
         <div className="cta-row">
@@ -98,8 +98,8 @@ export default function ContactSection({ onCopy }: ContactSectionProps) {
             <a className="cta-split-main" href={resumeHref} target="_blank" rel="noopener">
               <span className="cta-btn-icon"><FileIcon /></span>
               <span className="cta-btn-body">
-                <span className="cta-btn-label">{t(lang, 'résumé', 'cv')}</span>
-                <span className="cta-btn-val">{t(lang, 'PDF, one page', 'PDF, jedna strona')}</span>
+                <span className="cta-btn-label"><T en="résumé" pl="cv" /></span>
+                <span className="cta-btn-val"><T en="PDF, one page" pl="PDF, jedna strona" /></span>
               </span>
               <span className="cta-btn-cta" data-cta="external">↗</span>
             </a>
@@ -109,7 +109,7 @@ export default function ContactSection({ onCopy }: ContactSectionProps) {
               download
               aria-label="Download résumé"
               title="Download résumé"
-            >{t(lang, 'save', 'pobierz')}</a>
+            ><T en="save" pl="pobierz" /></a>
           </div>
         </div>
       </div>

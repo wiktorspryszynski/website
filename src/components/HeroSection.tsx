@@ -1,9 +1,8 @@
 import { useRef } from 'react'
-import { useLang } from '../context/LanguageContext'
-import { t } from '../data/homeContent'
 import { BACKEND_EXISTS } from '../config/features'
 import LinkGrid from './LinkGrid'
 import FetcherWidget from './FetcherWidget'
+import T from './T'
 
 interface HeroSectionProps {
   onWwwClick: (rect: DOMRect) => void
@@ -12,7 +11,6 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ onWwwClick, onPronounceClick, onCopy }: HeroSectionProps) {
-  const { lang } = useLang()
   const wwwRef = useRef<HTMLSpanElement>(null)
   const pronounceRef = useRef<HTMLSpanElement>(null)
 
@@ -33,11 +31,11 @@ export default function HeroSection({ onWwwClick, onPronounceClick, onCopy }: He
   return (
     <section id="top" className="hero">
       <div className="hero-meta">
-        <span>{t(lang, 'Gdańsk, PL', 'Gdańsk, PL')}</span>
+        <span>Gdańsk, PL</span>
         <span className="dot-sep">·</span>
         <span>
           <i className="ok" />
-          {t(lang, 'Open to work, May 2026', 'Dostępny od maja 2026')}
+          <T en="Open to work, May 2026" pl="Dostępny od maja 2026" />
         </span>
       </div>
 
@@ -74,11 +72,10 @@ export default function HeroSection({ onWwwClick, onPronounceClick, onCopy }: He
       </h1>
 
       <p className="tag">
-        {t(
-          lang,
-          'Full-stack engineer. I build small, careful software end-to-end — from schema to the last hover state.',
-          'Full-stack engineer. Robię małe, staranne oprogramowanie od bazy po ostatni stan hover.'
-        )}
+        <T
+          en="Full-stack engineer. I build small, careful software end-to-end — from schema to the last hover state."
+          pl="Full-stack engineer. Robię małe, staranne oprogramowanie od bazy po ostatni stan hover."
+        />
       </p>
 
       <div className="hero-row">
