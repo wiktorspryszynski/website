@@ -20,10 +20,14 @@ export default function NavBar() {
   return (
     <header className="top">
       <div className="top-inner">
-        <a className={`sig${sigVisible ? ' sig-show' : ''}`} href="#top" aria-label="Top">
+        <button
+          className={`sig${sigVisible ? ' sig-show' : ''}`}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          aria-label="Scroll to top"
+        >
           <span>Wiktor</span>
           <span className="sig-last">Spryszyński</span>
-        </a>
+        </button>
         <nav className="nav">
           <a href="#work">{lang === 'pl' ? 'Projekty' : 'Work'}</a>
           <a href="#about">{lang === 'pl' ? 'O mnie' : 'About'}</a>
