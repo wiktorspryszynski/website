@@ -28,7 +28,7 @@ export default function OrbCanvas() {
     const original = posArr.slice(0)
 
     const mat = new THREE.LineBasicMaterial({ color: 0xebe9e3, transparent: true, opacity: 0.12 })
-    let edgeMesh = new THREE.LineSegments(new THREE.WireframeGeometry(geom), mat)
+    const edgeMesh = new THREE.LineSegments(new THREE.WireframeGeometry(geom), mat)
     scene.add(edgeMesh)
 
     // Outer shell
@@ -121,7 +121,7 @@ export default function OrbCanvas() {
     onResize()
     window.addEventListener('resize', onResize)
 
-    const clock = new THREE.Clock()
+    const timer = new THREE.Timer()
 
     function noise(x: number, y: number, z: number, t: number) {
       return (
@@ -136,7 +136,7 @@ export default function OrbCanvas() {
         const ox = original[i * 3]
         const oy = original[i * 3 + 1]
         const oz = original[i * 3 + 2]
-        const t = clock.getElapsedTime() * 0.25
+        const t = timer.getElapsed() * 0.25
         const n = noise(ox, oy, oz, t)
         const s = 1 + 0.05 * n
         posArr[i * 3] = ox * s
@@ -154,7 +154,8 @@ export default function OrbCanvas() {
     let frame = 0
 
     function tick() {
-      const t = clock.getElapsedTime()
+      timer.update()
+      const t = timer.getElapsed()
       if (frame % 3 === 0) rebuildEdges()
       frame++
 
