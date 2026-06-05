@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { LanguageProvider } from './context/LanguageContext'
+import { BACKEND_EXISTS } from './config/features'
 import NavBar from './components/NavBar'
 import OrbCanvas from './components/OrbCanvas'
 import HeroSection from './components/HeroSection'
@@ -73,7 +74,7 @@ export default function HomePage() {
       </main>
       <SiteFooter onTerminalOpen={openTerm} />
       <TerminalOverlay isOpen={termOpen} onClose={closeTerm} />
-      <WwwEgg isOpen={wwwOpen} anchorRect={wwwAnchorRect} onClose={() => setWwwOpen(false)} />
+      {BACKEND_EXISTS && <WwwEgg isOpen={wwwOpen} anchorRect={wwwAnchorRect} onClose={() => setWwwOpen(false)} />}
       <PronunciationPop isOpen={pronounceOpen} anchorRect={pronounceAnchorRect} onClose={() => setPronounceOpen(false)} />
       <Toast message={toastMsg} onDismiss={dismissToast} />
     </LanguageProvider>

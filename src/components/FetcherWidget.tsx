@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { useLang } from '../context/LanguageContext'
 import { t } from '../data/homeContent'
 import { colorJson } from '../utils/colorJson'
+import { BACKEND_EXISTS } from '../config/features'
 
 interface FetchState {
   statusState: 'loading' | 'ok' | 'err'

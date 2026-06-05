@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { useLang } from '../context/LanguageContext'
 import { t } from '../data/homeContent'
+import { BACKEND_EXISTS } from '../config/features'
 import LinkGrid from './LinkGrid'
 import FetcherWidget from './FetcherWidget'
 
@@ -42,16 +43,20 @@ export default function HeroSection({ onWwwClick, onPronounceClick, onCopy }: He
 
       <h1 className="name">
         <span className="name-line">
-          <span
-            className="egg"
-            data-egg="www"
-            tabIndex={0}
-            role="button"
-            aria-label="W"
-            ref={wwwRef}
-            onClick={handleWwwClick}
-            onKeyDown={handleWwwKey}
-          >Wiktor</span>
+          {BACKEND_EXISTS ? (
+            <span
+              className="egg"
+              data-egg="www"
+              tabIndex={0}
+              role="button"
+              aria-label="W"
+              ref={wwwRef}
+              onClick={handleWwwClick}
+              onKeyDown={handleWwwKey}
+            >Wiktor</span>
+          ) : (
+            <span>Wiktor</span>
+          )}
         </span>
         <span className="name-line">
           <span
@@ -78,7 +83,7 @@ export default function HeroSection({ onWwwClick, onPronounceClick, onCopy }: He
 
       <div className="hero-row">
         <LinkGrid onCopy={onCopy} />
-        <FetcherWidget />
+        {BACKEND_EXISTS && <FetcherWidget />}
       </div>
     </section>
   )

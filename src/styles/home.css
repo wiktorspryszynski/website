@@ -41,7 +41,7 @@ button {
 ::selection { background: var(--accent); color: var(--bg); }
 
 /* layout container */
-.top, main > section, .bottom {
+main > section, .bottom, .top-inner {
   max-width: var(--maxw);
   margin: 0 auto;
   padding-left: var(--gutter);
@@ -68,18 +68,29 @@ main { position: relative; z-index: 1; }
 
 /* ---------- top bar ---------- */
 .top {
-  position: sticky; top: 0; z-index: 30;
-  display: flex; align-items: center; justify-content: space-between;
-  padding-top: 22px; padding-bottom: 22px;
+  position: sticky; top: 0; z-index: 30; width: 100%;
   background: linear-gradient(to bottom, rgba(12, 12, 13, 0.92) 60%, rgba(12, 12, 13, 0));
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+}
+.top-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 22px; padding-bottom: 22px;
 }
 .sig {
   font-family: var(--display);
   font-size: 17px; font-weight: 400;
   letter-spacing: -0.01em;
   display: inline-flex; gap: 6px; align-items: baseline;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.sig.sig-show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 .sig-last { font-style: italic; color: var(--ink-2); }
 .nav {
