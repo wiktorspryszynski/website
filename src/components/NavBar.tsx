@@ -2,6 +2,12 @@ import { useEffect, useState } from 'react'
 import { useLang } from '../context/LanguageContext'
 import type { Lang } from '../context/LanguageContext'
 
+const NavButton = ({ scrollTo, text }: { scrollTo: string; text: string }) => (
+  <button onClick={() => document.getElementById(scrollTo)?.scrollIntoView({ behavior: 'smooth' })}>
+    {text}
+  </button>
+)
+
 export default function NavBar() {
   const { lang, setLang } = useLang()
   const [sigVisible, setSigVisible] = useState(false)
@@ -29,9 +35,9 @@ export default function NavBar() {
           <span className="sig-last">Spryszyński</span>
         </button>
         <nav className="nav">
-          <button onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>{lang === 'pl' ? 'O mnie' : 'About'}</button>
-          <button onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}>{lang === 'pl' ? 'Projekty' : 'Work'}</button>
-          <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>{lang === 'pl' ? 'Kontakt' : 'Contact'}</button>
+          <NavButton scrollTo="about"   text={lang === 'pl' ? 'O mnie'   : 'About'} />
+          <NavButton scrollTo="work"    text={lang === 'pl' ? 'Projekty' : 'Work'} />
+          <NavButton scrollTo="contact" text={lang === 'pl' ? 'Kontakt'  : 'Contact'} />
           <span className="lang" role="group" aria-label="Language">
             <button
               data-lang="en"
