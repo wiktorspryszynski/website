@@ -1,5 +1,6 @@
 import { projects, statusLabel } from '../data/homeContent'
 import T from './T'
+import TechTag from './TechTag'
 
 export default function WorkSection() {
   return (
@@ -17,7 +18,7 @@ export default function WorkSection() {
           </header>
           <p className="proj-desc"><T en={proj.desc.en} pl={proj.desc.pl} /></p>
           <footer className="proj-foot">
-            <span className="proj-stack">{proj.stack}</span>
+            <span className="proj-stack">{proj.stack.map(t => <TechTag key={t} name={t} />)}</span>
             {proj.demoUrl ? (
               <span className="proj-links">
                 <a className="proj-link" href={proj.sourceUrl} target="_blank" rel="noopener">

@@ -1,4 +1,9 @@
 import T from './T'
+import TechTag from './TechTag'
+
+const SHIPPED  = ['PHP', 'JavaScript', 'React', 'SQL', 'HTML/CSS']
+const SIDE     = ['TypeScript', 'Python', 'FastAPI', 'PostgreSQL', 'Redis', 'Docker', 'Deck.gl']
+const MOBILE   = ['React Native', 'Expo']
 
 export default function AboutSection() {
   return (
@@ -21,13 +26,13 @@ export default function AboutSection() {
       <aside className="about-side">
         <dl>
           <dt><T en="Shipped" pl="Produkcja" /></dt>
-          <dd>PHP · JavaScript · React · SQL · HTML/CSS</dd>
+          <dd>{SHIPPED.map(t => <TechTag key={t} name={t} />)}</dd>
           <dt><T en="Side" pl="Po godzinach" /></dt>
-          <dd>TypeScript · Python · FastAPI · PostgreSQL · Redis · Deck.gl</dd>
+          <dd>{SIDE.map(t => <TechTag key={t} name={t} />)}</dd>
           <dt><T en="Mobile" pl="Mobile" /></dt>
-          <dd>React Native, Expo</dd>
+          <dd>{MOBILE.map(t => <TechTag key={t} name={t} />)}</dd>
           <dt><T en="Languages" pl="Języki" /></dt>
-          <dd>Polish, English</dd>
+          <dd className="about-langs">Polish, English</dd>
         </dl>
       </aside>
     </section>
