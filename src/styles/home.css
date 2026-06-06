@@ -381,7 +381,7 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
   line-height: 1.5;
   color: var(--ink);
   margin: 0;
-  max-width: 36ch;
+  max-width: 85%;
 }
 .about-body p + p { margin-top: 22px; }
 .about-side dl {

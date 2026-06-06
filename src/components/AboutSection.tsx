@@ -20,11 +20,11 @@ export default function AboutSection() {
         /></p>
         <p><T
           en="I built the backend in PHP, the frontend in JavaScript & React. I designed the database schema and implemented many features (e.g. monitoring, event logging, signing up, JWT)."
-          pl="Stworzyłem backend w PHP, frontend w JavaScript i React. Zaprojektowałem schemat bazy danych i zaimplementowałem wiele funkcji (np. monitoring, logowanie zdarzeń, rejestracja, JWT)."
+          pl="Pisałem tam backend w PHP, a frontend w JavaScript i React. Projektowałem schemat bazy danych i zaimplementowałem wiele funkcji (np. monitoring, logowanie zdarzeń, rejestracja, JWT)."
         /></p>
         <p><T
           en="In the meantime, I also built a React Native mobile app for indoor navigation - a group project for a hospital, which was our Bachelor's thesis."
-          pl="W międzyczasie stworzyłem również aplikację mobilną w React Native do nawigacji wewnątrz budynków - projekt grupowy dla Szpitala Specjalistycznego w Kościerzynie, beneficjenta naszej pracy inżynierskiej."
+          pl="W międzyczasie stworzyłem również aplikację mobilną w React Native do nawigacji wewnątrz budynków - projekt grupowy dla Szpitala Specjalistycznego w Kościerzynie, była to nasza praca inżynierska."
         /></p>
         <p><T
           en="I like 3D renders (obviously), simplicity in code and intuitive design."
