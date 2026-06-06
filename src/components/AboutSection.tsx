@@ -11,7 +11,7 @@ export default function AboutSection() {
       <h2 className="h2"><T en="About" pl="O mnie" /></h2>
       <div className="about-body">
         <p><T
-          en="I'm based in Gdańsk, Poland."
+          en={<>I'm based in <a className="geo-link" href="https://maps.google.com/?q=Gdańsk,+Poland" target="_blank" rel="noopener noreferrer">Gdańsk, Poland</a>.</>}
           pl="Mieszkam w Gdańsku."
         /></p>
         <p><T

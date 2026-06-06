@@ -407,6 +407,13 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
   padding-top: 4px;
   letter-spacing: 0.01em;
 }
+.geo-link {
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+.geo-link::after { content: ' ↗'; font-size: 0.75em; opacity: 0.4; vertical-align: 0.15em; transition: opacity 0.15s; }
+.geo-link:hover { opacity: 1; }
+.geo-link:hover::after { opacity: 1; }
 
 /* ---------- work ---------- */
 .work { display: grid; gap: 0; }
