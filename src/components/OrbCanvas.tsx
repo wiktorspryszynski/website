@@ -129,11 +129,19 @@ export default function OrbCanvas() {
 
     const endDragBlur = () => { isDragging = false; document.body.classList.remove('dragging-orb') }
 
+    let lastScrollY = window.scrollY
+    const handleScroll = () => {
+      const dy = window.scrollY - lastScrollY
+      velY += dy * 0.00004
+      lastScrollY = window.scrollY
+    }
+
     window.addEventListener('pointerdown', handlePointerDown)
     window.addEventListener('pointermove', handlePointerMove)
     window.addEventListener('pointerup', endDrag)
     window.addEventListener('pointercancel', endDrag)
     window.addEventListener('blur', endDragBlur)
+    window.addEventListener('scroll', handleScroll)
     document.addEventListener('pointermove', handlePointerMoveCursor)
 
     const onResize = () => {
@@ -232,6 +240,7 @@ export default function OrbCanvas() {
       window.removeEventListener('pointercancel', endDrag)
       window.removeEventListener('blur', endDragBlur)
       document.removeEventListener('pointermove', handlePointerMoveCursor)
+      window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', onResize)
       document.body.classList.remove('dragging-orb')
       if (document.body.style.cursor === 'grab') document.body.style.cursor = ''
