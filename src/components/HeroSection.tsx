@@ -77,8 +77,13 @@ export default function HeroSection({ onWwwClick, onPronounceClick, onCopy }: He
 
       <p className="tag">
         <T
-          en="Full-stack engineer. I build small, careful software end-to-end — from schema to the last hover state."
-          pl="Full-stack engineer. Robię małe, staranne oprogramowanie od bazy po ostatni stan hover."
+          en="Full stack developer"
+          pl="Full stack developer"
+        />
+        <br />
+        <T
+          en="I like building projects that solve a real problem"
+          pl="Lubię budować projekty, które rozwiązują prawdziwy problem"
         />
       </p>
 
