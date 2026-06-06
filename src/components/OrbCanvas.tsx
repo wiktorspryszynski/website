@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
+import { SPIKES_ENABLED } from '../config/features'
 
 export default function OrbCanvas() {
   const mountRef = useRef<HTMLDivElement>(null)
@@ -61,6 +62,22 @@ export default function OrbCanvas() {
     let dragRotX = 0, dragRotY = 0
     let velX = 0, velY = 0
 
+    let spikeStartTime = -999
+    let pointerDownX = 0, pointerDownY = 0
+    let hasDragged = false
+
+    function isClickOnOrb(clientX: number, clientY: number): boolean {
+      const offX = window.innerWidth > 880 ? 2.2 : 0
+      const center = new THREE.Vector3(offX, 0, 0)
+      const edge = new THREE.Vector3(offX + 2.7, 0, 0)
+      center.project(camera)
+      edge.project(camera)
+      const cx = (center.x * 0.5 + 0.5) * window.innerWidth
+      const cy = (-center.y * 0.5 + 0.5) * window.innerHeight
+      const r = Math.abs((edge.x * 0.5 + 0.5) * window.innerWidth - cx)
+      return (clientX - cx) ** 2 + (clientY - cy) ** 2 < r * r
+    }
+
     function isHeroArea(e: PointerEvent) {
       const el = e.target as Element | null
       if (el?.closest('a, button, input, textarea, .top, .term-overlay, .nav, .lang, .fetcher, .pron-pop, .www-window, .links, .contact-list, .proj, .name .egg')) return false
@@ -72,6 +89,8 @@ export default function OrbCanvas() {
       if (!isHeroArea(e)) return
       isDragging = true
       lastX = e.clientX; lastY = e.clientY
+      pointerDownX = e.clientX; pointerDownY = e.clientY
+      hasDragged = false
       velX = 0; velY = 0
       document.body.classList.add('dragging-orb')
       window.getSelection()?.removeAllRanges()
@@ -84,6 +103,10 @@ export default function OrbCanvas() {
         dragRotY += dx; dragRotX += dy
         velX = dx; velY = dy
         lastX = e.clientX; lastY = e.clientY
+        if (SPIKES_ENABLED) {
+          const totalMove = Math.abs(e.clientX - pointerDownX) + Math.abs(e.clientY - pointerDownY)
+          if (totalMove > 6) hasDragged = true
+        }
         if (e.cancelable) e.preventDefault()
       } else {
         target.x = (e.clientX / window.innerWidth - 0.5) * 2
@@ -91,10 +114,11 @@ export default function OrbCanvas() {
       }
     }
 
-    const endDrag = () => {
+    const endDrag = (e: PointerEvent) => {
       if (!isDragging) return
       isDragging = false
       document.body.classList.remove('dragging-orb')
+      if (SPIKES_ENABLED && !hasDragged && isHeroArea(e) && isClickOnOrb(e.clientX, e.clientY)) spikeStartTime = timer.getElapsed()
     }
 
     const handlePointerMoveCursor = (e: PointerEvent) => {
@@ -103,11 +127,13 @@ export default function OrbCanvas() {
       else if (document.body.style.cursor === 'grab') document.body.style.cursor = ''
     }
 
+    const endDragBlur = () => { isDragging = false; document.body.classList.remove('dragging-orb') }
+
     window.addEventListener('pointerdown', handlePointerDown)
     window.addEventListener('pointermove', handlePointerMove)
     window.addEventListener('pointerup', endDrag)
     window.addEventListener('pointercancel', endDrag)
-    window.addEventListener('blur', endDrag)
+    window.addEventListener('blur', endDragBlur)
     document.addEventListener('pointermove', handlePointerMoveCursor)
 
     const onResize = () => {
@@ -131,14 +157,31 @@ export default function OrbCanvas() {
       )
     }
 
+    const beatHashes = [
+      [7.3, 4.1, 9.7],
+      [3.1, 8.7, 2.3],
+      [5.9, 1.3, 6.7],
+      [9.1, 3.7, 4.9],
+    ]
+
     function rebuildEdges() {
+      const elapsed = timer.getElapsed()
+      const spikeAge = elapsed - spikeStartTime
+      const spikeEnvelope = SPIKES_ENABLED && spikeAge < 2.2
+        ? Math.abs(Math.sin(spikeAge * 11)) * Math.exp(-spikeAge * 2.8)
+        : 0
+
+      const beatIndex = Math.floor(spikeAge * 11 / Math.PI) % beatHashes.length
+      const [ha, hb, hc] = SPIKES_ENABLED && spikeEnvelope > 0 ? beatHashes[beatIndex] : beatHashes[0]
+
       for (let i = 0; i < posAttr.count; i++) {
         const ox = original[i * 3]
         const oy = original[i * 3 + 1]
         const oz = original[i * 3 + 2]
-        const t = timer.getElapsed() * 0.25
+        const t = elapsed * 0.25
         const n = noise(ox, oy, oz, t)
-        const s = 1 + 0.05 * n
+        const perVertex = Math.pow(Math.abs(Math.sin(ox * ha + oy * hb + oz * hc)), 5)
+        const s = 1 + 0.05 * n + spikeEnvelope * perVertex * 2.2
         posArr[i * 3] = ox * s
         posArr[i * 3 + 1] = oy * s
         posArr[i * 3 + 2] = oz * s
@@ -187,7 +230,7 @@ export default function OrbCanvas() {
       window.removeEventListener('pointermove', handlePointerMove)
       window.removeEventListener('pointerup', endDrag)
       window.removeEventListener('pointercancel', endDrag)
-      window.removeEventListener('blur', endDrag)
+      window.removeEventListener('blur', endDragBlur)
       document.removeEventListener('pointermove', handlePointerMoveCursor)
       window.removeEventListener('resize', onResize)
       document.body.classList.remove('dragging-orb')
