@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import { useLang } from '../context/LanguageContext'
 import { EmailIcon, GithubIcon, LinkedInIcon, FileIcon } from './LinkRow'
 import T from './T'
+import { LOOKING_FOR_HIRE } from '../config/features'
 
 const EMAIL = 'spryszynskiwiktor@gmail.com'
 
@@ -42,15 +43,22 @@ export default function ContactSection({ onCopy }: ContactSectionProps) {
       if (timerRef.current) clearTimeout(timerRef.current)
       timerRef.current = setTimeout(() => setCopied(false), 1800)
     } else {
-      onCopy("couldn′t copy")
+      onCopy("couldn't copy")
     }
   }
 
   return (
     <section id="contact" className="contact">
-      <h2 className="h2"><T en="Get in touch" pl="Napisz" /></h2>
+      <h2 className="h2"><T en="Let's get in touch" pl="Skontaktuj się ze mną" /></h2>
       <p className="contact-tag">
-        <T en="The fastest way is email. I read everything." pl="Najszybciej przez email. Czytam wszystko." />
+        { LOOKING_FOR_HIRE
+          ? <T en="I'm currently looking for new job opportunities." pl="Obecnie szukam nowych ofert pracy." />
+          : <T en="I'm currently open to project collaborations." pl="Obecnie jestem otwarty na współpracę przy projektach." />
+        }
+        <T
+          en="The best way to reach me is by email - I usually reply within an hour."
+          pl="Najlepiej napisać przez email - staram się odpowiedzieć w ciągu godziny."
+        />
       </p>
 
       <div className="cta-buttons">

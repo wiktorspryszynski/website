@@ -3,6 +3,7 @@ import { BACKEND_EXISTS } from '../config/features'
 import LinkGrid from './LinkGrid'
 import FetcherWidget from './FetcherWidget'
 import T from './T'
+import { LOOKING_FOR_HIRE } from '../config/features'
 
 interface HeroSectionProps {
   onWwwClick: (rect: DOMRect) => void
@@ -35,7 +36,10 @@ export default function HeroSection({ onWwwClick, onPronounceClick, onCopy }: He
         <span className="dot-sep">·</span>
         <span>
           <i className="ok" />
-          <T en="Open to work, May 2026" pl="Dostępny od maja 2026" />
+          {LOOKING_FOR_HIRE
+           ? <T en="Open to job opportunities"      pl="Otwarty na oferty pracy" />
+           : <T en="Open to project collaborations" pl="Otwarty na współpracę przy projektach" />
+          }
         </span>
       </div>
 

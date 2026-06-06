@@ -2,7 +2,7 @@
 
 ## Planned
 
-- [ ] Wire up a backend - some things are BACKEND_DEPENDENT (bool variable), e.g.: API endpoint showcase, WWW easter egg
+- [ ] Wire up a backend - some things are backend dependent (`BACKEND_EXISTS` bool variable), e.g.: API endpoint showcase, WWW easter egg
 - [ ] `flight-scope` demo link — `demoUrl` is set to `'#'` in `homeContent.ts`
 - [ ] Add ML and historic playback to flight-scope (noted in project description)
 - [ ] SEO / OG meta tags via React Helmet
