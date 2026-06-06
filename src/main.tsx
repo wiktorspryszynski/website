@@ -4,12 +4,7 @@ import './styles/home.css'
 import App from './App.tsx'
 
 console.log(
-  '%c██╗    ██╗███████╗\n',
-  '%c██║    ██║██╔════╝\n',
-  '%c██║ █╗ ██║███████╗\n',
-  '%c██║███╗██║╚════██║\n',
-  '%c╚███╔███╔╝███████║\n',
-  '%c ╚══╝╚══╝ ╚══════╝',
+  '%c██╗    ██╗███████╗\n%c██║    ██║██╔════╝\n%c██║ █╗ ██║███████╗\n%c██║███╗██║╚════██║\n%c╚███╔███╔╝███████║\n%c ╚══╝╚══╝ ╚══════╝',
   'color:#f472b6;font-family:monospace',
   'color:#a78bfa;font-family:monospace',
   'color:#60a5fa;font-family:monospace',

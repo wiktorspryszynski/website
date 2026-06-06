@@ -39,23 +39,15 @@ export default function NavBar() {
           <NavButton scrollTo="about"   en="About"   pl="O mnie" />
           <NavButton scrollTo="work"    en="Work"    pl="Projekty" />
           <NavButton scrollTo="contact" en="Contact" pl="Kontakt" />
-          <span className="lang" role="group" aria-label="Language">
-            <button
-              data-lang="en"
-              className={lang === 'en' ? 'active' : ''}
-              onClick={() => setLang('en' as Lang)}
-            >
-              EN
-            </button>
+          <button
+            className="lang"
+            aria-label={`Switch to ${lang === 'en' ? 'Polish' : 'English'}`}
+            onClick={() => setLang((lang === 'en' ? 'pl' : 'en') as Lang)}
+          >
+            <span className={lang === 'en' ? 'active' : ''}>EN</span>
             <span className="lang-sep">/</span>
-            <button
-              data-lang="pl"
-              className={lang === 'pl' ? 'active' : ''}
-              onClick={() => setLang('pl' as Lang)}
-            >
-              PL
-            </button>
-          </span>
+            <span className={lang === 'pl' ? 'active' : ''}>PL</span>
+          </button>
         </nav>
       </div>
     </header>

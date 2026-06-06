@@ -101,10 +101,13 @@ main { position: relative; z-index: 1; }
 }
 .nav a, .nav > button { transition: color 0.2s ease; }
 .nav a:hover, .nav > button:hover { color: var(--accent); }
-.lang { display: inline-flex; gap: 4px; align-items: center; color: var(--muted); }
-.lang button { font: inherit; color: var(--muted); transition: color 0.2s ease; }
-.lang button.active { color: var(--ink); }
-.lang button:hover { color: var(--accent); }
+.lang { display: inline-flex; gap: 4px; align-items: center; color: var(--muted); transition: color 0.2s ease; }
+.lang span { transition: color 0.2s ease; }
+.lang span.active { color: var(--ink); }
+@media (hover: hover) {
+  .lang:hover { color: var(--accent); }
+  .lang:hover span.active { color: var(--ink); }
+}
 .lang-sep { color: var(--muted); }
 
 @keyframes t-in {
