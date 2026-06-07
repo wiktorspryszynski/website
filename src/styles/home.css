@@ -609,6 +609,10 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
 .cta-split-side:hover { background: rgba(201, 88, 53, 0.12); color: var(--accent); }
 
 /* ---------- bottom ---------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 60px;
+}
 .bottom {
   display: flex; justify-content: space-between; align-items: center;
   gap: 16px;
@@ -616,8 +620,6 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
   font-family: var(--mono); font-size: 11px;
   color: var(--muted);
   letter-spacing: 0.02em;
-  border-top: 1px solid var(--line);
-  margin-top: 60px;
 }
 .bottom-mid { text-align: center; flex: 1; }
 .term-toggle {
@@ -625,16 +627,55 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
   font-family: var(--mono); font-size: 11px; color: var(--muted);
   padding: 4px 8px; border-radius: 4px;
   border: 1px solid var(--line);
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  transition: color 0.2s, border-color 0.2s, background 0.2s, box-shadow 0.2s;
 }
 .term-toggle:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
 .term-toggle kbd {
-  font: inherit;
+  font-family: Consolas, var(--mono);
+  font-size: inherit;
   background: transparent;
   border: 0;
   color: inherit;
   padding: 0;
 }
+.term-hit { opacity: 0.95; }
+
+/* --- glow variants (change GLOW_STYLE in SiteFooter.tsx to switch) --- */
+@keyframes term-glow-green {
+  0%   { box-shadow: none; border-color: var(--line); color: var(--muted); }
+  25%  { box-shadow: 0 0 10px 2px rgba(74,222,128,0.35); border-color: #4ade80; color: #4ade80; }
+  60%  { box-shadow: 0 0 10px 2px rgba(74,222,128,0.35); border-color: #4ade80; color: #4ade80; }
+  100% { box-shadow: none; border-color: var(--line); color: var(--muted); }
+}
+.term-toggle.term-glow-green { animation: term-glow-green 1.6s ease forwards; }
+
+@keyframes term-glow-cyan {
+  0%   { box-shadow: none; border-color: var(--line); color: var(--muted); }
+  25%  { box-shadow: 0 0 10px 2px rgba(34,211,238,0.35); border-color: #22d3ee; color: #22d3ee; }
+  60%  { box-shadow: 0 0 10px 2px rgba(34,211,238,0.35); border-color: #22d3ee; color: #22d3ee; }
+  100% { box-shadow: none; border-color: var(--line); color: var(--muted); }
+}
+.term-toggle.term-glow-cyan { animation: term-glow-cyan 1.6s ease forwards; }
+
+@keyframes term-glow-white {
+  0%   { box-shadow: 0 -6px 10px rgba(235,233,227,0.22); border-color: rgba(235,233,227,0.6); color: rgba(235,233,227,0.85); }
+  25%  { box-shadow: 6px 0 10px rgba(235,233,227,0.22); border-color: rgba(235,233,227,0.6); color: rgba(235,233,227,0.85); }
+  50%  { box-shadow: 0 6px 10px rgba(235,233,227,0.22); border-color: rgba(235,233,227,0.6); color: rgba(235,233,227,0.85); }
+  75%  { box-shadow: -6px 0 10px rgba(235,233,227,0.22); border-color: rgba(235,233,227,0.6); color: rgba(235,233,227,0.85); }
+  100% { box-shadow: none; border-color: var(--line); color: var(--muted); }
+}
+.term-toggle.term-glow-white { animation: term-glow-white 1.8s linear forwards; }
+
+@keyframes term-glow-blink {
+  0%   { opacity: 1; }
+  15%  { opacity: 0.15; }
+  30%  { opacity: 1; }
+  50%  { opacity: 0.15; }
+  65%  { opacity: 1; }
+  80%  { opacity: 0.15; }
+  100% { opacity: 1; }
+}
+.term-toggle.term-glow-blink { animation: term-glow-blink 1.2s ease forwards; }
 @media (max-width: 640px) {
   .bottom { flex-direction: column; align-items: flex-start; }
   .bottom-mid { text-align: left; }
