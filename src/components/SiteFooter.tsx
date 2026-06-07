@@ -10,7 +10,7 @@ export default function SiteFooter({ onTerminalOpen }: SiteFooterProps) {
   return (
     <footer className="bottom">
       <span>© Wiktor Spryszyński, 2026</span>
-      <span className="bottom-mid">{lang === 'pl' ? 'Gdańsk · 54.35°N, 18.65°E' : 'Gdańsk · 54.35°N, 18.65°E'}</span>
+      <span className="bottom-mid">{lang === 'pl' ? 'Gdańsk · 54.35°N, 18.65°E' : 'Gdańsk, Poland · 54.35°N, 18.65°E'}</span>
       <span>
         <button className="term-toggle" type="button" onClick={onTerminalOpen}>
           <kbd>`</kbd>
