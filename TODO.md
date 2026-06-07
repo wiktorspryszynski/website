@@ -3,8 +3,6 @@
 ## Planned
 
 - [ ] Wire up a backend - some things are backend dependent (`BACKEND_EXISTS` bool variable), e.g.: API endpoint showcase, WWW easter egg
-- [ ] `flight-scope` demo link — `demoUrl` is set to `'#'` in `homeContent.ts`
-- [ ] Add ML and historic playback to flight-scope (noted in project description)
 - [ ] SEO / OG meta tags via React Helmet
 - [ ] Better project showcase divs (expand to show more, show a GIF, add icons, color code languages listed in project's stack)
 
@@ -16,19 +14,16 @@
   - [ ] Clicking "Wiktor" shows retro 90s WWW div: "You are visitor number X" — use real counter via backend endpoint, not hardcoded number
   - [X] Clicking "Spryszyński" shows pronunciation guide
   - [X] Backtick (`` ` ``) opens Linux-style terminal with preset commands
-  - [ ] ASCII art of name/surname printed in browser console on load
+  - [X] ASCII art of name/surname printed in browser console on load
 
 ## Nice to have
 
-- [ ] Footer: show short git SHA of current build (inject via GitHub Actions: `VITE_COMMIT_SHA=${{ github.sha }}`, display first 7 chars)
-- [ ] Footer: "built with" icon tooltips — hover shows a one-liner or fun fact about that tool
+- [X] Footer: show short git SHA of current build (inject via GitHub Actions: `VITE_COMMIT_SHA=${{ github.sha }}`, display first 7 chars)
+- [X] Footer: "built with" icon tooltips — hover shows a one-liner or fun fact about that tool
 - [ ] `/now` page — short "what I'm working on right now" subpage, link subtly from footer
-- [ ] `/humans.txt` — authors, stack, tools used; link subtly from footer
+- [X] `/humans.txt` — authors, stack, tools used; link subtly from footer
 - [ ] `<meta name="author">` with a recruiter-friendly message, e.g. "Wiktor Spryszyński – reach out if you're hiring"
 - [ ] Persist terminal history across opens (sessionStorage)
-- [ ] Cursor follower with spring physics (subtle, small dot with slight lag)
-- [ ] Dark/light theme toggle
-- [ ] Konami code → move to terminal as a hidden command or trigger for `party`
 
 ## Broken / needs attention
 
@@ -36,6 +31,8 @@
 
 ## Ideas (not committed)
 
+- Dark/light theme toggle
+- Mouse cursor follower with spring physics (subtle, small dot with slight lag)
 - Spring-physics cursor follower
 - Generative visual tied to personal data, not just decorative — examples:
   - **GitHub commits → 3D bar chart**: fetch contribution data via GitHub API, render as rotatable grid in Three.js (reuse existing setup). Each column = one week, height = commit count. Shows activity, not just aesthetics.
