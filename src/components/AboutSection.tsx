@@ -27,7 +27,7 @@ export default function AboutSection() {
           pl="W międzyczasie stworzyłem również aplikację mobilną w React Native do nawigacji wewnątrz budynków - projekt grupowy dla Szpitala Specjalistycznego w Kościerzynie, była to nasza praca inżynierska."
         /></p>
         <p><T
-          en="I like 3D renders (obviously), simplicity in code and intuitive design."
+          en="I like 3D renders (as you can see), simplicity in code and intuitive design."
           pl="Lubię renderowanie 3D (jak widać), prostotę w kodzie i intuicyjny design."
         /></p>
       </div>
