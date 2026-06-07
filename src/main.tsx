@@ -13,7 +13,7 @@ console.log(
   'color:#fb923c;font-family:monospace',
 )
 console.log(
-  `\nhello :]\n\nlooking for more easter eggs?\ntry pressing %c\`%c on the site\n`,
+  `\nhello :]\ntry pressing %c\`%c on the site\n`,
   'background:#000;color:#fff;padding:1px 4px;border-radius:2px;font-family:monospace',
   '',
 )
