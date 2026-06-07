@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Tippy from '@tippyjs/react'
+import { NOW_PAGE_AVAILABLE } from '../config/features'
 import 'tippy.js/dist/tippy.css'
 import { SiReact, SiTypescript, SiVite, SiThreedotjs } from 'react-icons/si'
 const GLOW_STYLE = 'white' // 'green' | 'cyan' | 'white' | 'blink'
@@ -13,9 +14,9 @@ const BUILT_WITH = [
 ]
 
 const SITE_LINKS = [
-  { label: 'now',           href: '/now',          internal: true  },
-  { label: '/humans.txt',   href: '/humans.txt',   internal: false },
-  { label: 'legacy v1',     href: '/legacy/v1',    internal: false },
+  ...(NOW_PAGE_AVAILABLE ? [{ label: 'now', href: '/now', internal: true }] : []),
+  { label: '/humans.txt', href: '/humans.txt', internal: false },
+  { label: 'legacy v1',  href: '/legacy/v1',  internal: false },
 ]
 
 interface SiteFooterProps {
