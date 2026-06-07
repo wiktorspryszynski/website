@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { useLang } from '../context/LanguageContext'
 
 export default function T({ en, pl }: { en: ReactNode; pl: ReactNode }) {
