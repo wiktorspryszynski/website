@@ -428,6 +428,7 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
   flex-wrap: wrap;
 }
 .proj-title {
+  display: flex; align-items: center; gap: 10px;
   font-family: var(--display);
   font-weight: 400;
   font-size: clamp(24px, 2.6vw, 32px);
@@ -436,6 +437,13 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
   font-style: italic;
 }
 .proj-small .proj-title { font-size: clamp(20px, 2vw, 24px); font-style: normal; }
+.proj-icon {
+  width: 22px; height: 22px;
+  border-radius: 5px;
+  object-fit: cover;
+  flex-shrink: 0;
+  font-style: normal;
+}
 .proj-status {
   font-family: var(--mono); font-size: 10px;
   letter-spacing: 0.08em;

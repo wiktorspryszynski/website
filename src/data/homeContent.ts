@@ -1,4 +1,8 @@
 import type { Lang } from '../context/LanguageContext'
+import nomNomIcon from '../assets/proj-icons/nomnom-icon.png'
+import flightScopeIcon from '../assets/proj-icons/flightscope-icon.png'
+import spotifyIcon from '../assets/proj-icons/spotify-icon.png'
+import githubIcon from '../assets/proj-icons/github-icon.svg'
 
 export function t(lang: Lang, en: string, pl: string): string {
   return lang === 'pl' ? pl : en
@@ -13,57 +17,64 @@ export interface Project {
   stack: string[]
   sourceUrl: string
   demoUrl?: string
+  icon?: string
   small?: boolean
 }
 
 export const projects: Project[] = [
   {
-    title: 'nom-nom',
+    title: 'nom nom',
     status: 'wip',
+    icon: nomNomIcon,
     desc: {
       en: 'A small PWA for tracking calories and water. Photo-scan a plate for an estimate, generate meal ideas with a shareable grocery list. Started because no free calorie app respected my time.',
       pl: 'Mała PWA do liczenia kalorii i wody. Skanuj zdjęcie posiłku, generuj pomysły na posiłki z listą zakupów. Powstaje, bo żadna darmowa apka do liczenia kalorii nie szanowała mojego czasu.',
     },
     stack: ['React', 'TypeScript', 'Python', 'FastAPI', 'Postgres', 'Docker', 'PWA'],
     sourceUrl: 'https://github.com/wiktorspryszynski/nom-nom',
+    demoUrl: 'https://fit.spryszynski.pl',
   },
   {
-    title: 'flight-scope',
+    title: 'flight scope',
     status: 'live',
+    icon: flightScopeIcon,
     desc: {
       en: 'A live flight tracker. OpenSky into Redis, fanned out to clients, persisted to Postgres. Click a plane and ride along beside a 3D model. Currently adding ML and historic playback.',
       pl: 'Tracker lotów na żywo. OpenSky do Redisa, rozsyłany do klientów, zapisany w Postgresie. Klikasz samolot i lecisz obok modelu 3D. Dokładam ML i odtwarzanie historii.',
     },
     stack: ['React', 'TypeScript', 'Python', 'FastAPI', 'Postgres', 'Redis', 'Docker', 'Deck.gl'],
     sourceUrl: 'https://github.com/wiktorspryszynski/flight-scope',
-    demoUrl: '#',
+    demoUrl: 'https://flights.spryszynski.pl',
   },
   {
-    title: 'spotify-recommender',
+    title: 'spotify recommender',
     status: 'dead',
+    icon: spotifyIcon,
     desc: {
       en: 'Sign in with Spotify, pull your top tracks, get a recommended playlist back. Saves to your library in one click. Retired when Spotify killed the audio-features endpoint.',
       pl: 'Logowanie przez Spotify, pobranie topki, zwrot rekomendowanej playlisty. Zapis do biblioteki jednym kliknięciem. Zamknięte, gdy Spotify wyłączył endpoint audio-features.',
     },
     stack: ['Python', 'Django', 'scikit-learn', 'joblib', 'Docker', 'OAuth'],
     sourceUrl: 'https://github.com/wiktorspryszynski/spotify_music_recommender',
+    demoUrl: 'https://spotify.spryszynski.pl',
   },
-  {
-    title: 'self-updating github profile',
-    status: 'quiet',
-    desc: {
-      en: 'A nightly Action that scrapes my own stats and regenerates the PNG embedded in my profile README.',
-      pl: 'Nocna akcja GitHub, która pobiera moje statystyki i regeneruje PNG osadzony w README profilu.',
-    },
-    stack: ['Python', 'GitHub Actions'],
-    sourceUrl: 'https://github.com/wiktorspryszynski/wiktorspryszynski',
-    small: true,
-  },
+  // {
+  //   title: 'self updating github profile',
+  //   status: 'quiet',
+  //   icon: githubIcon,
+  //   desc: {
+  //     en: 'A nightly Action that scrapes my own stats and regenerates the PNG embedded in my profile README.',
+  //     pl: 'Nocna akcja GitHub, która pobiera moje statystyki i regeneruje PNG osadzony w README profilu.',
+  //   },
+  //   stack: ['Python', 'GitHub Actions'],
+  //   sourceUrl: 'https://github.com/wiktorspryszynski/wiktorspryszynski',
+  //   small: true,
+  // },
 ]
 
 export const statusLabel: Record<ProjectStatus, Record<Lang, string>> = {
   live: { en: 'live', pl: 'live' },
   wip: { en: 'in progress', pl: 'w trakcie' },
-  dead: { en: 'archived', pl: 'archiwum' },
+  dead: { en: 'deprecated', pl: 'przestarzałe' },
   quiet: { en: 'nightly', pl: 'nocne' },
 }

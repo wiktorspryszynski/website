@@ -10,7 +10,10 @@ export default function WorkSection() {
       {projects.map(proj => (
         <article key={proj.title} className={`proj${proj.small ? ' proj-small' : ''}`}>
           <header className="proj-head">
-            <h3 className="proj-title">{proj.title}</h3>
+            <h3 className="proj-title">
+              {proj.icon && <img src={proj.icon} alt="" className="proj-icon" />}
+              {proj.title}
+            </h3>
             <span className="proj-status" data-state={proj.status}>
               <i />
               <T en={statusLabel[proj.status].en} pl={statusLabel[proj.status].pl} />
