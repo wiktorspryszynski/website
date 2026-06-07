@@ -56,7 +56,7 @@ export default function SiteFooter({ onTerminalOpen }: SiteFooterProps) {
     <footer className="site-footer">
       <div className="bottom">
         <span id="copyright-wrapper">
-          <span id="copyright-name">© Wiktor Spryszyński</span>, <span id="copyright-year">2026</span>
+          <span id="copyright-name">© Wiktor Spryszyński</span>, <span id="copyright-year">{new Date().getFullYear()}</span>
         </span>
 
         <span className="bottom-mid">
