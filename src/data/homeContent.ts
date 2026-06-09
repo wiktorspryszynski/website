@@ -79,12 +79,12 @@ export const projects: Project[] = [
     demoUrl: 'https://spotify.spryszynski.pl',
     modelUrl: 'https://github.com/wiktorspryszynski/music_recommender_model/blob/main/music_recommender_engine.ipynb',
     longDesc: {
-      en: 'Pulls your Spotify top 100 (50 liked + 50 most played) tracks and their audio features, then a cosine-similarity model trained on genre clusters generates a playlist. It picks one most similar track from a larger dataset (of 100k songs) per one fetched song (equals 100 recommended songs). One click saves it straight to your Spotify library. Retired in 2024 when Spotify removed the audio-features endpoint that the model depended on. Demo works only on saved songs data.',
-      pl: 'Pobiera 100 topowych utworów Spotify (50 polubionych + 50 najczęściej odtwarzanych) i ich cechy audio, a model kosinusowy wytrenowany na klastrach gatunków generuje playlistę. Wybiera on jeden najbardziej podobny utwór z większego zbioru danych (100 tys. piosenek) na każdy pobrany utwór (co daje 100 rekomendowanych piosenek). Jedno kliknięcie zapisuje ją w bibliotece. Zamknięte w 2024, gdy Spotify usunął endpoint audio-features. Demo działa tylko na zapisanych danych piosenek.',
+      en: 'Pulls your Spotify top 100 (50 liked + 50 most played) tracks and their audio features, then a cosine-similarity model trained on a bigger dataset (100k songs with audio features) generates a playlist. It picks one most similar track per one fetched song (equals 100 recommended songs). One click saves it straight to your Spotify library. Retired in 2024 when Spotify removed the audio-features endpoint that the model depended on. Demo works only on saved songs data.',
+      pl: 'Pobiera 100 topowych utworów Spotify (50 polubionych + 50 najczęściej odtwarzanych) i ich cechy audio, a model kosinusowy wytrenowany na większym zbiorze danych (100 tys. piosenek z cechami audio) generuje playlistę. Wybiera on jeden najbardziej podobny utwór na każdy pobrany utwór (co daje 100 rekomendowanych piosenek). Jedno kliknięcie zapisuje ją w bibliotece. Zamknięte w 2024, gdy Spotify usunął endpoint audio-features. Demo działa tylko na zapisanych danych piosenek.',
     },
     features: {
-      en: ['Spotify OAuth sign-in', 'Top-100 track analysis via audio features', 'Cosine-similarity model (scikit-learn)', 'One-click playlist save to library'],
-      pl: ['Logowanie OAuth przez Spotify', 'Analiza 100 topowych przez cechy audio', 'Model kosinusowy (scikit-learn)', 'Zapis playlisty jednym kliknięciem'],
+      en: ['Spotify OAuth sign-in', 'Top-100 track analysis via audio features', 'Cosine-similarity model (scikit-learn)', 'One-click playlist save to library', 'Demo only works on saved songs data'],
+      pl: ['Logowanie OAuth przez Spotify', 'Analiza 100 topowych przez cechy audio', 'Model kosinusowy (scikit-learn)', 'Zapis playlisty jednym kliknięciem', 'Demo działa tylko na zapisanych piosenkach'],
     },
   },
   // {
