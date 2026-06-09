@@ -121,6 +121,13 @@ export default function WorkSection() {
               <CardLinks proj={proj} />
             </footer>
             {(isExpanded || isClosing) && <ExpandContent proj={proj} />}
+            {isExpanded && (
+              <button
+                className="proj-close"
+                onClick={e => { e.stopPropagation(); close() }}
+                aria-label="Close"
+              >✕</button>
+            )}
           </article>
         )
       })}
