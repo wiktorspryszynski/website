@@ -49,7 +49,7 @@ export default function ContactSection({ onCopy }: ContactSectionProps) {
 
   return (
     <section id="contact" className="contact">
-      <h2 className="h2"><T en="Let's get in touch" pl="Skontaktuj się ze mną" /></h2>
+      <h2 className="h2"><T en="Let's get in touch!" pl="Napisz do mnie!" /></h2>
       <p className="contact-tag">
         { LOOKING_FOR_HIRE
           ? <T en="I'm currently looking for new job opportunities." pl="Obecnie szukam nowych ofert pracy." />

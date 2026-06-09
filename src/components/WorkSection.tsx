@@ -28,15 +28,28 @@ function ExpandContent({ proj }: { proj: Project }) {
 function CardLinks({ proj }: { proj: Project }) {
   return (
     <span className="proj-btns">
-      <a
-        className="proj-btn"
-        href={proj.sourceUrl}
-        target="_blank"
-        rel="noopener"
-        onClick={e => e.stopPropagation()}
-      >
-        <SiGithub size={12} /><T en="source" pl="kod" />
-      </a>
+      {proj.modelUrl && (
+        <a
+          className="proj-btn"
+          href={proj.modelUrl}
+          target="_blank"
+          rel="noopener"
+          onClick={e => e.stopPropagation()}
+        >
+          <T en="model" pl="model" />
+        </a>
+      )}
+      {proj.sourceUrl && (
+        <a
+          className="proj-btn"
+          href={proj.sourceUrl}
+          target="_blank"
+          rel="noopener"
+          onClick={e => e.stopPropagation()}
+        >
+          <SiGithub size={12} /><T en="source" pl="kod" />
+        </a>
+      )}
       {proj.demoUrl && (
         <a
           className="proj-btn proj-btn-demo"
@@ -80,7 +93,7 @@ export default function WorkSection() {
   return (
     <section id="work" className="work">
       <div className="work-head">
-        <h2 className="h2"><T en="Selected work" pl="Wybrane projekty" /></h2>
+        <h2 className="h2"><T en="Personal projects" pl="Moje projekty" /></h2>
         <span className="proj-hint">click to expand</span>
       </div>
 
