@@ -1,4 +1,5 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { projects, statusLabel } from '../data/homeContent'
 import type { Project, Screenshot } from '../data/homeContent'
 import T from './T'
@@ -9,45 +10,74 @@ import { TbBrandGithub } from 'react-icons/tb'
 const GALLERY_MAX_W = 600
 const GALLERY_MAX_H = 360
 
+function Lightbox({ src, onClose }: { src: string; onClose: () => void }) {
+  useEffect(() => {
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = prev }
+  }, [])
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [onClose])
+
+  return createPortal(
+    <div className="lightbox-overlay" onClick={e => { e.stopPropagation(); onClose() }}>
+      <button className="lightbox-close" onClick={e => { e.stopPropagation(); onClose() }} aria-label="Close">✕</button>
+      <img src={src} alt="" className="lightbox-img" onClick={e => e.stopPropagation()} />
+    </div>,
+    document.body
+  )
+}
+
 function ScreenshotGallery({ screenshots }: { screenshots: Screenshot[] }) {
   const [idx, setIdx] = useState(0)
+  const [lightbox, setLightbox] = useState<string | null>(null)
   const prev = useCallback((e: React.MouseEvent) => { e.stopPropagation(); setIdx(i => (i - 1 + screenshots.length) % screenshots.length) }, [screenshots.length])
   const next = useCallback((e: React.MouseEvent) => { e.stopPropagation(); setIdx(i => (i + 1) % screenshots.length) }, [screenshots.length])
+  const open = useCallback((e: React.MouseEvent, src: string) => { e.stopPropagation(); setLightbox(src) }, [])
+  const close = useCallback(() => setLightbox(null), [])
 
   if (screenshots.length < 3) {
     return (
-      <div className="proj-gallery-row">
-        {screenshots.map((s, i) => {
-          const scale = Math.min(GALLERY_MAX_W / s.width, GALLERY_MAX_H / s.height, 1)
-          return <img key={i} src={s.src} alt="" className="proj-screenshot" style={{ width: Math.round(s.width * scale), height: Math.round(s.height * scale) }} />
-        })}
-      </div>
+      <>
+        <div className="proj-gallery-row">
+          {screenshots.map((s, i) => {
+            const scale = Math.min(GALLERY_MAX_W / s.width, GALLERY_MAX_H / s.height, 1)
+            return <img key={i} src={s.src} alt="" className="proj-screenshot proj-screenshot-clickable" style={{ width: Math.round(s.width * scale), height: Math.round(s.height * scale) }} onClick={e => open(e, s.src)} />
+          })}
+        </div>
+        {lightbox && <Lightbox src={lightbox} onClose={close} />}
+      </>
     )
   }
 
   const s = screenshots[idx]
   const scale = Math.min(GALLERY_MAX_W / s.width, GALLERY_MAX_H / s.height, 1)
-  const w = Math.round(s.width * scale)
-  const h = Math.round(s.height * scale)
 
   return (
-    <div className="proj-gallery">
-      <div className="proj-gallery-stage">
-        <button className="proj-gallery-arrow left" onClick={prev} aria-label="Previous">‹</button>
-        <img src={s.src} alt="" className="proj-screenshot" style={{ width: w, height: h }} />
-        <button className="proj-gallery-arrow right" onClick={next} aria-label="Next">›</button>
+    <>
+      <div className="proj-gallery">
+        <div className="proj-gallery-stage">
+          <button className="proj-gallery-arrow left" onClick={prev} aria-label="Previous">‹</button>
+          <img src={s.src} alt="" className="proj-screenshot proj-screenshot-clickable" style={{ width: Math.round(s.width * scale), height: Math.round(s.height * scale) }} onClick={e => open(e, s.src)} />
+          <button className="proj-gallery-arrow right" onClick={next} aria-label="Next">›</button>
+        </div>
+        <div className="proj-gallery-dots">
+          {screenshots.map((_, i) => (
+            <button
+              key={i}
+              className={`proj-gallery-dot${i === idx ? ' active' : ''}`}
+              onClick={e => { e.stopPropagation(); setIdx(i) }}
+              aria-label={`Screenshot ${i + 1}`}
+            />
+          ))}
+        </div>
       </div>
-      <div className="proj-gallery-dots">
-        {screenshots.map((_, i) => (
-          <button
-            key={i}
-            className={`proj-gallery-dot${i === idx ? ' active' : ''}`}
-            onClick={e => { e.stopPropagation(); setIdx(i) }}
-            aria-label={`Screenshot ${i + 1}`}
-          />
-        ))}
-      </div>
-    </div>
+      {lightbox && <Lightbox src={lightbox} onClose={close} />}
+    </>
   )
 }
 
