@@ -4,7 +4,7 @@ import type { Project } from '../data/homeContent'
 import T from './T'
 import TechTag from './TechTag'
 import { useLang } from '../context/LanguageContext'
-import { SiGithub } from 'react-icons/si'
+import { TbBrandGithub } from 'react-icons/tb'
 
 function ExpandContent({ proj }: { proj: Project }) {
   const { lang } = useLang()
@@ -36,7 +36,7 @@ function CardLinks({ proj }: { proj: Project }) {
           rel="noopener"
           onClick={e => e.stopPropagation()}
         >
-          <T en="view model" pl="zobacz model" />
+          <TbBrandGithub size={13} /><T en="view model" pl="zobacz model" />
         </a>
       )}
       {proj.sourceUrl && (
@@ -47,7 +47,7 @@ function CardLinks({ proj }: { proj: Project }) {
           rel="noopener"
           onClick={e => e.stopPropagation()}
         >
-          <SiGithub size={12} /><T en="source" pl="kod" />
+          <TbBrandGithub size={13} /><T en="source" pl="kod" />
         </a>
       )}
       {proj.demoUrl && (
