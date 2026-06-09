@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function NowPage() {
   useEffect(() => {
-    document.title = 'Now — Wiktor Spryszyński'
+    document.title = 'Now - Wiktor Spryszyński'
     return () => { document.title = 'Wiktor Spryszyński' }
   }, [])
 

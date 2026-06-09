@@ -7,10 +7,10 @@ import { SiReact, SiTypescript, SiVite, SiThreedotjs } from 'react-icons/si'
 const GLOW_STYLE = 'white' // 'green' | 'cyan' | 'white' | 'blink'
 
 const BUILT_WITH = [
-  { Icon: SiReact,      tip: 'React 19 — concurrent UI',        color: '#61DAFB' },
-  { Icon: SiTypescript, tip: 'TypeScript ~5.9 — strict mode',   color: '#3178C6' },
-  { Icon: SiVite,       tip: 'Vite 7 — instant HMR',            color: '#646CFF' },
-  { Icon: SiThreedotjs, tip: 'Three.js 0.184 — the orb & stars', color: '#049EF4' },
+  { Icon: SiReact,      tip: 'React 19 - concurrent UI',         color: '#61DAFB' },
+  { Icon: SiTypescript, tip: 'TypeScript ~5.9 - strict mode',    color: '#3178C6' },
+  { Icon: SiVite,       tip: 'Vite 7 - instant HMR',             color: '#646CFF' },
+  { Icon: SiThreedotjs, tip: 'Three.js 0.184 - the orb & stars', color: '#049EF4' },
 ]
 
 const SITE_LINKS = [

@@ -68,7 +68,7 @@ export default function WwwEgg({ isOpen, anchorRect, onClose }: WwwEggProps) {
     >
       <div className="www-window" role="dialog" aria-label="Web 1.0 easter egg">
         <div className="www-titlebar">
-          <span>★ wiktor's homepage — Netscape Navigator 3.0</span>
+          <span>★ wiktor's homepage - Netscape Navigator 3.0</span>
           <button className="www-titlebar-x" aria-label="close" onClick={onClose}>×</button>
         </div>
         <div className="www-content">

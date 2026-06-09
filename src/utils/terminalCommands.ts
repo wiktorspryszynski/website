@@ -60,8 +60,8 @@ export const commands: Record<string, CommandFn> = {
     line('wiktor spryszynski / full-stack engineer / gdansk, pl'),
     line(''),
     line('experience', 'dim'),
-    line('  saas startup, 3 people, ~1.5y — php, js, react'),
-    line('  hospital indoor nav, 3 people, 3mo — react native, 3d, dijkstra'),
+    line('  saas startup, 3 people, ~1.5y - php, js, react'),
+    line('  hospital indoor nav, 3 people, 3mo - react native, 3d, dijkstra'),
     line(''),
     line('now: building flight-scope and nom-nom.', 'dim'),
   ],
@@ -98,7 +98,7 @@ export function runCommand(raw: string): RunResult {
 
   return {
     lines: [line(
-      `<span style='color:var(--accent)'>command not found:</span> ${escapeHtml(cmd)} — try <span style='color:var(--ok)'>help</span>`,
+      `<span style='color:var(--accent)'>command not found:</span> ${escapeHtml(cmd)} - try <span style='color:var(--ok)'>help</span>`,
       'out', true
     )],
   }
