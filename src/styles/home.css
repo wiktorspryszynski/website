@@ -577,8 +577,11 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
 }
 .lightbox-close:hover { opacity: 1; }
 .lightbox-img {
-  max-width: 100vw; max-height: 100vh;
+  max-width: 90vw; max-height: 90vh;
   object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.6);
   animation: proj-expand-in 0.2s ease forwards;
 }
 .proj-long-desc {
