@@ -19,6 +19,9 @@ export interface Project {
   demoUrl?: string
   icon?: string
   small?: boolean
+  longDesc?: Record<Lang, string>
+  features?: Record<Lang, string[]>
+  screenshot?: string
 }
 
 export const projects: Project[] = [
@@ -33,6 +36,14 @@ export const projects: Project[] = [
     stack: ['React', 'TypeScript', 'Python', 'FastAPI', 'Postgres', 'Docker', 'PWA'],
     sourceUrl: 'https://github.com/wiktorspryszynski/nom-nom',
     demoUrl: 'https://fit.spryszynski.pl',
+    longDesc: {
+      en: 'Vision API scans the photo and estimates calories, macros, and portion size. A generator then suggests meal ideas and produces a shareable grocery list. Built offline-first so the tracker keeps working without a connection. No ads, no paywall, no dark patterns.',
+      pl: 'API wizyjne skanuje zdjęcie i szacuje kalorie, makroskładniki oraz porcję. Generator proponuje posiłki i tworzy listę zakupów do udostępnienia. PWA działa offline. Żadnych reklam, paywalla ani ciemnych wzorców.',
+    },
+    features: {
+      en: ['Photo scan → calorie + macro estimate', 'AI meal ideas + shareable grocery list', 'Offline-first PWA', 'Water intake tracker'],
+      pl: ['Skan zdjęcia → kalorie + makroskładniki', 'Propozycje posiłków AI + lista zakupów', 'PWA działające offline', 'Śledzenie wypitej wody'],
+    },
   },
   {
     title: 'flight scope',
@@ -45,6 +56,14 @@ export const projects: Project[] = [
     stack: ['React', 'TypeScript', 'Python', 'FastAPI', 'Postgres', 'Redis', 'Docker', 'Deck.gl'],
     sourceUrl: 'https://github.com/wiktorspryszynski/flight-scope',
     demoUrl: 'https://flights.spryszynski.pl',
+    longDesc: {
+      en: 'Live ADS-B positions from OpenSky land in Redis pub/sub and fan out over WebSockets to every connected browser. Positions are persisted to Postgres for historic playback. Click any aircraft and a 3D model locks to its heading and altitude. ML anomaly detection and a route scrubber are currently in progress.',
+      pl: 'Dane ADS-B z OpenSky trafiają do Redis pub/sub i są rozsyłane przez WebSockety. Pozycje zapisywane w Postgresie do odtwarzania historii. Kliknij samolot, a model 3D śledzi jego kurs i wysokość. ML do anomalii i scrubber historyczny w trakcie.',
+    },
+    features: {
+      en: ['Real-time ADS-B via OpenSky + Redis pub/sub', 'WebSocket fan-out to all connected clients', 'Click-to-follow with 3D model (Deck.gl)', 'ML anomaly detection (in progress)', 'Historic route playback (in progress)'],
+      pl: ['ADS-B na żywo przez OpenSky + Redis pub/sub', 'WebSocket do wszystkich klientów', 'Śledzenie 3D modelu samolotu (Deck.gl)', 'Wykrywanie anomalii ML (w trakcie)', 'Odtwarzanie historii trasy (w trakcie)'],
+    },
   },
   {
     title: 'spotify recommender',
@@ -57,6 +76,14 @@ export const projects: Project[] = [
     stack: ['Python', 'Django', 'scikit-learn', 'joblib', 'Docker', 'OAuth'],
     sourceUrl: 'https://github.com/wiktorspryszynski/spotify_music_recommender',
     demoUrl: 'https://spotify.spryszynski.pl',
+    longDesc: {
+      en: 'OAuth sign-in pulls your top 50 tracks and their audio features, then a cosine-similarity model trained on genre clusters generates a playlist tuned to your taste. One click saves it straight to your Spotify library. Retired in 2024 when Spotify removed the audio-features endpoint that the model depended on.',
+      pl: 'OAuth pobiera 50 topowych utworów i ich cechy audio, a model kosinusowy wytrenowany na klastrach gatunków generuje playlistę. Jedno kliknięcie zapisuje ją w bibliotece. Zamknięte w 2024, gdy Spotify usunął endpoint audio-features.',
+    },
+    features: {
+      en: ['Spotify OAuth sign-in', 'Top-50 track analysis via audio features', 'Cosine-similarity model (scikit-learn)', 'One-click playlist save to library'],
+      pl: ['Logowanie OAuth przez Spotify', 'Analiza 50 topowych przez cechy audio', 'Model kosinusowy (scikit-learn)', 'Zapis playlisty jednym kliknięciem'],
+    },
   },
   // {
   //   title: 'self updating github profile',
