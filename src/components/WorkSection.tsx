@@ -36,7 +36,7 @@ function CardLinks({ proj }: { proj: Project }) {
           rel="noopener"
           onClick={e => e.stopPropagation()}
         >
-          <T en="model" pl="model" />
+          <T en="view model" pl="zobacz model" />
         </a>
       )}
       {proj.sourceUrl && (
