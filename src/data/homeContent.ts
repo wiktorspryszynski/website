@@ -3,12 +3,25 @@ import nomNomIcon from '../assets/proj-icons/nomnom-icon.png'
 import flightScopeIcon from '../assets/proj-icons/flightscope-icon.png'
 import spotifyIcon from '../assets/proj-icons/spotify-icon.png'
 // import githubIcon from '../assets/proj-icons/github-icon.svg'
+import nomnom1 from '../assets/screenshots/nomnom_screenshot_1.png'
+import nomnom2 from '../assets/screenshots/nomnom_screenshot_2.png'
+import flightscope1 from '../assets/screenshots/flightscope_screenshot_1.png'
+import flightscope2 from '../assets/screenshots/flightscope_screenshot_2.png'
+import spotify1 from '../assets/screenshots/spotify_screenshot_1.png'
+import spotify2 from '../assets/screenshots/spotify_screenshot_2.png'
+import spotify3 from '../assets/screenshots/spotify_screenshot_3.png'
 
 export function t(lang: Lang, en: string, pl: string): string {
   return lang === 'pl' ? pl : en
 }
 
 export type ProjectStatus = 'live' | 'wip' | 'dead' | 'quiet'
+
+export interface Screenshot {
+  src: string
+  width: number
+  height: number
+}
 
 export interface Project {
   title: string
@@ -21,7 +34,7 @@ export interface Project {
   small?: boolean
   longDesc?: Record<Lang, string>
   features?: Record<Lang, string[]>
-  screenshot?: string
+  screenshots?: Screenshot[]
   modelUrl?: string
 }
 
@@ -45,6 +58,10 @@ export const projects: Project[] = [
       en: ['Photo scan → calorie + macro estimate (AI)', 'Exercise burned calorie estimate (AI)', 'Meal ideas (AI)', 'Water intake tracker', 'Shareable grocery list (coming soon)'],
       pl: ['Skan zdjęcia → kalorie + makroskładniki (AI)', 'Szacowanie kalorii spalonych podczas ćwiczeń (AI)', 'Propozycje posiłków (AI)', 'Śledzenie wypitej wody' , 'Dzielona lista zakupów (wkrótce)'],
     },
+    screenshots: [
+      { src: nomnom1, width: 500, height: 828 },
+      { src: nomnom2, width: 602, height: 1194 },
+    ],
   },
   {
     title: 'flight scope',
@@ -65,6 +82,10 @@ export const projects: Project[] = [
       en: ['Real-time ADS-B via OpenSky + Redis pub/sub', 'SSE fan-out to all connected clients', 'Click-to-follow with 3D model (Deck.gl)', 'ML anomaly detection (in progress)', 'Historic data'],
       pl: ['ADS-B na żywo przez OpenSky + Redis pub/sub', 'SSE do wszystkich klientów', 'Śledzenie 3D modelu samolotu (Deck.gl)', 'Wykrywanie anomalii ML (w trakcie)', 'Dane historyczne'],
     },
+    screenshots: [
+      { src: flightscope1, width: 1311, height: 1229 },
+      { src: flightscope2, width: 845, height: 860 },
+    ],
   },
   {
     title: 'spotify recommender',
@@ -86,6 +107,11 @@ export const projects: Project[] = [
       en: ['Spotify OAuth sign-in', 'Top-100 track analysis via audio features', 'Cosine-similarity model (scikit-learn)', 'One-click playlist save to library', 'Demo only works on saved songs data'],
       pl: ['Logowanie OAuth przez Spotify', 'Analiza 100 topowych przez cechy audio', 'Model kosinusowy (scikit-learn)', 'Zapis playlisty jednym kliknięciem', 'Demo działa tylko na zapisanych piosenkach'],
     },
+    screenshots: [
+      { src: spotify1, width: 1224, height: 772 },
+      { src: spotify2, width: 1243, height: 790 },
+      { src: spotify3, width: 1719, height: 1042 },
+    ],
   },
   // {
   //   title: 'self updating github profile',

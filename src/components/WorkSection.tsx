@@ -1,18 +1,61 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { projects, statusLabel } from '../data/homeContent'
-import type { Project } from '../data/homeContent'
+import type { Project, Screenshot } from '../data/homeContent'
 import T from './T'
 import TechTag from './TechTag'
 import { useLang } from '../context/LanguageContext'
 import { TbBrandGithub } from 'react-icons/tb'
 
+const GALLERY_MAX_W = 600
+const GALLERY_MAX_H = 360
+
+function ScreenshotGallery({ screenshots }: { screenshots: Screenshot[] }) {
+  const [idx, setIdx] = useState(0)
+  const prev = useCallback((e: React.MouseEvent) => { e.stopPropagation(); setIdx(i => (i - 1 + screenshots.length) % screenshots.length) }, [screenshots.length])
+  const next = useCallback((e: React.MouseEvent) => { e.stopPropagation(); setIdx(i => (i + 1) % screenshots.length) }, [screenshots.length])
+
+  if (screenshots.length < 3) {
+    return (
+      <div className="proj-gallery-row">
+        {screenshots.map((s, i) => {
+          const scale = Math.min(GALLERY_MAX_W / s.width, GALLERY_MAX_H / s.height, 1)
+          return <img key={i} src={s.src} alt="" className="proj-screenshot" style={{ width: Math.round(s.width * scale), height: Math.round(s.height * scale) }} />
+        })}
+      </div>
+    )
+  }
+
+  const s = screenshots[idx]
+  const scale = Math.min(GALLERY_MAX_W / s.width, GALLERY_MAX_H / s.height, 1)
+  const w = Math.round(s.width * scale)
+  const h = Math.round(s.height * scale)
+
+  return (
+    <div className="proj-gallery">
+      <div className="proj-gallery-stage">
+        <button className="proj-gallery-arrow left" onClick={prev} aria-label="Previous">‹</button>
+        <img src={s.src} alt="" className="proj-screenshot" style={{ width: w, height: h }} />
+        <button className="proj-gallery-arrow right" onClick={next} aria-label="Next">›</button>
+      </div>
+      <div className="proj-gallery-dots">
+        {screenshots.map((_, i) => (
+          <button
+            key={i}
+            className={`proj-gallery-dot${i === idx ? ' active' : ''}`}
+            onClick={e => { e.stopPropagation(); setIdx(i) }}
+            aria-label={`Screenshot ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
 function ExpandContent({ proj }: { proj: Project }) {
   const { lang } = useLang()
   return (
     <div className="proj-expand">
-      {proj.screenshot && (
-        <img src={proj.screenshot} alt={`${proj.title} screenshot`} className="proj-screenshot" />
-      )}
+      {proj.screenshots && <ScreenshotGallery screenshots={proj.screenshots} />}
       {proj.longDesc && (
         <p className="proj-long-desc">{proj.longDesc[lang]}</p>
       )}

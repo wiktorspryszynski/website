@@ -525,10 +525,42 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
   from { opacity: 0; transform: translateY(-4px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.proj-screenshot {
-  width: 100%; max-height: 240px; object-fit: cover;
-  border-radius: 6px; border: 1px solid var(--line);
+.proj-gallery-row {
+  display: flex; gap: 10px; flex-wrap: wrap;
 }
+.proj-gallery {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+.proj-gallery-stage {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  width: 100%;
+}
+.proj-screenshot {
+  border-radius: 6px; border: 1px solid var(--line);
+  display: block;
+}
+.proj-gallery-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: var(--bg-2); border: 1px solid var(--line); color: var(--ink);
+  width: 30px; height: 30px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; line-height: 1; cursor: pointer;
+  z-index: 1; padding: 0;
+  transition: background 0.15s;
+}
+.proj-gallery-arrow:hover { background: var(--bg-3, var(--line)); }
+.proj-gallery-arrow.left { left: 0; }
+.proj-gallery-arrow.right { right: 0; }
+.proj-gallery-dots {
+  display: flex; gap: 6px; align-items: center;
+}
+.proj-gallery-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--line); border: none; padding: 0; cursor: pointer;
+  transition: background 0.15s;
+}
+.proj-gallery-dot.active { background: var(--ink-2); }
 .proj-long-desc {
   font-family: var(--sans); font-size: 14px; color: var(--ink-2);
   line-height: 1.65; max-width: 64ch; margin: 0;
