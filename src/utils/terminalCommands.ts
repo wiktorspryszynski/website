@@ -6,7 +6,7 @@ export type TerminalLine = {
 
 export type RunResult = {
   lines: TerminalLine[]
-  special?: 'clear' | 'exit' | 'hire' | 'sudo-hire' | 'matrix' | 'party'
+  special?: 'clear' | 'exit' | 'hire' | 'sudo-hire'
 }
 
 type CommandDef = {
@@ -26,13 +26,22 @@ function escapeHtml(s: string): string {
 
 const COMMANDS: Record<string, CommandDef> = {
   help: {
-    help: 'this list',
     run: () => ({
-      lines: Object.entries(COMMANDS)
-        .filter(([, def]) => def.help)
-        .map(([cmd, def]) =>
-          line(`  <span style="color:var(--ok)">${cmd.padEnd(12)}</span><span style="color:var(--muted)">${def.help}</span>`, 'out', true)
-        ),
+      lines: ([
+        ['whoami',              'about me'],
+        ['ls',                  'list projects'],
+        ['cat resume',          'resume summary'],
+        ['stack',               'tech'],
+        ['contact',             'links'],
+        ['hire',                'the important one'],
+        ['rm &lt;anything&gt;', 'delete a file',  'rm <anything>'.length],
+        ['neofetch',            'system info'],
+        ['clear',               'clear the terminal'],
+        ['exit',                'close'],
+      ] as [string, string, number?][]).map(([c, d, vlen]) => {
+        const pad = ' '.repeat(Math.max(0, 27 - (vlen ?? c.length)))
+        return line(`  <span style="color:var(--ok)">${c}${pad}</span><span style="color:var(--muted)">${d}</span>`, 'out', true)
+      }),
     }),
   },
 
@@ -82,6 +91,7 @@ const COMMANDS: Record<string, CommandDef> = {
       line("github    <a style='color:var(--accent)' target='_blank' href='https://github.com/wiktorspryszynski'>github.com/wiktorspryszynski</a>", 'out', true),
       line("linkedin  <a style='color:var(--accent)' target='_blank' href='https://www.linkedin.com/in/wiktor-spryszynski/'>linkedin.com/in/wiktor-spryszynski</a>", 'out', true),
       line("email     <a style='color:var(--accent)' href='mailto:spryszynskiwiktor@gmail.com'>spryszynskiwiktor@gmail.com</a>", 'out', true),
+      line("cv        <a style='color:var(--accent)' href='/_CV_Wiktor_Spryszynski_ENG.pdf' download>_CV_Wiktor_Spryszynski_ENG.pdf</a>", 'out', true),
     ]}),
   },
 
@@ -145,23 +155,6 @@ const COMMANDS: Record<string, CommandDef> = {
     },
   },
 
-  cv: {
-    help: 'download resume',
-    run: () => ({ lines: [
-      line(`<a style='color:var(--accent)' href='/_CV_Wiktor_Spryszynski_ENG.pdf' download>_CV_Wiktor_Spryszynski_ENG.pdf</a>  <span style='color:var(--muted)'>↓ download</span>`, 'out', true),
-    ]}),
-  },
-
-  matrix: {
-    help: 'try me',
-    run: () => ({ lines: [line('initiating…', 'dim')], special: 'matrix' }),
-  },
-
-  party: {
-    help: 'try me',
-    run: () => ({ lines: [line('🎉', 'out')], special: 'party' }),
-  },
-
   // hidden aliases
   'ls projects': { run: () => COMMANDS.ls.run() },
   links:         { run: () => COMMANDS.contact.run() },
@@ -186,8 +179,8 @@ export function runCommand(raw: string): RunResult {
   if (cmd.startsWith('cd '))
     return { lines: [line("you can′t cd. this is a portfolio.", 'dim')] }
 
-  if (cmd === 'rm -rf /')
-    return { lines: [line('nice try.', 'err')] }
+  if (cmd.startsWith('rm ') || cmd === 'rm')
+    return { lines: [line('rm: permission denied', 'err')] }
 
   const def = COMMANDS[cmd]
   if (def)

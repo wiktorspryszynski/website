@@ -149,8 +149,6 @@ export default function TerminalOverlay({ isOpen, onClose }: TerminalOverlayProp
         window.location.href = "mailto:spryszynskiwiktor@gmail.com?subject=URGENT%3A%20Let%27s%20talk&body=Hi%20Wiktor%2C"
       }, 350)
     }
-    if (result.special === 'matrix') setEffect('matrix')
-    if (result.special === 'party')  setEffect('party')
   }
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
