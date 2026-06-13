@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { LanguageProvider } from './context/LanguageProvider'
 import { BACKEND_EXISTS } from './config/features'
 import NavBar from './components/NavBar'
@@ -58,8 +59,31 @@ export default function HomePage() {
     return () => document.removeEventListener('keydown', handleKeyDown)
   }, [termOpen, wwwOpen, pronounceOpen])
 
+  const SITE_URL = 'https://spryszynski.pl'
+  const TITLE = 'Wiktor Spryszyński - Full-Stack Developer'
+  const DESCRIPTION = 'Full-stack developer based in Gdańsk, Poland. Building web apps with React, TypeScript and FastAPI.'
+
   return (
     <LanguageProvider>
+      <Helmet>
+        <title>{TITLE}</title>
+        <meta name="description" content={DESCRIPTION} />
+        <meta name="author" content="Wiktor Spryszyński" />
+        <link rel="canonical" href={SITE_URL} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={SITE_URL} />
+        <meta property="og:title" content={TITLE} />
+        <meta property="og:description" content={DESCRIPTION} />
+        <meta property="og:image" content={`${SITE_URL}/project-preview.svg`} />
+        <meta property="og:site_name" content="Wiktor Spryszyński" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={TITLE} />
+        <meta name="twitter:description" content={DESCRIPTION} />
+        <meta name="twitter:image" content={`${SITE_URL}/project-preview.svg`} />
+      </Helmet>
       <OrbCanvas />
       <NavBar />
       <main>
