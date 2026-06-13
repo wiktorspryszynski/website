@@ -1122,6 +1122,10 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
 .pron-flag span:nth-child(1) { background: #fff; }
 .pron-flag span:nth-child(2) { background: #dc143c; }
 
+@keyframes term-confetti {
+  0%   { transform: translateY(0)    rotate(0deg);   opacity: 1; }
+  100% { transform: translateY(500px) rotate(720deg); opacity: 0; }
+}
 /* ---------- terminal overlay ---------- */
 .term-overlay {
   position: fixed; inset: 0; z-index: 100;
@@ -1134,6 +1138,7 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
 }
 .term-overlay.open { opacity: 1; pointer-events: auto; }
 .term-window {
+  position: relative;
   width: min(680px, 100%); max-height: 78vh;
   background: #0a0a0b;
   border: 1px solid var(--line-strong);

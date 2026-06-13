@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { type TerminalLine, runCommand } from '../utils/terminalCommands'
 
@@ -12,6 +12,85 @@ const BOOT_LINES: TerminalLine[] = [
   { text: '', cls: 'out' },
 ]
 
+const CONFETTI_COLORS = ['#ff0', '#f0f', '#0ff', '#f80', '#0f8', '#f44']
+
+function MatrixEffect({ onDone }: { onDone: () => void }) {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+
+  useEffect(() => {
+    const canvas = canvasRef.current!
+    const ctx = canvas.getContext('2d')!
+    const W = canvas.offsetWidth
+    const H = canvas.offsetHeight
+    canvas.width = W
+    canvas.height = H
+
+    const FS = 14
+    const cols = Math.floor(W / FS)
+    const drops = Array.from({ length: cols }, () => Math.random() * -40)
+    const CHARS = 'アイウエオカキクケコサシスセソ0123456789ABCDEF<>{}[]|/\\'
+
+    const draw = () => {
+      ctx.fillStyle = 'rgba(10,10,11,0.08)'
+      ctx.fillRect(0, 0, W, H)
+      ctx.font = `${FS}px monospace`
+      drops.forEach((y, i) => {
+        const char = CHARS[Math.floor(Math.random() * CHARS.length)]
+        ctx.fillStyle = '#aaffaa'
+        ctx.fillText(char, i * FS, y * FS)
+        ctx.fillStyle = '#00c41a'
+        ctx.fillText(CHARS[Math.floor(Math.random() * CHARS.length)], i * FS, (y - 1) * FS)
+        if (y * FS > H && Math.random() > 0.975) drops[i] = 0
+        drops[i] += 0.6
+      })
+    }
+
+    const interval = setInterval(draw, 40)
+    const timeout = setTimeout(() => { clearInterval(interval); onDone() }, 4000)
+    return () => { clearInterval(interval); clearTimeout(timeout) }
+  }, [onDone])
+
+  return <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 10 }} />
+}
+
+function PartyEffect({ onDone }: { onDone: () => void }) {
+  useEffect(() => {
+    const t = setTimeout(onDone, 3500)
+    return () => clearTimeout(t)
+  }, [onDone])
+
+  const pieces = useMemo(() =>
+    Array.from({ length: 55 }, (_, i) => ({
+      id: i,
+      color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
+      left: Math.random() * 100,
+      delay: Math.random() * 0.9,
+      duration: 1.5 + Math.random() * 1.5,
+      size: 6 + Math.random() * 6,
+      rotate: Math.random() * 360,
+      circle: Math.random() > 0.5,
+    })), []
+  )
+
+  return (
+    <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none', zIndex: 10 }}>
+      {pieces.map(p => (
+        <div key={p.id} style={{
+          position: 'absolute',
+          top: '-10px',
+          left: `${p.left}%`,
+          width: p.size,
+          height: p.size,
+          background: p.color,
+          borderRadius: p.circle ? '50%' : '2px',
+          animation: `term-confetti ${p.duration}s ${p.delay}s ease-in forwards`,
+          transform: `rotate(${p.rotate}deg)`,
+        }} />
+      ))}
+    </div>
+  )
+}
+
 export default function TerminalOverlay({ isOpen, onClose }: TerminalOverlayProps) {
   const [lines, setLines] = useState<TerminalLine[]>([])
   const [inputVal, setInputVal] = useState('')
@@ -19,9 +98,12 @@ export default function TerminalOverlay({ isOpen, onClose }: TerminalOverlayProp
     try { return JSON.parse(sessionStorage.getItem('term-history') ?? '[]') } catch { return [] }
   })
   const [histIdx, setHistIdx] = useState(-1)
+  const [effect, setEffect] = useState<'matrix' | 'party' | null>(null)
   const booted = useRef(false)
   const bodyRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+
+  const clearEffect = useCallback(() => setEffect(null), [])
 
   useEffect(() => {
     if (isOpen) {
@@ -71,6 +153,8 @@ export default function TerminalOverlay({ isOpen, onClose }: TerminalOverlayProp
         window.location.href = "mailto:spryszynskiwiktor@gmail.com?subject=URGENT%3A%20Let%27s%20talk&body=Hi%20Wiktor%2C"
       }, 350)
     }
+    if (result.special === 'matrix') setEffect('matrix')
+    if (result.special === 'party')  setEffect('party')
   }
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
@@ -101,6 +185,8 @@ export default function TerminalOverlay({ isOpen, onClose }: TerminalOverlayProp
   return createPortal(
     <div id="term" className={`term-overlay${isOpen ? ' open' : ''}`} aria-hidden={!isOpen}>
       <div className="term-window" role="dialog" aria-label="Terminal">
+        {effect === 'matrix' && <MatrixEffect onDone={clearEffect} />}
+        {effect === 'party'  && <PartyEffect  onDone={clearEffect} />}
         <div className="term-head">
           <div className="dots">
             <span onClick={onClose} role="button" aria-label="Close terminal" title="close" />

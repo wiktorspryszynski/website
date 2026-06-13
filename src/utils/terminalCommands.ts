@@ -6,7 +6,7 @@ export type TerminalLine = {
 
 export type RunResult = {
   lines: TerminalLine[]
-  special?: 'clear' | 'exit' | 'hire' | 'sudo-hire'
+  special?: 'clear' | 'exit' | 'hire' | 'sudo-hire' | 'matrix' | 'party'
 }
 
 type CommandDef = {
@@ -103,8 +103,68 @@ const COMMANDS: Record<string, CommandDef> = {
     run: () => ({ lines: [], special: 'exit' }),
   },
 
+  neofetch: {
+    help: 'system info',
+    run: () => {
+      const born = new Date(2000, 4, 31)
+      const now = new Date()
+      const totalDays = Math.floor((now.getTime() - born.getTime()) / (24 * 60 * 60 * 1000))
+      const years = Math.floor(totalDays / 365.25)
+      const days = totalDays - Math.floor(years * 365.25)
+
+      const ART: [string, string][] = [
+        ['██╗    ██╗███████╗', '#f472b6'],
+        ['██║    ██║██╔════╝', '#a78bfa'],
+        ['██║ █╗ ██║███████╗', '#60a5fa'],
+        ['██║███╗██║╚════██║', '#34d399'],
+        ['╚███╔███╔╝███████║', '#fbbf24'],
+        [' ╚══╝╚══╝ ╚══════╝', '#fb923c'],
+      ]
+
+      const k = (s: string) => `<span style='color:var(--accent);display:inline-block;min-width:9ch'>${s}</span>`
+      const INFO = [
+        `<span style='color:var(--accent)'>wiktor</span>@<span style='color:var(--ok)'>spryszynski.pl</span>`,
+        `<span style='color:var(--muted)'>${'─'.repeat(22)}</span>`,
+        `${k('OS')}spryszynski.pl v2`,
+        `${k('Host')}OVHCloud`,
+        `${k('Kernel')}TypeScript ~5.9 strict`,
+        `${k('DE')}Three.js 0.184`,
+        `${k('Terminal')}this one`,
+        `${k('Uptime')}${years}y ${days}d`,
+        `${k('Memory')}barely working`,
+      ]
+
+      const artCol  = ART.map(([t, c]) => `<div style="color:${c};white-space:pre">${t}</div>`).join('')
+      const infoCol = INFO.map(t => `<div>${t}</div>`).join('')
+      return {
+        lines: [line(
+          `<div style="display:flex;gap:20px;align-items:flex-start"><div>${artCol}</div><div>${infoCol}</div></div>`,
+          'out', true
+        )],
+      }
+    },
+  },
+
+  cv: {
+    help: 'download resume',
+    run: () => ({ lines: [
+      line(`<a style='color:var(--accent)' href='/_CV_Wiktor_Spryszynski_ENG.pdf' download>_CV_Wiktor_Spryszynski_ENG.pdf</a>  <span style='color:var(--muted)'>↓ download</span>`, 'out', true),
+    ]}),
+  },
+
+  matrix: {
+    help: 'try me',
+    run: () => ({ lines: [line('initiating…', 'dim')], special: 'matrix' }),
+  },
+
+  party: {
+    help: 'try me',
+    run: () => ({ lines: [line('🎉', 'out')], special: 'party' }),
+  },
+
   // hidden aliases
   'ls projects': { run: () => COMMANDS.ls.run() },
+  links:         { run: () => COMMANDS.contact.run() },
   'sudo hire': { run: () => ({ lines: [
     line('[sudo] password for recruiter: ••••••••', 'dim'),
     line("<span style='color:var(--ok)'>permission granted.</span>", 'out', true),

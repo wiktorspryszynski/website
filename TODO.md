@@ -8,9 +8,9 @@
 
 -  Easter eggs
   - [X] Terminal: add `sudo` command — respond with "You are not in the sudoers file. This incident will be reported."
-  - [ ] Terminal: add `matrix` command — green falling chars overlay for a few seconds
-  - [ ] Terminal: add `party` command — confetti burst for 3s
-  - [ ] Terminal: add `links`, `cv`, `neofetch` (show stack as if it's system info) commands
+  - [X] Terminal: add `matrix` command — green falling chars overlay for a few seconds
+  - [X] Terminal: add `party` command — confetti burst for 3s
+  - [X] Terminal: add `links`, `cv`, `neofetch` (show stack as if it's system info) commands
   - [ ] Clicking "Wiktor" shows retro 90s WWW div: "You are visitor number X" — use real counter via backend endpoint, not hardcoded number
   - [X] Clicking "Spryszyński" shows pronunciation guide
   - [X] Backtick (`` ` ``) opens Linux-style terminal with preset commands
