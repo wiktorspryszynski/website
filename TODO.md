@@ -4,7 +4,7 @@
 
 - [ ] Wire up a backend - some things are backend dependent (`BACKEND_EXISTS` bool variable), e.g.: API endpoint showcase, WWW easter egg
 - [ ] SEO / OG meta tags via React Helmet
-- [ ] Better project showcase divs (expand to show more, show a GIF, add icons, color code languages listed in project's stack)
+- [X] Better project showcase divs (expand to show more, show a GIF, add icons, color code languages listed in project's stack)
 
 -  Easter eggs
   - [ ] Terminal: add `sudo` command — respond with "Wiktor is not in the sudoers file. This incident will be reported."
