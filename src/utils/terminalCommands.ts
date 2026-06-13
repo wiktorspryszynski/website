@@ -87,7 +87,10 @@ const COMMANDS: Record<string, CommandDef> = {
 
   hire: {
     help: 'the important one',
-    run: () => ({ lines: [line('opening mail…')], special: 'hire' }),
+    run: () => ({ lines: [
+      line('drafting email…', 'dim'),
+      line('opening mail client.'),
+    ], special: 'hire' }),
   },
 
   clear: {
@@ -102,7 +105,12 @@ const COMMANDS: Record<string, CommandDef> = {
 
   // hidden aliases
   'ls projects': { run: () => COMMANDS.ls.run() },
-  'sudo hire':   { run: () => ({ lines: [line("<span style='color:var(--accent)'>Permission granted.</span>", 'out', true)], special: 'sudo-hire' }) },
+  'sudo hire': { run: () => ({ lines: [
+    line('[sudo] password for recruiter: ••••••••', 'dim'),
+    line("<span style='color:var(--ok)'>permission granted.</span>", 'out', true),
+    line('flagging as URGENT.', 'err'),
+    line('opening mail client.'),
+  ], special: 'sudo-hire' }) },
 }
 
 export function runCommand(raw: string): RunResult {
