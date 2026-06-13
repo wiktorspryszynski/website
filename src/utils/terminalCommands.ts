@@ -90,17 +90,6 @@ const COMMANDS: Record<string, CommandDef> = {
     run: () => ({ lines: [line('opening mail…')], special: 'hire' }),
   },
 
-  coffee: {
-    help: 'pour me one',
-    run: () => ({ lines: [
-      '     ( (',
-      '     ) )',
-      '  .-----.',
-      '  |     |]',
-      "  `-----'",
-    ].map(l => line(l)).concat([line('on it.', 'dim')]) }),
-  },
-
   clear: {
     help: 'clear the terminal',
     run: () => ({ lines: [], special: 'clear' }),
