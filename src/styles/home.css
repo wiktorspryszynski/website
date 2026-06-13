@@ -516,8 +516,12 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
 
 /* proj-expand */
 .proj-expand {
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
+  position: absolute;
+  top: calc(100% - 32px);
+  left: 0; right: 0;
+  padding: 20px;
+  background: var(--bg);
+  border-radius: 0 0 4px 4px;
   display: flex; flex-direction: column; gap: 16px;
   animation: proj-expand-in 0.25s ease forwards;
 }
@@ -654,7 +658,7 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
   background: var(--bg);
   padding-inline: 20px;
   margin-inline: -20px;
-  border-radius: 4px;
+  border-radius: 4px 4px 0 0;
   animation: spotlight-pop 0.25s ease forwards;
 }
 .proj-close {
@@ -672,7 +676,7 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
   background: var(--bg);
   padding-inline: 20px;
   margin-inline: -20px;
-  border-radius: 4px;
+  border-radius: 4px 4px 0 0;
   pointer-events: none;
   animation: spotlight-pop-out 0.22s ease forwards;
 }
