@@ -5,7 +5,7 @@ import type { Project, Screenshot } from '../data/homeContent'
 import T from './T'
 import TechTag from './TechTag'
 import { useLang } from '../context/LanguageContext'
-import { TbBrandGithub, TbChevronLeft, TbChevronRight } from 'react-icons/tb'
+import { TbBrandGithub, TbChevronLeft, TbChevronRight, TbNotebook } from 'react-icons/tb'
 
 const GALLERY_MAX_W = 600
 const GALLERY_MAX_H = 360
@@ -124,7 +124,7 @@ function CardLinks({ proj }: { proj: Project }) {
           rel="noopener"
           onClick={e => e.stopPropagation()}
         >
-          <TbBrandGithub size={13} /><T en="view model" pl="zobacz model" />
+          <TbNotebook size={13} /><T en="view model" pl="zobacz model" />
         </a>
       )}
       {proj.sourceUrl && (
