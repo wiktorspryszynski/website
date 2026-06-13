@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { type TerminalLine, runCommand } from '../utils/terminalCommands'
 
@@ -59,7 +59,7 @@ function PartyEffect({ onDone }: { onDone: () => void }) {
     return () => clearTimeout(t)
   }, [onDone])
 
-  const pieces = useMemo(() =>
+  const [pieces] = useState(() =>
     Array.from({ length: 60 }, (_, i) => {
       const fromLeft = i < 30
       return {
@@ -72,7 +72,7 @@ function PartyEffect({ onDone }: { onDone: () => void }) {
         rotate: Math.random() * 360,
         circle: Math.random() > 0.5,
       }
-    }), []
+    })
   )
 
   return (
@@ -95,27 +95,20 @@ function PartyEffect({ onDone }: { onDone: () => void }) {
 }
 
 export default function TerminalOverlay({ isOpen, onClose }: TerminalOverlayProps) {
-  const [lines, setLines] = useState<TerminalLine[]>([])
+  const [lines, setLines] = useState<TerminalLine[]>(BOOT_LINES)
   const [inputVal, setInputVal] = useState('')
   const [history, setHistory] = useState<string[]>(() => {
     try { return JSON.parse(sessionStorage.getItem('term-history') ?? '[]') } catch { return [] }
   })
   const [histIdx, setHistIdx] = useState(-1)
   const [effect, setEffect] = useState<'matrix' | 'party' | null>(null)
-  const booted = useRef(false)
   const bodyRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
   const clearEffect = useCallback(() => setEffect(null), [])
 
   useEffect(() => {
-    if (isOpen) {
-      if (!booted.current) {
-        setLines(BOOT_LINES)
-        booted.current = true
-      }
-      setTimeout(() => inputRef.current?.focus(), 40)
-    }
+    if (isOpen) setTimeout(() => inputRef.current?.focus(), 40)
   }, [isOpen])
 
   useEffect(() => {
