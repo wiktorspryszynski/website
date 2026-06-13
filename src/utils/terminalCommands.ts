@@ -31,8 +31,6 @@ const COMMANDS: Record<string, CommandDef> = {
         ['whoami',              'about me'],
         ['ls',                  'list projects'],
         ['cat resume',          'resume summary'],
-        ['stack',               'tech'],
-        ['contact',             'links'],
         ['hire',                'the important one'],
         ['rm &lt;anything&gt;', 'delete a file',  'rm <anything>'.length],
         ['neofetch',            'system info'],
@@ -50,7 +48,19 @@ const COMMANDS: Record<string, CommandDef> = {
     run: () => ({ lines: [
       line('wiktor spryszynski'),
       line('full-stack engineer, gdansk, pl.', 'dim'),
-      line(LOOKING_FOR_HIRE ? 'open to work.' : 'looking to collaborate.', 'dim'),
+      line(LOOKING_FOR_HIRE ? 'open to work.' : '', 'dim'),
+      line(''),
+      line(''),
+      line('stack', 'dim'),
+      line('shipped: php, javascript, react, sql, html/css'),
+      line('side: typescript, python, fastapi, postgres, redis, deck.gl'),
+      line(''),
+      line(''),
+      line('contact', 'dim'),
+      line("github    <a style='color:var(--accent)' target='_blank' href='https://github.com/wiktorspryszynski'>github.com/wiktorspryszynski</a>", 'out', true),
+      line("linkedin  <a style='color:var(--accent)' target='_blank' href='https://www.linkedin.com/in/wiktor-spryszynski/'>linkedin.com/in/wiktor-spryszynski</a>", 'out', true),
+      line("email     <a style='color:var(--accent)' href='mailto:spryszynskiwiktor@gmail.com'>spryszynskiwiktor@gmail.com</a>", 'out', true),
+      line("cv        <a style='color:var(--accent)' href='/_CV_Wiktor_Spryszynski_ENG.pdf' download>_CV_Wiktor_Spryszynski_ENG.pdf</a>", 'out', true),
     ]}),
   },
 
@@ -74,24 +84,6 @@ const COMMANDS: Record<string, CommandDef> = {
       line('  hospital indoor nav, 3 people, 3mo - react native, 3d, dijkstra'),
       line(''),
       line('now: building flight-scope and nom-nom.', 'dim'),
-    ]}),
-  },
-
-  stack: {
-    help: 'tech',
-    run: () => ({ lines: [
-      line('shipped: php, javascript, react, sql, html/css'),
-      line('side: typescript, python, fastapi, postgres, redis, deck.gl'),
-    ]}),
-  },
-
-  contact: {
-    help: 'links',
-    run: () => ({ lines: [
-      line("github    <a style='color:var(--accent)' target='_blank' href='https://github.com/wiktorspryszynski'>github.com/wiktorspryszynski</a>", 'out', true),
-      line("linkedin  <a style='color:var(--accent)' target='_blank' href='https://www.linkedin.com/in/wiktor-spryszynski/'>linkedin.com/in/wiktor-spryszynski</a>", 'out', true),
-      line("email     <a style='color:var(--accent)' href='mailto:spryszynskiwiktor@gmail.com'>spryszynskiwiktor@gmail.com</a>", 'out', true),
-      line("cv        <a style='color:var(--accent)' href='/_CV_Wiktor_Spryszynski_ENG.pdf' download>_CV_Wiktor_Spryszynski_ENG.pdf</a>", 'out', true),
     ]}),
   },
 
@@ -157,7 +149,6 @@ const COMMANDS: Record<string, CommandDef> = {
 
   // hidden aliases
   'ls projects': { run: () => COMMANDS.ls.run() },
-  links:         { run: () => COMMANDS.contact.run() },
   'sudo hire': { run: () => ({ lines: [
     line('[sudo] password for recruiter: ••••••••', 'dim'),
     line("<span style='color:var(--ok)'>permission granted.</span>", 'out', true),
