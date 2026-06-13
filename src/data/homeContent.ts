@@ -93,7 +93,7 @@ export const projects: Project[] = [
     icon: spotifyIcon,
     desc: {
       en: 'Generate a playlist based on your Spotify top tracks by a cosine-similarity model. Allows saving it to your library. Unfortunately retired when Spotify removed the audio-features endpoint that the model depended on.',
-      pl: 'Generowanie playlisty na podstawie Twoich topowych utworów Spotify przez model kosinusowy. Pozwala też na zapisanie jej w bibliotece. Niestety zamknięte, gdy Spotify usunął endpoint audio-features, od którego zależał model.',
+      pl: 'Generowanie playlisty na podstawie Twoich topowych utworów Spotify przez model kosinusowy. Pozwala też na zapisanie jej w bibliotece. Niestety zamknięte, ponieważ Spotify usunął endpoint audio-features, od którego zależał model.',
     },
     stack: ['Python', 'Django', 'scikit-learn', 'joblib', 'kNN', 'Docker', 'OAuth'],
     sourceUrl: 'https://github.com/wiktorspryszynski/spotify_music_recommender',
