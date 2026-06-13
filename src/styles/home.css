@@ -590,13 +590,15 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
 .lightbox-arrow {
   pointer-events: all;
   background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
-  color: #fff; font-size: 32px; line-height: 1;
+  color: #fff;
   width: 44px; height: 44px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   cursor: pointer; padding: 0;
   opacity: 0.7; transition: opacity 0.15s, background 0.15s;
 }
 .lightbox-arrow:hover { opacity: 1; background: rgba(255,255,255,0.15); }
+.lightbox-arrow-prev svg { transform: translateX(-1px); }
+.lightbox-arrow-next svg { transform: translateX(1px); }
 @media (max-width: 640px) {
   .lightbox-nav {
     position: static; pointer-events: all;

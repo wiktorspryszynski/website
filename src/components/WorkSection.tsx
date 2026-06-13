@@ -5,7 +5,7 @@ import type { Project, Screenshot } from '../data/homeContent'
 import T from './T'
 import TechTag from './TechTag'
 import { useLang } from '../context/LanguageContext'
-import { TbBrandGithub } from 'react-icons/tb'
+import { TbBrandGithub, TbChevronLeft, TbChevronRight } from 'react-icons/tb'
 
 const GALLERY_MAX_W = 600
 const GALLERY_MAX_H = 360
@@ -37,8 +37,8 @@ function Lightbox({ screenshots, idx, onChange, onClose }: { screenshots: Screen
         <img src={screenshots[idx].src} alt="" className="lightbox-img" key={idx} />
         {screenshots.length > 1 && (
           <div className="lightbox-nav">
-            <button className="lightbox-arrow" onClick={prev} aria-label="Previous">‹</button>
-            <button className="lightbox-arrow" onClick={next} aria-label="Next">›</button>
+            <button className="lightbox-arrow lightbox-arrow-prev" onClick={prev} aria-label="Previous"><TbChevronLeft size={24} /></button>
+            <button className="lightbox-arrow lightbox-arrow-next" onClick={next} aria-label="Next"><TbChevronRight size={24} /></button>
           </div>
         )}
       </div>
