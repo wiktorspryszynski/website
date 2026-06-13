@@ -5,7 +5,8 @@ import type { Project, Screenshot } from '../data/homeContent'
 import T from './T'
 import TechTag from './TechTag'
 import { useLang } from '../context/LanguageContext'
-import { TbBrandGithub, TbChevronLeft, TbChevronRight, TbNotebook } from 'react-icons/tb'
+import { TbBrandGithub, TbNotebook } from 'react-icons/tb'
+import Arrow from './Arrow'
 
 const GALLERY_MAX_W = 600
 const GALLERY_MAX_H = 360
@@ -37,8 +38,8 @@ function Lightbox({ screenshots, idx, onChange, onClose }: { screenshots: Screen
         <img src={screenshots[idx].src} alt="" className="lightbox-img" key={idx} />
         {screenshots.length > 1 && (
           <div className="lightbox-nav">
-            <button className="lightbox-arrow lightbox-arrow-prev" onClick={prev} aria-label="Previous"><TbChevronLeft size={24} /></button>
-            <button className="lightbox-arrow lightbox-arrow-next" onClick={next} aria-label="Next"><TbChevronRight size={24} /></button>
+            <button className="lightbox-arrow lightbox-arrow-prev" onClick={prev} aria-label="Previous"><Arrow direction="left" size={24} /></button>
+            <button className="lightbox-arrow lightbox-arrow-next" onClick={next} aria-label="Next"><Arrow direction="right" size={24} /></button>
           </div>
         )}
       </div>
@@ -76,9 +77,9 @@ function ScreenshotGallery({ screenshots }: { screenshots: Screenshot[] }) {
     <>
       <div className="proj-gallery">
         <div className="proj-gallery-stage">
-          <button className="proj-gallery-arrow left" onClick={prev} aria-label="Previous">‹</button>
+          <button className="proj-gallery-arrow left" onClick={prev} aria-label="Previous"><Arrow direction="left" /></button>
           <img src={s.src} alt="" className="proj-screenshot proj-screenshot-clickable" style={{ width: Math.round(s.width * scale), height: Math.round(s.height * scale) }} onClick={e => open(e, idx)} />
-          <button className="proj-gallery-arrow right" onClick={next} aria-label="Next">›</button>
+          <button className="proj-gallery-arrow right" onClick={next} aria-label="Next"><Arrow direction="right" /></button>
         </div>
         <div className="proj-gallery-dots">
           {screenshots.map((_, i) => (
@@ -146,7 +147,7 @@ function CardLinks({ proj }: { proj: Project }) {
           rel="noopener"
           onClick={e => e.stopPropagation()}
         >
-          demo ↗
+          demo <Arrow size={11} />
         </a>
       )}
     </span>

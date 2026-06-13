@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import { useLang } from '../context/LanguageContext'
 import { EmailIcon, GithubIcon, LinkedInIcon, FileIcon } from './LinkRow'
 import T from './T'
+import Arrow from './Arrow'
 import { LOOKING_FOR_HIRE } from '../config/features'
 
 const EMAIL = 'spryszynskiwiktor@gmail.com'
@@ -92,7 +93,7 @@ export default function ContactSection({ onCopy }: ContactSectionProps) {
               <span className="cta-btn-label">github</span>
               <span className="cta-btn-val">@wiktorspryszynski</span>
             </span>
-            <span className="cta-btn-cta" data-cta="external">↗</span>
+            <span className="cta-btn-cta" data-cta="external"><Arrow /></span>
           </a>
           <a className="cta-btn" href="https://www.linkedin.com/in/wiktor-spryszynski/" target="_blank" rel="noopener">
             <span className="cta-btn-icon"><LinkedInIcon /></span>
@@ -100,7 +101,7 @@ export default function ContactSection({ onCopy }: ContactSectionProps) {
               <span className="cta-btn-label">linkedin</span>
               <span className="cta-btn-val">in/wiktor-spryszynski</span>
             </span>
-            <span className="cta-btn-cta" data-cta="external">↗</span>
+            <span className="cta-btn-cta" data-cta="external"><Arrow /></span>
           </a>
           <div className="cta-split">
             <a className="cta-split-main" href={resumeHref} target="_blank" rel="noopener">
@@ -109,7 +110,7 @@ export default function ContactSection({ onCopy }: ContactSectionProps) {
                 <span className="cta-btn-label"><T en="résumé" pl="cv" /></span>
                 <span className="cta-btn-val"><T en="PDF, one page" pl="PDF, jedna strona" /></span>
               </span>
-              <span className="cta-btn-cta" data-cta="external">↗</span>
+              <span className="cta-btn-cta" data-cta="external"><Arrow /></span>
             </a>
             <a
               className="cta-split-side"

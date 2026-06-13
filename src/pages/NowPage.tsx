@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Arrow from '../components/Arrow'
 
 export default function NowPage() {
   useEffect(() => {
@@ -10,7 +11,7 @@ export default function NowPage() {
   return (
     <main className="now-page">
       <div className="now-inner">
-        <Link to="/" className="now-back">← back</Link>
+        <Link to="/" className="now-back"><Arrow direction="left" /> back</Link>
         <h1 className="now-title">Now</h1>
         <p className="now-meta">Updated June 2026 · Gdańsk, Poland</p>
         <div className="now-body">

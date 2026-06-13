@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import T from './T'
+import Arrow from './Arrow'
 
 async function copyText(text: string): Promise<boolean> {
   try {
@@ -90,7 +91,7 @@ export default function LinkRow({ icon, label, value, action, aside }: LinkRowPr
 
   const ctaContent = action.type === 'copy'
     ? (copied ? <>✓ <T en="copied" pl="skopiowano" /></> : <T en="copy" pl="skopiuj" />)
-    : action.type === 'download' ? '↓' : '↗'
+    : action.type === 'download' ? <Arrow direction="down" /> : <Arrow />
 
   const inner = (
     <>

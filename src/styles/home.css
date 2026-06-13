@@ -830,6 +830,9 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
   letter-spacing: 0.02em;
 }
 .bottom-mid { display: inline-flex; align-items: baseline; gap: 6px; flex: 1; justify-content: center; }
+[data-tooltip] { position: relative; }
+[data-tooltip]::after { content: attr(data-tooltip); position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); background: #222; color: #eee; font-size: 11px; white-space: nowrap; padding: 3px 7px; border-radius: 4px; pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 9999; }
+[data-tooltip]:hover::after { opacity: 1; }
 .footer-heart { margin: 0 2px 0 4px; font-size: 15px; color: var(--muted); transition: color 0.15s; cursor: default; display: inline-block; transform: scaleX(1.5); }
 .footer-heart:hover { color: #e53e3e; }
 .footer-icons { display: inline-flex; align-items: flex-end; gap: 8px; margin-left: 2px; }

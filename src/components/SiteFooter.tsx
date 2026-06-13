@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Tippy from '@tippyjs/react'
 import { NOW_PAGE_AVAILABLE } from '../config/features'
-import 'tippy.js/dist/tippy.css'
 import { SiReact, SiTypescript, SiVite, SiThreedotjs } from 'react-icons/si'
 const GLOW_STYLE = 'white' // 'green' | 'cyan' | 'white' | 'blink'
 
@@ -62,31 +60,30 @@ export default function SiteFooter({ onTerminalOpen }: SiteFooterProps) {
 
         <span className="bottom-mid">
           Built with
-          <Tippy content="love" placement="top"><span className="footer-heart">♥</span></Tippy>
+          <span className="footer-heart" data-tooltip="love">♥</span>
           and
           <span className="footer-icons">
             {BUILT_WITH.map(({ Icon, tip, color }) => (
-              <Tippy key={tip} content={tip} placement="top">
-                <span
-                  className="footer-icon-wrap"
-                  style={{ '--icon-color': color } as React.CSSProperties}
-                >
-                  <Icon size={13} />
-                </span>
-              </Tippy>
+              <span
+                key={tip}
+                className="footer-icon-wrap"
+                style={{ '--icon-color': color } as React.CSSProperties}
+                data-tooltip={tip}
+              >
+                <Icon size={13} />
+              </span>
             ))}
           </span>
         </span>
 
         <span className="footer-right">
-          <Tippy content="view commit" placement="top">
-            <a
-              className="footer-sha"
-              href={`https://github.com/wiktorspryszynski/website/commit/${__GIT_SHA__}`}
-              target="_blank"
-              rel="noreferrer"
-            >{__GIT_SHA__}</a>
-          </Tippy>
+          <a
+            className="footer-sha"
+            href={`https://github.com/wiktorspryszynski/website/commit/${__GIT_SHA__}`}
+            target="_blank"
+            rel="noreferrer"
+            data-tooltip="view commit"
+          >{__GIT_SHA__}</a>
 
           <div ref={dropRef} className={`footer-drop${linksOpen ? ' open' : ''}`}>
             <button
