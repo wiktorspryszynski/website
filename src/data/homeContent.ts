@@ -69,7 +69,7 @@ export const projects: Project[] = [
     icon: flightScopeIcon,
     desc: {
       en: 'A live flight tracker. Click any plane to fly alongside a 3D model. You can also view positions from up to 2 weeks in the past.',
-      pl: 'Tracker lotów na żywo. Kliknij samolot i lecisz obok modelu 3D. Możesz również zobaczyć pozycje z ostatnich 2 tygodni.',
+      pl: 'Tracker lotów na żywo. Kliknij samolot i leć obok modelu 3D. Można również zobaczyć pozycje z ostatnich 2 tygodni.',
     },
     stack: ['React', 'TypeScript', 'Python', 'FastAPI', 'Postgres', 'Redis', 'Docker', 'Deck.gl'],
     sourceUrl: 'https://github.com/wiktorspryszynski/flight-scope',
@@ -92,8 +92,8 @@ export const projects: Project[] = [
     status: 'dead',
     icon: spotifyIcon,
     desc: {
-      en: 'Sign in with Spotify, pull your top tracks, get a recommended playlist back. Saves to your library in one click. Retired when Spotify killed the audio-features endpoint.',
-      pl: 'Logowanie przez Spotify, pobranie topki, zwrot rekomendowanej playlisty. Zapis do biblioteki jednym kliknięciem. Zamknięte, gdy Spotify wyłączył endpoint audio-features.',
+      en: 'Generate a playlist based on your Spotify top tracks by a cosine-similarity model. Allows saving it to your library. Unfortunately retired when Spotify removed the audio-features endpoint that the model depended on.',
+      pl: 'Generowanie playlisty na podstawie Twoich topowych utworów Spotify przez model kosinusowy. Pozwala też na zapisanie jej w bibliotece. Niestety zamknięte, gdy Spotify usunął endpoint audio-features, od którego zależał model.',
     },
     stack: ['Python', 'Django', 'scikit-learn', 'joblib', 'kNN', 'Docker', 'OAuth'],
     sourceUrl: 'https://github.com/wiktorspryszynski/spotify_music_recommender',
@@ -104,8 +104,8 @@ export const projects: Project[] = [
       pl: 'Pobiera 100 topowych utworów Spotify (50 polubionych + 50 najczęściej odtwarzanych) i ich cechy audio, a model kosinusowy wytrenowany na większym zbiorze danych (100 tys. piosenek z cechami audio) generuje playlistę. Wybiera on jeden najbardziej podobny utwór na każdy pobrany utwór (co daje 100 rekomendowanych piosenek). Jedno kliknięcie zapisuje ją w bibliotece. Zamknięte w 2024, gdy Spotify usunął endpoint audio-features. Demo działa tylko na zapisanych danych piosenek.',
     },
     features: {
-      en: ['Spotify OAuth sign-in', 'Top-100 track analysis via audio features', 'Cosine-similarity model (scikit-learn)', 'One-click playlist save to library', 'Demo only works on saved songs data'],
-      pl: ['Logowanie OAuth przez Spotify', 'Analiza 100 topowych przez cechy audio', 'Model kosinusowy (scikit-learn)', 'Zapis playlisty jednym kliknięciem', 'Demo działa tylko na zapisanych piosenkach'],
+      en: ['Spotify OAuth sign-in', 'Top-100 track analysis by audio features', 'Cosine-similarity model (scikit-learn)', 'Playlist save', 'Demo only works on saved songs data'],
+      pl: ['Logowanie OAuth przez Spotify', 'Analiza 100 topowych po cechach audio', 'Model kosinusowy (scikit-learn)', 'Zapis playlisty', 'Demo działa tylko na zapisanych piosenkach'],
     },
     screenshots: [
       { src: spotify1, width: 1224, height: 772 },
