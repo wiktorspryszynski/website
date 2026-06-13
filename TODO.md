@@ -27,7 +27,7 @@
 
 ## Broken / needs attention
 
-- [ ] `flight-scope` demo URL is a placeholder `#` — either add a real URL or hide the demo button
+- [X] `flight-scope` demo URL is a placeholder `#` — either add a real URL or hide the demo button
 
 ## Ideas (not committed)
 
