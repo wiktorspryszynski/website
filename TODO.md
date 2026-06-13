@@ -3,11 +3,11 @@
 ## Planned
 
 - [ ] Wire up a backend - some things are backend dependent (`BACKEND_EXISTS` bool variable), e.g.: API endpoint showcase, WWW easter egg
-- [ ] SEO / OG meta tags via React Helmet
+- [X] SEO / OG meta tags via React Helmet
 - [X] Better project showcase divs (expand to show more, show a GIF, add icons, color code languages listed in project's stack)
 
 -  Easter eggs
-  - [ ] Terminal: add `sudo` command — respond with "Wiktor is not in the sudoers file. This incident will be reported."
+  - [X] Terminal: add `sudo` command — respond with "You are not in the sudoers file. This incident will be reported."
   - [ ] Terminal: add `matrix` command — green falling chars overlay for a few seconds
   - [ ] Terminal: add `party` command — confetti burst for 3s
   - [ ] Terminal: add `links`, `cv`, `neofetch` (show stack as if it's system info) commands
@@ -22,8 +22,8 @@
 - [X] Footer: "built with" icon tooltips — hover shows a one-liner or fun fact about that tool
 - [ ] `/now` page — short "what I'm working on right now" subpage, link subtly from footer
 - [X] `/humans.txt` — authors, stack, tools used; link subtly from footer
-- [ ] `<meta name="author">` with a recruiter-friendly message, e.g. "Wiktor Spryszyński – reach out if you're hiring"
-- [ ] Persist terminal history across opens (sessionStorage)
+- [X] `<meta name="author">` with a recruiter-friendly message, e.g. "Wiktor Spryszyński – reach out if you're hiring"
+- [X] Persist terminal history across opens (sessionStorage)
 
 ## Broken / needs attention
 

@@ -68,7 +68,7 @@ export default function HomePage() {
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
-        <meta name="author" content="Wiktor Spryszyński" />
+        <meta name="author" content="Wiktor Spryszyński — reach out if you're hiring" />
         <link rel="canonical" href={SITE_URL} />
 
         <meta property="og:type" content="website" />

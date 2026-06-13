@@ -15,7 +15,9 @@ const BOOT_LINES: TerminalLine[] = [
 export default function TerminalOverlay({ isOpen, onClose }: TerminalOverlayProps) {
   const [lines, setLines] = useState<TerminalLine[]>([])
   const [inputVal, setInputVal] = useState('')
-  const [history, setHistory] = useState<string[]>([])
+  const [history, setHistory] = useState<string[]>(() => {
+    try { return JSON.parse(sessionStorage.getItem('term-history') ?? '[]') } catch { return [] }
+  })
   const [histIdx, setHistIdx] = useState(-1)
   const booted = useRef(false)
   const bodyRef = useRef<HTMLDivElement>(null)
@@ -40,7 +42,7 @@ export default function TerminalOverlay({ isOpen, onClose }: TerminalOverlayProp
     const result = runCommand(raw)
 
     if (result.special === 'clear') {
-      setLines([])
+      setLines(BOOT_LINES)
       return
     }
     if (result.special === 'exit') {
@@ -51,7 +53,11 @@ export default function TerminalOverlay({ isOpen, onClose }: TerminalOverlayProp
     setLines(prev => [...prev, cmdLine, ...result.lines])
 
     if (raw.trim()) {
-      setHistory(h => [...h, raw])
+      setHistory(h => {
+        const next = [...h, raw]
+        sessionStorage.setItem('term-history', JSON.stringify(next))
+        return next
+      })
       setHistIdx(-1)
     }
 
