@@ -60,16 +60,19 @@ function PartyEffect({ onDone }: { onDone: () => void }) {
   }, [onDone])
 
   const pieces = useMemo(() =>
-    Array.from({ length: 55 }, (_, i) => ({
-      id: i,
-      color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
-      left: Math.random() * 100,
-      delay: Math.random() * 0.9,
-      duration: 1.5 + Math.random() * 1.5,
-      size: 6 + Math.random() * 6,
-      rotate: Math.random() * 360,
-      circle: Math.random() > 0.5,
-    })), []
+    Array.from({ length: 60 }, (_, i) => {
+      const fromLeft = i < 30
+      return {
+        id: i,
+        color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
+        left: fromLeft ? Math.random() * 30 : 70 + Math.random() * 30,
+        delay: Math.random() * 0.5,
+        duration: 1.2 + Math.random() * 1,
+        size: 6 + Math.random() * 6,
+        rotate: Math.random() * 360,
+        circle: Math.random() > 0.5,
+      }
+    }), []
   )
 
   return (
@@ -77,13 +80,13 @@ function PartyEffect({ onDone }: { onDone: () => void }) {
       {pieces.map(p => (
         <div key={p.id} style={{
           position: 'absolute',
-          top: '-10px',
+          bottom: '-10px',
           left: `${p.left}%`,
           width: p.size,
           height: p.size,
           background: p.color,
           borderRadius: p.circle ? '50%' : '2px',
-          animation: `term-confetti ${p.duration}s ${p.delay}s ease-in forwards`,
+          animation: `term-confetti ${p.duration}s ${p.delay}s ease-out forwards`,
           transform: `rotate(${p.rotate}deg)`,
         }} />
       ))}

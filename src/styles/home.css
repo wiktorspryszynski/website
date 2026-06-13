@@ -1123,8 +1123,9 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
 .pron-flag span:nth-child(2) { background: #dc143c; }
 
 @keyframes term-confetti {
-  0%   { transform: translateY(0)    rotate(0deg);   opacity: 1; }
-  100% { transform: translateY(500px) rotate(720deg); opacity: 0; }
+  0%   { transform: translateY(0) rotate(0deg);    opacity: 1; }
+  70%  { opacity: 1; }
+  100% { transform: translateY(-480px) rotate(540deg); opacity: 0; }
 }
 /* ---------- terminal overlay ---------- */
 .term-overlay {
