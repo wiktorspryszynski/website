@@ -33,13 +33,15 @@ function Lightbox({ screenshots, idx, onChange, onClose }: { screenshots: Screen
   return createPortal(
     <div className="lightbox-overlay" onClick={e => { e.stopPropagation(); onClose() }}>
       <button className="lightbox-close" onClick={e => { e.stopPropagation(); onClose() }} aria-label="Close">✕</button>
-      {screenshots.length > 1 && (
-        <button className="lightbox-arrow left" onClick={prev} aria-label="Previous">‹</button>
-      )}
-      <img src={screenshots[idx].src} alt="" className="lightbox-img" onClick={e => e.stopPropagation()} key={idx} />
-      {screenshots.length > 1 && (
-        <button className="lightbox-arrow right" onClick={next} aria-label="Next">›</button>
-      )}
+      <div className="lightbox-content" onClick={e => e.stopPropagation()}>
+        <img src={screenshots[idx].src} alt="" className="lightbox-img" key={idx} />
+        {screenshots.length > 1 && (
+          <div className="lightbox-nav">
+            <button className="lightbox-arrow" onClick={prev} aria-label="Previous">‹</button>
+            <button className="lightbox-arrow" onClick={next} aria-label="Next">›</button>
+          </div>
+        )}
+      </div>
     </div>,
     document.body
   )
