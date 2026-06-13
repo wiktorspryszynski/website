@@ -33,8 +33,8 @@ export default function AboutSection() {
       </div>
       <aside className="about-side">
         <dl>
-          <dt><T en="Shipped" pl="Komercyjnie" /></dt><dd>{SHIPPED.map(t => <TechTag key={t} name={t} />)}</dd>
-          <dt><T en="Side projects" pl="Projekty własne" /></dt><dd>{SIDE.map(t => <TechTag key={t} name={t} />)}</dd>
+          <dt><T en="Commercially" pl="Zawodowo" /></dt><dd>{SHIPPED.map(t => <TechTag key={t} name={t} />)}</dd>
+          <dt><T en="Personal projects" pl="Projekty własne" /></dt><dd>{SIDE.map(t => <TechTag key={t} name={t} />)}</dd>
           <dt><T en="Mobile" pl="Mobilne" /></dt><dd>{MOBILE.map(t => <TechTag key={t} name={t} />)}</dd>
           <dt><T en="Languages" pl="Języki" /></dt><dd className="about-langs"><T en="English (C1), Polish (native)" pl="Angielski (C1), Polski" /></dd>
         </dl>
