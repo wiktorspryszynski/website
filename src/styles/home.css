@@ -508,6 +508,17 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
 .proj-btn:hover {
   border-color: var(--muted);
   color: var(--ink);
+  background: rgba(235, 233, 227, 0.05);
+}
+.proj-btn-blur {
+  background: rgba(20, 19, 21, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.proj-btn-blur:hover {
+  background: rgba(235, 233, 227, 0.14);
+  border-color: var(--ink);
+  color: var(--ink);
 }
 .proj-btn-demo {
   border-color: rgba(201, 88, 53, 0.4);

@@ -118,13 +118,13 @@ function ExpandContent({ proj }: { proj: Project }) {
 function CardLinks({ proj }: { proj: Project }) {
   return (
     <span className="proj-btns">
-      <ProjBtn href={proj.modelUrl} optional>
+      <ProjBtn href={proj.modelUrl} optional blur>
         <TbNotebook size={13} /><T en="view model" pl="zobacz model" />
       </ProjBtn>
-      <ProjBtn href={proj.sourceUrl} optional>
+      <ProjBtn href={proj.sourceUrl} optional blur>
         <TbBrandGithub size={13} /><T en="source" pl="kod" />
       </ProjBtn>
-      <ProjBtn href={proj.demoUrl} optional className="proj-btn-demo">
+      <ProjBtn href={proj.demoUrl} optional blur className="proj-btn-demo">
         demo <Arrow size={11} />
       </ProjBtn>
     </span>
