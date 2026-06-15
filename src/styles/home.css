@@ -118,7 +118,6 @@ main { position: relative; z-index: 1; }
 
 @media (max-width: 640px) {
   .nav { gap: 16px; font-size: 11px; }
-  .nav > button:nth-child(2) { display: none; }
 }
 
 /* ---------- hero ---------- */
