@@ -345,6 +345,10 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
   color: var(--muted);
   font-style: italic;
 }
+@media (max-width: 640px) {
+  .h2 { margin-bottom: 20px; }
+  .work-head { margin-bottom: 20px; }
+}
 
 /* ---------- tech tags ---------- */
 .tech-tag {
