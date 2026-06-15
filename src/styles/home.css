@@ -861,10 +861,11 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
 .footer-right { display: inline-flex; align-items: center; gap: 16px; }
 .footer-link { color: var(--muted); transition: color 0.15s; }
 .footer-link:hover { color: var(--ink); }
-.footer-version { font-family: var(--mono); font-size: 10px; color: var(--muted); opacity: 0.5; letter-spacing: 0.04em; transition: opacity 0.15s; }
+.footer-version { font-family: var(--mono); font-size: 10px; color: #908e87; opacity: 0.85; letter-spacing: 0.04em; transition: opacity 0.15s; }
 .footer-version:hover { opacity: 1; }
-.footer-sha { font-family: var(--mono); font-size: 10px; color: var(--muted); opacity: 0.5; letter-spacing: 0.04em; transition: opacity 0.15s; }
+.footer-sha { font-family: var(--mono); font-size: 10px; color: #908e87; opacity: 0.85; letter-spacing: 0.04em; transition: opacity 0.15s; }
 .footer-sha:hover { opacity: 1; }
+.footer-sha-val { text-transform: lowercase; letter-spacing: 0.06em; }
 .footer-drop { position: relative; }
 .footer-drop-trigger { display: inline-flex; align-items: center; gap: 3px; }
 .footer-drop-menu {
