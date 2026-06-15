@@ -78,6 +78,14 @@ export default function SiteFooter({ onTerminalOpen }: SiteFooterProps) {
 
         <span className="footer-right">
           <a
+            className="footer-version"
+            href={`https://github.com/wiktorspryszynski/website/releases/tag/v${__APP_VERSION__}`}
+            target="_blank"
+            rel="noreferrer"
+            data-tooltip="release notes"
+          >v{__APP_VERSION__}</a>
+
+          <a
             className="footer-sha"
             href={`https://github.com/wiktorspryszynski/website/commit/${__GIT_SHA__}`}
             target="_blank"

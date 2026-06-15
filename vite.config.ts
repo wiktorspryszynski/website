@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react'
 import { existsSync, readFileSync, statSync } from 'fs'
 import { resolve } from 'path'
 
+const pkg = JSON.parse(readFileSync(resolve(process.cwd(), 'package.json'), 'utf-8'))
+
 export default defineConfig({
   base: '/',
   plugins: [
@@ -29,6 +31,7 @@ export default defineConfig({
     },
   ],
   define: {
+    __APP_VERSION__: JSON.stringify(pkg.version),
     __GIT_SHA__: JSON.stringify((process.env.VITE_GIT_SHA ?? 'dev').slice(0, 7)),
     __BUILD_NUMBER__: JSON.stringify(process.env.VITE_BUILD_NUMBER ?? 'local'),
     __BUILD_DATE__: JSON.stringify(new Date().toISOString().slice(0, 10)),

@@ -38,7 +38,13 @@ No test suite is configured.
 
 Global styles are in a single file: `src/styles/home.css`.
 
-Build injects three globals via `vite.config.ts` defines: `__GIT_SHA__`, `__BUILD_NUMBER__`, `__BUILD_DATE__`.
+Build injects four globals via `vite.config.ts` defines: `__APP_VERSION__` (from `package.json` version), `__GIT_SHA__`, `__BUILD_NUMBER__`, `__BUILD_DATE__`. `__GIT_SHA__`/`__BUILD_NUMBER__` come from `VITE_GIT_SHA`/`VITE_BUILD_NUMBER` (set by the deploy workflow); they fall back to `dev`/`local` for local builds. The footer surfaces `__APP_VERSION__` and `__GIT_SHA__`.
+
+### Versioning
+
+The app version lives in `package.json` (`version`) and is the single source of truth — `vite.config.ts` injects it as `__APP_VERSION__` and the footer displays it (linking to `/releases/tag/v<version>`).
+
+To cut a release, just bump `version` in `package.json` and push to `main`. The `release` workflow (`.github/workflows/release.yml`) reads the new version and publishes a GitHub Release (tag `v<version>`) with auto-generated notes. It's idempotent — if a release for that version already exists (e.g. `package.json` changed for an unrelated reason), the run is a no-op. No manual tagging required.
 
 ### Legacy v1 routing
 
