@@ -37,7 +37,7 @@ export default function NavBar() {
         </button>
         <nav className="nav">
           <NavButton scrollTo="about"   en="About"   pl="O mnie" />
-          <NavButton scrollTo="work"    en="Work"    pl="Projekty" />
+          <NavButton scrollTo="work"    en="Projects"    pl="Projekty" />
           <NavButton scrollTo="contact" en="Contact" pl="Kontakt" />
           <button
             className="lang"

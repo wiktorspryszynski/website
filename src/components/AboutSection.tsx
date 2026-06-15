@@ -1,5 +1,6 @@
 import T from './T'
 import TechTag from './TechTag'
+import Arrow from './Arrow'
 
 const SHIPPED  = ['PHP', 'JavaScript', 'React', 'SQL', 'HTML/CSS']
 const SIDE     = ['TypeScript', 'Python', 'FastAPI', 'PostgreSQL', 'Redis', 'Docker', 'Deck.gl']
@@ -11,7 +12,7 @@ export default function AboutSection() {
       <h2 className="h2"><T en="About" pl="O mnie" /></h2>
       <div className="about-body">
         <p><T
-          en={<>I'm based in <a className="geo-link" href="https://maps.google.com/?q=Gdańsk,+Poland" target="_blank" rel="noopener noreferrer">Gdańsk, Poland</a>.</>}
+          en={<>I'm based in <a className="geo-link" href="https://maps.google.com/?q=Gdańsk,+Poland" target="_blank" rel="noopener noreferrer">Gdańsk, Poland <Arrow /></a>.</>}
           pl="Mieszkam w Gdańsku."
         /></p>
         <p><T

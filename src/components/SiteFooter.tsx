@@ -90,8 +90,8 @@ export default function SiteFooter({ onTerminalOpen }: SiteFooterProps) {
             href={`https://github.com/wiktorspryszynski/website/commit/${__GIT_SHA__}`}
             target="_blank"
             rel="noreferrer"
-            data-tooltip="view commit"
-          >{__GIT_SHA__}</a>
+            data-tooltip={`built ${__BUILD_DATE__} · ${__BUILD_NUMBER__} · click to view the commit`}
+          ><span className="footer-sha-val">{__GIT_SHA__}</span></a>
 
           <div ref={dropRef} className={`footer-drop${linksOpen ? ' open' : ''}`}>
             <button

@@ -7,6 +7,7 @@ import TechTag from './TechTag'
 import { useLang } from '../context/LanguageContext'
 import { TbBrandGithub, TbNotebook } from 'react-icons/tb'
 import Arrow from './Arrow'
+import ProjBtn from './ProjBtn'
 
 const GALLERY_MAX_W = 600
 const GALLERY_MAX_H = 360
@@ -117,39 +118,15 @@ function ExpandContent({ proj }: { proj: Project }) {
 function CardLinks({ proj }: { proj: Project }) {
   return (
     <span className="proj-btns">
-      {proj.modelUrl && (
-        <a
-          className="proj-btn"
-          href={proj.modelUrl}
-          target="_blank"
-          rel="noopener"
-          onClick={e => e.stopPropagation()}
-        >
-          <TbNotebook size={13} /><T en="view model" pl="zobacz model" />
-        </a>
-      )}
-      {proj.sourceUrl && (
-        <a
-          className="proj-btn"
-          href={proj.sourceUrl}
-          target="_blank"
-          rel="noopener"
-          onClick={e => e.stopPropagation()}
-        >
-          <TbBrandGithub size={13} /><T en="source" pl="kod" />
-        </a>
-      )}
-      {proj.demoUrl && (
-        <a
-          className="proj-btn proj-btn-demo"
-          href={proj.demoUrl}
-          target="_blank"
-          rel="noopener"
-          onClick={e => e.stopPropagation()}
-        >
-          demo <Arrow size={11} />
-        </a>
-      )}
+      <ProjBtn href={proj.modelUrl} optional blur>
+        <TbNotebook size={13} /><T en="view model" pl="zobacz model" />
+      </ProjBtn>
+      <ProjBtn href={proj.sourceUrl} optional blur>
+        <TbBrandGithub size={13} /><T en="source" pl="kod" />
+      </ProjBtn>
+      <ProjBtn href={proj.demoUrl} optional blur className="proj-btn-demo">
+        demo <Arrow size={12} />
+      </ProjBtn>
     </span>
   )
 }
