@@ -125,7 +125,7 @@ function CardLinks({ proj }: { proj: Project }) {
         <TbBrandGithub size={13} /><T en="source" pl="kod" />
       </ProjBtn>
       <ProjBtn href={proj.demoUrl} optional blur className="proj-btn-demo">
-        demo <Arrow size={11} />
+        demo <Arrow size={12} />
       </ProjBtn>
     </span>
   )

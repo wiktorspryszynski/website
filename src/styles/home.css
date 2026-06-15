@@ -521,12 +521,11 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
   color: var(--ink);
 }
 .proj-btn-demo {
-  border-color: rgba(201, 88, 53, 0.4);
-  color: var(--accent);
+  color: var(--ink);
+  background: rgba(235, 233, 227, 0.06);
 }
 .proj-btn-demo:hover {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--ink);
   color: var(--bg);
 }
 
