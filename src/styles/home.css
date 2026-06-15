@@ -890,7 +890,7 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
   border: 1px solid var(--line);
   transition: color 0.2s, border-color 0.2s, background 0.2s, box-shadow 0.2s;
 }
-.term-toggle:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+.term-toggle:hover { color: var(--ink); border-color: var(--ink); background: rgba(235, 233, 227, 0.08); }
 .term-toggle kbd {
   font-family: Consolas, var(--mono);
   font-size: inherit;
