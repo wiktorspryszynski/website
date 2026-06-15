@@ -1,0 +1,14 @@
+/* TEAM */
+Developer: Wiktor Spryszyński
+Location: Gdańsk, Poland
+GitHub: github.com/wiktorspryszynski
+
+/* TECHNOLOGY */
+Frontend: React, TypeScript, Vite
+Backend: FastAPI, Python
+Database: PostgreSQL
+Hosting: VPS (OVHCloud), Nginx, Docker
+
+/* SITE */
+Last update: {{BUILD_DATE}}
+Language: Polish / English

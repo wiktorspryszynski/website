@@ -1,0 +1,33 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1C243A"/>
+      <stop offset="1" stop-color="#101826"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="260" y1="180" x2="940" y2="540" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C5CFF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#00D4FF" stop-opacity="0.22"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#7C5CFF"/>
+      <stop offset="1" stop-color="#00D4FF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <circle cx="1080" cy="120" r="220" fill="#00D4FF" fill-opacity="0.08"/>
+  <circle cx="140" cy="620" r="260" fill="#7C5CFF" fill-opacity="0.12"/>
+
+  <rect x="220" y="150" width="760" height="400" rx="26" fill="url(#glass)" stroke="#3B4A6B"/>
+  <rect x="280" y="230" width="360" height="18" rx="9" fill="#E6E9EF" fill-opacity="0.85"/>
+  <rect x="280" y="268" width="260" height="12" rx="6" fill="#A9B1BD" fill-opacity="0.8"/>
+  <rect x="280" y="300" width="300" height="12" rx="6" fill="#A9B1BD" fill-opacity="0.65"/>
+
+  <rect x="700" y="225" width="220" height="140" rx="14" fill="#151D30" stroke="url(#line)"/>
+  <rect x="700" y="385" width="220" height="30" rx="10" fill="#101725" stroke="#2D3A56"/>
+  <rect x="700" y="435" width="102" height="40" rx="12" fill="#202B44" stroke="#3B4A6B"/>
+  <rect x="818" y="435" width="102" height="40" rx="12" fill="#202B44" stroke="#3B4A6B"/>
+
+  <text x="280" y="366" fill="#E6E9EF" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="700">Project Preview</text>
+  <text x="280" y="405" fill="#A9B1BD" font-family="Segoe UI, Arial, sans-serif" font-size="22">UI concept with stack, media and actions</text>
+</svg>

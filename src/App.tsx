@@ -1,18 +1,17 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import Flashcards from './components/Flashcards';
-import CvPage from './components/CvPage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
+import HomePage from './HomePage'
+import NowPage from './pages/NowPage'
 
-function App() {
+export default function App() {
   return (
+    <HelmetProvider>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/flashcards" element={<Flashcards />} />
-        <Route path="/cv" element={<CvPage />} />
+        <Route path="/now" element={<NowPage />} />
+        <Route path="/*" element={<HomePage />} />
       </Routes>
     </BrowserRouter>
-  );
+    </HelmetProvider>
+  )
 }
-
-export default App;
