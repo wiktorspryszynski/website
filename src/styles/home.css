@@ -961,11 +961,22 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
 
 /* ---------- /now page ---------- */
 .now-page {
+  position: relative;
   min-height: 100vh;
   display: flex; align-items: flex-start; justify-content: center;
   padding: clamp(40px, 8vh, 80px) var(--gutter);
 }
-.now-inner { max-width: 640px; width: 100%; }
+.now-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  width: 100%;
+  animation: now-rise 0.7s cubic-bezier(.2, .7, .2, 1) both;
+}
+@keyframes now-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 .now-back {
   font-family: var(--mono); font-size: 12px; color: var(--muted);
   transition: color 0.15s;
@@ -980,6 +991,22 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
 }
 .now-meta { font-family: var(--mono); font-size: 12px; color: var(--muted); margin: 0 0 40px; }
 .now-body { color: var(--ink-2); line-height: 1.7; font-size: 17px; }
+.now-body p { margin: 0 0 16px; }
+.now-section { margin-top: 40px; }
+.now-label {
+  font-family: var(--mono); font-weight: 400;
+  font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); margin: 0 0 12px;
+}
+.now-list { margin: 0; padding-left: 18px; }
+.now-list li { margin: 0 0 8px; }
+.now-link {
+  color: var(--ink);
+  border-bottom: 1px solid var(--line-strong);
+  transition: border-color 0.15s;
+}
+.now-link:hover { border-color: var(--ink); }
+.now-link svg { vertical-align: -1px; margin-left: 1px; }
 
 /* ---------- toast ---------- */
 .toast {
