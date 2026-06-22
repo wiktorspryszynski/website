@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async'
 import { LanguageProvider } from './context/LanguageProvider'
 import { BACKEND_EXISTS } from './config/features'
 import NavBar from './components/NavBar'
-import OrbCanvas from './components/OrbCanvas'
 import HeroSection from './components/HeroSection'
 import AboutSection from './components/AboutSection'
 import WorkSection from './components/WorkSection'
@@ -84,7 +83,6 @@ export default function HomePage() {
         <meta name="twitter:description" content={DESCRIPTION} />
         <meta name="twitter:image" content={`${SITE_URL}/project-preview.svg`} />
       </Helmet>
-      <OrbCanvas />
       <NavBar />
       <main>
         <HeroSection

@@ -2,8 +2,24 @@ import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 import { SPIKES_ENABLED } from '../config/features'
 
-export default function OrbCanvas() {
+interface OrbCanvasProps {
+  /**
+   * 'home'    = drifting backdrop on the right (the landing page).
+   * 'subpage' = zoomed-in, left-anchored, decorative.
+   *
+   * A single instance lives in App and stays mounted across route changes; switching
+   * `mode` makes the same orb glide between the two states (no WebGL re-init, no flash),
+   * so navigating home <-> any subpage reads as one continuous orb.
+   */
+  mode?: 'home' | 'subpage'
+}
+
+export default function OrbCanvas({ mode = 'home' }: OrbCanvasProps) {
   const mountRef = useRef<HTMLDivElement>(null)
+  const modeRef = useRef(mode)
+
+  // Keep the latest mode readable inside the long-lived animation loop / event handlers.
+  useEffect(() => { modeRef.current = mode }, [mode])
 
   useEffect(() => {
     const mount = mountRef.current
@@ -12,9 +28,16 @@ export default function OrbCanvas() {
     const w = () => mount.clientWidth
     const h = () => mount.clientHeight
 
+    // Per-mode targets. The loop eases the live orb toward these every frame, so a mode
+    // change animates the transition (home <-> subpage glide) instead of snapping.
+    const targetOffX = () => {
+      if (window.innerWidth <= 880) return 0
+      return modeRef.current === 'subpage' ? -2.7 : 2.2
+    }
+    const targetZ = () => (modeRef.current === 'subpage' ? 5.6 : 8)
+
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(40, w() / h(), 0.1, 100)
-    camera.position.set(0, 0, 8)
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
@@ -66,10 +89,19 @@ export default function OrbCanvas() {
     let pointerDownX = 0, pointerDownY = 0
     let hasDragged = false
 
+    // Live orb anchor + camera distance. Initialised to the current mode so a cold load
+    // (incl. deep-linking straight to a subpage) snaps into place; an in-session mode change
+    // is what produces the glide.
+    let curOffX = targetOffX()
+    let curZ = targetZ()
+    let prevMode = modeRef.current
+    edgeMesh.position.x = curOffX
+    shell.position.x = curOffX
+    camera.position.set(0, 0, curZ)
+
     function isClickOnOrb(clientX: number, clientY: number): boolean {
-      const offX = window.innerWidth > 880 ? 2.2 : 0
-      const center = new THREE.Vector3(offX, 0, 0)
-      const edge = new THREE.Vector3(offX + 2.7, 0, 0)
+      const center = new THREE.Vector3(curOffX, 0, 0)
+      const edge = new THREE.Vector3(curOffX + 2.7, 0, 0)
       center.project(camera)
       edge.project(camera)
       const cx = (center.x * 0.5 + 0.5) * window.innerWidth
@@ -86,6 +118,7 @@ export default function OrbCanvas() {
     }
 
     const handlePointerDown = (e: PointerEvent) => {
+      if (modeRef.current !== 'home') return // subpage orb is decorative — no drag
       if (!isHeroArea(e)) return
       isDragging = true
       lastX = e.clientX; lastY = e.clientY
@@ -109,6 +142,7 @@ export default function OrbCanvas() {
         }
         if (e.cancelable) e.preventDefault()
       } else {
+        // Parallax — runs in every mode, only nudges the look-at target (never grabs/selects).
         target.x = (e.clientX / window.innerWidth - 0.5) * 2
         target.y = (e.clientY / window.innerHeight - 0.5) * 2
       }
@@ -122,7 +156,7 @@ export default function OrbCanvas() {
     }
 
     const handlePointerMoveCursor = (e: PointerEvent) => {
-      if (isDragging) return
+      if (modeRef.current !== 'home' || isDragging) return
       if (isHeroArea(e)) document.body.style.cursor = 'grab'
       else if (document.body.style.cursor === 'grab') document.body.style.cursor = ''
     }
@@ -131,6 +165,7 @@ export default function OrbCanvas() {
 
     let lastScrollY = window.scrollY
     const handleScroll = () => {
+      if (modeRef.current !== 'home') { lastScrollY = window.scrollY; return }
       const dy = window.scrollY - lastScrollY
       velY += dy * 0.00004
       lastScrollY = window.scrollY
@@ -148,9 +183,6 @@ export default function OrbCanvas() {
       camera.aspect = w() / h()
       camera.updateProjectionMatrix()
       renderer.setSize(w(), h())
-      const offX = window.innerWidth > 880 ? 2.2 : 0
-      edgeMesh.position.x = offX
-      shell.position.x = offX
     }
     onResize()
     window.addEventListener('resize', onResize)
@@ -210,6 +242,20 @@ export default function OrbCanvas() {
       if (frame % 3 === 0) rebuildEdges()
       frame++
 
+      // A route-driven mode change kicks the spin so the glide carries a little momentum.
+      if (modeRef.current !== prevMode) {
+        velX += 0.09
+        prevMode = modeRef.current
+      }
+
+      // Ease the orb toward the current route's anchor + zoom — the home <-> subpage glide.
+      // Low factor = slow, smooth ~3s travel (still interruptible if the route flips mid-glide).
+      const easeFactor = 0.01
+      curOffX += (targetOffX() - curOffX) * easeFactor
+      curZ += (targetZ() - curZ) * easeFactor
+      edgeMesh.position.x = curOffX
+      shell.position.x = curOffX
+
       edgeMesh.rotation.y = t * 0.06 + dragRotY
       edgeMesh.rotation.x = t * 0.03 + dragRotX
       shell.rotation.y = -t * 0.04 + dragRotY * 0.5
@@ -225,6 +271,7 @@ export default function OrbCanvas() {
       eased.y += (target.y - eased.y) * 0.04
       camera.position.x = eased.x * 0.5
       camera.position.y = -eased.y * 0.3
+      camera.position.z = curZ
       camera.lookAt(0, 0, 0)
 
       renderer.render(scene, camera)

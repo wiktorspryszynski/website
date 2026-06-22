@@ -24,7 +24,8 @@
 - [X] `/humans.txt` — authors, stack, tools used; link subtly from footer
 - [X] `<meta name="author">` with a recruiter-friendly message, e.g. "Wiktor Spryszyński – reach out if you're hiring"
 - [X] Persist terminal history across opens (sessionStorage)
-ad
+- [ ] GitHub commit graph
+
 ## Broken / needs attention
 
 - [X] `flight-scope` demo URL is a placeholder `#` — either add a real URL or hide the demo button
