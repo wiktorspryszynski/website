@@ -11,13 +11,13 @@ export default function NowPage() {
   return (
     <main className="now-page">
       <div className="now-inner">
-        <Link to="/" className="now-back"><Arrow direction="left" /> back</Link>
+        <Link to="/" className="now-back"><Arrow direction="left" /><span>back</span></Link>
         <h1 className="now-title">Now</h1>
         <p className="now-meta">Updated June 2026 · Gdańsk, Poland</p>
         <div className="now-body">
           <p>
             A snapshot of what has my attention right now — inspired by{' '}
-            <a className="now-link" href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">
+            <a className="link" href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">
               Derek Sivers' /now page<Arrow />
             </a>.
           </p>
@@ -44,7 +44,7 @@ export default function NowPage() {
             <h2 className="now-label">Open to</h2>
             <p>
               Interesting full-stack work and collaborations. If something here resonates,{' '}
-              <Link to="/#contact" className="now-link">get in touch</Link>.
+              <Link to="/#contact" className="link">get in touch</Link>.
             </p>
           </section>
         </div>

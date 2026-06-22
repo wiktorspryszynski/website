@@ -34,6 +34,32 @@ body {
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
+
+/* Opt-in link styling: white text with a hand-drawn squiggle that wipes in on hover.
+   Add the `link` class to any inline/prose anchor. */
+.link {
+  position: relative;
+  color: var(--ink);
+}
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.28em;
+  height: 0.4em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='6' viewBox='0 0 16 6'%3E%3Cpath d='M0 3 Q 4 0 8 3 T 16 3' fill='none' stroke='%23ebe9e3' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: left center;
+  background-size: 16px 6px;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.35s ease;
+  pointer-events: none;
+}
+.link svg { vertical-align: -1px; margin-left: 1px; }
+.link:hover::after {
+  clip-path: inset(0 0 0 0);
+}
 button {
   font: inherit; color: inherit; background: none; border: 0;
   cursor: pointer; padding: 0; text-align: inherit;
@@ -410,32 +436,10 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
   padding-top: 4px;
   letter-spacing: 0.01em;
 }
+/* Squiggle comes from the `.link` class; geo-link reads pure white so it pops a touch
+   brighter than the warm off-white (--ink) prose around it. */
 .geo-link {
-  position: relative;
-  opacity: 0.7;
-  text-decoration: none;
-  transition: opacity 0.15s;
-}
-.geo-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -0.3em;
-  height: 0.4em;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='6' viewBox='0 0 16 6'%3E%3Cpath d='M0 3 Q 4 0 8 3 T 16 3' fill='none' stroke='%23c95835' stroke-width='1.4'/%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-position: left center;
-  background-size: 16px 6px;
-  clip-path: inset(0 100% 0 0);
-  transition: clip-path 0.35s ease;
-  pointer-events: none;
-}
-.geo-link:hover {
-  opacity: 1;
-}
-.geo-link:hover::after {
-  clip-path: inset(0 0 0 0);
+  color: #fff;
 }
 
 /* ---------- work ---------- */
@@ -980,8 +984,10 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
 .now-back {
   font-family: var(--mono); font-size: 12px; color: var(--muted);
   transition: color 0.15s;
-  display: inline-block; margin-bottom: 40px;
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-bottom: 40px;
 }
+.now-back svg { width: 14px; height: 14px; }
 .now-back:hover { color: var(--ink); }
 .now-title {
   font-family: var(--display); font-weight: 300;
@@ -1000,13 +1006,6 @@ main > section { padding-top: 80px; padding-bottom: 80px; }
 }
 .now-list { margin: 0; padding-left: 18px; }
 .now-list li { margin: 0 0 8px; }
-.now-link {
-  color: var(--ink);
-  border-bottom: 1px solid var(--line-strong);
-  transition: border-color 0.15s;
-}
-.now-link:hover { border-color: var(--ink); }
-.now-link svg { vertical-align: -1px; margin-left: 1px; }
 
 /* ---------- toast ---------- */
 .toast {

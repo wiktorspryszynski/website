@@ -247,10 +247,10 @@ export default function OrbCanvas({ mode = 'home' }: OrbCanvasProps) {
         velX += 0.09
         prevMode = modeRef.current
       }
-      
+
       // Ease the orb toward the current route's anchor + zoom — the home <-> subpage glide.
       // Low factor = slow, smooth ~3s travel (still interruptible if the route flips mid-glide).
-      const easeFactor = 0.02
+      const easeFactor = 0.01
       curOffX += (targetOffX() - curOffX) * easeFactor
       curZ += (targetZ() - curZ) * easeFactor
       edgeMesh.position.x = curOffX
